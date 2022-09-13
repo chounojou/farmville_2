@@ -1,11 +1,8 @@
 ﻿# The script of the game goes in this file.
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-# Check file define-default untuk melihat definisi karakter/variabel
 
+# Check file define-default untuk melihat definisi karakter/variabel
+define e = Character("Eileen")
 # The game starts here.
 label start:
 
@@ -15,18 +12,8 @@ label start:
         jump phase2
     else:
         jump phase3
-<<<<<<< HEAD
-=======
-=======
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileen")
 
 
-# The game starts here.
-
-label start:
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -49,5 +36,3 @@ label start:
     # This ends the game.
 
     return
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)

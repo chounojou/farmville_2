@@ -1,42 +1,64 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 189, in script
-    python:
-  File "renpy/common/00start.rpy", line 189, in script
-    python:
-  File "renpy/common/00start.rpy", line 190, in <module>
-    renpy.execute_default_statement(True)
-Exception: store.quick_menu is being given a default a second time.
+  File "game/story/phase1.rpy", line 6, in script
+    "The sunlight is shining through the windows today."
+  File "game/screens.rpy", line 246, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 246, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 247, in execute
+    imagebutton auto "gui/button/autoplay_%s_ingame_button" action ShowMenu('history') xpos 690 ypos 590 focus_mask True at q_move1
+Exception: Imagebutton does not have a idle image. (auto='gui/button/autoplay_%s_ingame_button').
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "E:\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
-    renpy.main.main()
-  File "E:\renpy-7.3.5-sdk\renpy\main.py", line 578, in main
-    run(restart)
-  File "E:\renpy-7.3.5-sdk\renpy\main.py", line 143, in run
-    renpy.execution.run_context(True)
-  File "E:\renpy-7.3.5-sdk\renpy\execution.py", line 908, in run_context
-    context.run()
-  File "renpy/common/00start.rpy", line 189, in script
-    python:
-  File "renpy/common/00start.rpy", line 189, in script
-    python:
-  File "E:\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "E:\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "renpy/common/00start.rpy", line 190, in <module>
-    renpy.execute_default_statement(True)
-  File "E:\renpy-7.3.5-sdk\renpy\exports.py", line 3495, in execute_default_statement
-    i.set_default(start)
-  File "game/screens_cgtutorial.rpyc", line 270, in set_default
-    �#��>!H>�����nl��sv�����Ae�S^�E�?�Y�na�>��(�*{���-{Q�}�[ܱ�}}�3����� ���>��P�t��SZx�A�k���_AV�$I9��j���U[u��S��X�)G����+n�q�;�,�8_;��{��E*;�W����N"�o(�::�S�2�
-Exception: store.quick_menu is being given a default a second time.
+  File "game/story/phase1.rpy", line 6, in script
+    "The sunlight is shining through the windows today."
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\ast.py", line 921, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\exports.py", line 1373, in say
+    who(what, *args, **kwargs)
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\character.py", line 1266, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\character.py", line 927, in do_display
+    display_say(who,
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\character.py", line 666, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\core.py", line 3804, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\core.py", line 3804, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 246, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 246, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 247, in execute
+    imagebutton auto "gui/button/autoplay_%s_ingame_button" action ShowMenu('history') xpos 690 ypos 590 focus_mask True at q_move1
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\ui.py", line 952, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\ui.py", line 946, in choice
+    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
+Exception: Imagebutton does not have a idle image. (auto='gui/button/autoplay_%s_ingame_button').
 
-Windows-8-6.2.9200
-Ren'Py 7.3.5.606
-rai_farmville2 1.0
-Mon Sep 12 20:25:02 2022
+Windows-10-10.0.19044 AMD64
+Ren'Py 8.0.1.22070801
+rai_farmville 1.0
+Tue Sep 13 22:51:04 2022

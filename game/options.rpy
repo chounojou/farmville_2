@@ -12,29 +12,13 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-<<<<<<< HEAD
-define config.name = _("rai_farmville2")
-=======
-<<<<<<< HEAD
-define config.name = _("rai_farmville2")
-=======
 define config.name = _("rai_farmville")
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-<<<<<<< HEAD
-define gui.show_name = True
-=======
-<<<<<<< HEAD
-define gui.show_name = True
-=======
 define gui.show_name = False
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 
 ## The version of the game.
@@ -53,15 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-<<<<<<< HEAD
-define build.name = "rai_farmville2"
-=======
-<<<<<<< HEAD
-define build.name = "rai_farmville2"
-=======
 define build.name = "rai_farmville"
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 
 ## Sounds and music ############################################################
@@ -166,15 +142,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-<<<<<<< HEAD
-define config.save_directory = "rai_farmville2-1662779006"
-=======
-<<<<<<< HEAD
-define config.save_directory = "rai_farmville2-1662779006"
-=======
 define config.save_directory = "rai_farmville-1655386009"
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 
 ## Icon ########################################################################

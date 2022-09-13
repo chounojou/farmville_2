@@ -39,29 +39,10 @@ style label_text is gui_text:
 style prompt_text is gui_text:
     properties gui.text_properties("prompt")
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-
-style bar:
-    ysize gui.bar_size
-    left_bar Frame("gui/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
-    right_bar Frame("gui/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
-
-style vbar:
-    xsize gui.bar_size
-    top_bar Frame("gui/bar/top.png", gui.vbar_borders, tile=gui.bar_tile)
-    bottom_bar Frame("gui/bar/bottom.png", gui.vbar_borders, tile=gui.bar_tile)
-<<<<<<< HEAD
-=======
-=======
 style vbar:
     xsize gui.bar_size
     top_bar Frame("gui/bar/left.png", gui.vbar_borders, tile=gui.bar_tile)
     bottom_bar Frame("gui/bar/right.png", gui.vbar_borders, tile=gui.bar_tile)
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style scrollbar:
     ysize gui.scrollbar_size
@@ -75,20 +56,10 @@ style vscrollbar:
 
 style slider:
     ysize gui.slider_size
-<<<<<<< HEAD
-    base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
-    thumb "gui/slider/horizontal_[prefix_]thumb.png"
-=======
-<<<<<<< HEAD
-    base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
-    thumb "gui/slider/horizontal_[prefix_]thumb.png"
-=======
     left_bar "gui/slider/left_bar.png"
     right_bar "gui/slider/right_bar.png"
     thumb "gui/slider/horizontal_[prefix_]thumb.png"
     thumb_offset 23
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style vslider:
     xsize gui.slider_size
@@ -120,16 +91,11 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 transform sideways:
     rotate -5
 
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 screen say(who, what):
+
     style_prefix "say"
 
     window:
@@ -140,15 +106,7 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-<<<<<<< HEAD
-                text who id "who"
-=======
-<<<<<<< HEAD
-                text who id "who"
-=======
                 text who id "who" at sideways
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
         text what id "what"
 
@@ -181,23 +139,10 @@ style window:
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-    xpos gui.name_xpos
-    xanchor gui.name_xalign
-    xsize gui.namebox_width
-    ypos gui.name_ypos
-<<<<<<< HEAD
-=======
-=======
     xpos 490
     xanchor gui.name_xalign
     xsize gui.namebox_width
     ypos -125
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
     ysize gui.namebox_height
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
@@ -211,21 +156,9 @@ style say_label:
 style say_dialogue:
     properties gui.text_properties("dialogue")
 
-<<<<<<< HEAD
-    xpos gui.dialogue_xpos
-    xsize gui.dialogue_width
-    ypos gui.dialogue_ypos
-=======
-<<<<<<< HEAD
-    xpos gui.dialogue_xpos
-    xsize gui.dialogue_width
-    ypos gui.dialogue_ypos
-=======
     xpos 450
     xsize gui.dialogue_width
     ypos 30
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 
 ## Input screen ################################################################
@@ -239,11 +172,14 @@ style say_dialogue:
 ## https://www.renpy.org/doc/html/screen_special.html#input
 
 screen input(prompt):
+
     style_prefix "input"
 
     window:
 
+
         vbox:
+
             xalign gui.dialogue_text_xalign
             xpos gui.dialogue_xpos
             xsize gui.dialogue_width
@@ -290,15 +226,7 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-<<<<<<< HEAD
-    ypos 405
-=======
-<<<<<<< HEAD
-    ypos 405
-=======
     ypos 270
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
     yanchor 0.5
 
     spacing gui.choice_spacing
@@ -317,16 +245,8 @@ style choice_button_text is default:
 
 screen quick_menu():
 
-<<<<<<< HEAD
     ## Ensure this appears on top of other screens.
     zorder 100
-=======
-<<<<<<< HEAD
-    ## Ensure this appears on top of other screens.
-    zorder 100
-=======
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
     if quick_menu:
 
@@ -336,26 +256,22 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            imagemap:
+                ground "gui/button/ingame_hover.png"
+                idle "gui/button/ingame_hover.png"
+                hover "gui/button/ingame_hover.png"
+                selected_idle "gui/button/ingame_hover.png"
+                selected_hover "gui/button/ingame_hover.png"
+
+                hotspot (754,652,38,39) action Preference("auto-forward", "toggle")
+                hotspot (820,652,42,40) action Rollback()
+                hotspot (887,652,41,39) action Skip() alternate Skip(fast=True, confirm=True)
+                hotspot (953,650,41,45) action QuickSave()
+                hotspot (1020,652,43,37) action ShowMenu('history')
 
 
-<<<<<<< HEAD
-=======
-=======
-            imagebutton 
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
+
+
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
 init python:
@@ -382,10 +298,6 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 ## pause menu ##
 screen pause_menu():
 
@@ -420,8 +332,6 @@ style pause_menu_frame:
 
     background "gui/overlay/main_menu.png"
 ###
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 screen navigation():
 
     vbox:
@@ -435,14 +345,8 @@ screen navigation():
         if main_menu:
 
             textbutton _("Start") action Start()
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
             ypos 480
             xpos 1050
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
         else:
 
@@ -450,25 +354,10 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Preferences") action ShowMenu("preferences")
-
-        if renpy.get_screen("main_menu"):
-            textbutton _("Gallery") action ShowMenu("album")
-<<<<<<< HEAD
-=======
-=======
         textbutton _("Load Game") action ShowMenu("load") xpos -25 ypos 5
         textbutton _("Gallery") action ShowMenu("gallery") xpos -15 ypos 5
 
         textbutton _("Settings") action ShowMenu("preferences") xpos -10
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
         if _in_replay:
 
@@ -478,35 +367,11 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-        textbutton _("About") action ShowMenu("about")
-
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
-
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-<<<<<<< HEAD
-            textbutton _("Quit") action Quit(confirm=not main_menu)
-=======
-<<<<<<< HEAD
-            textbutton _("Quit") action Quit(confirm=not main_menu)
-=======
             textbutton _("Quit") action Quit(confirm=not main_menu) xpos 10 ypos -5
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 
 style navigation_button is gui_button
@@ -560,38 +425,17 @@ style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
 style main_menu_frame:
-<<<<<<< HEAD
-    xsize 420
-=======
-<<<<<<< HEAD
-    xsize 420
-=======
     xsize 280
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
     yfill True
 
     background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-    xoffset -30
-    xmaximum 1200
-    yalign 1.0
-    yoffset -30
-<<<<<<< HEAD
-=======
-=======
     xoffset -20
     xmaximum 800
     yalign 1.0
     yoffset -20
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
@@ -693,39 +537,12 @@ style return_button is navigation_button
 style return_button_text is navigation_button_text
 
 style game_menu_outer_frame:
-<<<<<<< HEAD
-    bottom_padding 45
-    top_padding 180
-=======
-<<<<<<< HEAD
-    bottom_padding 45
-    top_padding 180
-=======
     bottom_padding 30
     top_padding 120
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
     background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-    xsize 420
-    yfill True
-
-style game_menu_content_frame:
-    left_margin 60
-    right_margin 30
-    top_margin 15
-
-style game_menu_viewport:
-    xsize 1380
-<<<<<<< HEAD
-=======
-=======
     xsize 280
     yfill True
 
@@ -736,32 +553,16 @@ style game_menu_content_frame:
 
 style game_menu_viewport:
     xsize 920
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
 
 style game_menu_side:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-    spacing 15
-
-style game_menu_label:
-    xpos 75
-    ysize 180
-<<<<<<< HEAD
-=======
-=======
     spacing 10
 
 style game_menu_label:
     xpos 50
     ysize 120
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style game_menu_label_text:
     size gui.title_text_size
@@ -771,15 +572,7 @@ style game_menu_label_text:
 style return_button:
     xpos gui.navigation_xpos
     yalign 1.0
-<<<<<<< HEAD
-    yoffset -45
-=======
-<<<<<<< HEAD
-    yoffset -45
-=======
     yoffset -30
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 
 ## About screen ################################################################
@@ -934,18 +727,8 @@ style slot_time_text is slot_button_text
 style slot_name_text is slot_button_text
 
 style page_label:
-<<<<<<< HEAD
-    xpadding 75
-    ypadding 5
-=======
-<<<<<<< HEAD
-    xpadding 75
-    ypadding 5
-=======
     xpadding 50
     ypadding 3
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style page_label_text:
     text_align 0.5
@@ -976,14 +759,6 @@ screen preferences():
 
     tag menu
 
-<<<<<<< HEAD
-    use game_menu(_("Preferences"), scroll="viewport"):
-
-=======
-<<<<<<< HEAD
-    use game_menu(_("Preferences"), scroll="viewport"):
-
-=======
     imagemap:
         ground "gui/ggame_menu.png"
         idle "gui/button/set.png"
@@ -994,8 +769,6 @@ screen preferences():
         hotspot (235, 534, 69, 74) action ShowMenu("pause_menu")
         hotspot (324, 543, 63, 60) action ShowMenu("pause_menu")
         hotspot (411, 545, 155, 58) action ShowMenu("pause_menu")
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
         vbox:
 
             hbox:
@@ -1008,14 +781,8 @@ screen preferences():
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
                         xpos 255
                         ypos 115
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
                 vbox:
                     style_prefix "radio"
@@ -1042,28 +809,6 @@ screen preferences():
 
                 vbox:
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-                    label _("Text Speed")
-
-                    bar value Preference("text speed")
-
-                    label _("Auto-Forward Time")
-
-                    bar value Preference("auto-forward time")
-
-                vbox:
-
-                    if config.has_music:
-                        label _("Music Volume")
-
-                        hbox:
-                            bar value Preference("music volume")
-<<<<<<< HEAD
-=======
-=======
 
                     label _("Text Speed") ypos -3 xpos 20
 
@@ -1087,8 +832,6 @@ screen preferences():
                             bar value Preference("music volume")
                         xpos 360
                         ypos 135
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
                     if config.has_sound:
 
@@ -1113,43 +856,6 @@ screen preferences():
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-
-
-style pref_label is gui_label
-style pref_label_text is gui_label_text
-style pref_vbox is vbox
-
-style radio_label is pref_label
-style radio_label_text is pref_label_text
-style radio_button is gui_button
-style radio_button_text is gui_button_text
-style radio_vbox is pref_vbox
-
-style check_label is pref_label
-style check_label_text is pref_label_text
-style check_button is gui_button
-style check_button_text is gui_button_text
-style check_vbox is pref_vbox
-
-style slider_label is pref_label
-style slider_label_text is pref_label_text
-style slider_slider is gui_slider
-style slider_button is gui_button
-style slider_button_text is gui_button_text
-style slider_pref_vbox is pref_vbox
-
-style mute_all_button is check_button
-style mute_all_button_text is check_button_text
-<<<<<<< HEAD
-=======
-=======
             textbutton _("Mute All"):
                 action Preference("all mute", "toggle")
                 style "mute_all_button"
@@ -1193,31 +899,16 @@ style slider_pref_vbox is pref_vbox
 style mute_all_button is check_button
 style mute_all_button_text:
     size 16
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style pref_label:
     top_margin gui.pref_spacing
     bottom_margin 3
 
 style pref_label_text:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-    yalign 1.0
-
-style pref_vbox:
-    xsize 338
-<<<<<<< HEAD
-=======
-=======
     yalign 2.0
 
 style pref_vbox:
     xsize 225
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style radio_vbox:
     spacing gui.pref_button_spacing
@@ -1240,19 +931,6 @@ style check_button_text:
     properties gui.button_text_properties("check_button")
 
 style slider_slider:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 97b775d (second commit)
-    xsize 525
-
-style slider_button:
-    properties gui.button_properties("slider_button")
-    yalign 0.5
-    left_margin 15
-<<<<<<< HEAD
-=======
-=======
     xsize 317
     ysize 40
 
@@ -1263,22 +941,12 @@ style slider_button:
     properties gui.button_properties("slider_button")
     xalign 0.5
     left_margin 10
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style slider_button_text:
     properties gui.button_text_properties("slider_button")
 
 style slider_vbox:
-<<<<<<< HEAD
-    xsize 675
-=======
-<<<<<<< HEAD
-    xsize 675
-=======
     xsize 350
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 
 ## History screen ##############################################################
@@ -1390,15 +1058,7 @@ screen help():
         style_prefix "help"
 
         vbox:
-<<<<<<< HEAD
-            spacing 23
-=======
-<<<<<<< HEAD
-            spacing 23
-=======
             spacing 15
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
             hbox:
 
@@ -1524,32 +1184,14 @@ style help_text is gui_text
 
 style help_button:
     properties gui.button_properties("help_button")
-<<<<<<< HEAD
-    xmargin 12
-=======
-<<<<<<< HEAD
-    xmargin 12
-=======
     xmargin 8
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style help_button_text:
     properties gui.button_text_properties("help_button")
 
 style help_label:
-<<<<<<< HEAD
-    xsize 375
-    right_padding 30
-=======
-<<<<<<< HEAD
-    xsize 375
-    right_padding 30
-=======
     xsize 250
     right_padding 20
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style help_label_text:
     size gui.text_size
@@ -1586,15 +1228,7 @@ screen confirm(message, yes_action, no_action):
         vbox:
             xalign .5
             yalign .5
-<<<<<<< HEAD
-            spacing 45
-=======
-<<<<<<< HEAD
-            spacing 45
-=======
             spacing 30
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
             label _(message):
                 style "confirm_prompt"
@@ -1602,15 +1236,7 @@ screen confirm(message, yes_action, no_action):
 
             hbox:
                 xalign 0.5
-<<<<<<< HEAD
-                spacing 150
-=======
-<<<<<<< HEAD
-                spacing 150
-=======
                 spacing 100
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
                 textbutton _("Yes") action yes_action
                 textbutton _("No") action no_action
@@ -1657,15 +1283,7 @@ screen skip_indicator():
     frame:
 
         hbox:
-<<<<<<< HEAD
-            spacing 9
-=======
-<<<<<<< HEAD
-            spacing 9
-=======
             spacing 6
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
             text _("Skipping")
 
@@ -1745,16 +1363,10 @@ style notify_text:
     properties gui.text_properties("notify")
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 ## NVL screen ##################################################################
 ##
 ## This screen is used for NVL-mode dialogue and menus.
@@ -1880,15 +1492,7 @@ style nvl_button_text:
 
 style pref_vbox:
     variant "medium"
-<<<<<<< HEAD
-    xsize 675
-=======
-<<<<<<< HEAD
-    xsize 675
-=======
     xsize 450
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 ## Since a mouse may not be present, we replace the quick menu with a version
 ## that uses fewer and bigger buttons that are easier to touch.
@@ -1937,15 +1541,7 @@ style game_menu_outer_frame:
 
 style game_menu_navigation_frame:
     variant "small"
-<<<<<<< HEAD
-    xsize 510
-=======
-<<<<<<< HEAD
-    xsize 510
-=======
     xsize 340
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style game_menu_content_frame:
     variant "small"
@@ -1953,15 +1549,7 @@ style game_menu_content_frame:
 
 style pref_vbox:
     variant "small"
-<<<<<<< HEAD
-    xsize 600
-=======
-<<<<<<< HEAD
-    xsize 600
-=======
     xsize 400
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
 
 style bar:
     variant "small"
@@ -2005,12 +1593,4 @@ style slider_pref_vbox:
 
 style slider_pref_slider:
     variant "small"
-<<<<<<< HEAD
-    xsize 900
-=======
-<<<<<<< HEAD
-    xsize 900
-=======
     xsize 600
->>>>>>> 0ef4bef (second commit)
->>>>>>> 97b775d (second commit)
