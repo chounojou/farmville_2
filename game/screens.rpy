@@ -264,7 +264,7 @@ screen quick_menu():
                 selected_hover "gui/button/ingame_hover.png"
 
                 hotspot (754,652,38,39) action Preference("auto-forward", "toggle")
-                hotspot (820,652,42,40) action Rollback()
+                hotspot (820,652,42,40) action HideInterface()
                 hotspot (887,652,41,39) action Skip() alternate Skip(fast=True, confirm=True)
                 hotspot (953,650,41,45) action QuickSave()
                 hotspot (1020,652,43,37) action ShowMenu('history')
@@ -355,7 +355,7 @@ screen navigation():
             textbutton _("Save") action ShowMenu("save")
 
         textbutton _("Load Game") action ShowMenu("load") xpos -25 ypos 5
-        textbutton _("Gallery") action ShowMenu("gallery") xpos -15 ypos 5
+        textbutton _("Album") action ShowMenu("album") xpos -15 ypos 5
 
         textbutton _("Settings") action ShowMenu("preferences") xpos -10
 
@@ -626,95 +626,86 @@ style about_label_text:
 ## https://www.renpy.org/doc/html/screen_special.html#save https://
 ## www.renpy.org/doc/html/screen_special.html#load
 
-screen save():
+screen load_save_slot:
+    $ file_text = "% s\n  %s" % (FileTime(number, empty=" "), FileSaveName(number))
+    add FileScreenshot(number) xpos -1 ypos 0
+    text file_text xpos 11 ypos -24 size 15  color "#000000"
+
+screen load:
 
     tag menu
 
-    use file_slots(_("Save"))
+    imagemap:
+        ground 'gui/saveload/ground_save.png'
+        idle 'gui/saveload/ground_save.png'
+        hover 'gui/saveload/ground_save.png'
+        selected_idle 'gui/saveload/ground_save.png'
+        selected_hover 'gui/saveload/ground_save.png'
+        cache False
+
+        hotspot (57, 980, 78, 72) action FilePagePrevious()
+        hotspot (195, 981, 67, 66) action FilePageNext()
+
+        ## You might get confused but these one below are the save/load slots, those boxes.
+        hotspot (229, 387, 286, 150) action FileAction(1):
+            use load_save_slot(number=1)
+        hotspot (219, 721, 285, 150) action FileAction(2):
+            use load_save_slot(number=2)
+        hotspot (1140, 370, 285, 150) action FileAction(3):
+            use load_save_slot(number=3)
+        hotspot (1139, 720, 286, 150) action FileAction(4):
+            use load_save_slot(number=4)
 
 
-screen load():
+
+        hotspot (357, 980, 68, 64) action ShowMenu('load')
+        hotspot (633, 980, 69, 63) action ShowMenu('save')
+
+        textbutton _("Back") action Return() xpos 184 ypos 116
+
+        for page in range(1, 10):
+            textbutton "[page]" action FilePage(page)
+
+
+
+
+screen save:
 
     tag menu
 
-    use file_slots(_("Load"))
+    imagemap:
+        ground 'gui/saveload/ground_save.png'
+        idle 'gui/saveload/ground_save.png'
+        hover 'gui/saveload/ground_save.png'
+        selected_idle 'gui/saveload/ground_save.png'
+        selected_hover 'gui/saveload/ground_save.png'
+        cache False
+
+        hotspot (712, 616, 74, 96) action FilePage(1)
+        hotspot (883, 616, 75, 96) action FilePage(2)
+
+        ## You might get confused but these one below are the save/load slots, those boxes.
+        hotspot (229, 387, 286, 150) action FileAction(1):
+            use load_save_slot(number=1)
+        hotspot (219, 721, 285, 150) action FileAction(2):
+            use load_save_slot(number=2)
+        hotspot (1140, 370, 285, 150) action FileAction(3):
+            use load_save_slot(number=3)
+        hotspot (1139, 720, 286, 150) action FileAction(4):
+            use load_save_slot(number=4)
 
 
-screen file_slots(title):
+        hotspot (31, 31, 257, 79) action ShowMenu('preferences')
+        hotspot (31, 110, 189, 70) action ShowMenu('load')
+        hotspot (31, 180, 173, 77) action ShowMenu('save')
+        hotspot (31, 311, 245, 78) action ShowMenu('extras')
+        hotspot (31, 389, 321, 70) action MainMenu()
+        hotspot (31, 459, 147, 62) action Quit()
+        hotspot (31, 593, 224, 94) action Return()
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
-
-    use game_menu(title):
-
-        fixed:
-
-            ## This ensures the input will get the enter event before any of the
-            ## buttons do.
-            order_reverse True
-
-            ## The page name, which can be edited by clicking on a button.
-            button:
-                style "page_label"
-
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
-
-                input:
-                    style "page_label_text"
-                    value page_name_value
-
-            ## The grid of file slots.
-            grid gui.file_slot_cols gui.file_slot_rows:
-                style_prefix "slot"
-
-                xalign 0.5
-                yalign 0.5
-
-                spacing gui.slot_spacing
-
-                for i in range(gui.file_slot_cols * gui.file_slot_rows):
-
-                    $ slot = i + 1
-
-                    button:
-                        action FileAction(slot)
-
-                        has vbox
-
-                        add FileScreenshot(slot) xalign 0.5
-
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
-                            style "slot_time_text"
-
-                        text FileSaveName(slot):
-                            style "slot_name_text"
-
-                        key "save_delete" action FileDelete(slot)
-
-            ## Buttons to access other pages.
-            hbox:
-                style_prefix "page"
-
-                xalign 0.5
-                yalign 1.0
-
-                spacing gui.page_spacing
-
-                textbutton _("<") action FilePagePrevious()
-
-                if config.has_autosave:
-                    textbutton _("{#auto_page}A") action FilePage("auto")
-
-                if config.has_quicksave:
-                    textbutton _("{#quick_page}Q") action FilePage("quick")
-
-                ## range(1, 10) gives the numbers from 1 to 9.
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
-
-                textbutton _(">") action FilePageNext()
-
+init python:
+    config.thumbnail_width = 340
+    config.thumbnail_height = 245
 
 style page_label is gui_label
 style page_label_text is gui_label_text

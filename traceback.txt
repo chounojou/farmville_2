@@ -1,31 +1,33 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/phase1.rpy", line 6, in script
-    "The sunlight is shining through the windows today."
-  File "game/screens.rpy", line 246, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 246, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 247, in execute
-    imagebutton auto "gui/button/autoplay_%s_ingame_button" action ShowMenu('history') xpos 690 ypos 590 focus_mask True at q_move1
-Exception: Imagebutton does not have a idle image. (auto='gui/button/autoplay_%s_ingame_button').
+  File "game/screens.rpy", line 634, in execute
+    screen load:
+  File "game/screens.rpy", line 634, in execute
+    screen load:
+  File "game/screens.rpy", line 638, in execute
+    imagemap:
+  File "game/screens.rpy", line 663, in execute
+    hotspot (897, 985, 66, 59) action FileDelete(slot)
+  File "game/screens.rpy", line 663, in keywords
+    hotspot (897, 985, 66, 59) action FileDelete(slot)
+  File "game/screens.rpy", line 663, in <module>
+    hotspot (897, 985, 66, 59) action FileDelete(slot)
+NameError: name 'slot' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/phase1.rpy", line 6, in script
-    "The sunlight is shining through the windows today."
-  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\ast.py", line 921, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\exports.py", line 1373, in say
-    who(what, *args, **kwargs)
-  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\character.py", line 1266, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\character.py", line 927, in do_display
-    display_say(who,
-  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\character.py", line 666, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\ast.py", line 1131, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\python.py", line 1049, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
   File "D:\HintoXD\renpy-7.4.8-sdk\renpy\ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\core.py", line 3377, in interact
@@ -38,6 +40,7 @@ Full traceback:
     d.visit_all(callback, seen)
   File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\core.py", line 582, in visit_all
     d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
   File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\screen.py", line 451, in visit_all
     callback(self)
   File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\core.py", line 3804, in <lambda>
@@ -46,19 +49,21 @@ Full traceback:
     self.update()
   File "D:\HintoXD\renpy-7.4.8-sdk\renpy\display\screen.py", line 653, in update
     self.screen.function(**self.scope)
-  File "game/screens.rpy", line 246, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 246, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 247, in execute
-    imagebutton auto "gui/button/autoplay_%s_ingame_button" action ShowMenu('history') xpos 690 ypos 590 focus_mask True at q_move1
-  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\ui.py", line 952, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "D:\HintoXD\renpy-7.4.8-sdk\renpy\ui.py", line 946, in choice
-    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
-Exception: Imagebutton does not have a idle image. (auto='gui/button/autoplay_%s_ingame_button').
+  File "game/screens.rpy", line 634, in execute
+    screen load:
+  File "game/screens.rpy", line 634, in execute
+    screen load:
+  File "game/screens.rpy", line 638, in execute
+    imagemap:
+  File "game/screens.rpy", line 663, in execute
+    hotspot (897, 985, 66, 59) action FileDelete(slot)
+  File "game/screens.rpy", line 663, in keywords
+    hotspot (897, 985, 66, 59) action FileDelete(slot)
+  File "game/screens.rpy", line 663, in <module>
+    hotspot (897, 985, 66, 59) action FileDelete(slot)
+NameError: name 'slot' is not defined
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.1.22070801
 rai_farmville 1.0
-Tue Sep 13 22:51:04 2022
+Wed Sep 14 21:46:26 2022
