@@ -139,26 +139,28 @@ style window:
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos 490
+    xpos 615
     xanchor gui.name_xalign
-    xsize gui.namebox_width
-    ypos -125
-    ysize gui.namebox_height
+    xsize 496
+    ypos -285
+    ysize 230
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
     properties gui.text_properties("name", accent=True)
-    xalign gui.name_xalign
+    xalign 0.0
     yalign 0.5
+    xpos 75
+    ypos 110
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
 
-    xpos 450
+    xpos 650
     xsize gui.dialogue_width
-    ypos 30
+    ypos -75
 
 
 ## Input screen ################################################################
@@ -257,17 +259,18 @@ screen quick_menu():
             yalign 1.0
 
             imagemap:
-                ground "gui/button/ingame_hover.png"
-                idle "gui/button/ingame_hover.png"
+                ground "gui/button/ingame_idle.png"
+                idle "gui/button/ingame_idle.png"
                 hover "gui/button/ingame_hover.png"
-                selected_idle "gui/button/ingame_hover.png"
+                selected_idle "gui/button/ingame_idle.png"
                 selected_hover "gui/button/ingame_hover.png"
 
-                hotspot (754,652,38,39) action Preference("auto-forward", "toggle")
-                hotspot (820,652,42,40) action HideInterface()
-                hotspot (887,652,41,39) action Skip() alternate Skip(fast=True, confirm=True)
-                hotspot (953,650,41,45) action QuickSave()
-                hotspot (1020,652,43,37) action ShowMenu('history')
+                hotspot (1115, 961, 89, 91) action Preference("auto-forward", "toggle")
+                hotspot (1217, 966, 85, 86) action HideInterface()
+                hotspot (1315, 964, 92, 85) action Skip() alternate Skip(fast=True, confirm=True)
+                hotspot (1418, 966, 88, 84) action ShowMenu('save')
+                hotspot (1519, 966, 89, 86) action ShowMenu('history')
+                hotspot (1793, 43, 84, 85) action ShowMenu('pause_menu')
 
 
 
@@ -311,18 +314,18 @@ screen pause_menu():
         style "pm_root"
 
     imagemap:
-        ground "gui/button/pause_menu.png"
+        ground "gui/pause_menu_2.png"
         idle "gui/button/pause_menu.png"
-        hover "gui/button/pause_menu.png"
+        hover "gui/button/pause_menu_hover.png"
         selected_idle "gui/button/pause_menu.png"
-        selected_hover "gui/button/pause_menu.png"
+        selected_hover "gui/button/pause_menu_hover.png"
 
-        hotspot (414,139,210,67) action ShowMenu("load")
-        hotspot (675,140,207,65) action ShowMenu('history')
-        hotspot (926,139,205,66) action ShowMenu("preferences")
-        hotspot (172,412,210,68) action ShowMenu("main_menu")
-        hotspot (474,412,210,70) action ShowMenu('history')
-        hotspot (67,81,202,75) action ShowMenu('history')
+        hotspot (611, 194, 340, 127) action ShowMenu("save")
+        hotspot (997, 202, 332, 115) action ShowMenu('load')
+        hotspot (1380, 202, 334, 114) action ShowMenu("preferences")
+        hotspot (251, 616, 334, 115) action MainMenu()
+        hotspot (698, 616, 338, 113) action Quit(confirm=not main_menu)
+        hotspot (103, 137, 279, 78) action Return()
 
 
 style pause_menu_frame is empty
@@ -344,9 +347,9 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
-            ypos 480
-            xpos 1050
+            textbutton _("New Game") action Start() xpos -20 ypos -10
+            ypos 720
+            xpos 1550
 
         else:
 
@@ -354,10 +357,10 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load Game") action ShowMenu("load") xpos -25 ypos 5
-        textbutton _("Album") action ShowMenu("album") xpos -15 ypos 5
+        textbutton _("Load Game") action ShowMenu("load") xpos -30 ypos -5
+        textbutton _("Gallery") action ShowMenu("album")  ypos 5
 
-        textbutton _("Settings") action ShowMenu("preferences") xpos -10
+        textbutton _("Settings") action ShowMenu("preferences") xpos -10 ypos 15
 
         if _in_replay:
 
@@ -371,11 +374,16 @@ screen navigation():
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu) xpos 10 ypos -5
+            textbutton _("Quit") action Quit(confirm=not main_menu) xpos 35 ypos 15
 
 
 style navigation_button is gui_button
-style navigation_button_text is gui_button_text
+style navigation_button_text:
+    size 40
+    color '#fbb03b'
+    selected_color '#ffffff'
+    hover_color '#ffffff'
+    outlines [(0, '#381301', 5, 5)]
 
 style navigation_button:
     size_group "navigation"
@@ -629,7 +637,6 @@ style about_label_text:
 screen load_save_slot:
     $ file_text = "% s\n  %s" % (FileTime(number, empty=" "), FileSaveName(number))
     add FileScreenshot(number) xpos -1 ypos 0
-    text file_text xpos 11 ypos -24 size 15  color "#000000"
 
 screen load:
 
@@ -644,7 +651,7 @@ screen load:
         cache False
 
         hotspot (57, 980, 78, 72) action FilePagePrevious()
-        hotspot (195, 981, 67, 66) action FilePageNext()
+        hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True)
 
         ## You might get confused but these one below are the save/load slots, those boxes.
         hotspot (229, 387, 286, 150) action FileAction(1):
@@ -663,10 +670,6 @@ screen load:
 
         textbutton _("Back") action Return() xpos 184 ypos 116
 
-        for page in range(1, 10):
-            textbutton "[page]" action FilePage(page)
-
-
 
 
 screen save:
@@ -681,8 +684,8 @@ screen save:
         selected_hover 'gui/saveload/ground_save.png'
         cache False
 
-        hotspot (712, 616, 74, 96) action FilePage(1)
-        hotspot (883, 616, 75, 96) action FilePage(2)
+        hotspot (57, 980, 78, 72) action FilePagePrevious(max=5, wrap=True)
+        hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True)
 
         ## You might get confused but these one below are the save/load slots, those boxes.
         hotspot (229, 387, 286, 150) action FileAction(1):
@@ -695,17 +698,15 @@ screen save:
             use load_save_slot(number=4)
 
 
-        hotspot (31, 31, 257, 79) action ShowMenu('preferences')
-        hotspot (31, 110, 189, 70) action ShowMenu('load')
-        hotspot (31, 180, 173, 77) action ShowMenu('save')
-        hotspot (31, 311, 245, 78) action ShowMenu('extras')
-        hotspot (31, 389, 321, 70) action MainMenu()
-        hotspot (31, 459, 147, 62) action Quit()
-        hotspot (31, 593, 224, 94) action Return()
+
+        hotspot (357, 980, 68, 64) action ShowMenu('load')
+        hotspot (633, 980, 69, 63) action ShowMenu('save')
+
+        textbutton _("Back") action Return() xpos 184 ypos 116
 
 init python:
-    config.thumbnail_width = 340
-    config.thumbnail_height = 245
+    config.thumbnail_width = 290
+    config.thumbnail_height = 150
 
 style page_label is gui_label
 style page_label_text is gui_label_text

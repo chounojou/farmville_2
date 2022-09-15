@@ -64,22 +64,22 @@ define gui.name_text_font = "Happy Chicken.otf"
 define gui.interface_text_font = "Happy Chicken.otf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 22
+define gui.text_size = 33
 
 ## The size of character names.
-define gui.name_text_size = 30
+define gui.name_text_size = 50
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 25
+define gui.interface_text_size = 40
 
 ## The size of labels in the game's user interface.
-define gui.label_text_size = 16
+define gui.label_text_size = 36
 
 ## The size of text on the notify screen.
-define gui.notify_text_size = 16
+define gui.notify_text_size = 24
 
 ## The size of the game's title.
-define gui.title_text_size = 50
+define gui.title_text_size = 75
 
 
 ## Main and Game Menus #########################################################
@@ -132,7 +132,7 @@ define gui.dialogue_xpos = 268
 define gui.dialogue_ypos = 50
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 744
+define gui.dialogue_width = 1000
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
