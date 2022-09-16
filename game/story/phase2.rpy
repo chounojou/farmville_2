@@ -48,15 +48,15 @@ label phase2:
     "Which one will he do?"
     menu:
         "Tidy File":
-            jump scene1_intro
+            jump phase2_scene1_intro
 
         "Fix CCTV":
-            jump scene2_intro
+            jump phase2_scene2_intro
 
         "Attend Meeting":
-            jump scene3_intro
+            jump phase2_scene3_intro
 
-    label scene1_intro:
+    label phase2_scene1_intro:
         scene IPD_WORKPLACE
         show rai_confused
 
@@ -81,16 +81,13 @@ label phase2:
         hide rai_default with dissolve
 
     menu:
-        "Tidy File":
-            jump scene1_intro
-
         "Fix CCTV":
-            jump scene2_intro
+            jump phase2_scene2_intro
 
         "Attend Meeting":
-            jump scene3_intro
+            jump phase2_scene3_intro
     
-    label scene2_intro:
+    label phase2_scene2_intro:
         scene CCTV_ROOM
         # SFX Knock
 
@@ -154,9 +151,9 @@ label phase2:
 
         # Black Screen
 
-        jump scene3_intro
+        jump phase2_scene3_intro
     
-    label scene3_intro:
+    label phase2_scene3_intro:
         scene MEETING_ROOM
         show rai_serious
 
@@ -341,7 +338,7 @@ label phase2:
             Farmer "Are you ready, young man?"
             Rai "Ready anytime, Sir!"
 
-        label scene1_1:
+        label phase2_scene1_1:
             Farmer "A fiery spirit, apparently." 
             Farmer "Okay. There's some work you need to do." 
             Farmer "What kind of work are you going to do, huh?"
@@ -359,7 +356,7 @@ label phase2:
 
             "Rai just laughs awkwardly."
 
-            jump scene1_2
+            jump phase2_scene1_2
 
         label scene1_1_b:
             Farmer "Hahaha!"
@@ -368,9 +365,9 @@ label phase2:
             show rai_default
             Rai "Glad to be helped."
 
-            jump scene1_2
+            jump phase2_scene1_2
 
-        label scene1_2:
+        label phase2_scene1_2:
             Farmer "Great. Now we can move on to your first job."
             Farmer "Here, take this."
 
@@ -3199,19 +3196,339 @@ label phase2:
             
             "Having his doubt somewhat confirmed, the officer decided to end his investigation and went back to the Farm."
 
+        label R3scene13:
+            "After the last night’s event, Rai decided to confront his suspect directly today"
+            
+            #market
+            show butcher_default
+            Butcher "Yo kid, so you’ve come again"
+            Butcher "What do I need to get you this time?"
+            Butcher "Any orders?"
 
+            show rai_nervous 
+            Rai "A-actually... I came here to talk to Elsyne"
+            Rai "May I?"
+            Butcher "You two really did become closer huh? Haha"
+            Butcher "Alright then, I’ll call her for you" 
+            Butcher "One sec" 
+            Butcher "There she is, I’ll leave you two on your own now"
 
+            hide butcher_default
+            Elsyne "What?"
 
+            show rai_nervous 
+            Rai "I wanna ask about something..." 
+            Rai "Last night, did you-"
+            Rai "Enough"
+            Rai "So that was really you huh?"
+            
+            show rai_nervous 
+            Rai "Y-yes..."
+            Elsyne "So be it then" 
+            Elsyne "Fine, I’ll tell you everything later"
+            Elsyne "Meet me at the waterfall tonight, and before then, get outta my face"
+            Rai "H-huh, A...alright"
+            Elsyne "Now go."
+            Elsyne "Get out"
 
+        label R3scene14:
+            #waterfall 2
+            #Crashing waterfalls
 
+            #From here on Elsyne gonna be on her Eldritch form, unless stated otherwise
 
+            "As Rai went toward the meeting spot, he could see a shadowy figure waiting for him. The exact same figure that he saw on the forest last night"
 
+            show rai_nervous
+            Rai "I...I’m here"
 
+            show elsyne_shadow
+            Elsyne "So you’ve come huh"
 
+            "The figure came closer"
 
+            #CG STARTS
+            show darkelsyne_smile
+            Elsyne "You’ve seen everything"
+            Elsyne "This is who i really am"
+            Elsyne "Let me guess, you were sent here to go after me, no?"
 
+            show rai_serious
+            Rai "To tell you the truth... Yes"
+            Rai "I’m officer Rai Galilei of the Interdimensional Police"
+            Rai "I was sent here to detain, and bring you to the IPD"
+            Elsyne "So that means you have prepared for the worst possible outcome huh?"
+            
+            show rai_serious 
+            Rai "What are you talking about"
+            Elsyne "I.... I’m not going down without a fight" 
+            Elsyne "Did you expect for me to just get caught obediently?"
+            
+            show rai_sad 
+            Rai "N...No"
+            Rai "But if possible, i want you to give yourself in"
+            Rai "I don’t wish to hurt you"
+            Elsyne "Hmph"
+            Elsyne "(Me too, Rai)" 
+            
+            show darkelsyne_sad 
+            Elsyne "(Me too, Rai)"
+            Elsyne "(I also didn’t wish to hurt you)"
+            Elsyne "But is there really another way?"
 
+            show darkelsyne_angry
+            Elsyne "HERE I COME, PREPARE YOURSELF"
 
+            show rai_serious 
+            Rai "Tch, so we’re doing this the hard way?"
+            Rai "Fine then, you left me with no choice"
+
+            "Rai loaded up his gun"
+
+            # [CG ENDS]
+            # [Waterfall 3]
+            
+            show darkelsyne_angry 
+            Elsyne "RRAAAGH"
+            
+            "Elsyne extended her tentacles quickly at Rai, but the officer, with his great reflexes, dodged it in time"
+
+            show rai_surprised 
+            Rai "Whoa!"
+            
+            show rai_serious 
+            Rai "(Those tentacles are blindingly fast)"
+            Rai "(I should really avoid getting struck by those)"
+
+            # [Gun loading]
+            Rai "(i’ll be sure to avoid her vitals)"
+            Rai "(Maybe I should aim for the tentacles?)"
+
+            "Rai took aim at Elsyne"
+            
+            Elsyne "Hm?"
+            Elsyne "Oh no you don’t"
+            Elsyne "Freeze!"
+            
+            "The eyes on her tentacles suddenly glows up"
+            "And after that, an odd psychic wave reverberated through the area"
+
+            show rai_annoyed 
+            Rai "(Urrk)"
+            Rai "(What’s... happening)"
+            Rai "(I can’t... move)"
+            
+            show darkelsyne_smile 
+            Elsyne "Feel it..."
+            Elsyne "The terror that’s crawling in your skin"
+            Rai "(I can’t... fail here)" 
+            Rai "(I must shake it off, no matter what)"
+
+            "Even after immobilized by Elsyne’s power, Rai continued to try to break free" 
+            "And eventually, he succeed"
+            
+            Rai "GAH"
+
+            # [Waterfall 2]
+            show rai_serious 
+            Rai "Haah..."
+            Rai "Finally... I broke free"
+            
+            "Once again, the officer took aim at the eldritch"
+
+            show darkelsyne_surprised 
+            Elsyne "Oh"
+            Elsyne "Amazing"
+            Elsyne "You dispelled the effect of my power"
+            
+            # [Gunshot]
+            "Rai fired his shot"
+            "And it hit, that shot snapped one of her tentacles, more than he hoped for"
+            
+            Rai "Haah.. haah.." 
+            Rai "(Did I go too far)"
+            Rai "(But that shouldn’t be fatal)"
+
+            show darkelsyne_angry 
+            Elsyne "Hmm?"
+
+            "The tentacles regenerated"
+
+            show rai_surprised 
+            Rai "(What???)"
+            Rai "(It can regenerate???)"
+
+            show darkelsyne_smile 
+            Elsyne "I’m afraid that’s not gonna work"
+            Elsyne "Are you hesitating?"
+
+            show darkelsyne_sad 
+            Elsyne "(I knew he also didn’t want to land a fatal blow)"
+            Elsyne "(I’ll just scare him for a little)"
+            show rai_sad 
+            Rai "I... Can’t..."
+            
+            show darkelsyne_angry 
+            Elsyne "Hmmph"
+
+            "Elsyne answered back with flurry of blows from her, but just as before, rai managed to dodge every single one of them"
+
+        label R3scene14_1:
+            show rai_annoyed
+            Rai "(If this keeps up, i don’t think my stamina could last for a little longer)"
+            Rai "(What should i do?)"
+
+        menu:
+            "Charge at her":
+                jump R3scene14_1_a
+
+            "Keep dodging":
+                jump R3scene14_1_b
+
+        label R3scene14_1_a:
+            # Bad End
+
+            show rai_annoyed
+            Rai "(I can’t keep this up)" 
+            Rai "(I should take on the offensive)"
+
+            show rai_serious 
+            Rai "Rrraaahhh"
+
+            "Rai charged at her recklessly"
+
+            show darkelsyne_surprised 
+            Elsyne "(Huh?)"
+            Elsyne "(Did he lost it already)"
+            Elsyne "(Fine then, i’ll just put him to sleep)"
+            Rai "SURRENDER NOW, ELSYNEEE"
+
+            # [SFX stab]
+            "One of Elsyne’s tentacle stabbed Rai’s leg, lightly"
+
+            show rai_surprised 
+            Rai "(!!!)"
+            Rai "(What’s this...)"
+
+            show darkelsyne_sad 
+            Elsyne "I’m sorry, Rai."
+
+            show rai_annoyed 
+            Rai "(Uhh...)"
+            Rai "(My consciousness is fading out.)"
+            Elsyne "So it ends here..."
+            Elsyne "Don’t worry, that wasn’t lethal"
+            Elsyne "You will faint for a while"
+            Elsyne "But it’ll be fine"
+
+            show rai_sad 
+            Rai "El… syne."
+            Elsyne "Thanks for everything Rai"
+            Elsyne "But it was time for me to go"
+            Elsyne "I’m sorry... But please..." 
+            Elsyne "Please forget everything about me"
+            Elsyne "I’ll be leaving the Farmland for now"
+            Elsyne "Don’t go look out for me..."
+            Elsyne "Until we meet again..."
+
+            "Afterward, Elsyne escaped the scene, and Rai, having failed his mission, went back to the IPD empty handed..." 
+            "Except for the memories that he made in the Farmland."
+            "And you know, one shall change their action. Not everyone have those privilege of having second chance - But you - You have thos"
+
+        menu:
+            "Rewind the time":
+                jump R3scene14_1
+
+        label R3scene14_1_b:
+            # Goo end
+
+            show rai_sad
+            Rai "(No... I don’t want to hurt her...)"
+
+            show rai_serious 
+            Rai "(I’ll just keep looking for an opening.)"
+            Rai "(There must be some.)"
+
+            show darkelsyne_surprised 
+            Elsyne "(Huh, he’s not going to attack again at all...)"
+
+            show darkelsyne_angry 
+            Elsyne "TAKE THIS!"
+
+            "Elsyne approached Rai suddenly, trying to struck him from point blank range"
+
+            show rai_surprised 
+            Rai "Ah!!"
+            "But suddenly, she stopped. Rai was already covering his head with his hands, he was prepared."
+
+            show darkelsyne_sad 
+            Elsyne "This isn’t right."
+            Elsyne "I.. don’t want to hurt you… Not again.."
+
+            # SPRITE ELSYNE RETURN TO HUMAN FORM
+            show elsyne_sad
+            Elsyne "That’s it"
+            Elsyne "I... Surrender"
+            Elsyne "Let’s just end this, shall we?"
+            
+            show rai_surprised 
+            Rai "Huh?"
+            Elsyne "I know that from the beginning, you didn’t mean to land a fatal blow, did you?"
+            Elsyne "It was the same for me"
+            Elsyne "I... I can’t bear to hurt someone who cares for me."
+            
+            show elsyne_smile 
+            Elsyne "Even though we just barely met, you've shown me kindness..." 
+            Elsyne "You made me feel this happiness..."
+            
+            show elsyne_sad 
+            Elsyne "I’m tired with all of this..."
+            Elsyne "All I ever wanted was to live a peaceful life."
+            Elsyne "Living like a normal girl."
+            Elsyne "But I’ve accepted everything" 
+            Elsyne "I know I was a terrible person" 
+            Elsyne "Someone who took a lot of life... I don’t deserve that kind of life after everything that i’ve done"
+            Elsyne "And so, I’ll turn myself in" 
+            Elsyne "I’m prepared for the consequences" 
+            Elsyne "I know that sooner or later there’ll be someone that will come for me"
+
+            show elsyne_smile 
+            Elsyne "But I'm glad... I met you..."
+            Elsyne "You gave me the chance to make me feel what I wanted to experience..."
+            Elsyne "So once again... Thank You."
+
+            show rai_sad 
+            Rai "Don’t be like that"
+            Rai "I know, what you’ve been doing was not from your own will"
+            Rai "In this case, you’re just a victim"
+            Rai "But you remembered what I said right? Everyone has the right to receive kindness and feel happiness, even if it’s someone like you."
+            Rai "Furthermore, I know you didn’t have that kind of malice inside."
+            Rai "Even if the things that you did can’t be undone, you can still try to prevent those from happening again."
+            Elsyne "Uh-huh."
+            Elsyne "Thanks."
+            Rai "I promise, the IPD will treat you well."
+            Rai "I swear."
+            Elsyne "Alright…"
+            Rai "Before we leave, would you like to go back home for one more time?"
+            Elsyne "Nope, I’m fine" 
+            Elsyne "I’ve left my farewell letter to Ma at home"
+            Elsyne "She should find it later"
+            Rai "Well then, if that’s your wish"
+            Rai "Oh and one more thing, I see that you’ve  been holding on to something strange for a while."
+            Elsyne "Ah, this?"
+            Elsyne "I don’t remember where i got it, but yes, i’ve been holding on to it since then"
+            Rai "May I have it?"
+            Elsyne "Sure, here you go"
+            Rai "Thanks"
+            Rai "Alright then"
+            Rai "Since we’re done here, let’s go to the IPD now"
+            Elsyne "Uh-huh."
+            
+            "And so, Rai have successfully completed his mission, and furthermore, he has resolved things peacefully" 
+            "And thus, his adventure comes to an end."
+            "Until he opens what Elsyne gave him.."
+
+            jump ending
 
 
     label ending:
