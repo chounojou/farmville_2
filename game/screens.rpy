@@ -323,7 +323,7 @@ screen pause_menu():
         hotspot (611, 194, 340, 127) action ShowMenu("save")
         hotspot (997, 202, 332, 115) action ShowMenu('load')
         hotspot (1380, 202, 334, 114) action ShowMenu("preferences")
-        hotspot (251, 616, 334, 115) action MainMenu()
+        hotspot (251, 616, 334, 115) action ShowMenu("main_menu")
         hotspot (698, 616, 338, 113) action Quit(confirm=not main_menu)
         hotspot (103, 137, 279, 78) action Return()
 
