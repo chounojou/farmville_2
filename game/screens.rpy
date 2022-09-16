@@ -59,7 +59,7 @@ style slider:
     left_bar "gui/slider/left_bar.png"
     right_bar "gui/slider/right_bar.png"
     thumb "gui/slider/horizontal_[prefix_]thumb.png"
-    thumb_offset 23
+    thumb_offset 31
 
 style vslider:
     xsize gui.slider_size
@@ -223,12 +223,12 @@ define config.narrator_menu = True
 
 
 style choice_vbox is vbox
-style choice_button is button
 style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 270
+    ypos 850
+    xpos 1150
     yanchor 0.5
 
     spacing gui.choice_spacing
@@ -635,7 +635,7 @@ style about_label_text:
 ## www.renpy.org/doc/html/screen_special.html#load
 
 screen load_save_slot:
-    $ file_text = "% s\n  %s" % (FileTime(number, empty=" "), FileSaveName(number))
+    $ file_text = "% s\n  %s" % (FileTime(number, empty="Empty Slot"), FileSaveName(number))
     add FileScreenshot(number) xpos -1 ypos 0
 
 screen load:
@@ -668,7 +668,14 @@ screen load:
         hotspot (357, 980, 68, 64) action ShowMenu('load')
         hotspot (633, 980, 69, 63) action ShowMenu('save')
 
-        textbutton _("Back") action Return() xpos 184 ypos 116
+
+        textbutton _("Back") action Return() xpos 130 ypos 75
+        text "{color=#ffce3b}{size=+40}{font=happy chicken.otf}Load{/font}{/size}{/color}" xpos 820 ypos 89
+        textbutton "{color=#ffce3b}{font=happy chicken.otf}Load{/font}{/color}" action ShowMenu('load') xpos 450 ypos 980
+        textbutton "{color=#ffce3b}{font=happy chicken.otf}Save{/font}{/color}" action ShowMenu('save') xpos 720 ypos 980
+        text "{color=#ffce3b}{font=happy chicken.otf}Delete{/font}{/color}" xpos 980 ypos 980
+        text "{color=#ffce3b}{font=happy chicken.otf}Disable Auto Save Slot{/font}{/color}" xpos 1280 ypos 980
+
 
 
 
@@ -684,7 +691,7 @@ screen save:
         selected_hover 'gui/saveload/ground_save.png'
         cache False
 
-        hotspot (57, 980, 78, 72) action FilePagePrevious(max=5, wrap=True)
+        hotspot (57, 980, 78, 72) action FilePagePrevious()
         hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True)
 
         ## You might get confused but these one below are the save/load slots, those boxes.
@@ -702,7 +709,13 @@ screen save:
         hotspot (357, 980, 68, 64) action ShowMenu('load')
         hotspot (633, 980, 69, 63) action ShowMenu('save')
 
-        textbutton _("Back") action Return() xpos 184 ypos 116
+
+        textbutton _("Back") action Return() xpos 130 ypos 75
+        text "{color=#ffce3b}{size=+40}{font=happy chicken.otf}Save{/font}{/size}{/color}" xpos 820 ypos 89
+        textbutton "{color=#ffce3b}{font=happy chicken.otf}Load{/font}{/color}" action ShowMenu('load') xpos 450 ypos 980
+        textbutton "{color=#ffce3b}{font=happy chicken.otf}Save{/font}{/color}" action ShowMenu('save') xpos 720 ypos 980
+        text "{color=#ffce3b}{font=happy chicken.otf}Delete{/font}{/color}" xpos 980 ypos 980
+        text "{color=#ffce3b}{font=happy chicken.otf}Disable Auto Save Slot{/font}{/color}" xpos 1280 ypos 980
 
 init python:
     config.thumbnail_width = 290
@@ -721,6 +734,7 @@ style slot_name_text is slot_button_text
 style page_label:
     xpadding 50
     ypadding 3
+
 
 style page_label_text:
     text_align 0.5
@@ -752,15 +766,16 @@ screen preferences():
     tag menu
 
     imagemap:
-        ground "gui/ggame_menu.png"
+        ground "gui/game_menu.png"
         idle "gui/button/set.png"
         hover "gui/button/set_hover.png"
-        selected_idle "gui/button/set_hover.png"
+        selected_idle "gui/button/set.png"
         selected_hover "gui/button/set_hover.png"
 
-        hotspot (235, 534, 69, 74) action ShowMenu("pause_menu")
-        hotspot (324, 543, 63, 60) action ShowMenu("pause_menu")
-        hotspot (411, 545, 155, 58) action ShowMenu("pause_menu")
+        hotspot (376, 818, 79, 90) action Return()
+        hotspot (617, 818, 231, 83) action ShowMenu("history")
+        hotspot (483, 804, 102, 112) action ShowMenu("main_menu")
+
         vbox:
 
             hbox:
@@ -770,25 +785,23 @@ screen preferences():
 
                     vbox:
                         style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
-                        xpos 255
-                        ypos 115
+                        label _("Display") xpos 435 ypos 153
+                        textbutton _("          Window") action Preference("display", "window") xpos 385 ypos 188
+                        textbutton _("          Fullscreen") action Preference("display", "fullscreen") xpos 385 ypos 205
 
                 vbox:
                     style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
+                    label _("Rollback Side") xpos 503 ypos 153
+                    textbutton _("           Disable") action Preference("rollback side", "disable") xpos 447 ypos 188
+                    textbutton _("           Left") action Preference("rollback side", "left") xpos 447 ypos 205
+                    textbutton _("           Right") action Preference("rollback side", "right") xpos 447 ypos 224
 
                 vbox:
                     style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    label _("Skip") xpos 684 ypos 153
+                    textbutton _("           Unseen Text") action Preference("skip", "toggle") xpos 615 ypos 188
+                    textbutton _("           After Choices") action Preference("after choices", "toggle") xpos 615 ypos 205
+                    textbutton _("           Transitions") action InvertSelected(Preference("transitions", "toggle")) xpos 615 ypos 224
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
@@ -802,45 +815,45 @@ screen preferences():
                 vbox:
 
 
-                    label _("Text Speed") ypos -3 xpos 20
+                    label _("Text Speed") ypos -7 xpos 1
 
-                    bar value Preference("text speed")
+                    bar value Preference("text speed") ypos 1
 
-                    label _("Auto-Forward Time") ypos -3 xpos 20
+                    label _("Auto-Forward Time") ypos 3 xpos 1
 
-                    bar value Preference("auto-forward time")
+                    bar value Preference("auto-forward time") ypos 8
 
-                    xpos 235
-                    ypos 135
+                    xpos 382
+                    ypos 255
 
 
 
                 vbox:
 
                     if config.has_music:
-                        label _("Music Volume") ypos -5 xpos -1
+                        label _("Music Volume") ypos -8 xpos 25
 
                         hbox:
                             bar value Preference("music volume")
-                        xpos 360
-                        ypos 135
+                        xpos 563
+                        ypos 255
 
                     if config.has_sound:
 
-                        label _("Sound Volume")
+                        label _("Sound Volume") ypos 1 xpos 25
 
                         hbox:
-                            bar value Preference("sound volume")
+                            bar value Preference("sound volume") ypos 5
 
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
 
                     if config.has_voice:
-                        label _("Voice Volume")
+                        label _("Voice Volume") ypos 8 xpos 25
 
                         hbox:
-                            bar value Preference("voice volume")
+                            bar value Preference("voice volume") ypos 10
 
                             if config.sample_voice:
                                 textbutton _("Test") action Play("voice", config.sample_voice)
@@ -848,49 +861,67 @@ screen preferences():
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
 
-            textbutton _("Mute All"):
+            textbutton _("           Mute All"):
                 action Preference("all mute", "toggle")
                 style "mute_all_button"
+                ypos 275
+                xpos 1070
 
 
 
 style pref_label is gui_label
 style pref_label_text:
-    size 16
+    size 23
+    outlines [(0, '#59173e', 1, 1)]
 style pref_vbox is vbox
 
 style radio_label is pref_label
 style radio_label_text:
-    size 16
+    size 23
     color '#ffce3b'
+    outlines [(0, '#59173e', 1, 1)]
 style radio_button is gui_button
 style radio_button_text:
-    size 16
+    size 23
     color '#ffffff'
     selected_color '#ffce3b'
+    hover_color '#ffce3b'
+    outlines [(0, '#59173e', 1, 1)]
 style radio_vbox is pref_vbox
 
 style check_label is pref_label
 style check_label_text:
-    size 16
+    size 23
+    color '#ffce3b'
+    outlines [(0, '#59173e', 1, 1)]
 style check_button is gui_button
 style check_button_text:
-    size 16
+    size 23
+    color '#ffffff'
+    selected_color '#ffce3b'
+    hover_color '#ffce3b'
+    outlines [(0, '#59173e', 1, 1)]
 style check_vbox is pref_vbox
 
 style pref_slider is gui_slider
 style slider_label is pref_label
 style slider_label_text:
-    size 16
+    size 23
+    outlines [(0, '#59173e', 1, 1)]
 style slider_slider is gui_slider
 style slider_button is gui_button
 style slider_button_text:
-    size 16
+    size 23
+    outlines [(0, '#59173e', 1, 1)]
 style slider_pref_vbox is pref_vbox
 
 style mute_all_button is check_button
 style mute_all_button_text:
-    size 16
+    size 23
+    color '#ffffff'
+    selected_color '#ffce3b'
+    hover_color '#ffce3b'
+    outlines [(0, '#59173e', 1, 1)]
 
 style pref_label:
     top_margin gui.pref_spacing
@@ -900,7 +931,7 @@ style pref_label_text:
     yalign 2.0
 
 style pref_vbox:
-    xsize 225
+    xsize 300
 
 style radio_vbox:
     spacing gui.pref_button_spacing
@@ -923,8 +954,8 @@ style check_button_text:
     properties gui.button_text_properties("check_button")
 
 style slider_slider:
-    xsize 317
-    ysize 40
+    xsize 475
+    ysize 62
 
 style slider_text:
     xalign 1.0
