@@ -21,7 +21,7 @@ init python:
 
 screen album:
     tag menu
-    add "images/VN UI/gui/gallery_menu.png"
+    add "gui/gallery_menu.png"
 
     hbox:
         xalign 0.5

@@ -323,7 +323,7 @@ screen pause_menu():
         hotspot (611, 194, 340, 127) action ShowMenu("save")
         hotspot (997, 202, 332, 115) action ShowMenu('load')
         hotspot (1380, 202, 334, 114) action ShowMenu("preferences")
-        hotspot (251, 616, 334, 115) action ShowMenu("main_menu")
+        hotspot (251, 616, 334, 115) action MainMenu()
         hotspot (698, 616, 338, 113) action Quit(confirm=not main_menu)
         hotspot (103, 137, 279, 78) action Return()
 
@@ -347,7 +347,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("New Game") action Start() xpos -20 ypos -10
+            textbutton _("New Game") action Start() xpos -20 ypos -5
             ypos 720
             xpos 1550
 
@@ -357,10 +357,10 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load Game") action ShowMenu("load") xpos -30 ypos -5
+        textbutton _("Load Game") action ShowMenu("load") xpos -30 ypos 2
         textbutton _("Gallery") action ShowMenu("album")  ypos 5
 
-        textbutton _("Settings") action ShowMenu("preferences") xpos -10 ypos 15
+        textbutton _("Settings") action ShowMenu("preferences") xpos -10 ypos 10
 
         if _in_replay:
 
@@ -374,7 +374,7 @@ screen navigation():
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu) xpos 35 ypos 15
+            textbutton _("Quit") action Quit(confirm=not main_menu) xpos 35 ypos 5
 
 
 style navigation_button is gui_button
@@ -671,10 +671,10 @@ screen load:
 
         textbutton _("Back") action Return() xpos 130 ypos 75
         text "{color=#ffce3b}{size=+40}{font=happy chicken.otf}Load{/font}{/size}{/color}" xpos 820 ypos 89
-        textbutton "{color=#ffce3b}{font=happy chicken.otf}Load{/font}{/color}" action ShowMenu('load') xpos 450 ypos 980
-        textbutton "{color=#ffce3b}{font=happy chicken.otf}Save{/font}{/color}" action ShowMenu('save') xpos 720 ypos 980
-        text "{color=#ffce3b}{font=happy chicken.otf}Delete{/font}{/color}" xpos 980 ypos 980
-        text "{color=#ffce3b}{font=happy chicken.otf}Disable Auto Save Slot{/font}{/color}" xpos 1280 ypos 980
+        textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Load{/size}{/font}{/color}" action ShowMenu('load') xpos 450 ypos 970
+        textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Save{/size}{/font}{/color}" action ShowMenu('save') xpos 720 ypos 970
+        text "{color=#ffce3b}{font=happy chicken.otf}Delete{/font}{/color}" xpos 980 ypos 985
+        text "{color=#ffce3b}{font=happy chicken.otf}Disable Auto Save Slot{/font}{/color}" xpos 1280 ypos 985
 
 
 
@@ -824,7 +824,7 @@ screen preferences():
                     bar value Preference("auto-forward time") ypos 8
 
                     xpos 382
-                    ypos 255
+                    ypos 205
 
 
 
@@ -836,7 +836,7 @@ screen preferences():
                         hbox:
                             bar value Preference("music volume")
                         xpos 563
-                        ypos 255
+                        ypos 205
 
                     if config.has_sound:
 
@@ -864,7 +864,7 @@ screen preferences():
             textbutton _("           Mute All"):
                 action Preference("all mute", "toggle")
                 style "mute_all_button"
-                ypos 275
+                ypos 235
                 xpos 1070
 
 
