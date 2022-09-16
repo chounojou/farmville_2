@@ -17,6 +17,14 @@ define Villager     = Character("Villager")
 define Talking_Tree = Character("Talking Tree")
 define Ducks        = Character("Ducks")
 define Duck         = Character("Duck")
+define Seller       = Character("Seller")
+define Unknown      = Character("???")
+define Crow         = Character("Crow")
+define Adventurer   = Character("Adventurer")
+define MiRA         = Character("MiRA")
+define The_Girl     = Character("The Girl")
+define Butcher      = Character("Butcher")
+define Elsyne       = Character("Elsyne")
 
 #Phases
 
