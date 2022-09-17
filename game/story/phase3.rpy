@@ -2721,9 +2721,9 @@ label phase3:
         #=Credit=
 
 
-#    $ persistent.phase1 = True
-#    $ persistent.phase2 = False
-#    $ persistent.phase3 = False
-    $ persistent.trial_wyen_2_1 = False
-    $ persistent.trial_wyen_2_2 = False
+    $ persistent.phase1 = True
+    $ persistent.phase2 = False
+    $ persistent.phase3 = False
+    $ persistent.k2_caught = False
+    $ persistent.k3_caught = False
     return
