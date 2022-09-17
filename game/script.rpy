@@ -1,13 +1,9 @@
 ﻿# The script of the game goes in this file.
 
+
 # Check file define-default untuk melihat definisi karakter/variabel
 
 # The game starts here.
-
-init:
-    $ style.default.font = "HinaMincho-Regular.ttf"
-    $ style.default.language = "eastasian"
-
 label start:
 
     if persistent.phase1:
@@ -16,3 +12,5 @@ label start:
         jump phase2
     else:
         jump phase3
+
+    return
