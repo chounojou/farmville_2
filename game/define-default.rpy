@@ -31,6 +31,7 @@ define Elsyne       = Character("Elsyne")
 define Galileans    = Character("Galileans")
 
 define Cow          = Character("Cow")
+define Wyen         = Character("Wyen", image= "Wyen")
 
 define Man          = Character("Man")
 define Old_Lady     = Character("Old Lady")
@@ -170,6 +171,35 @@ image side Felix Hurt:
     "Sprite/inmates #1/side Felix Hurt.png"
     zoom 0.35
 
+#----------------------------------------------------------------------#
+#----------------------------------WYEN--------------------------------#
+#----------------------------------------------------------------------#
+image Wyen Default:
+    "Sprite/inmates #4/final/Wyen Half.png"
+    zoom 0.60
+image side Wyen Default:
+    "Sprite/inmates #4/final/side Wyen Default.png"
+    zoom 0.35
+image Wyen Manic:
+    "Sprite/inmates #4/final/Wyen Half.png"
+    zoom 0.60
+image side Wyen Manic:
+    "Sprite/inmates #4/final/side Wyen Manic.png"
+    zoom 0.35
+image Wyen Smile:
+    "Sprite/inmates #4/final/Wyen Half.png"
+    zoom 0.60
+image side Wyen Smile:
+    "Sprite/inmates #4/final/side Wyen Smile.png"
+    zoom 0.35
+image Wyen Surprised:
+    "Sprite/inmates #4/final/Wyen Half.png"
+    zoom 0.60
+image side Wyen Surprised:
+    "Sprite/inmates #4/final/side Wyen Surprise.png"
+    zoom 0.35
+
+
 #Galileans
 image Galilean_1 Default:
     "Sprite/Galilean Member/Galilean 1 (Cewek).png"
@@ -267,13 +297,22 @@ image Farm          = "BG/Farm.jpg"
 image Hill          = "BG/Hill.jpg"
 image Fish Shop     = "BG/Fish shop.jpg"
 image CCTV          = "BG/CCTV.jpg"
+image Barn          = "BG/Barn.jpg"
 
-image caveTunnel    = "BG/Cave tunnel.jpg"
-image caveNyabang   = "BG/Cave nyabang.jpg"
-image caveFinal     = "BG/Cave - final place.jpg"
+image caveTunnel:
+    "BG/Cave tunnel.jpg"
+    zoom 2.0
+image caveNyabang:
+    "BG/Cave nyabang.jpg"
+    zoom 2.0
+image caveFinal:
+    "BG/Cave - final place.jpg"
+    zoom 2.0
 
 image waterfallDay  = "BG/Waterfall_Day.jpg"
 image waterfallNight = "BG/Waterfall_Night.jpg"
+
+image galaxy        = "BG/WyenChamber.jpg"
 
 #CG
 image CG1:
