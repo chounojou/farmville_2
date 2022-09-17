@@ -28,6 +28,8 @@ define The_Girl     = Character("The Girl")
 define Butcher      = Character("Butcher")
 define Elsyne       = Character("Elsyne")
 
+define Galileans    = Character("Galileans")
+
 define Cow          = Character("Cow")
 
 define Man          = Character("Man")
@@ -266,14 +268,23 @@ image Hill          = "BG/Hill.jpg"
 image Fish Shop     = "BG/Fish shop.jpg"
 image CCTV          = "BG/CCTV.jpg"
 
+image caveTunnel    = "BG/Cave tunnel.jpg"
+image caveNyabang   = "BG/Cave nyabang.jpg"
+image caveFinal     = "BG/Cave - final place.jpg"
+
+image waterfallDay  = "BG/Waterfall_Day.jpg"
+image waterfallNight = "BG/Waterfall_Night.jpg"
+
 #CG
 image CG1:
     "CGs/CG_1.png"
     zoom 0.5
-
+image CG7:
+    "CGs/CG_7.png"
+image CG8:
+    "CGs/CG_8.png"
 image CG9:
-    "CGs/CG_1.png"
-    zoom 0.5
+    "CGs/CG_9.png"
 
 #Phases
 

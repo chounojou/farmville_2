@@ -10,6 +10,9 @@ default trial_cave = False
 
 label phase3:
 
+    scene IPD WORKPLACE
+    with fade
+
     "It’s a bright and sunny day at the Interdimensional \nPolice Department or IPD for short."
     "The sunlight is shining through the windows today."
     "A perfect day to go outside and lay down on a sandy \nbeach with a friend or two but not for Rai Galilei."
@@ -24,33 +27,33 @@ label phase3:
     "His number one favorite drink to accompany him \nthrough all the paperwork of the day. "
     "He takes a sip as he sits down on his chair."
 
-    show rai_default
-    Rai "Ah.. another day with my wife, Shigoto-san."
-    Rai "Hmm, let's see what I have to do today."
+    show Rai Default
+    Rai Default "Ah.. another day with my wife, Shigoto-san."
+    Rai Default "Hmm, let's see what I have to do today."
 
-    Rai "Man… It’s just the beginning of the day yet \nsomeone has already put this much paper here."
-    Rai "I can’t work properly if my table is full of \npapers."
-    Rai "I need to tidy it up a bit, I think I should \nput some of \nthe papers in the drawer for the meantime."
+    Rai Default "Man… It’s just the beginning of the day yet \nsomeone has already put this much paper here."
+    Rai Default "I can’t work properly if my table is full of \npapers."
+    Rai Default "I need to tidy it up a bit, I think I should \nput some of \nthe papers in the drawer for the meantime."
 
     "While Rai was tidying up the papers that were on \nhis desk, one of his Galilean coworkers came by his table."
 
-    show rai_default at left with easeinleft
-    show galilean_default at right with easeinright
+    show Rai Default at right with easeinright
+    show Galilean_1 Default at left with easeinleft
 
-    Galilean_1 "Good morning! Sorry to disturb you \nso early in the morning…"
+    Galilean_1 Default "Good morning! Sorry to disturb you \nso early in the morning…"
 
-    Rai "Oh! Good morning!"
-    Rai "It’s okay. Is there something that I could \nhelp you with?"
+    Rai Default "Oh! Good morning!"
+    Rai Default "It’s okay. Is there something that I could \nhelp you with?"
 
-    Galilean_1 "Ah yes, I’m just here to remind you about \nthe meeting that we will be holding in a bit."
-    Galilean_1 "Please don’t forget to bring the necessary \nfiles for it!"
+    Galilean_1 Default "Ah yes, I’m just here to remind you about \nthe meeting that we will be holding in a bit."
+    Galilean_1 Default "Please don’t forget to bring the necessary \nfiles for it!"
 
-    Rai "Thank you for the reminder. I’ll get it ready."
+    Rai Default "Thank you for the reminder. I’ll get it ready."
 
-    Galilean_1 "Okay then, I shall excuse myself now. \nHave a good day!"
+    Galilean_1 Default "Okay then, I shall excuse myself now. \nHave a good day!"
 
-    hide galilean_default with dissolve
-    hide rai_default with dissolve
+    hide Galilean_1 Default
+    hide Rai Default
 
     "As Rai gets back on his chair, he sees a post-it-note \nreminder on his PC screen to help fix the CCTV."
 
@@ -68,14 +71,16 @@ label phase3:
             jump intro_p3_3_1
 
     label intro_p3_1_1:
-        #[ IPD Workplace ]
+        scene IPD WORKPLACE
 
         "Rai picks up the papers on his desk and opens his drawer."
 
         #[ Rai Appears ]
 
         #Rai (confused):
-        Rai "Wait, what…?"
+        show Rai Surprised
+
+        Rai Surprised "Wait, what…?"
 
         "It was surprisingly tidy."
         "There are only a few cases that will make Rai have \nthe intention to tidy up his work drawer."
@@ -87,7 +92,7 @@ label phase3:
         "it was as neat as if he had just recently opened it."
 
         #Rai (shocked):
-        Rai "When did I… tidy it up? Kinda forgot really."
+        Rai Surprised "When did I… tidy it up? Kinda forgot really."
 
         "What's going on today? Is the Rai Galilei starting \nto experience senility or fatigue from work so much"
         "that his mind is forced to forget the activities that \nhe did yesterday or maybe even more recent than that?"
@@ -96,15 +101,19 @@ label phase3:
         "He can just put the papers that’s currently in his \nhands easily."
 
         #Rai (default):
-        Rai "Maybe it’s one of my coworkers. Oh well, time to \nget back to Shigoto-san."
+        Rai Default "Maybe it’s one of my coworkers. Oh well, time to \nget back to Shigoto-san."
 
         #[ Rai Leaves ]
         #[ Black Screen ]
+        hide Rai Default
+        with fade
 
         jump intro_menu
 
     label intro_p3_2_1:
         #[ Meeting Room ]
+        scene Meeting Room
+        with fade
 
         "Interdimensional Officers Discussion, an annual meeting with other branches to discuss progress between High-Ranking Officers in each branch."
         "Rai arrives with the file that his boss asked him to bring in, he also made sure that he got a copy for everyone as well."
@@ -112,59 +121,68 @@ label phase3:
 
         #[ SFX Bump ]
         #[ Galilean 1 Appears ]
+        show Rai Default at right with hpunch
+        show Galilean_1 Default at left with easeinleft
 
         #Galilean 1:
-        Galilean_1 "Oh, I’m sorry Sir Rai. Are you okay?"
+        Galilean_1 Default "Oh, I’m sorry Sir Rai. Are you okay?"
 
         #[ Rai Appears ]
 
         #Rai (surprised):
-        Rai "I’m okay, my bad. I was lost in my thoughts."
+        Rai Surprised "I’m okay, my bad. I was lost in my thoughts."
 
         #Galilean 1:
-        Galilean_1 "My bad too sir, I am in a hurry, they said there’s some anomalies in the CCTV Room, and I am assigned to investigate it."
+        Galilean_1 Default "My bad too sir, I am in a hurry, they said there’s some anomalies in the CCTV Room, and I am assigned to investigate it."
 
         #Rai (default):
-        Rai "Okay then, feel free to go first."
+        Rai Default "Okay then, feel free to go first."
 
         #Galilean 1:
-        Galilean_1 "Thank you sir."
+        Galilean_1 Default "Thank you sir."
 
         #[ Galilean 1 Leaves ]
+        hide Galilean_1 Default
 
         "When the Galilean leaves, Rai enters the meeting room and sees that no one is there except for his boss."
 
+        show Rai Default at right with easeinright
+        show Boss Default at left with easeinleft
+
         #Rai (confused):
-        Rai "What happened Boss? Am I late?"
+        Rai Thinking "What happened Boss? Am I late?"
 
         #Boss:
-        Boss "No, the higher ups suddenly rescheduled our meeting for next week due to some anomalies that they need to tackle at their own place."
+        Boss Default "No, the higher ups suddenly rescheduled our meeting for next week due to some anomalies that they need to tackle at their own place."
 
         #Rai (sad):
-        Rai "Too bad, I was hoping I could be useful today Boss."
+        Rai Sad "Too bad, I was hoping I could be useful today Boss."
 
         #Boss:
-        Boss "Don't worry, I already said that you eagerly wait for them."
+        Boss Default "Don't worry, I already said that you eagerly wait for them."
 
         "Rai’s Boss reassures him with a shoulder pat."
 
         #Boss:
-        Boss "Is that the document that I asked you to fetch? It’s the notes for the meeting."
+        Boss Default "Is that the document that I asked you to fetch? It’s the notes for the meeting."
 
         #Rai (default):
-        Rai "Yes it is Boss, here you go. Is there another task that you need me to do?"
+        Rai Default "Yes it is Boss, here you go. Is there another task that you need me to do?"
 
         #Boss:
-        Boss "No, you may go. Still, the anomaly that they mention seems weird, it suddenly happens when each representative has already gathered in the meeting room."
+        Boss Default "No, you may go. Still, the anomaly that they mention seems weird, it suddenly happens when each representative has already gathered in the meeting room."
 
         #Rai (thinking):
-        Rai "That reminds me, a Galilean also said something about a strange anomaly in the CCTV room. Is it alright if I go there first before going back to my office?"
+        Rai Thinking "That reminds me, a Galilean also said something about a strange anomaly in the CCTV room. Is it alright if I go there first before going back to my office?"
 
         #Boss:
-        Boss "I would highly appreciate it if you help that sector Rai."
+        Boss Default "I would highly appreciate it if you help that sector Rai."
 
         #Rai (happy):
-        Rai "Affirmative Boss."
+        Rai Happy "Affirmative Boss."
+
+        hide Rai Default
+        hide Boss Default
 
         #[ Boss Leaves ]
         #[ Rai Leaves ]
@@ -178,33 +196,39 @@ label phase3:
 
     label intro_p3_3_1:
         #[CCTV Room]
+        scene CCTV
+        with fade
+
+        show Galilean_1 Default at left with easeinleft
+        show Galilean_2 Default with easeinleft
+        show Rai Default at right with easeinright
 
         "Rai sees two Galileans in the CCTV room as he memorizes the location and sector he needs to help repair, if there are any."
 
         #Rai (serious):
-        Rai "Rai Galilei, reporting for duty. I heard there’s some strange anomalies in the CCTV Room. Was there a video leak or something else happened?"
+        Rai Serious "Rai Galilei, reporting for duty. I heard there’s some strange anomalies in the CCTV Room. Was there a video leak or something else happened?"
 
         #Galilean 2:
-        "Welcome sir. Well, there was a leak but not as in the video, but the cleaning liquid accidentally spilled."
-        "Right now it’s mixed with oil reagents that the Athenean team brought."
+        Galilean_2 Default "Welcome sir. Well, there was a leak but not as in the video, but the cleaning liquid accidentally spilled."
+        Galilean_2 Default "Right now it’s mixed with oil reagents that the Athenean team brought."
 
         #Rai (default):
-        Rai "Oh, I thought our records were leaked. A false alarm then."
+        Rai Default "Oh, I thought our records were leaked. A false alarm then."
 
         #Galilean 1:
-        "Technically sir, it was not a false alarm."
+        Galilean_1 Default "Technically sir, it was not a false alarm."
 
         #Rai (default):
-        Rai "Well yeah, make sense. I just remembered, I noticed there are several CCTVs that looked like they needed maintenance."
+        Rai Default "Well yeah, make sense. I just remembered, I noticed there are several CCTVs that looked like they needed maintenance."
 
         #Galilean 2:
-        "This is the major reason why we request the cleaning liquid but our hands are currently full because of the spilling incident…"
+        Galilean_2 Default "This is the major reason why we request the cleaning liquid but our hands are currently full because of the spilling incident…"
 
         #Rai (default):
-        Rai "Well, let me do a favor by helping out then."
+        Rai Default "Well, let me do a favor by helping out then."
 
         #Galilean 1:
-        "Very well sir, we will provide you with the gear."
+        Galilean_1 Default "Very well sir, we will provide you with the gear."
 
         #[ BLACKSCREEN ]
 
@@ -212,11 +236,12 @@ label phase3:
 
     label intro_p3_3_2:
         #[ Cell ]
+        scene Jail Red
+        with fade
 
         "As Rai walks to the cell room, a shadow flashes from his left side and bumps his body, almost knocking him down."
-
+        show Rai Default with hpunch
         #[ SFX Crash ]
-
         "Luckily his body reflex helped him to stand back up straight."
         "The figure that hit him left as quickly as it came. Rai spots a glimpse of animal-like fur."
         "Rai feels a bit dizzy and tries to figure out what happened."
@@ -225,28 +250,30 @@ label phase3:
 
         "Sirens roared through the room, a sign that a prisoner had escaped."
 
+        show Rai Default
+
         #Galilean 3:
-        "Sir Rai, there's a Jailbreaker on the loose!"
+        Galilean_3 Default "Sir Rai, there's a Jailbreaker on the loose!"
 
         #Rai (serious):
-        Rai "I need intels."
+        Rai Serious "I need intels."
 
         #Galilean 3:
-        "Human with cat-like traits. According to the database he has hairy, sharp claws, and a long mustache."
+        Galilean_3 Default "Human with cat-like traits. According to the database he has hairy, sharp claws, and a long mustache."
 
         #Rai (thinking):
-        Rai "Wait. Like a cat? Perhaps…"
+        Rai Thinking "Wait. Like a cat? Perhaps…"
 
         "Rai's intuition immediately suspects the person who bumped into him just now."
 
         #Rai (serious):
-        Rai "Rai Galilei to Center, permission to perform IPD Protocol Code 058-Romeo Alpha India-555."
-        Rai "Chasing a suspect of jailbreak, based on the characteristics of cat-like fur."
+        Rai Serious "Rai Galilei to Center, permission to perform IPD Protocol Code 058-Romeo Alpha India-555."
+        Rai Serious "Chasing a suspect of jailbreak, based on the characteristics of cat-like fur."
 
         #[SFX Inhale]
 
         #Rai (serious):
-        Rai "State of the Arts, Engage!"
+        Rai Serious "State of the Arts, Engage!"
 
         "As soon as yelled and his body responded quickly as he wished."
         "He thinks fast as to how he would apprehend the cat-like inmate."
@@ -256,43 +283,47 @@ label phase3:
         "A sign that the activation of SotA is complete."
 
         #Rai (serious):
-        Rai "It's been a long time since I used this. Let’s see if I still remember that spell… Chaser!"
+        Rai Serious "It's been a long time since I used this. Let’s see if I still remember that spell… Chaser!"
 
-        "Chaser enchants his muscles, increasing his speed.• Maintaining the amount of the SotA, Rai starts to chase the suspect."
+        "Chaser enchants his muscles, increasing his speed."
+        "Maintaining the amount of the SotA, Rai starts to chase the suspect."
 
         "A radio call came from his receiver."
 
         #Galilean 1:
-        "Would you like to activate the code sir?"
+        Galilean_1 Default "Would you like to activate the code sir?"
 
         #Rai (serious):
-        Rai "Yes, the code for SotA activation."
+        Rai Serious "Yes, the code for SotA activation."
 
         #Galilean 1:
-        "First time hearing it officially, sir. We will secure the perimeter by the code we got."
-        "We will send the last location where the suspect is detected, based on the tracker in the collar every inmate has."
+        Galilean_1 Default "First time hearing it officially, sir. We will secure the perimeter by the code we got."
+        Galilean_1 Default "We will send the last location where the suspect is detected, based on the tracker in the collar every inmate has."
 
         #Rai (serious):
-        Rai "On it. Galilei out."
+        Rai Serious "On it. Galilei out."
 
         "Digging through his memories of the last moment Rai had used this tactic, he walked down the hall while combing the left side."
 
         "An eerie feeling emanates from there for some reason…"
 
         #???:
-        "Fancy meeting you here, my sweet margarine blondie cop."
+        Unknown "Fancy meeting you here, my sweet margarine blondie cop."
 
         #Rai (serious):
-        Rai "It's you… Catboy."
+        Rai Serious "It's you… Catboy."
+
+        show Felix Default at left with easeinleft
+        show Rai Default at right with easeinright
 
         #Felix Lynx (smirk) :
-        Felix "Yes yes, it's me blondie. Felix Lynx! AHAHAHA!"
+        Felix Smirk "Yes yes, it's me blondie. Felix Lynx! AHAHAHA!"
 
         "As Felix leaps towards Rai. He prepares to lunge into him."
 
         #[SFX jump and claw]
 
-        "The height of the attack forced Rai into a defensive position, as Felix's claw swipes and kicks continued to attack him."
+        "The height of the attack forced Rai into a defensive position, as Felix's claw swipes and kicks continued to attack him." with vpunch
 
         #[SFX punch and wush wush (parrying punch) (berkali kali)]
 
@@ -300,28 +331,28 @@ label phase3:
         "But Felix's half-animal physiology clearly had the advantage in both stamina and attack power, forcing Rai to act defensively."
 
         #Rai (serious):
-        Rai "Khh, melee attacks. I have to admit, this is difficult."
+        Rai Serious "Khh, melee attacks. I have to admit, this is difficult."
 
         #[SFX punch]
 
-        "A deceptive punch shot comes from Felix, forcing Rai to change his stance to defend stronger."
+        "A deceptive punch shot comes from Felix, forcing Rai to change his stance to defend stronger." with hpunch
         "The pause that was created made him manage to land a deadly scratch on Rai's face, which was unexpectedly blocked by Rai."
         "His eye glows as bright as the sparkles from the SotA."
 
         #Felix Lynx (surprised):
-        Felix "Impossible… That eye..!"
-        Felix "I REMEMBER THAT EYE VERY WELL."
+        Felix Surprised "Impossible… That eye..!"
+        Felix Surprised "I REMEMBER THAT EYE VERY WELL."
 
         #Rai (excited):
-        Rai "That's my line. And yes, catboy."
-        Rai "FEAST UPON THESE EYES THAT BESTOWS UPON THY JUDGMENT!!!"
-        Rai "Now it's my turn!! Niji-iro!!!"
+        Rai Excited "That's my line. And yes, catboy."
+        Rai Excited "FEAST UPON THESE EYES THAT BESTOWS UPON THY JUDGMENT!!!"
+        Rai Excited "Now it's my turn!! Niji-iro!!!"
 
         #[SFX electric]
 
         "SotA particles condense in Rai's iris."
         "It glows like a rainbow, increasing responsiveness and reactivity to the opponent's movements."
-        "As the electricity sparks from his fingers and in a flash he attacks Felix with great speed."
+        "As the electricity sparks from his fingers and in a flash he attacks Felix with great speed." with hpunch
 
         "Felix was unable to fend off every attack from Rai."
 
@@ -330,7 +361,7 @@ label phase3:
         "If he allows the attack to enter, the dense SotA particles enveloping Rai's fingers will only further damage his body."
 
         #Felix (annoyed):
-        Felix "THIS BLONDIE!!!"
+        Felix Annoyed "THIS BLONDIE!!!" with hpunch
 
         #[SFX clawing (berkali kali)]
 
@@ -345,16 +376,16 @@ label phase3:
 
         #[SFX throwing objects (berkali kali)]
 
-        "Gallons, paint cans, iron trellises, whatever clang along the warehouses' walls Felix can throw on Rai’s way."
+        "Gallons, paint cans, iron trellises, whatever clang along the warehouses' walls Felix can throw on Rai’s way." with hpunch
         "But Rai finds a way to evade the random obstacles this catboy makes."
 
         #Rai (serious):
-        Rai "Hah! Just like an actual cat huh."
+        Rai Serious "Hah! Just like an actual cat huh."
 
         #[SFX Electric]
 
         "Rai pumps electric jumps on his soles."
-        "He uses a wooden plank as a support to jump somersaults."
+        "He uses a wooden plank as a support to jump somersaults." with vpunch
         "Avoiding objects that were aimed at his face, lightning bolts and ice particles condenses from the surrounding water vapor."
 
         "Not satisfied, Rai immediately grabs a screwdriver that was attached to his uniform."
@@ -362,24 +393,24 @@ label phase3:
 
         #[SFX throwing screwdriver (wushh kaya shuriken)]
 
-        "And strike! The screwdriver just stabs Felix's calf."
+        "And strike! The screwdriver just stabs Felix's calf." with hpunch
         "Without wasting time, Rai immediately uses it to cut the distance by condensing SotA particles to increase his jumping power."
         "Ambushing him like a tiger pouncing on its prey."
 
         #Rai (happy):
-        Rai "HA! Gotcha!"
+        Rai Happy "HA! Gotcha!"
 
         #Felix (hurt):
-        Felix "UWAAAAGH!"
+        Felix Hurt "UWAAAAGH!"
 
         #[ SFX Kick ]
 
-        "Landing a knee strike on the nape of the suspect."
+        "Landing a knee strike on the nape of the suspect." with hpunch
         "The target was successfully immobilized."
 
         #[ SFX Exhale ]
         #Rai (default) :
-        Rai "State of the Arts, Terminate."
+        Rai Default "State of the Arts, Terminate."
 
         "After knocking out Felix, Rai felt tired."
         "The State of the Arts that he was using slowly disappeared after he said the turn off chant."
@@ -387,18 +418,23 @@ label phase3:
         "He continued to connect his intercom to report back to the center."
 
         #Rai (serious) :
-        Rai "Rai Galilei to Center, IPD Protocol Code 058-Romeo Alpha India-555, chasing a suspect of jailbreaking: success."
-        Rai "Target has been immobilized."
-        Rai "I'll bring the suspect back to his cell for further inspection."
-        Rai "Galilei out."
+        Rai Serious "Rai Galilei to Center, IPD Protocol Code 058-Romeo Alpha India-555, chasing a suspect of jailbreaking: success."
+        Rai Serious "Target has been immobilized."
+        Rai Serious "I'll bring the suspect back to his cell for further inspection."
+        Rai Serious "Galilei out."
+
+        hide Rai Default
+        hide Felix Default
 
         #[ CELL ]
-        "Arriving at the cell, Rai realizes a faint buzzing sound from Felix’s pockets."
+        show Jail with dissolve
+
+        "Arriving at the cell, Rai realizes a faint buzzing sound from Felix’s pockets." with hpunch
         "He starts to search for it and finds some sort of a communication device."
 
         #Rai (default) :
-        Rai "Rai Galilei to Artemisia, I found a communication device in the back pocket of the jailbreaker."
-        Rai "Request for assistance to check the device."
+        Rai Default "Rai Galilei to Artemisia, I found a communication device in the back pocket of the jailbreaker."
+        Rai Default "Request for assistance to check the device."
 
         #Artemisia :
         Artemisia "Affirmative, request accepted."
@@ -412,14 +448,16 @@ label phase3:
         Artemisia "The projector turns on, showing two red dots at a dimension coded as 611-813 Dimension aka the Farmland dimension."
 
         #Rai (default) :
-        Rai "I request for capturing both of the targets."
+        Rai Default "I request for capturing both of the targets."
 
         #Artemisia :
         Artemisia "Request granted. But I will assign a team of elite officers. You can immediately go to the dimension."
 
         #Rai (default) :
-        Rai "Got it, I will finish here first then prepare for the next target. Galilei out."
+        Rai Default "Got it, I will finish here first then prepare for the next target. Galilei out."
 
+        hide Rai Default
+        with dissolve
         #[ Galilean Leaves ]
         #[ Rai Leaves ]
         #[ Black Screen ]
@@ -428,83 +466,86 @@ label phase3:
 
     label intro_p3_3_3:
         #[ FARM ]
+        scene Farm
+        with fade
 
         "Arriving at the farm, Rai was greeted by the sound of different farm animals from the little chickens and ducks to much bigger ones like sheep, horses, and cows."
         "He looks at his watch waiting for the other Galileis to finish tracking the hideouts that were shown on the map earlier."
 
         #Rai (thinking) :
-        Rai "I think I have some time to kill, I wonder what animals are in here."
+        Rai Thinking "I think I have some time to kill, I wonder what animals are in here."
 
         "Rai walks past the noisy shed full of ducks then to the chickens."
         "He enters the fenced grassfield where the sheeps are feeding on fresh grass."
 
         #Rai (thinking) :
-        Rai "Where are the cows? I thought a farm would have cows…."
+        Rai Thinking "Where are the cows? I thought a farm would have cows…."
 
         "Curious because he didn't see a single cow outside."
         "So he went to the big building where some cows might be kept."
 
         #Rai  (happy) :
-        Rai "Bingo, there you are."
+        Rai Happy "Bingo, there you are."
 
         "Rai goes inside the building, approaching a cow that is having their meal time."
 
         #Rai (happy) :
-        Rai "Let me give you some more, here."
+        Rai Happy "Let me give you some more, here."
 
         "Rai grabbed some extra hay near the entrance."
         "As if the cow knew this one human gives extra food, it eats the hay Rai gave with passion."
         "Another cow seemed to get jealous from the first cow getting extra hay so it started making noises asking for the same."
 
         #Rai (surprised) :
-        Rai "Whoa! Calm down friend. Did your owner not give you enough?"
-        Rai "There is still more for all of you."
+        Rai Surprise "Whoa! Calm down friend. Did your owner not give you enough?"
+        Rai Surprise "There is still more for all of you."
 
         "Rai then gives other cows the same portion as the first one."
 
         #Rai (excited) :
-        Rai "There you go!"
-        Rai "Eat more, grow more, and be the strongest cow in the world!!!"
+        Rai Excited "There you go!"
+        Rai Excited "Eat more, grow more, and be the strongest cow in the world!!!"
 
         #[SFX  Rai petting Cow noises they said www ]
 
         "When Rai was enjoying petting the cows, beeping came from his communication device."
 
         #Rai (default) :
-        Rai "Is it time already?"
-        Rai "Man… Alright. Galilean, what did you get?"
+        Rai Default "Is it time already?"
+        Rai Default "Man… Alright. Galilean, what did you get?"
 
         #Galilean :
-        "It’s positive, we found a place just like the coordinates we get. Waiting for the next order."
+        Galilean_1 Default "It’s positive, we found a place just like the coordinates we get. Waiting for the next order."
 
         #Rai (serious) :
-        Rai "So they are not moving? Good job officer, wait for me. I will go there myself."
+        Rai Serious "So they are not moving? Good job officer, wait for me. I will go there myself."
 
         #Galilean :
-        "Affirmative."
+        Galilean_1 Default "Affirmative."
 
         "Rai then parts ways with all the cows and all the other farm animals then goes to the place where the squad is waiting for him."
 
         #[ CAVE ]
+        scene Cave
 
         "An Artemisia gives the command to Rai Galilei from the data that they successfully got from the communication device."
         "And from the looks of it, it’s like some sort of cave."
 
         #Rai (serious)  :
-        Rai "Artemisia, is this the right coordinates? What I can see is just an abandoned cave."
+        Rai Serious "Artemisia, is this the right coordinates? What I can see is just an abandoned cave."
 
         #Artemisia (no sprite, in call) :
         Artemisia "Does it fit a hideout of a gang of criminals?"
         Artemisia "I told you to bring some men with you. We don't know how many guys are inside!"
 
         #Rai (serious) :
-        Rai "Alright alright."
-        Rai "It’s okay, we need to focus."
-        Rai "Galileans check inside the cave!"
-        Rai "I will stand by here in case something happens."
+        Rai Serious "Alright alright."
+        Rai Serious "It’s okay, we need to focus."
+        Rai Serious "Galileans check inside the cave!"
+        Rai Serious "I will stand by here in case something happens."
 
         #Galileans :
-        "Ten-four!"
+        Galilean_1 Default "Ten-four!"
 
         "All three officers start entering the cave with caution."
 
@@ -515,19 +556,19 @@ label phase3:
         "Suddenly the communication device held by Rai rang."
 
         #Galilean 1 :
-        "We found the suspect sir."
+        Galilean_1 Default "We found the suspect sir."
 
         #Rai (happy) :
-        Rai "Good job officers"
+        Rai Happy "Good job officers"
 
         #??? (Mira) :
-        "No no no.."
+        Unknown "No no no.."
 
         "Rai heard another woman’s voice from the device."
         "He got the location."
 
         #Rai (serious) :
-        Rai "Let's go."
+        Rai Serious "Let's go."
 
         "They headed lower down the hill as Rai walked in front of her."
         "Rai doesn't handcuff her because she wants to cooperate."
@@ -535,19 +576,19 @@ label phase3:
 
         #[ Waterfall ]
         #Artemisia (no sprite, in call) :
-        Artemisia "This is the last location."
+        Artemisia Default "This is the last location."
 
         #Rai (default) :
-        Rai "Inside the waterfall I assume?"
+        Rai Default "Inside the waterfall I assume?"
 
         #Artemisia (no sprite, in call) :
         Artemisia "I think so. Careful if you go inside the waterfall, our terminal can’t reach that deep."
 
         #Rai (default) :
-        Rai "You guys hear that? Keep each other safe."
+        Rai Default "You guys hear that? Keep each other safe."
 
         #Galileans :
-        "Sir! Yes sir."
+        Galilean_2 Default "Sir! Yes sir."
 
         "They search for the area around the waterfall."
         "It took quite some time since the area is wide."
@@ -555,21 +596,21 @@ label phase3:
         #[ Black Screen ]
 
         #Galilean 2 :
-        "We found the suspect sir!"
+        Galilean_2 Default "We found the suspect sir!"
 
         #Rai (default) :
-        Rai "Good job officer, now everyone heard that come back to the meeting point."
+        Rai Default "Good job officer, now everyone heard that come back to the meeting point."
 
         "After Rai and all the Galileans meet at the meeting point."
         "They prepare to go back to the farm."
 
         #Rai (default) :
-        Rai "Before we’re leaving, is there anything else you need to do…?"
+        Rai Default "Before we’re leaving, is there anything else you need to do…?"
 
         #??? (Elysine):
-        "Nope, I’m fine..."
-        "I’ve left my farewell letter at home who kept me at her house."
-        "She should have found it later."
+        Unknown "Nope, I’m fine..."
+        Unknown "I’ve left my farewell letter at home who kept me at her house."
+        Unknown"She should have found it later."
 
         jump intro_p3_3_4
 
@@ -580,19 +621,19 @@ label phase3:
         "The suspects get sent back to IPD first with the Galileans while Rai observes the surroundings for the last time before he joins them back at IPD."
 
         #Rai :
-        Rai "Good thing we caught all of them without any loss."
-        Rai "I bet the barn will become famous after this incident because all of this, I feel bad for the co-"
+        Rai Default "Good thing we caught all of them without any loss."
+        Rai Default "I bet the barn will become famous after this incident because all of this, I feel bad for the co-"
 
         "The moment Rai says the last line, he suddenly has a strange feeling."
         "Like he has done all of this before."
 
         #Rai (nervous) :
-        Rai "Is this what others call ‘Deja Vu’? Funny…"
+        Rai Nervous "Is this what others call ‘Deja Vu’? Funny…"
 
         "With his look on the cow barn. \nThe uneasy feeling is still there."
 
         #Rai (thinking) :
-        Rai "What did I miss…?"
+        Rai Thinking "What did I miss…?"
 
         "He glances at the fences with the animals encaged."
         "He noticed a cow was missing from its place."
@@ -614,47 +655,51 @@ label phase3:
         #[Inside Barn]
 
         #[CG opt. 7 Start]
+        show CG7
+        with fade
 
         #Rai (Confused): “
-        "Huh? Weird…"
-        "..This barn looks quite unusual"
-        "It’s nothing like the usual barn I’ve seen before."
-        "The interior doesn’t even match the exterior."
+        Rai Thinking "Huh? Weird…"
+        Rai Thinking "..This barn looks quite unusual"
+        Rai Thinking "It’s nothing like the usual barn I’ve seen before."
+        Rai Thinking "The interior doesn’t even match the exterior."
 
         #Rai (Happy):
-        "Ushi-san~ are you here?"
+        Rai Happy "Ushi-san~ are you here?"
 
         #Rai (Confused):
-        "Eh…?"
+        Rai Thinking "Eh…?"
 
         #Rai (Confused):
-        "Huh? It’s surprisingly empty here…"
+        Rai Thinking "Huh? It’s surprisingly empty here…"
 
         #Rai (Default):
-        "Hmmm…Let’s see…"
+        Rai Default "Hmmm…Let’s see…"
 
         #[SFX footstep but on pretty grassy (?) surface (as in the barn) because of hay]
 
         #Rai (Default):
-        "I wonder why this barn is so empty, where are the animals?"
+        Rai Default "I wonder why this barn is so empty, where are the animals?"
 
         #(Delay)
 
         #Rai (Default):
-        "Hmmm...Preeetty moist here… anyway, Ushi-san where are-"
+        Rai Default "Hmmm...Preeetty moist here… anyway, Ushi-san where are-"
 
         #Rai (Happy):
-        "Ah!"
+        Rai Happy "Ah!"
 
         #[CG opt 7 End]
 
         #[Inside Barn]
+        show Barn
+        with disolve
 
         #[SFX footstep but on pretty grassy (?) surface (as in the barn) because of hay but shorter because Rai approaching the cow]
 
         #Rai (Happy):
-        "There you are Ushi-san!"
-        "How do you get here?"
+        Rai Happy "There you are Ushi-san!"
+        Rai Happy "How do you get here?"
 
         #[pitchfork flying through screen?]
         #[SFX something flying “whusssh” and then SFX something metallic (pitchfork) hit the wall]
@@ -2168,6 +2213,8 @@ label phase3:
         "And if you are wrong even on one question you will lose."
 
         #[CG Mid Start]
+        show CG8
+        with fade
 
         #Wyen (Evil):
         "Now this is the last showdown to determine all."
@@ -2414,81 +2461,84 @@ label phase3:
             "#73021D":
                 jump wyen_bad_end_2
 
-        #[Star sword disappeared]
+        label wyen_after_ft:
+            #[Star sword disappeared]
 
-        #Wyen (Surprised):
-        "*gasp*How could this be possible…"
+            #Wyen (Surprised):
+            "*gasp*How could this be possible…"
 
-        #Rai (Happy):
-        "Hah! How about that huh!? I can solve your challenge!"
+            #Rai (Happy):
+            "Hah! How about that huh!? I can solve your challenge!"
 
-        #Wyen (Surprised):
-        "How could you…"
+            #Wyen (Surprised):
+            "How could you…"
 
-        #Rai (Happy): “
-        "Haha! Of course I can!"
-        "You’re facing one of the best interdimensional police officer that already solved many cases and was recognized by a lot of-"
+            #Rai (Happy): “
+            "Haha! Of course I can!"
+            "You’re facing one of the best interdimensional police officer that already solved many cases and was recognized by a lot of-"
 
-        #Wyen (Evil):
-        "HOW COULD YOU NOT FIT DEEZ NUT IN YOUR MOUTH!"
+            #Wyen (Evil):
+            "HOW COULD YOU NOT FIT DEEZ NUT IN YOUR MOUTH!"
 
-        #Wyen (Evil):
-        "GOTTEM!"
+            #Wyen (Evil):
+            "GOTTEM!"
 
-        #Rai (Surprised):
-        "..."
+            #Rai (Surprised):
+            "..."
 
-        #Rai (Annoyed):
-        "*sigh* of course of course…"
-        "Hang in there Rai… Hang in there…"
+            #Rai (Annoyed):
+            "*sigh* of course of course…"
+            "Hang in there Rai… Hang in there…"
 
-        #(Delay)
+            #(Delay)
 
-        #Rai (Serious):
-        "Anyway, I win! Now you must be a good cow and let me arrest you!"
+            #Rai (Serious):
+            "Anyway, I win! Now you must be a good cow and let me arrest you!"
 
-        #Wyen (Default):
-        "*sigh* fine… You win, you can arrest me now."
+            #Wyen (Default):
+            "*sigh* fine… You win, you can arrest me now."
 
-        #Rai (Default):
-        "Nice to have your cooperation."
-        "Now please stay-"
+            #Rai (Default):
+            "Nice to have your cooperation."
+            "Now please stay-"
 
-        #Wyen (Evil):
-        "...*chuckle*Just kidding."
+            #Wyen (Evil):
+            "...*chuckle*Just kidding."
 
-        #[Star sword come from upper screen and jailing Rai again]
-        #[+SFX]
-        #[+maybe shake the screen too a little]
+            #[Star sword come from upper screen and jailing Rai again]
+            #[+SFX]
+            #[+maybe shake the screen too a little]
 
-        #Rai (Serious):
-        "What!? This is cheating! I already won!"
+            #Rai (Serious):
+            "What!? This is cheating! I already won!"
 
-        #Wyen (Evil):
-        "Oh my Mr. police officer. You should realize that although you win, you’re still inside my domain *chuckle*."
+            #Wyen (Evil):
+            "Oh my Mr. police officer. You should realize that although you win, you’re still inside my domain *chuckle*."
 
-        #Rai (Serious):
-        "You never intended to play fair don’t you! You… damned cow!"
+            #Rai (Serious):
+            "You never intended to play fair don’t you! You… damned cow!"
 
-        #Wyen (Evil):
-        "Oooh, How rude of you Mr. police officer, it’s not good."
-        "Well as a punishment for being bad police officer I shall give you a punishment challenge."
+            #Wyen (Evil):
+            "Oooh, How rude of you Mr. police officer, it’s not good."
+            "Well as a punishment for being bad police officer I shall give you a punishment challenge."
 
-        #[SFX Wyen clicking finger]
-        #[Wyen’s screen appear]
+            #[SFX Wyen clicking finger]
+            #[Wyen’s screen appear]
 
-        #Wyen (Evil):
-        "Now Mr. Rai. Go ahead and solve it or else, you’ll die *chuckle*"
+            #Wyen (Evil):
+            "Now Mr. Rai. Go ahead and solve it or else, you’ll die *chuckle*"
 
-        #Rai (Annoyed):
-        "Tch… I can't ignore it… I need to solve it or else I'll die."
+            #Rai (Annoyed):
+            "Tch… I can't ignore it… I need to solve it or else I'll die."
 
-        #Rai (Serious):
-        "Okay… let’s do it!"
+            #Rai (Serious):
+            "Okay… let’s do it!"
+
+            jump wyen_final_ft
 
         #(Insert a glitched random word for the question and answers. Just glitched keyboard smash or random symbols are fine. Still put the timer and if Rai chooses any answer or the timer reaches zero then continue to the next section.).
 
-        menu:
+        menu wyen_final_ft:
             "{glitch=50.0}{chaos}{sc}WHjfgejhwgQgbdoiaqb{/sc}{/chaos}{/glitch}"
 
             "{glitch=50.0}{chaos}{sc}AGHbfsgADkgo87fn2i87{/sc}{/chaos}{/glitch}":
@@ -2719,7 +2769,7 @@ label phase3:
         #Everyone:
         "HAPPY BIRTHDAY RAI!"
 
-        
+
         #[CG 9 END END]
 
         #=Credit=

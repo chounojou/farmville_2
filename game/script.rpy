@@ -6,11 +6,13 @@
 # The game starts here.
 label start:
 
-    if persistent.phase1:
-        jump phase1
-    elif persistent.phase2:
-        jump phase2
-    else:
-        jump phase3
+    jump phase3
+
+#    if persistent.phase1:
+#        jump phase1
+#    elif persistent.phase2:
+#        jump phase2
+#    else:
+#        jump phase3
 
     return
