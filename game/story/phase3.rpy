@@ -2713,9 +2713,13 @@ label phase3:
         "1!"
 
         #[CG 9 END START]
+        show CG9
+        with fade
 
         #Everyone:
         "HAPPY BIRTHDAY RAI!"
+
+        
         #[CG 9 END END]
 
         #=Credit=
