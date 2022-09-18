@@ -1,12 +1,10 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 
 # Check file define-default untuk melihat definisi karakter/variabel
 
 # The game starts here.
 label start:
-
-    jump phase3
 
 #    if persistent.phase1:
 #        jump phase1
@@ -15,4 +13,5 @@ label start:
 #    else:
 #        jump phase3
 
-    return
+#    return
+
