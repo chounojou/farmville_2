@@ -1,8 +1,7 @@
 label phase1:
-
+    play music audio.IPD volume 0.25 loop
     scene IPD WORKPLACE
     with fade
-
     "It’s a bright and sunny day at the Interdimensional Police Department or IPD for short."
     "The sunlight is shining through the windows today."
     "A perfect day to go outside and lay down on a sandy beach with a friend or two but not for Rai Galilei."
@@ -17,7 +16,7 @@ label phase1:
     "He takes a sip as he sits down on his chair."
 
     show Rai Default with dissolve
-    Rai "Ah.. another day with my wife, Shigoto-san."
+    Rai Default "Ah.. another day with my wife, Shigoto-san."
     Rai "Hmm, let's see what I have to do today."
     Rai "Man… It’s just the beginning of the day yet someone has already put this much paper here."
     Rai "I can’t work properly if my table is full of papers."
@@ -55,8 +54,11 @@ label phase1:
             jump scene3_intro
 
     label scene1_intro:
+        stop music
+        play music audio.meeting_room volume 0.25 loop
         scene Meeting Room
         with fade
+
         "Interdimensional Officers Discussion, an annual meeting with other branches to discuss progress between High-Ranking Officers in each branch."
         "Rai arrives with the file that his boss asked him to bring, he also made sure that he got a copy for everyone as well."
         "When Rai enters the meeting room he sees that no one is there except for his boss."
@@ -79,17 +81,19 @@ label phase1:
         hide Rai Default
         with dissolve
         hide Boss Default 
-        
+        play sound audio.footsteps
         "Rai walks back to his office remembering that he wanted to tidy up the files that were on his drawers a while ago."
         
         #SFX Footstep
         #BG : Blackscreen
+        stop music
         jump scene3_intro
 
     label scene2_intro:
-
         scene IPD WORKPLACE
         with fade
+
+        play sound audio.knock
         "As Rai was about to go to the CCTV Room, he heard a knock"
 
         #SFX knock
@@ -97,7 +101,7 @@ label phase1:
         Galilean_2 "Uhh sir? Forgive me for the intrusion, but I’m here to give you this. It's from the CCTV Operator Guy. He says to give it to you."
 
         show Rai Default at left with dissolve
-        Rai "Oh, okay. Just put it on the table, thank you."
+        Rai Default "Oh, okay. Just put it on the table, thank you."
         
         Galilean_2 "Then, I'll excuse myself."
         hide Galilean_2 with dissolve
@@ -106,33 +110,32 @@ label phase1:
         "Need help in the CCTV Room -Artemisia"
 
         Rai "My god, I thought it’s a prank. Damn you Artemisia."
-
+        play sound audio.footsteps
         "Rai laughs as he folds the paper neatly and walks towards the CCTV Room."
-
+    
         #SFX Footstep
         #Blackscreen
 
+        stop music
+        play music audio.cctv_room volume 0.25 loop
         scene CCTV
         with fade
         show Artemisia Default at left with dissolve
         Artemisia "Welcome sir, sorry to summon you with a piece of paper."
-        show Rai Happy at right with easeinright
+        show Rai Default at right with easeinright
 
-        Rai "Ah, you mean this?"
+        Rai Happy "Ah, you mean this?"
 
         "Rai shows the paper that has already been folded into a shuriken-shaped. He throws the shuriken across the room, making it fly and it returns neatly into his hand."
 
         Artemisia "Ohmagah, Milord… Ahem- I mean. Such a talent to neatly fold an origami and to make it fly like that."
         Rai "Oh don't flatter me, also this… origami thing you said? I learned it from the Youtube video you gave during my expedition in the Far East Dimension."
-
-        show Rai Serious
-        Rai "Anyway, what seems to be the problem regarding the CCTV?"
+        Rai Serious "Anyway, what seems to be the problem regarding the CCTV?"
         Artemisia "Right. As I said from the message, there seems to be a problem with some of the CCTVs in certain spots. Here are the camera locations."
 
         "Artemisia shows a monitor with IPD camera layout."
 
-        show Rai Thinking
-        Rai "Hmm, the spot is kinda suspicious."
+        Rai Thinking "Hmm, the spot is kinda suspicious."
         Artemisia "What do you mean sir?"
 
         show Rai Serious 
@@ -147,43 +150,37 @@ label phase1:
         hide Artemisia
         with dissolve
         #Blackscreen
+        stop music
 
     label scene2_2intro:
+        play music audio.IPD volume 0.25 loop
         scene IPD WORKPLACE
         with fade
-        show Rai Happy with dissolve
-        Rai "Ah yes. More Shigoto-san. More work. Shigoto-san daisuki~"
-        "Rai walks happily to the first camera. The first place is near the IPD Entrance."
 
-        show Rai Serious
-        Rai "Hmm, no wonder. The lenses are too dirty and the screws are also a bit loose. Luckily it’s a small maintenance."
+        show Rai Default with dissolve
+        Rai Happy "Ah yes. More Shigoto-san. More work. Shigoto-san daisuki~"
+        "Rai walks happily to the first camera. The first place is near the IPD Entrance."
+        Rai Serious "Hmm, no wonder. The lenses are too dirty and the screws are also a bit loose. Luckily it’s a small maintenance."
 
         "Rai tinkers with the tools given by the Artemisia to repair the CCTV."
         "After he tightens back the screw and changes the lens, he reports back through the receiver to check if it’s working again or not."
         
         Artemisia Black "Looking good sir."
-
-        show Rai Happy
-        Rai "Okay, thanks Artemisia."
+        Rai Happy "Okay, thanks Artemisia."
 
         "He does the same to the CCTV near the IPD Hall, the Receptionist, the Pantry, and the one in the Conference Room."
 
-        show Rai Default
-        Rai "Now, what should I do next?"
+        Rai Default "Now, what should I do next?"
 
         "As Rai walks back, he sees a certain CCTV that’s badly damaged, it looks like it’s broken. As he approaches it a burnt smell emanates from it and he quickly reports it."
 
-        show Rai Nervous
-        Rai "I found one CCTV that smells burnt.. Is this one of the CCTV spots that you mentioned?"
+        Rai Nervous "I found one CCTV that smells burnt.. Is this one of the CCTV spots that you mentioned?"
         Artemisia "I think so, can you try to fix it?"
-
-        show Rai Thinking
-        Rai "Uhh… I’ll try."
+        Rai Thinking "Uhh… I’ll try."
 
         "Rai picks up the tools and starts to tinker with the CCTV, unscrewing the cover then slowly removing the cover lid. And he’s met with a bunch of complicated components. Lots of wired cables, a chipset, and many other things."
 
-        show Rai Default
-        Rai "I'm not sure what to do. Here is the photo of the inner CCTV that I mentioned."
+        Rai Default "I'm not sure what to do. Here is the photo of the inner CCTV that I mentioned."
         Artemisia "Wait, I think we have a manual for this in the drawers."
         Rai "A manual? I guess I can fetch it myself. Does this CCTV need to be immediately fixed?"
         Artemisia "You can take your time sir. This one is not that urgent. I will leave it to you, thank you for letting me know."
@@ -193,79 +190,66 @@ label phase1:
         Artemisia "Over and out"
 
         "After Rai re-screws the broken CCTV back. And walks back to his office to pick up the manual that’s on the drawers,"
-
+        stop music
         jump scene3_intro
 
     label scene3_intro:
+        play music audio.IPD volume 0.25 loop
         scene IPD WORKPLACE
         with fade
 
         show Rai Surprised with dissolve
-        Rai "!!!"
+        Rai Surprised "!!!"
         Rai "Oh god When was the last time I opened this drawer?!"
         Rai "There could be an explosion of papers anytime now!"
         Rai "I’ll have to move the old files to the archive room or it’s gonna be even messier!"
-
-        show Rai Sad
-        Rai "Man, I did learn a few tips on how to tidy up files properly but then again this many is just ueee..."
+        Rai Sad "Man, I did learn a few tips on how to tidy up files properly but then again this many is just ueee..."
 
         "After a while of ‘ueees’ Rai kinda successfully sorts out the files. There were a lot of bookbinders titled ‘ATHENEAN’ and some were marked as ‘GALILEAN’."
         "Both of them seem to be a big pile of paperworks, flash disks, SD Cards, and burnt clothes strapped in a plastic ziploc bag that looked like a confiscated item."
         "It was packed tightly in the corner of the drawer."
 
-        show Rai Happy
-        Rai "Oh wow, I forgot I saved this piece of burnt cloth during my time as an Athenean. Ah… Good old times."
-
-        show Rai Serious
-        Rai "It's been a long time ago since IPD accepted me. I remember when Boss gave me the codename RAI and placed me into the GALILEAN unit, Thus Rai Galilei was born! Hehe, what a time."
+        Rai Happy "Oh wow, I forgot I saved this piece of burnt cloth during my time as an Athenean. Ah… Good old times."
+        Rai Serious "It's been a long time ago since IPD accepted me. I remember when Boss gave me the codename RAI and placed me into the GALILEAN unit, Thus Rai Galilei was born! Hehe, what a time."
 
         "As Rai speaks to himself, he sips another cola while arranging the drawer."
 
         "He finds another peculiar book. It’s a dark-brown binder book, strapped with purple cloth, weaving an ‘ATHENEAN’ on its cover. The backside is a lot of hand-woven ribbon with colorful colors, mostly in red and blue."
         "When he flips it, one of the papers slips from the binder, Rai picks it up and reads the written text on it."
 
-        show Rai Excited
-        Rai "What's this… hmm.  It reads… 'It feels like a fairytale - Maxwell’."
-
-        show Rai Happy
-        Rai "Ah yeah, looking back, I do remember a bit when I was in the Athenean unit. Fine work, a good one. Yes yes, good memory indeed. Me likey."
+        Rai Excited "What's this… hmm.  It reads… 'It feels like a fairytale - Maxwell’."
+        Rai Happy "Ah yeah, looking back, I do remember a bit when I was in the Athenean unit. Fine work, a good one. Yes yes, good memory indeed. Me likey."
 
         "Rai flips the binder book, reminiscing a lot about the job. After finishing with ‘ATHENEAN’, he picks up the ‘GALILEIAN’ one and starts to examine it."
         "The binder is in a hue color of black, brown and light yellow, kinda like a rusted steel. Complemented with a hand-woven gray ribbon as the strap circling around it, making it look like a chained book."
 
-        show Rai Happy
-        Rai "Ah, this book. It’s my favorite one. It made me feel like I was writing a new spell in my grimoires. Fuhahahahaha!"
+        Rai Happy "Ah, this book. It’s my favorite one. It made me feel like I was writing a new spell in my grimoires. Fuhahahahaha!"
 
         "Rai laughs hysterically for a sec. His chuuni sense is back."
 
-        show Rai Default
-        Rai "Ekhm. But really, looking at this, let’s see… Aha!"
+        Rai Default "Ekhm. But really, looking at this, let’s see… Aha!"
 
         "As he slowly takes the polaroid photo of him and his coworker, celebrating his birthday in IPD."
         "It was completely dark that day because there was a jailbreak (which turned out to be a prank) and the inmates were creating a big mess by shutting down IPD’s electricity."
 
-        show Rai Excited
-        Rai "Naughty Inmates. Made us IPD wear night vision goggles for three days straight because of the power outage."
+        Rai Excited "Naughty Inmates. Made us IPD wear night vision goggles for three days straight because of the power outage."
         "Still it was so fun, I felt like an espionage agent when that day happened. Working on my laptop at the corner of the office, completely with a night vision to maintain the surroundings, because they were playing hide and seek."
         "It ended up as a big surprise: ‘A Jailbreak Session’."
 
         "Rai laughs while remembering the photo."
 
-        show Rai Happy
-        Rai "But that trick won't happen again, right?"
+        Rai Happy "But that trick won't happen again, right?"
 
         #SFX SIREN
+        play sound audio.siren_loop
         "Suddenly IPD Siren rang loudly, notifying that there’s an inmate that successfully did a jailbreak."
 
-        show Rai Surprised
-        Rai "OH MY GOD, REALLY? Did I just jinx myself? I spoke too soon. Damn that disturbed my flashback."
+        Rai Surprised "OH MY GOD, REALLY? Did I just jinx myself? I spoke too soon. Damn that disturbed my flashback."
 
         "Rai’s receiver turns on."
 
         Artemisia "Artemisia to Galilei."
-
-        show Rai Serious
-        Rai "Galilei Here."
+        Rai Serious "Galilei Here."
         Artemisia "We need you to be in IPD Jail Hall ASAP"
         Rai "Northway or Southway, Artemisia?"
         Artemisia "Northway sir."
@@ -274,16 +258,20 @@ label phase1:
         hide Artemisia
         hide Rai Serious with dissolve
         "Rai quickened his pace to Northway IPD Jail Hall."
-
+        
     label scene3_2intro:
-        scene Jail
+        stop music
+        play music audio.IPD_cell volume 0.25 loop
+        scene Jail Red
         with dissolve
+        
         #SFX RUNNING
+        play sound audio.running
         "As Rai arrives, there were three Galileian and an Artemisia in there examining the recent jailbreak room."
         show Galilean_3 Default at left with dissolve
         
         show Rai Serious at right with easeinright
-        Rai "Data report. What’s the identity of the inmate? Did you see their number? Or anything?!"
+        Rai Serious "Data report. What’s the identity of the inmate? Did you see their number? Or anything?!"
 
         show Felix Default at center with dissolve
         Galilean_3 "Yes sir. His name is Felix Linx. According to his files he’s a half human, half cat hybrid with pink hair and three orange stripes on both of his cheeks"
@@ -293,8 +281,7 @@ label phase1:
         Rai "His codename?"
         Galilean_3 "Based on the mugshot and the data that we’ve got, we dubbed this Inmate as ‘Catboy Paradise’. Lately because he has spoken about ‘True Paradise’."
 
-        show Rai Thinking
-        Rai "Uhh, why does that codename sound so familiar?"
+        Rai Thinking "Uhh, why does that codename sound so familiar?"
 
         show Artemisia Default with dissolve
         Artemisia "Pardon sir?"
@@ -314,57 +301,55 @@ label phase1:
         Artemisia "Wait, that code. Does that mean…?"
         Rai "Yes. It is like what you thought, Artemisia. I will go after him myself."
         Artemisia "Very well sir. We’ll provide you with the latest escape route of the inmate. It seems he ran away to code 611-813 Dimension aka the Farmland Dimension. We’ll leave him to you."
-
-        hide Rai Serious
-        hide Artemisia Black
-        with dissolve
         #Blackscreen
         #GO TO INMATES#1 ROUTE
         # This ends of intro/prolog
+        stop music
         jump scene1_1
 
     #Mulainya pengejaran sus pertama yaitu Felix
     label scene1_1:
+        play music audio.farm volume 0.25 loop
         scene Farm
         with fade
+        
         "It is a peaceful morning in Farmland. The sun had just climbed out of its hiding. Its warm light dyed the sky a yellowish orange."
         "It seemed like a normal morning, but an interdimensional portal near a barn, which isn’t normal."
         "A young man walked out of it and looked around."
 
         show Rai Default at center with dissolve
-        Rai "The air is kinda cold..."
+        Rai Default "The air is kinda cold..."
         Rai "Hm, is that a barn?"
-
-        show Rai Excited
-        Rai "I don’t see any houses, so maybe it’s only the farmer here… which makes my job easier."
-
-        show Rai Happy
-        Rai "Less possible suspicion. Good, good."
+        Rai Excited "I don’t see any houses, so maybe it’s only the farmer here… which makes my job easier."
+        Rai Happy "Less possible suspicion. Good, good."
         Rai "Even if the inmate’s not here, maybe I can dig some information about this dimension from the farmer."
-
-        show Rai Excited
-        Rai "Alright, I should change my clothes"
+        Rai Excited "Alright, I should change my clothes"
         Rai "Undercover field mission starts!"
 
         #From here use farmer  rai sprite
         #screen fade to black
+        #stop music
 
+        #play music audio.Farm loop
         scene Farm
         with fade
         #SFX FOOTSTEPS
+        play sound audio.footsteps_grass
         FRai "There’s really no one else outside.."
 
-        show FRai Nervous with dissolve
+        show FRai Default with dissolve
         FRai Nervous "It’s kinda creepy… at least there’s animals. I can see them."
 
         ##[SFX chicken noises, duck quacking, horse neighing, sheep baa-ing, cow moo-ing (all noises at once, chaotic)]
+        play sound audio.farm_animals
 
-        show FRai Surprised
         FRai Surprised "Whoa, wha-"
 
         #SFX #[SFX barn door opening]
+        play sound audio.barn_door
         show Farmer Default at right with easeinright
-        show FRai Nervous at left with ease
+        show FRai Default at left with ease
+
         FRai Nervous "H-hello, sir. Good morning."
         Farmer "What are you doing here? Who are you?"
         FRai "My name is Rai. I.. would like to take a look around this farm, sir."
@@ -383,11 +368,15 @@ label phase1:
 
         hide Farmer Default with dissolve
         ##[SFX footstep, followed by SFX barn door opening]
+        play sound audio.footsteps
 
-        show FRai Thinking at center with ease
+        play sound audio.barn_door
+
+        show FRai Default at center with ease
         FRai Thinking "?"
 
         #SFX FOOTSTEPS
+        play sound audio.footsteps
         show Farmer Default at right with easeinright
         Farmer "Here you go!"
         FRai "Seeds?"
@@ -400,23 +389,15 @@ label phase1:
         Cow "Moooo" #Cow (Wyen’s cow form)
         Farmer "I’ll take care of the cow."
         FRai "Okay then!"
-
-        show FRai Nervous
         FRai Nervous "Wait, are you not gonna teach me?"
         Farmer "It’s your first task, and an easy one. What could go wrong with it anyway?"
         Farmer "Also, I got work to do. Just make sure you don’t give the chickens too much food. Good luck!"
         Farmer "I’ll be right back."
-
-        show FRai Surprised
         FRai Surprised "Ah, wait!"
         Farmer "Hmm? Is there anything you need?"
-
-        show FRai Nervous
         FRai Nervous "Uh, um, Like i said, I just came here not a long time ago, so I’m not really familiar with all the places here."
         Farmer "Sorry i can’t show you around for now, i need to grab some water from the well."
         Farmer "Though, I have a map if you need it! Here."
-
-        show FRai Happy
         FRai Happy "Ah! Thank you very much!"
         Farmer "You’re welcome."
         Farmer "Alright, I have to go now. Good luck on your task!" #Farmer gone?
@@ -424,9 +405,9 @@ label phase1:
         hide Cow WyenColor 
         with dissolve
         ##[SFX running away footsteps]
+        play sound audio.running
 
         FRai "Got it"
-        show FRai Surprised
         FRai Surprised "...wait, I’m supposed to search for clues and find the runaway inmate!"
         FRai "I should search the whole farm.. guess I have to do it and feed all the animals at the same time."
         menu:
@@ -440,19 +421,20 @@ label phase1:
 
         #Blackscreen
         label scene1_1_1:
+            #play music audio.Farm loop
             scene Farm
-            show FRai Default with dissolve
+            show FRai Default 
+            with dissolve
             FRai Default "Here you go duck."
             #[SFX ducks quacking]
+            play sound audio.ducks
 
-            show FRai Excited
             FRai Excited "Alright, while they’re busy eating.. I’ll search this field!" #ngomong didalam hati?
             Rai "Hm.. it's just grass here."
             Duck "Quack!"
             Rai "I don't speak duck language."
             Ducks "Quack quack!"
 
-            show FRai Sad
             FRai Sad "I don't understand.."
             Farmer "The ducks like you, lad." #Farmer back?
 
@@ -461,14 +443,11 @@ label phase1:
             FRai Surprised  "Whoa! Since when are you here?"
             Farmer "Just now, haha."
             FRai "You can understand these ducks?"
-
             Farmer "Hm, you could say so."
             Farmer "I don't understand their language of course, but I've been living with animals for a long time already."
             Farmer "I know what they're trying to say from how they act."
             Farmer "These ducks don't usually quack at strangers. But they don't seem to have a problem with you being here."
             Farmer "Them quacking at you means they like you."
-
-            show FRai Happy
             FRai Happy "The ducks like me..!"
             Ducks "Quack quack!"
             FRai "By the way, sir. Why aren't these ducks in water?"
@@ -494,35 +473,30 @@ label phase1:
                 jump scene1_1_2
 
         label scene1_1_2:
+            #play music audio.Farm loop
             scene Farm
-            show FRai Default with dissolve
+            show FRai Default 
+            with dissolve
             FRai Default "Hello, horses. How’s your day?"
 
-            #[SFX horse noises]
+            play sound audio.horse #[SFX horse noises]
             "Hrrreeuuhh"
-
             FRai "Wow, you don't sound okay. You must be hungry."
 
-            #[SFX horse noises]
+            play sound audio.horse #[SFX horse noises]
             "Hrghheeuuh"
             FRai "Here's your breakfast!"
+            play sound audio.horse#[SFX horse noises]
 
-            #[SFX horse noises]
-            show FRai Excited
             FRai Excited "'Okay, time to search!'"
             FRai "'Maybe there's something in the grass.'"
-
-            #[SFX horse noises]
+            play sound audio.horse
             FRai "Hmm? Is there something?"
 
             #[SFX footstep on grass]
-            show FRai Surprised
+            play sound audio.footsteps_grass
             FRai Surprised "Who's there?!"
-
-            show FRai Serious
             FRai Serious "...."
-
-            show FRai Thinking
             FRai Thinking "'Maybe it's just my imagination.'"
             FRai "'This is an open field, there's nowhere to hide.'"
             FRai "'But if it is a person, then that person is very fast.'"
@@ -538,39 +512,44 @@ label phase1:
                 jump scene1_1_1
 
     label scene1_2:
+        #play music audio.Farm loop
         scene Farm
+        play sound audio.chickens
         #[SFX chicken noises]
-        show FRai Default with dissolve
+        show FRai Default 
+        with dissolve
         FRai Default "Alright, chickens. Breakfast time!"
 
         #[SFX chicken noises but louder]
+        play sound audio.chickens
         FRai "Whew, there’s more chickens than I thought."
 
         #[SFX chicken noises but even louder]
-        show FRai Annoyed
+        play sound audio.chickens
+
         FRai Annoyed "You’re all so noisy.. Is the food not enough?"
         FRai "Alright, I’ll give you a bit more, so calm down."
         FRai "Hey, no need to fly- wait what-"
 
         #[SFX chicken noises but EVEN louder and chaotic]
-        show FRai Surprised
-        FRai Surprised "Wait.. stop.. there’s enough for everyone-"
-        with vpunch
-        FRai "OW- AAAAARRRGGHH"
-        with vpunch
+        play sound audio.chickens
+        FRai Surprised "Wait.. stop.. there’s enough for everyone-" with vpunch
+        FRai "OW- AAAAARRRGGHH" with vpunch
 
         show Farmer Default at right with easeinleft
         Farmer "What happened?!"
         FRai "Mr farmer! Help me!!"
 
         #[SFX chicken noises]
+        play sound audio.chickens
         Farmer "Shoo, shoo!"
 
         #[SFX chicken noises]
-
+        play sound audio.chickens
         Farmer "Calm down! I’m here, okay?"
 
         #[SFX chicken noises but less loud]
+        play sound audio.chickens
         FRai "Phew.."
         FRai "Are the chickens always like this?"
         Farmer "No.. they're usually not like this."
@@ -581,37 +560,25 @@ label phase1:
         Farmer "They might be warning me about something."
         FRai "Something? Or.. Someone?"
         FRai "But I didn't see anyone!"
-
-        show FRai Thinking
         FRai Thinking "'Could it be the inmate..?'"
         FRai "'Then, what I heard when I was feeding the horses.. aren’t my imagination?'"
         FRai "'Ill have to go search later.'"
         Farmer "What’s with that face?"
-
-        show FRai Surprised
         FRai Surprised "Huh?"
         Farmer "Ha.. Maybe the chickens were just left with no food for a bit too long"
-
-        show FRai Nervous
         FRai Nervous "Well.. It could be"
-
         Farmer "By the way!"
         Farmer "Is your job done?"
         FRai "Ah, yes! I’ve done it!"
         Farmer "Good, good."
         Farmer "Here's some money. Go buy breakfast at the market."
-
-        show FRai Happy
         FRai Happy "...thank you!"
-
         Farmer "I gave you a map, right?"
         Farmer "Always carry it with you so you won’t be lost."
         FRai "Yes, I will."
         FRai "I'll go to the market later."
         Farmer "Why not now?"
         Farmer "It’s past the time for breakfast already. Or have you eaten breakfast?"
-
-        show FRai Nervous
         FRai Nervous "Well, I.. I think I’m gonna hang around in the farm for a while."
         Farmer "Adjusting yourself with the farm life, huh?"
         FRai "Kinda"
@@ -623,6 +590,7 @@ label phase1:
         FRai "Thank you!"
 
         #[Screen fades to black]
+        #play music audio.Farm loop
         scene Farm
         with fade
         show FRai Thinking with dissolve
@@ -634,6 +602,7 @@ label phase1:
         FRai "'Let’s see..'"
 
         #[SFX paper unroll (srek)]
+        play sound audio.paper_unroll
         #[Asset: Farmland map start]
 
         FRai "'Hmm, there's a river near the forest.'"
@@ -670,23 +639,24 @@ label phase1:
         FRai "Oh, right! I’m going. Bye-bye!"
         Farmer "Come back in time for lunch! Byee!"
 
+        stop music
         #[Screen fades to black]
-
+        play music audio.market volume 0.25 loop
         scene Market
         with fade
         show FRai Happy with dissolve
         FRai Happy "'He told me to go to the market when I was about to say so. What a coincidence!'"
 
         #[SFX people chattering]
+        play sound audio.people_chattering_loop
         FRai "'Wow, it sure is crowded here.'"
 
         #[SFX tummy growl]
-        show FRai Sad
-        FRai "'I’m hungry.. I wanna buy some food.'"
-        FRai "'Good thing I have money.'"
+        play sound audio.tummy_growl
 
-        show FRai Happy
-        FRai          "'Oh hey, a bread seller!'"
+        FRai Sad "'I’m hungry.. I wanna buy some food.'"
+        FRai "'Good thing I have money.'"
+        FRai Happy    "'Oh hey, a bread seller!'"
         FRai          "Hello there, little miss! Can I get some bread?"
         Bread_Seller "Here you go! It'll be 3 coins."
         FRai          "3 coins.. here!"
@@ -700,16 +670,20 @@ label phase1:
 
         Bread_Seller "That building over there."
         FRai         "Thank you!"
-
+        
         #[Screen fades to black]
+        stop music
+        play music audio.fish_shop volume 0.25 loop
         scene Fish Shop
         show Fisherman Default at right
         with fade
+
+        play sound audio.footsteps
         #[SFX footstep]
         Fisherman "AAAAAAAAAAAHHH!!! MY FISHH!!!" with vpunch
 
-        show FRai Surprised at left with easeinleft
-        FRai "?!"
+        show FRai Default at left with easeinleft
+        FRai Surprised "?!"
         Fisherman "MY FISH WERE STOLEN! MY FISH!!"
 
         show MeatButcher Blood at center with dissolve
@@ -719,6 +693,7 @@ label phase1:
         Fisherman "Ouch, how mean…"
         show FRai at center with ease
         FRai "Um, excuse me!"
+
         show MeatButcher Blood at left with ease
         FRai "Sorry for interrupting, but can you tell me more about the stolen fishes?"
         Meat_Butcher "And who are you?"
@@ -753,25 +728,27 @@ label phase1:
         Meat_Butcher "It’s not like he’s gonna come back next week…"
 
         #[Screen fades to black]
+        stop music
+        play music audio.market volume 0.25 loop
         scene Market
         with fade
         FRai "Have you seen a cat boy around here, sir? He has pink and bushy hair."
         Merchant "Catboy..? Nope."
 
         show FRai Sad with dissolve
-        FRai "Alright…"
+        FRai Sad "Alright…"
         FRai "Please tell the Fisherman at the fish shop if you spot him!"
         Merchant "...hm."
 
         show Felix Smirk at right with dissolve
         Felix "Heh, you’re too slow..." #he just gone or what?
         hide Felix Smirk with dissolve
+
+        play sound audio.footsteps
         #[SFX footstep]
 
         FRai "Ah, hello, miss! Have you seen a cat boy around here? He’s pink and bushy haired."
         Man "No, sorry." #Random person?????
-
-        show FRai Sad
         FRai "I see, alright.."
         FRai "Please tell the Fisherman at the fish shop if you see him!"
         FRai Annoyed "'Aaagh, I’ve been searching everywhere and asked everyone I see, but he’s nowhere!"
@@ -787,7 +764,7 @@ label phase1:
         Old_Lady "AAAAAHH! THIEF!!" with vpunch #Sound only? also this is soud of Old lady
         
         
-        show FRai Surprised at center with ease
+        show FRai Default at center with ease
         FRai Surprised "Wha-"
 
         show Felix Default at right with dissolve 
@@ -799,14 +776,13 @@ label phase1:
         Felix "What do you mean don’t move? You’re threatening me?"
         Felix "You don’t even have a weapon."
         FRai "Ugh.."
-
-        show Felix Smirk
         Felix Smirk "Aha. Are you gonna catch me?"
         Felix "Catch me if you caaan!"
 
         #[SFX running footsteps]
+        play sound audio.running
         FRai "You’re not going away!"
-
+        play sound audio.running
         #[SFX running footsteps]
         #[Screen fades to black]
 
@@ -814,6 +790,8 @@ label phase1:
         show FRai Annoyed
         with fade
         #[SFX running footsteps]
+        play sound audio.footsteps
+
         FRai Annoyed "Huff... huff…"
         FRai "So.. tired…"
         FRai "‘Where is he going..?’"
@@ -846,6 +824,7 @@ label phase1:
             jump scene1_3
 
     label scene1_3:
+        #play music audio.market loop
         scene Market
         show FRai Default
         with fade
@@ -866,9 +845,12 @@ label phase1:
         FRai "‘But I think it’s safe to go to the village and search.’"
 
         #[Screen fades to black]
+        play music audio.village volume 0.25 loop
         scene Village
         with fade #deleted?
+
         #[SFX people chattering]
+        play sound audio.people_chattering_loop
         FRai "‘Wow, it’s crowded in the morning.’"
 
         #[SFX 2 people bumping into each other]
@@ -878,8 +860,9 @@ label phase1:
         show FRai at center 
         show Villager at center
         with ease
-        FRai Surprised "Uwah-" with vpunch
 
+        play sound audio.bump
+        FRai Surprised "Uwah-" with vpunch
         show Villager Default at left with ease
         Villager "Aaaah! I’m so sorry!" 
 
@@ -894,9 +877,10 @@ label phase1:
         Villager "Here you go! Fresh potato!"
         FRai "Um, you don’t need to…"
         Villager "No, no, please take it!"
-        FRai Happy "...Thank you!"
-
+        
         #[SFX tummy growl]
+        play sound audio.tummy_growl
+        FRai Happy "...Thank you!"
         Villager "So you’re hungry! Good thing I gave you the potato. Eat up!"
         FRai Nervous "..."
         FRai "It’s raw..."
@@ -909,6 +893,8 @@ label phase1:
         Villager "It’s ok! My house is right there. Follow me!"
 
         #[SFX footsteps]
+        play sound audio.footsteps
+
         #[Screen fades to black]
         show Village
         with fade
@@ -922,13 +908,16 @@ label phase1:
         FRai "But at least I can still have lunch."
 
         #[SFX water blub blub]
-        "FRai sat on a bench, right below the kitchen window. The window is wide open. The sound of boiling water can be heard from inside the kitchen."
+        play sound audio.water_boiling
+        "Rai sat on a bench, right below the kitchen window. The window is wide open. The sound of boiling water can be heard from inside the kitchen."
 
         #[SFX footsteps]
+        play sound audio.footsteps
         Villager "Here’s the potato!"
         FRai Happy "Thank you!"
 
         #[SFX munching potat]
+        play sound audio.munching_potat
         FRai Serious "By the way.. have you seen the catboy in this village? The one at the market."
         Villager "Hmmm..."
         Villager "I don’t."
@@ -962,7 +951,9 @@ label phase1:
         Villager "Oh, bye-bye!"
 
         #[Screen fades to black]
-        scene Hill
+        stop music
+        play music audio.forest volume 0.25 loop
+        scene Forest
         with fade
         FRai "Hmm, it’s pretty hard searching with all these trees everywhere.."
         FRai "And I can’t see the path."
@@ -986,23 +977,19 @@ label phase1:
         FRai "I think so."
         Talking_Tree "Waaallkk toooo yooouurr leeeftt..!"
         Talking_Tree "Thaaaat waaayy yooouuu wiiiill approooaaachh theee paaathh oooof thiiiss fooooreesst.."
-        #show FRai Excited
-        FRai "Okay!"
+        FRai Excited "Okay!"
 
         #[CG 1 END]
         hide CG1 with dissolve
         #[SFX footsteps]
+        play sound audio.footsteps
 
-        show FRai Happy
-        FRai "Oh, there it is!"
+        show FRai Default
+        FRai Happy "Oh, there it is!"
         Talking_Tree "Oooohh, yooouu haaaveee diiiscoooveered theee paaathh…"
-
-        show FRai Surprised
-        FRai "Whoa, you can see me?"
+        FRai Surprised "Whoa, you can see me?"
         Talking_Tree "Iiiii aaamm veeerryy taaallll, myyy chiiildd, Iiii caaan seee yoouuu frooom heeeree… Iiii caaann viiieeeww eeeverythiiing iiinn thiiiss foreeesst..."
-
-        show FRai Excited
-        FRai "So cool..!"
+        FRai Excited "So cool..!"
         Talking_Tree "Ha-ha-ha…!"
         FRai "Hmm?"
         Talking_Tree "Whaaatt isss iiiitt, myyy chiiildd…?"
@@ -1014,9 +1001,12 @@ label phase1:
         #[Asset Scratches on tree]
 
         #[Screen fades to black]
-        scene Hill
-        show FRai Default
+        #play music audio.forest loop
+        scene Forest
+        show FRai Default at left
+        show TalkingTree at right
         with fade
+
         FRai Default "Mr Talking Tree, do you know who did this?"
         Talking_Tree "Oooohh yeeess Iiiii doooo, myyy chiiiildd.."
         Talking_Tree "Aaaaatt daaawwnn, theeereee waasss aaaa feeeliiinee laaaadd waaandeeeeriingg iiinn thiiiss fooorreeesst…"
@@ -1049,9 +1039,13 @@ label phase1:
         Talking_Tree "Faaareeweell, myy chiildd…"
 
         #[SFX running footsteps]
+        
         FRai Serious "‘I left the market for hours already. I have to go back!"
+        play sound audio.running
         #[Screen fades to black]
 
+        stop music
+        play music audio.fish_shop volume 0.25 loop
         scene Fish Shop
         show Fisherman Default at center
         with fade
@@ -1063,6 +1057,8 @@ label phase1:
         Fisherman "..."
 
         #[SFX footsteps]
+        play sound audio.footsteps
+
         show MeatButcher Default at left with dissolve
         Meat_Butcher "Hey."
         Meat_Butcher "You.. Why do you actually want to help? You got too much freetime?"
@@ -1080,6 +1076,8 @@ label phase1:
         FRai "I’m going to search more."
 
         #[SFX footsteps]
+        play sound audio.footsteps
+
         hide FRai Default with dissolve
         show Fisherman Default at right with ease
         Fisherman "I’m going. I must help him."
@@ -1088,10 +1086,14 @@ label phase1:
         Meat_Butcher "I'm going too!"
 
         #[Screen fades to black]
+        stop music
+        play music audio.market volume 0.25 loop
         scene Market
         show FRai Default
         with fade
         #[SFX running footsteps]
+        play sound audio.running
+        
         FRai Serious "‘Where.. where is he..’"
         "AAAAAAAHH!! THIEF!! HELP!" with vpunch #the sound of Lady
         show FRai Default at right with easeinright
@@ -1102,9 +1104,11 @@ label phase1:
         Felix Smirk "You’re never gonna catch me!"
 
         #[SFX running footsteps]
+        play sound audio.footsteps
         FRai Serious "I will this time!!"
 
         #[SFX running footsteps]
+        play sound audio.footsteps
         "Chase scene ensues. The police officer and the inmate are running, jumping, and parkouring through the crowded market."
         FRai Serious "Excuse me!"
         "Whoa!!" #the soud of Lady
@@ -1120,18 +1124,22 @@ label phase1:
             with fade
             FRai "‘Wood plank..!’"
             #[SFX wood planks falling]
+            play sound audio.wood_planks_falling
             FRai Serious "This is gonna hurt!"
 
             #[SFX wood plank go whoosh]
+            play sound audio.wood_planks_falling
             show Felix Annoyed at left with dissolve
             Felix Annoyed "Ugh-!" with vpunch
             Felix "‘My back..!’"
             FRai Excited "‘Now’s my chance!’"
 
             #[SFX running footsteps]
+            play sound audio.footsteps
             Felix "‘Crap, he’s catching up!’"
             Felix "‘I can’t let it happen!’"
             #[SFX wooden barrel falling harshly (tabrak tabrakan)]
+            play sound audio.wooden_barrel_falling
             Felix Smirk "My turn!"
             FRai Surprised "Whop-"
 
@@ -1150,6 +1158,8 @@ label phase1:
                 "Rai jumps as high as he can, avoiding the wooden barrels rolling towards him. He fell a few times but that’s okay."
 
                 #[SFX landing after jumping]
+                play sound audio.landing_floor
+
                 show FRai Default at right with dissolve
                 FRai Serious "‘That was close..!’"
 
@@ -1159,6 +1169,8 @@ label phase1:
                 FRai "‘But he won’t get too far with that injury!’"
 
                 #[SFX running footsteps]
+                play sound audio.footsteps
+
                 Felix "‘Oh no you won't!’"
                 "Felix turned to a building and disappears behind it."
                 FRai "‘Where is he going..?’"
@@ -1172,6 +1184,7 @@ label phase1:
 
                 #[Screen fades to black]
                 #[SFX wooden barrel falling harshly (tabrak tabrakan)]
+                play sound audio.wooden_barrel_falling
 
                 "Rai may have some broken bones now."
 
@@ -1184,6 +1197,7 @@ label phase1:
                 FRai "Wait, where’s my gun!?" with vpunch
                 #[Screen fades to black]
                 #[SFX wooden barrel falling harshly (tabrak tabrakan)]
+                play sound audio.wooden_barrel_falling
                 "Rai forgot he doesn’t have a weapon and his fists aren’t enough to destroy the wooden barrels."
 
                 jump scene1_3_1
@@ -1193,6 +1207,8 @@ label phase1:
         scene Market
         with fade
         #[SFX people chattering (rame)]
+        play sound audio.people_chattering_loop
+
         show FRai Thinking at right with easeinright
         FRai Thinking "‘Where is he..’"
         FRai Annoyed "‘Ugh, I can’t find him in this crowd!’"
@@ -1200,21 +1216,33 @@ label phase1:
         "Hey, that’s the catboy that stole fishes!" #the sound of Cutlery Seller
         "Is that the thief the farmer boy was talking about?" #the sound of Woman
         "Someone catch him!" #the sound of Girl
+        
         #[SFX people chattering but louder(rame)]
+        play sound audio.people_chattering_loop
+
         FRai Happy "There he is! Nice!"
         show Felix Default at left with dissolve
         Felix Annoyed "‘Ugh, that yellow head must’ve planned this..’"
         Felix "‘If there’s a building I could climb..’"
         Felix "‘There it is!’"
+
         #[SFX landing on roof]
+        play sound audio.landing_roof
+
         "My shop roof!" #the sound of Vegetable and fruit seller
         FRai Serious "‘Oh no, he’s gonna climb to a higher building..’"
         FRai "‘I have to climb too to catch him..!’"
+
         #[SFX climbing building]
+        play sound audio.climbing
+
         FRai "‘I gotta at least get to the highest floor of this building for a good view.’"
         "Uwaa?!" #sound of Shop customer
         FRai Nervous "‘Oh man, everyone from the window can see me..’"
+
         #[SFX landing on floor]
+        play sound audio.landing_floor
+
         FRai "‘Good thing this window is open. Now where is he.."
         FRai Surprised "There you are!"
 
@@ -1248,6 +1276,8 @@ label phase1:
         Felix "IPD."
         #[Screen fades to black]
 
+        stop music
+        play music audio.fish_shop volume 0.25 loop
         scene Fish Shop
         show Felix Default at right
         with fade
@@ -1260,7 +1290,10 @@ label phase1:
         show Felix Default at center with ease
         Felix "Get outta my way-"
         show Fisherman Default at center with ease
+        
         #[SFX punch]
+        play sound audio.punch
+
         Felix Hurt "AAARGHH!!" with vpunch
         hide Felix Default with dissolve
         show FRai Default at left with easeinleft
@@ -1269,8 +1302,11 @@ label phase1:
         Fisherman "I-i did it!!!"
         Fisherman "I defeated him.. Did… did you see that, young man?  I defeated him!!"
         FRai Happy "You defeated him!!"
+
+        play sound audio.crowd_cheering
         "YEAAAHH!!" #the sound of Crowd
         #[SFX crowd cheering]
+    
         Fisherman "My deepest thanks, really…"
         Fisherman "You’ve chased this tiger everywhere, without rest and without complaint!"
         FRai "That's too much.. but thank you."
@@ -1279,6 +1315,7 @@ label phase1:
         show FRai Default at center 
         show Fisherman Default at right
         with ease
+
         Meat_Butcher "Nice job, kid."
         FRai Sad "I’m not a kid.."
         "Hahaha!" #the sound of Crowd
