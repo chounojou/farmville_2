@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 
 # Check file define-default untuk melihat definisi karakter/variabel
@@ -19,4 +19,4 @@ label start:
     else:
         jump phase3
 
-    return
+#    return
