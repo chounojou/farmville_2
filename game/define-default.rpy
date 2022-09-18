@@ -86,7 +86,7 @@ image side FRai Surprised:
     zoom 0.35
 
 image FRai Nervous   = "Sprite/Rai/Farmer Rai_Half.png"
-image sideFRai Nervous:
+image side FRai Nervous:
     "Sprite/Rai/side Farmer Rai_Nervous.png"
     zoom 0.35
 
@@ -260,6 +260,14 @@ image CCTV          = "BG/CCTV.jpg"
 image CG1: 
     "CGs/CG_1.png"
     zoom 0.5
+default persistent.cg1_unlocked = False
+image CG2: 
+    "CGs/CG_2.png"
+    zoom 0.5
+default persistent.cg2_unlocked = False
+
+#Assets
+image Scratches Zoom = "Asset/Hebi/Tree_2_zoom.png"
 
 #Phases
 

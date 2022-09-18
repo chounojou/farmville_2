@@ -675,7 +675,7 @@ label phase1:
         scene Market
         with fade
         show FRai Happy with dissolve
-        FRai "'He told me to go to the market when I was about to say so. What a coincidence!'"
+        FRai Happy "'He told me to go to the market when I was about to say so. What a coincidence!'"
 
         #[SFX people chattering]
         FRai "'Wow, it sure is crowded here.'"
@@ -703,61 +703,51 @@ label phase1:
 
         #[Screen fades to black]
         scene Fish Shop
+        show Fisherman Default at right
         with fade
         #[SFX footstep]
-        show Fisherman Default at right with vpunch
-        Fisherman "AAAAAAAAAAAHHH!!! MY FISHH!!!"
+        Fisherman "AAAAAAAAAAAHHH!!! MY FISHH!!!" with vpunch
 
         show FRai Surprised at left with easeinleft
         FRai "?!"
         Fisherman "MY FISH WERE STOLEN! MY FISH!!"
 
-        show MeatButcher Default at center with dissolve
+        show MeatButcher Blood at center with dissolve
         Meat_Butcher "Ugh, just shut up already! It was like fifteen minutes ago and you’re still bringing that up?"
         Fisherman "A HUGE TIGER STOLE MY FISH!! He should pay.. he should pay!"
         Meat_Butcher "If you want to make him pay, then get moving! You’re not doing anything at all!"
         Fisherman "Ouch, how mean…"
+        show FRai at center with ease
         FRai "Um, excuse me!"
+        show MeatButcher Blood at left with ease
         FRai "Sorry for interrupting, but can you tell me more about the stolen fishes?"
         Meat_Butcher "And who are you?"
-
-        show FRai Excited
-        FRai "Ah, I’m just someone curious. And maybe I could help!"
+        FRai Excited "Ah, I’m just someone curious. And maybe I could help!"
         Meat_Butcher "This is none of your business."
         Fisherman "Oh, finally a good and kindhearted person!"
         Meat_Butcher "Haaaa?!"
         Fisherman "*gulp*"
-
-        show FRai Nervous
-        FRai "Uh.."
+        FRai Nervous "Uh.."
         FRai "Um, could you tell me more about the stolen fishes, sir?"
         Fisherman "My fish, my precious fish were stolen!"
         FRai "Please explain it in detail, sir."
         Fisherman "Not so long ago, a biiig scary tiger entered my shop, and snatched some of my fish away!"
-
-        show FRai Annoyed
-        FRai "In even more detail, sir."
+        FRai Annoyed "In even more detail, sir."
         Meat_Butcher "It’s useless."
         FRai "Oh?"
         Meat_Butcher "So, around fifteen minutes ago, a catboy came to this shop."
         Meat_Butcher "He has messy pink hair. "
-
-        show FRai Serious
-        FRai "‘The inmate..!’"
+        FRai Serious "‘The inmate..!’"
         Meat_Butcher "At first he seemed like a normal customer, but then he grabbed some fish and ran out immediately."
         FRai "So you were here when it happened?"
         Meat_Butcher "Yep."
         Meat_Butcher "And he’s fast. There were some people in and outside this shop, but nobody could catch him."
-
-        show FRai Thinking
-        FRai "I see.."
+        FRai Thinking"I see.."
         Meat_Butcher "So? You’re gonna find him?"
         FRai "Yes. I said I would help."
         Fisherman "You really will help me?!"
         Fisherman "Such a good person! What can I do without your help..! Thank you, thank you!"
-
-        show FRai Nervous
-        FRai "Ahaha, you’re welcome."
+        FRai Nervous "Ahaha, you’re welcome."
         FRai "I’ll go search for the thief now. I’ll be back soon."
         Fisherman "Safe travels!"
         Meat_Butcher "It’s not like he’s gonna come back next week…"
@@ -821,14 +811,14 @@ label phase1:
         #[Screen fades to black]
 
         scene Market
+        show FRai Annoyed
         with fade
         #[SFX running footsteps]
-        show FRai Annoyed
         FRai Annoyed "Huff... huff…"
         FRai "So.. tired…"
         FRai "‘Where is he going..?’"
         FRai Surprised "!!!"
-        Felix "Heh. You were so focused on chasing me, you don’t realize I’m leading you to a corner."
+        Felix Default "Heh. You were so focused on chasing me, you don’t realize I’m leading you to a corner."
         Felix "Well, good luck chasing me, if you can. Byeee!"
 
         "The inmate climbed up the walls and left."
@@ -849,29 +839,29 @@ label phase1:
             #Fadeout Blackscreen
             #Flashback Filter? using tint/swirly effect?
             scene Market
+            show FRai Default
             with fade
-            show FRai Default with dissolve
             FRai Default "Please tell the Fisherman at the fish shop if you spot him!"
 
             jump scene1_3
 
     label scene1_3:
         scene Market
+        show FRai Default
         with fade
-        show FRai Thinking with dissolve
         FRai Thinking "‘If the inmate is back to the market.. I’ve told everyone to go to the fish shop if they see the inmate, so I’ve got more eyes to help me.’"
         FRai "‘And maybe the people at the market can catch him..’"
 
         #[Flashback filter]
         scene Fish Shop
-        with fade
         show MeatButcher Default
+        with fade
         Meat_Butcher "And he’s fast. There were some people in and outside this shop, but nobody could catch him."
 
         #[Screen fades to black]
         scene Market
+        show FRai Default
         with fade
-        show FRai Nervous
         FRai Nervous "‘Hopefully.’"
         FRai "‘But I think it’s safe to go to the village and search.’"
 
@@ -882,16 +872,19 @@ label phase1:
         FRai "‘Wow, it’s crowded in the morning.’"
 
         #[SFX 2 people bumping into each other]
-        show FRai Default 
+        show FRai Default at right 
+        show Villager Default at left
+        with dissolve
+        show FRai at center 
+        show Villager at center
+        with ease
         FRai Surprised "Uwah-" with vpunch
 
-        show Villager Default 
-        Villager "Aaaah! I’m so sorry!" with vpunch
-
-        show FRai Default at right with ease
-        FRai Nervous"Ah, no, it’s my fault. I was spacing out and didn’t notice you."
-
         show Villager Default at left with ease
+        Villager "Aaaah! I’m so sorry!" 
+
+        show FRai Nervous at right with ease
+        FRai Nervous "Ah, no, it’s my fault. I was spacing out and didn’t notice you."
         FRai "Wait, you’re the one at the market!"
         Villager "Oh! I remember you!"
         Villager "You asked me something about a catboy."
@@ -977,13 +970,13 @@ label phase1:
         show TalkingTree Default at right with dissolve
         Talking_Tree "Goood daaaayy, my child… Yoooourr faaacee loookss liiikeeee youuu cooulddd useee soomeee heeeelp..!"
 
-        show FRai Default at left with dissolve
+        show FRai Default at left with easeinleft
         FRai Surprised "EEEEE?!" with vpunch
         FRai "‘The talking tree.. you’re real!"
 
         #[CG 1 START]
-        show CG1
-        with fade
+        show CG1 with dissolve
+        $ persistent.cg1_unlocked = True
         Talking_Tree "Ha-ha-ha. Iiii ammm, myy chiiild.."
 
         #show FRai Surprised
@@ -997,7 +990,7 @@ label phase1:
         FRai "Okay!"
 
         #[CG 1 END]
-        hide CG1
+        hide CG1 with dissolve
         #[SFX footsteps]
 
         show FRai Happy
@@ -1016,41 +1009,31 @@ label phase1:
         FRai "There’s something on this tree.."
 
         #[Asset Scratches on tree]
-        show FRai Thinking
-        FRai "Scratches.. it could be caused by the inmate, or a wild animal."
+        show Scratches Zoom with dissolve
+        FRai Thinking "Scratches.. it could be caused by the inmate, or a wild animal."
         #[Asset Scratches on tree]
 
         #[Screen fades to black]
         scene Hill
+        show FRai Default
         with fade
-        FRai "Mr Talking Tree, do you know who did this?"
+        FRai Default "Mr Talking Tree, do you know who did this?"
         Talking_Tree "Oooohh yeeess Iiiii doooo, myyy chiiiildd.."
         Talking_Tree "Aaaaatt daaawwnn, theeereee waasss aaaa feeeliiinee laaaadd waaandeeeeriingg iiinn thiiiss fooorreeesst…"
-
-        show FRai Surprised
-        FRai "Feline lad? The catboy?!"
+        FRai Thinking "Feline lad? The catboy?!"
         FRai "Does he have pinkish bushy hair?"
         Talking_Tree "Heeee dooeeess...!"
         FRai "So he was here!"
-
-        show FRai Thinking
-
         FRai "What’s with the scratch though?"
         Talking_Tree "Iiii scaaareeedd hiiimm oofff! Heeee weeentt awaaayy iiinn hoorrooor..! Ha-ha-ha…!"
-
-        show FRai Happy
-        FRai "You like to play tricks, huh?"
+        FRai Happy "You like to play tricks, huh?"
         Talking_Tree "Iiii maaayy beee aaancieeent, buuut thaaaat wiiill neeeveerr hiiindeer myy frooliic…! Ha-ha-ha…!"
         FRai "Oh? How old are you, if.. you don't mind telling?"
         Talking_Tree "Hmmmmmmmmmmm…"
         Talking_Tree "Iiii dooo nooott knoooww.. Iiii haaavee beeenn heereee siinceee theeee aaancieeennt tiiimeeess..!"
         Talking_Tree "Iii doooo noooot reemembeer.. hooowww looongg Iiii haaaveee stoood…"
-
-        show FRai Surprised
-        FRai "Ooh.."
-
-        show FRai Thinking
-        FRai "Hmm, do you know what is the catboy here for, sir?"
+        FRai Surprised "Ooh.."
+        FRai Thinking "Hmm, do you know what is the catboy here for, sir?"
         Talking_Tree "Theee feeliineee seeemed tooo beee seeeaarchiing fooor sooomeethiing..! Iiiii dooo nooot knoooww whaaatt iitt iiiiss…"
         FRai "I see…"
         FRai "Mr talking tree, you can see this whole forest, right? Is the catboy here?"
@@ -1061,29 +1044,26 @@ label phase1:
         Talking_Tree "Areee youuu gooiiing tooo deeepaaarrt noooww, myy chiiildd..?"
         FRai "Yeah. I have to meet someone."
         Talking_Tree "Iiitt haaass beeen aaa greeaat deeliightt taaalkiiingg tooo yooouu, myyy chiiildd.. Iiitt haaass beeen aaaa looongg tiimeee siincee Iii laasstt haaadd aaa taalkk wiithh aanyoonee.."
-
-        show FRai Happy
-        FRai "Thank you for helping me too."
+        FRai Happy "Thank you for helping me too."
         FRai "Bye-bye, Mr talking tree!"
         Talking_Tree "Faaareeweell, myy chiildd…"
 
         #[SFX running footsteps]
-        show FRai Serious
-        FRai "‘I left the market for hours already. I have to go back!"
-
+        FRai Serious "‘I left the market for hours already. I have to go back!"
         #[Screen fades to black]
+
         scene Fish Shop
+        show Fisherman Default at center
         with fade
-        show Fisherman Default
-        show FRai Serious
-        FRai "I’m back! Any news?"
+        show FRai Default at right with easeinright
+        FRai Serious "I’m back! Any news?"
         Fisherman "This is terribly painful, but I have to say, there is no news."
         FRai "I see.."
         FRai "I’ll go search again."
         Fisherman "..."
 
         #[SFX footsteps]
-        show MeatButcher Default
+        show MeatButcher Default at left with dissolve
         Meat_Butcher "Hey."
         Meat_Butcher "You.. Why do you actually want to help? You got too much freetime?"
         FRai "Maybe."
@@ -1091,22 +1071,17 @@ label phase1:
         FRai "..Miss. Do you not trust me?"
         Meat_Butcher "Yeah, well.. you're pretty suspicious."
         Meat_Butcher "You came outta nowhere and just said you want to help."
-
-        show FRai Nervous
-        FRai "Ahaha.."
+        FRai Nervous "Ahaha.."
         FRai "'I hope she doesn't find out about my mission..'"
         Meat_Butcher "But, if you really want to help.."
         Meat_Butcher "That's very.. kind."
-
-        show FRai Surprised
-        FRai "..."
-        show FRai Happy
-        FRai "Thank you."
+        FRai Nervous "..."
+        FRai Happy "Thank you."
         FRai "I’m going to search more."
 
         #[SFX footsteps]
-        hide FRai_surprised
-
+        hide FRai Default with dissolve
+        show Fisherman Default at right with ease
         Fisherman "I’m going. I must help him."
         Meat_Butcher "Huh? Hey, wait!"
         Meat_Butcher "..."
@@ -1114,66 +1089,51 @@ label phase1:
 
         #[Screen fades to black]
         scene Market
+        show FRai Default
         with fade
         #[SFX running footsteps]
+        FRai Serious "‘Where.. where is he..’"
+        "AAAAAAAHH!! THIEF!! HELP!" with vpunch #the sound of Lady
+        show FRai Default at right with easeinright
+        FRai Surprised "‘What, again?’"
 
-        show FRai Serious
-        FRai "‘Where.. where is he..’"
-        "AAAAAAAHH!! THIEF!! HELP!" #the sound of Lady
-
-        show FRai Surprised
-        FRai "‘What, again?’"
-
-        show Felix Default
+        show Felix Default at left with easeinleft
         Felix "It’s you again..."
-
-        show Felix Smirk
-        Felix "You’re never gonna catch me!"
+        Felix Smirk "You’re never gonna catch me!"
 
         #[SFX running footsteps]
-        show FRai Serious
-        FRai "I will this time!!"
+        FRai Serious "I will this time!!"
 
         #[SFX running footsteps]
         "Chase scene ensues. The police officer and the inmate are running, jumping, and parkouring through the crowded market."
-
-        show FRai Serious
-        FRai "Excuse me!"
+        FRai Serious "Excuse me!"
         "Whoa!!" #the soud of Lady
         FRai "I’m sorry- whoa!"
         "Whoaah!" #the sound of Children
-
-        show FRai Nervous
-        FRai "‘Oh my God, I almost hit those children!"
+        FRai Nervous "‘Oh my God, I almost hit those children!"
         Felix "Ahaha! You can’t catch up to me, don’t you?" #show Felix Smirk?
         FRai "He’s too fast..! I have to do something to slow him down!"
 
         label scene1_3_1:
             scene Market
+            show FRai Default at right
             with fade
-            show FRai Default
             FRai "‘Wood plank..!’"
             #[SFX wood planks falling]
-            show FRai Serious
-            FRai "This is gonna hurt!"
+            FRai Serious "This is gonna hurt!"
 
             #[SFX wood plank go whoosh]
-            show Felix Annoyed
-            Felix "Ugh-!"
+            show Felix Annoyed at left with dissolve
+            Felix Annoyed "Ugh-!" with vpunch
             Felix "‘My back..!’"
-
-            show FRai Excited
-            FRai "‘Now’s my chance!’"
+            FRai Excited "‘Now’s my chance!’"
 
             #[SFX running footsteps]
-            Felix "‘Crap, he’s catching up!’ • ‘I can’t let it happen!’"
+            Felix "‘Crap, he’s catching up!’"
+            Felix "‘I can’t let it happen!’"
             #[SFX wooden barrel falling harshly (tabrak tabrakan)]
-
-            show Felix Smirk
-            Felix "My turn!"
-
-            show FRai Surprised
-            FRai "Whop-"
+            Felix Smirk "My turn!"
+            FRai Surprised "Whop-"
 
             menu:
                 "Evade":
@@ -1187,21 +1147,18 @@ label phase1:
 
             label scene1_3_1a1:
                 scene Market
-                with fade
-                "FRai jumps as high as he can, avoiding the wooden barrels rolling towards him. He fell a few times but that’s okay."
+                "Rai jumps as high as he can, avoiding the wooden barrels rolling towards him. He fell a few times but that’s okay."
 
                 #[SFX landing after jumping]
-                show FRai Serious
-                FRai "‘That was close..!’"
+                show FRai Default at right with dissolve
+                FRai Serious "‘That was close..!’"
 
-                show Felix Annoyed
-                Felix "Tch.."
-
-                show Felix Serious
-                FRai "‘Oh no, I’m falling behind..’ • ‘But he won’t get too far with that injury!’"
+                show Felix Default at left with dissolve
+                Felix Annoyed "Tch.."
+                FRai "‘Oh no, I’m falling behind..’"
+                FRai "‘But he won’t get too far with that injury!’"
 
                 #[SFX running footsteps]
-                show Felix Annoyed
                 Felix "‘Oh no you won't!’"
                 "Felix turned to a building and disappears behind it."
                 FRai "‘Where is he going..?’"
@@ -1210,13 +1167,13 @@ label phase1:
 
             label scene1_3_1a2:
                 scene Market
-                show FRai Surprised
-                FRai "Oh no-"
+                show FRai Default
+                FRai Surprised "Oh no-" with vpunch
 
                 #[Screen fades to black]
                 #[SFX wooden barrel falling harshly (tabrak tabrakan)]
 
-                "FRai may have some broken bones now."
+                "Rai may have some broken bones now."
 
                 jump scene1_3_1
 
@@ -1224,10 +1181,10 @@ label phase1:
                 scene Market
                 show FRai Surprised
                 FRai "!?"
-                FRai "Wait, where’s my gun!?"
+                FRai "Wait, where’s my gun!?" with vpunch
                 #[Screen fades to black]
                 #[SFX wooden barrel falling harshly (tabrak tabrakan)]
-                "FRai forgot he doesn’t have a weapon and his fists aren’t enough to destroy the wooden barrels."
+                "Rai forgot he doesn’t have a weapon and his fists aren’t enough to destroy the wooden barrels."
 
                 jump scene1_3_1
 
@@ -1236,48 +1193,36 @@ label phase1:
         scene Market
         with fade
         #[SFX people chattering (rame)]
-        show FRai Thinking
-        FRai "‘Where is he..’"
-
-        show FRai Annoyed
-        FRai "‘Ugh, I can’t find him in this crowd!’"
-
-        show FRai Thinking
-        FRai "‘But this crowd.. that means..’"
+        show FRai Thinking at right with easeinright
+        FRai Thinking "‘Where is he..’"
+        FRai Annoyed "‘Ugh, I can’t find him in this crowd!’"
+        FRai Thinking "‘But this crowd.. that means..’"
         "Hey, that’s the catboy that stole fishes!" #the sound of Cutlery Seller
         "Is that the thief the farmer boy was talking about?" #the sound of Woman
         "Someone catch him!" #the sound of Girl
         #[SFX people chattering but louder(rame)]
-
-        show FRai Happy
-        FRai "There he is! Nice!"
-
-        show Felix Annoyed
-        Felix "‘Ugh, that yellow head must’ve planned this..’"
+        FRai Happy "There he is! Nice!"
+        show Felix Default at left with dissolve
+        Felix Annoyed "‘Ugh, that yellow head must’ve planned this..’"
         Felix "‘If there’s a building I could climb..’"
         Felix "‘There it is!’"
         #[SFX landing on roof]
         "My shop roof!" #the sound of Vegetable and fruit seller
-
-        show FRai Serious
-        FRai "‘Oh no, he’s gonna climb to a higher building..’"
+        FRai Serious "‘Oh no, he’s gonna climb to a higher building..’"
         FRai "‘I have to climb too to catch him..!’"
         #[SFX climbing building]
         FRai "‘I gotta at least get to the highest floor of this building for a good view.’"
         "Uwaa?!" #sound of Shop customer
-
-        show FRai Nervous
-        FRai "‘Oh man, everyone from the window can see me..’"
+        FRai Nervous "‘Oh man, everyone from the window can see me..’"
         #[SFX landing on floor]
         FRai "‘Good thing this window is open. Now where is he.."
-
-        show FRai Surprised
-        FRai "There you are!"
+        FRai Surprised "There you are!"
 
         #[CG 2 START]
-        Felix "Oh, still not giving up?"
-        FRai "I’m the one who should’ve said that!"
-        #show FRai Annoyed
+        show CG2 with dissolve
+        $ persistent.cg2_unlocked = True
+        Felix Default "Oh, still not giving up?"
+        FRai Annoyed "I’m the one who should’ve said that!"
         FRai "‘Tch! I can’t jump to that roof..!"
         FRai "I can throw something, but it’s useless from this distance.."
         Felix "Ha. Why are you so persistent?"
@@ -1289,94 +1234,74 @@ label phase1:
         Felix "You know you can’t match my speed, right? Yet you’re trying to chase me."
         FRai "..."
         #[CG 2 END]
+        hide FRai Default
+        hide Felix Default
 
-        scene Market
+        scene Market 
+        show FRai Default at right
+        show Felix Default at left
         with fade
-        Felix "It’s useless. If i were you, I would give up."
-        "FRai pulls out a handcuff."
-        FRai "There’s now way I’m giving up after all I did to find you!"
-
-        show FRai Annoyed
-        Felix "Ha,of course."
+        Felix Default "It’s useless. If i were you, I would give up."
+        "Rai pulls out a handcuff."
+        FRai Default "There’s now way I’m giving up after all I did to find you!"
+        Felix "Ha, of course."
         Felix "IPD."
         #[Screen fades to black]
 
         scene Fish Shop
+        show Felix Default at right
         with fade
-        show Felix Annoyed
-        Felix "I’m not going back there!"
+        Felix Annoyed "I’m not going back there!"
+        FRai Surprised "He’s going to jump down..!"
+        Felix Smirk "Ha! Goodbye, slowpoke!"
 
-        show FRai Surprised
-        FRai "He’s going to jump down..!"
-
-        show Felix Smirk
-        Felix "Ha! Goodbye, slowpoke!"
-
-        show Fisherman Default
-        show Felix Surprised
+        show Fisherman Default at left with dissolve
+        show Felix Surprised at right with easeinright
+        show Felix Default at center with ease
         Felix "Get outta my way-"
+        show Fisherman Default at center with ease
         #[SFX punch]
-
-        show Felix Hurt
-        Felix "AAARGHH!!"
-
-        show FRai Surprised
-        FRai "Whoa."
+        Felix Hurt "AAARGHH!!" with vpunch
+        hide Felix Default with dissolve
+        show FRai Default at left with easeinleft
+        FRai Surprised "Whoa."
         FRai "You.. you punched him mid-air.."
         Fisherman "I-i did it!!!"
         Fisherman "I defeated him.. Did… did you see that, young man?  I defeated him!!"
-
-        show FRai Happy
-        FRai "You defeated him!!"
+        FRai Happy "You defeated him!!"
         "YEAAAHH!!" #the sound of Crowd
         #[SFX crowd cheering]
         Fisherman "My deepest thanks, really…"
         Fisherman "You’ve chased this tiger everywhere, without rest and without complaint!"
-
-        show FRai Happy
         FRai "That's too much.. but thank you."
 
-        show MeatButcher Default
+        show MeatButcher Default at left with dissolve
+        show FRai Default at center 
+        show Fisherman Default at right
+        with ease
         Meat_Butcher "Nice job, kid."
-
-        show FRai Sad
-        FRai "I’m not a kid.."
+        FRai Sad "I’m not a kid.."
         "Hahaha!" #the sound of Crowd
         FRai "'These people.. they're all kind.'"
         FRai "'I can't do much without all the people I've met. I can't succeed my mission without them.'"
-
-        show FRai Serious
-        FRai "Alright now, catboy.."
+        FRai Serious "Alright now, catboy.."
         FRai "Pay for the fish that you stole."
-
-        show Felix Annoyed
-        Felix "Ugh.."
+        Felix Annoyed "Ugh.."
         Felix "Here."
-
-        show FRai Annoyed
-        FRai "Whaat, so you have money all this time?"
+        FRai Annoyed "Whaat, so you have money all this time?"
         FRai "Should have paid for it instead of adding some list to your already existing crimes."
-
-        show Felix Hurt
-        Felix "..."
+        Felix Hurt "..."
         FRai "Well, we’re gonna have lots to talk about when we get back to... Where you’re supposed to be."
-
-        show Felix Annoyed
-        Felix "Ugh…"
+        Felix Annoyed "Ugh…"
         FRai "Here’s your money, Mr. Fisherman. Here’s yours, and here’s yours, miss."
         FRai "And I’ll be taking this catboy with me."
-
-        show FRai Happy
-        FRai "Alright, everything’s done then."
+        FRai Happy "Alright, everything’s done then."
         FRai "I shall pack my things up"
         Fisherman "Thank you, once again!"
         Meat_Butcher "Thanks."
         Felix  "...Hey officer."
-
-        show FRai Surprised
-        FRai "Eh? W-what do you have there?!"
-        show FRai Thinking
-        FRai "Where did you get this?"
+        FRai Surprised "Eh? W-what do you have there?!"
+        FRai Thinking "Where did you get this?"
         FRai "A..."
         FRai "Code?"
 
