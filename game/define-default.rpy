@@ -266,6 +266,13 @@ image CG2:
     zoom 0.5
 default persistent.cg2_unlocked = False
 
+image CG7:
+    "CGs/CG_7.png"
+image CG8:
+    "CGs/CG_8.png"
+image CG9:
+    "CGs/CG_9.png"
+
 #Assets
 image Scratches Zoom = "Asset/Hebi/Tree_2_zoom.png"
 
