@@ -8,8 +8,19 @@ default chosen_trial = ""
 default trial_market = False
 default trial_cave = False
 
+init:
+    #position 1-5 from left to right
+    $ pos1 = Position(xpos=0.1)
+    $ pos2 = Position(xpos=0.3)
+    $ pos3 = Position(xpos=0.5)
+    $ pos4 = Position(xpos=0.7)
+    $ pos5 = Position(xpos=0.9)
+
+
+
 label phase3:
 
+    play music audio.IPD loop
     scene IPD WORKPLACE
     with fade
 
@@ -27,7 +38,8 @@ label phase3:
     "His number one favorite drink to accompany him \nthrough all the paperwork of the day. "
     "He takes a sip as he sits down on his chair."
 
-    show Rai Default
+    show Rai Default at pos3
+
     Rai Default "Ah.. another day with my wife, Shigoto-san."
     Rai Default "Hmm, let's see what I have to do today."
 
@@ -37,8 +49,8 @@ label phase3:
 
     "While Rai was tidying up the papers that were on \nhis desk, one of his Galilean coworkers came by his table."
 
-    show Rai Default at right with easeinright
-    show Galilean_1 Default at left with easeinleft
+    show Rai Default at pos4 with easeinright
+    show Galilean_1 Default at pos2 with easeinleft
 
     Galilean_1 Default "Good morning! Sorry to disturb you \nso early in the morning…"
 
@@ -78,7 +90,7 @@ label phase3:
         #[ Rai Appears ]
 
         #Rai (confused):
-        show Rai Surprised
+        show Rai Surprised at pos3
 
         Rai Surprised "Wait, what…?"
 
@@ -120,9 +132,10 @@ label phase3:
         "He suddenly crashes with a Galileian that seems to be in a hurry."
 
         #[ SFX Bump ]
+        play sound audio.bump
         #[ Galilean 1 Appears ]
-        show Rai Default at right with hpunch
-        show Galilean_1 Default at left with easeinleft
+        show Rai Default at pos4 with hpunch
+        show Galilean_1 Default at pos2 with easeinleft
 
         #Galilean 1:
         Galilean_1 Default "Oh, I’m sorry Sir Rai. Are you okay?"
@@ -146,8 +159,8 @@ label phase3:
 
         "When the Galilean leaves, Rai enters the meeting room and sees that no one is there except for his boss."
 
-        show Rai Default at right with easeinright
-        show Boss Default at left with easeinleft
+        show Rai Default at pos4 with easeinright
+        show Boss Default at pos2 with easeinleft
 
         #Rai (confused):
         Rai Thinking "What happened Boss? Am I late?"
@@ -230,27 +243,35 @@ label phase3:
         #Galilean 1:
         Galilean_1 Default "Very well sir, we will provide you with the gear."
 
+        stop music fadeout 0.5
+
         #[ BLACKSCREEN ]
 
         jump intro_p3_3_2
 
     label intro_p3_3_2:
         #[ Cell ]
-        scene Jail Red
+        play music audio.IPD_cell loop
+        scene Jail
         with fade
 
-        "As Rai walks to the cell room, a shadow flashes from his left side and bumps his body, almost knocking him down."
-        show Rai Default with hpunch
+        show Rai Default
+        play sound audio.bump
+        "As Rai walks to the cell room, a shadow flashes from his left side and bumps his body, almost knocking him down." with hpunch
+
         #[ SFX Crash ]
         "Luckily his body reflex helped him to stand back up straight."
         "The figure that hit him left as quickly as it came. Rai spots a glimpse of animal-like fur."
         "Rai feels a bit dizzy and tries to figure out what happened."
 
         #[ SFX Sirens ]
+        play ambience audio.siren_loop
 
-        "Sirens roared through the room, a sign that a prisoner had escaped."
+        scene Jail Red
 
         show Rai Default
+
+        "Sirens roared through the room, a sign that a prisoner had escaped."
 
         #Galilean 3:
         Galilean_3 Default "Sir Rai, there's a Jailbreaker on the loose!"
@@ -271,6 +292,7 @@ label phase3:
         Rai Serious "Chasing a suspect of jailbreak, based on the characteristics of cat-like fur."
 
         #[SFX Inhale]
+        play sound audio.inhale
 
         #Rai (serious):
         Rai Serious "State of the Arts, Engage!"
@@ -313,8 +335,8 @@ label phase3:
         #Rai (serious):
         Rai Serious "It's you… Catboy."
 
-        show Felix Default with easeinleft
-        show Rai Default at right with easeinright
+        show Rai Default at pos4 with easeinright
+        show Felix Default at pos2 with easeinleft
 
         #Felix Lynx (smirk) :
         Felix Smirk "Yes yes, it's me blondie. Felix Lynx! AHAHAHA!"
@@ -322,10 +344,15 @@ label phase3:
         "As Felix leaps towards Rai. He prepares to lunge into him."
 
         #[SFX jump and claw]
+        play sound audio.jump
+        queue sound audio.claw
 
         "The height of the attack forced Rai into a defensive position, as Felix's claw swipes and kicks continued to attack him." with vpunch
 
         #[SFX punch and wush wush (parrying punch) (berkali kali)]
+        play sound audio.punch
+        queue sound audio.punch
+        queue sound audio.parrying_punch
 
         "Parrying attack after attack, Rai manages to hold his own."
         "But Felix's half-animal physiology clearly had the advantage in both stamina and attack power, forcing Rai to act defensively."
@@ -334,6 +361,7 @@ label phase3:
         Rai Serious "Khh, melee attacks. I have to admit, this is difficult."
 
         #[SFX punch]
+        play sound audio.punch
 
         "A deceptive punch shot comes from Felix, forcing Rai to change his stance to defend stronger." with hpunch
         "The pause that was created made him manage to land a deadly scratch on Rai's face, which was unexpectedly blocked by Rai."
@@ -349,6 +377,7 @@ label phase3:
         Rai Excited "Now it's my turn!! Niji-iro!!!"
 
         #[SFX electric]
+        play sound audio.electric_loop loop fadeout 1.0
 
         "SotA particles condense in Rai's iris."
         "It glows like a rainbow, increasing responsiveness and reactivity to the opponent's movements."
@@ -364,9 +393,14 @@ label phase3:
         Felix Annoyed "THIS BLONDIE!!!" with hpunch
 
         #[SFX clawing (berkali kali)]
+        play sound audio.claw
+        play sound audio.claw
+        play sound audio.claw
 
         "Felix wields a sharp claw, forcing Rai to keep his distance and uses that time to run away."
         "Not wasting much time, Rai immediately pursues him, not letting him escape."
+
+        play sound audio.electric_loop loop fadeout 1.0
 
         "Rai's fast pace is immediately controlled by manifesting the Lorentz Rule on his fingers."
         "Firing solid particles of electricity as the intended target tries to dodge him."
@@ -375,6 +409,10 @@ label phase3:
         "He tries to knock down any object he can spot along the aisles of the storage warehouse."
 
         #[SFX throwing objects (berkali kali)]
+        play sound audio.throw
+        queue sound audio.throw
+        queue sound audio.throw
+        queue sound audio.throw
 
         "Gallons, paint cans, iron trellises, whatever clang along the warehouses' walls Felix can throw on Rai’s way." with hpunch
         "But Rai finds a way to evade the random obstacles this catboy makes."
@@ -383,6 +421,7 @@ label phase3:
         Rai Serious "Hah! Just like an actual cat huh."
 
         #[SFX Electric]
+        play sound audio.electric_loop loop fadeout 1.0
 
         "Rai pumps electric jumps on his soles."
         "He uses a wooden plank as a support to jump somersaults." with vpunch
@@ -392,6 +431,7 @@ label phase3:
         "He throws it like a shuriken, which he injected electric SotA particles into."
 
         #[SFX throwing screwdriver (wushh kaya shuriken)]
+        play sound audio.throw
 
         "And strike! The screwdriver just stabs Felix's calf." with hpunch
         "Without wasting time, Rai immediately uses it to cut the distance by condensing SotA particles to increase his jumping power."
@@ -404,11 +444,13 @@ label phase3:
         Felix Hurt "UWAAAAGH!"
 
         #[ SFX Kick ]
+        play sound audio.kick
 
         "Landing a knee strike on the nape of the suspect." with hpunch
         "The target was successfully immobilized."
 
         #[ SFX Exhale ]
+        play sound audio.exhale
         #Rai (default) :
         Rai Default "State of the Arts, Terminate."
 
@@ -422,6 +464,8 @@ label phase3:
         Rai Serious "Target has been immobilized."
         Rai Serious "I'll bring the suspect back to his cell for further inspection."
         Rai Serious "Galilei out."
+
+        stop ambience fadeout 1.0
 
         hide Rai Default
         hide Felix Default
@@ -464,12 +508,19 @@ label phase3:
         #[ Rai Leaves ]
         #[ Black Screen ]
 
+        stop music fadeout 1.0
+
         jump intro_p3_3_3
 
     label intro_p3_3_3:
         #[ FARM ]
         scene Farm
         with fade
+
+        play music audio.farm loop
+
+        play sound audio.chickens
+        queue sound audio.ducks
 
         "Arriving at the farm, Rai was greeted by the sound of different farm animals from the little chickens and ducks to much bigger ones like sheep, horses, and cows."
         "He looks at his watch waiting for the other Galileis to finish tracking the hideouts that were shown on the map earlier."
@@ -491,6 +542,8 @@ label phase3:
         #Rai  (happy) :
         Rai Happy "Bingo, there you are."
 
+        play sound audio.cows
+
         "Rai goes inside the building, approaching a cow that is having their meal time."
 
         #Rai (happy) :
@@ -498,6 +551,9 @@ label phase3:
 
         "Rai grabbed some extra hay near the entrance."
         "As if the cow knew this one human gives extra food, it eats the hay Rai gave with passion."
+
+        play sound audio.cows
+
         "Another cow seemed to get jealous from the first cow getting extra hay so it started making noises asking for the same."
 
         #Rai (surprised) :
@@ -511,6 +567,7 @@ label phase3:
         Rai Excited "Eat more, grow more, and be the strongest cow in the world!!!"
 
         #[SFX  Rai petting Cow noises they said www ]
+        play sound audio.cows
 
         "When Rai was enjoying petting the cows, beeping came from his communication device."
 
@@ -531,9 +588,13 @@ label phase3:
 
         "Rai then parts ways with all the cows and all the other farm animals then goes to the place where the squad is waiting for him."
 
+        stop music fadeout 1.0
+
         #[ CAVE ]
         scene caveTunnel
         with fade
+
+        play music audio.cave_bgm loop
 
         "An Artemisia gives the command to Rai Galilei from the data that they successfully got from the communication device."
         "And from the looks of it, it’s like some sort of cave."
@@ -553,21 +614,30 @@ label phase3:
         Rai Serious "Galileans check inside the cave!"
         Rai Serious "I will stand by here in case something happens."
 
-        show Rai Default at right with easeinright
-        show Galilean_1 Default with easeinright
-        show Galilean_2 Default with easeinright
-        show Galilean_3 Default with easeinright
+        show Rai Default at pos5 with easeinright
+        show Galilean_1 Default at pos1 with easeinright
+        show Galilean_2 Default at pos2 with easeinright
+        show Galilean_3 Default at pos3 with easeinright
 
         #Galileans :
         Galileans "Ten-four!"
 
         "All three officers start entering the cave with caution."
 
+        show Rai Default at pos3
+        hide Galilean_1 Default
+        hide Galilean_2 Default
+        hide Galilean_3 Default
+
         #[ SFX Wind and Footstep ]
-        "The Galileans came out holding the criminal tightly as they walked out of the cave."
+        play ambience audio.wind
+        play sound audio.footsteps loop
+
         "They marched down the hill."
         "The wind blowing filled the silence between them."
         "Suddenly the communication device held by Rai rang."
+
+        stop sound fadeout 1.0
 
         #Galilean 1 :
         Galilean_1 Default "We found the suspect sir."
@@ -588,9 +658,16 @@ label phase3:
         "Rai doesn't handcuff her because she wants to cooperate."
         "Rai glanced at her. They are now going to the other pinged location."
 
+        stop music fadeout 1.0
+        stop ambience fadeout 1.0
+
         #[ Waterfall ]
-        show waterfallDay
+        scene waterfallDay
         with fade
+
+        play music audio.waterfall_bgm loop fadeout 1.0
+
+        show Rai Default
 
         #Artemisia (no sprite, in call) :
         Artemisia Default "This is the last location."
@@ -621,18 +698,20 @@ label phase3:
         "After Rai and all the Galileans meet at the meeting point."
         "They prepare to go back to the farm."
 
+        show Rai Default at pos4 with easeinright
+        #show elsyne at pos2 i guess
+
         #Rai (default) :
         Rai Default "Before we’re leaving, is there anything else you need to do…?"
 
         #??? (Elysine):
         Unknown "Nope, I’m fine..."
-        Unknown "I’ve left my farewell letter at home who kept me at her house."
+        Unknown "I’ve left my farewell letter."
         Unknown"She should have found it later."
 
-        hide Rai Default
-        hide Galilean_1 Default
-        hide Galilean_2 Default
+        Rai Thinking "???"
 
+        stop music fadeout 1.0
 
         jump intro_p3_3_4
 
@@ -640,6 +719,8 @@ label phase3:
         #[ FARM ]
         scene Farm
         with fade
+
+        play music audio.farm loop fadeout 1.0
 
         "They arrived at the farm with both suspects."
         "The suspects get sent back to IPD first with the Galileans while Rai observes the surroundings for the last time before he joins them back at IPD."
@@ -668,23 +749,27 @@ label phase3:
 
         "Rai went inside the barn."
 
+        stop music fadeout 1.0
+
         jump wyen_1
 
     label wyen_1:
         #[SCENE 1]
         #[Black Screen]
 
+        play music audio.barn loop fadeout 1.0
+
         "Inside the barn…"
 
         #[SFX Barn’s door open]
+        play sound audio.barn_door
 
         #[Inside Barn]
-        scene Barn
-        with fade
 
         #[CG opt. 7 Start]
         show CG7
         with fade
+        $ persistent.cg7_unlocked = True
 
         #Rai (Confused): “
         Rai Thinking "Huh? Weird…"
@@ -705,6 +790,7 @@ label phase3:
         Rai Default "Hmmm…Let’s see…"
 
         #[SFX footstep but on pretty grassy (?) surface (as in the barn) because of hay]
+        play sound audio.footsteps_grass loop fadeout 1.0
 
         #Rai (Default):
         Rai Default "I wonder why this barn is so empty, where are the animals?"
@@ -717,6 +803,8 @@ label phase3:
         #Rai (Happy):
         Rai Happy "Ah!"
 
+        stop sound fadeout 1.0
+
         #[CG opt 7 End]
         hide CG7
 
@@ -725,10 +813,12 @@ label phase3:
         with dissolve
 
         #[SFX footstep but on pretty grassy (?) surface (as in the barn) because of hay but shorter because Rai approaching the cow]
+        play sound audio.footsteps_grass
 
         #Rai (Happy):
 
-        show Rai Default
+        show Rai Default at pos4 with easeinright
+        show Cow Default at pos2 with easeinleft
 
         Rai Happy "There you are Ushi-san!"
         Rai Happy "How do you get here?"
@@ -737,8 +827,11 @@ label phase3:
         #[SFX something flying “whusssh” and then SFX something metallic (pitchfork) hit the wall]
         #[While the metallic SFX plays blink the screen with white screen]
 
+        play sound audio.pitchfork_whoosh
+        queue sound audio.pitchfork_hit
+
         #Rai (Surprised):
-        Rai Surprised "What the-"
+        Rai Surprised "What the-" with hpunch
         Rai Surprised "This is… a pitchfork!?"
         Rai Surprised "Why’s there’s a pitchfork flying towards me?!-"
 
@@ -751,6 +844,7 @@ label phase3:
         #[Farmer ga kita]
 
         show Rai Default at right with easeinright
+        show Cow Default at left with easeinleft
         show Farmer Default with easeinright
 
         #Farmer:
@@ -811,12 +905,14 @@ label phase3:
         Farmer "SHUT UP! I’M GONNA FORCE YOU TO GET OUT NOW!" with hpunch
 
         #[SFX running (farmer run to Rai)]
+        play sound audio.running loop
 
         #Rai (Serious):
         Rai Serious "(Oh shit! He’s coming!)"
 
         #[Screen blinking with white screen]
         #[SFX running stopped]
+        stop sound
 
         #???:
         Unknown "*chuckle*"
@@ -826,9 +922,11 @@ label phase3:
         Rai Surprised "Wha- who’s talking-"
 
         #[Wyen’s cow form appear]
+        hide Cow Default
+        show Cow WyenColor at left
 
         #Wyen (Cow) (Default):
-        Cow "Hello Mr. police officer, or should I say… Mr. Rai Galilei."
+        Cow WyenColor "Hello Mr. police officer, or should I say… Mr. Rai Galilei."
 
         #Rai (Surprised):
         Rai Surprised"The cow’s… talking!? And how does it know my name!?"
@@ -841,36 +939,36 @@ label phase3:
         Rai Surprised "Wyen-sama…?"
 
         #Wyen (Cow) (Default):
-        Cow "Aww farmer, it’s okay, it’s not your fault."
-        Cow "I have gotten pretty bored lately anyway."
+        Cow WyenColor "Aww farmer, it’s okay, it’s not your fault."
+        Cow WyenColor "I have gotten pretty bored lately anyway."
 
         #Farmer:
         Farmer "Yes, Wyen-sama."
 
         #Wyen (Cow) (Default):
-        Cow "So Mr. Rai Galilei…You must be very confused."
-        Cow "I’m sorry, now let me introduce myself properly."
-        Cow "My name is Wyen Aster. You can say that I'm the master of this place."
+        Cow WyenColor "So Mr. Rai Galilei…You must be very confused."
+        Cow WyenColor "I’m sorry, now let me introduce myself properly."
+        Cow WyenColor "My name is Wyen Aster. You can say that I'm the master of this place."
 
         #Rai (Serious):
         Rai Serious "Master… of this place? Wha-What do you mean?"
 
         #Wyen (Cow) (Default):
-        Cow "Owh, there’s no other meaning. It’s just what it is."
+        Cow WyenColor "Owh, there’s no other meaning. It’s just what it is."
 
         #(Delay)
 
         #Wyen (Cow) (Default):
-        Cow "By the way…"
-        Cow "*giggle* My My, You’re pretty cute for a police officer, don’t you?"
-        Cow "Not to mention you called me ‘Ushi-san’ before... *giggle* that’s so cute."
+        Cow WyenColor "By the way…"
+        Cow WyenColor "*giggle* My My, You’re pretty cute for a police officer, don’t you?"
+        Cow WyenColor "Not to mention you called me ‘Ushi-san’ before... *giggle* that’s so cute."
 
         #Rai (Surprised/Flustered):
         Rai Surprised "Wha- What are you talking about!?"
         Rai Surprised "T-that’s not your problem and- and I’m not cuteeee!"
 
         #Wyen (Cow) (Default):
-        Cow "*giggle* You said you’re not cute but look how cute you are when you’re flustered."
+        Cow WyenColor "*giggle* You said you’re not cute but look how cute you are when you’re flustered."
 
         #Rai (Surprised/Flustered):
         Rai Surprised "Ngh…Anyway!"
@@ -879,7 +977,7 @@ label phase3:
         Rai Serious "So, if you’re the master of this place, then you’re the mastermind who’s pulling the strings behind all of these events right?"
 
         #Wyen (Cow) (Default):
-        Cow "Hmmm… For now, I’ll leave it to your imagination Mr. Rai Galilei because… it won’t be fun if i tell you now right?"
+        Cow WyenColor "Hmmm… For now, I’ll leave it to your imagination Mr. Rai Galilei because… it won’t be fun if i tell you now right?"
 
         #[Suddenly the screen is shaking]
 
@@ -888,27 +986,29 @@ label phase3:
 
         #[Screen shaking again while blinking with white screen]
         #[Suddenly a door to Wyen’s secret chamber appear]
+        play sound audio.door_open
 
         #Rai (Surprised):
         Rai Surprised "Is that… a door?"
 
         #Wyen (Cow) (Default):
-        Cow "Well Mr. Rai Galilei, if you want to know more, I'll be waiting in my chamber… but before that…"
-        Cow "You must face some trials first that will open this door."
+        Cow WyenColor "Well Mr. Rai Galilei, if you want to know more, I'll be waiting in my chamber… but before that…"
+        Cow WyenColor "You must face some trials first that will open this door."
 
         #Rai (Surprised):
         Rai Surprised "Trials…?"
 
         #Wyen (Cow) (Default):
-        Cow "Yes and farmer, can you please accompany him and explain the trials to Mr. Rai Galilei?"
+        Cow WyenColor "Yes and farmer, can you please accompany him and explain the trials to Mr. Rai Galilei?"
 
         #Famer:
         Farmer "Gladly, Wyen-sama."
 
         #Wyen (Cow) (Default):
-        Cow "Thank you farmer, well then… Ushi ma balls later I guess *giggle*"
+        Cow WyenColor "Thank you farmer, well then… Ushi ma balls later I guess *giggle*"
 
         #[Wyen’s cow form disappear]
+        hide Cow WyenColor
 
         #Rai (Serious):
         Rai Serious "Wait-! *gasp* that cow just disappeared!"
@@ -928,8 +1028,7 @@ label phase3:
 
     label wyen_2:
 
-        show Rai Default at right with easeinright
-        show Farmer Default
+        show Farmer Default at pos2 with easeinleft
 
         #Farmer:
         Farmer "Well… now Mr. Rai, as Wyen-sama said earlier, shall I explain these trials to you?"
@@ -997,6 +1096,9 @@ label phase3:
                 #Farmer:
                 "Understood, let me escort you there."
 
+                play sound audio.footsteps
+                stop music fadeout 1.0
+
                 #[SFX footsteps]
                 #[Fade out Black Screen]
 
@@ -1008,6 +1110,9 @@ label phase3:
 
                 #Farmer:
                 "Understood, let me escort you there."
+
+                play sound audio.footsteps
+                stop music fadeout 1.0
 
                 #[SFX footsteps]
                 #[Fade out Black Screen]
@@ -1022,8 +1127,10 @@ label phase3:
         scene Market
         with fade
 
-        show Rai Default at right with easeinright
-        show Farmer Default
+        play music audio.market loop fadeout 1.0
+
+        show Rai Default at pos4 with easeinright
+        show Farmer Default at pos2 with easeinright
 
         #Farmer:
         Farmer "We have arrived Mr. Rai. Welcome to the Fish Shop’s second floor"
@@ -1046,6 +1153,7 @@ label phase3:
 
         #[Only BG]
         #[SFX footsteps]
+        play sound audio.footsteps
 
         #Farmer:
         Farmer "Now, we are here."
@@ -1064,6 +1172,7 @@ label phase3:
         Farmer "Please wait a second, I'll take care of this."
 
         #[SFX clicking (?) the finger (Farmer click(?) his finger)]
+        play sound audio.finger_snap
         #[BG darkened]
 
         #Rai (Surprised):
@@ -1104,6 +1213,9 @@ label phase3:
         Farmer "2…"
         Farmer "1…"
         Farmer "Start!"
+
+        hide Rai Default
+        hide Farmer Default
 
         menu trial_market_q1:
             "What is 3 x 2?"
@@ -1246,8 +1358,8 @@ label phase3:
             jump wyen_bad_end_1
 
         #Farmer:
-        show Rai Default at right with easeinright
-        show Farmer
+        show Rai Default at pos4 with easeinright
+        show Farmer Default at pos2 with easeinright
 
         Farmer "You have answered all the questions."
         Farmer "Now let us see how much score you get."
@@ -1261,6 +1373,7 @@ label phase3:
         Rai Happy "Phew…"
 
         #[SFX ceklek likes something unlocked]
+        play sound audio.unlock
 
         #Rai (Surprised):
         Rai Surprised "Wow, that surprised me!"
@@ -1272,9 +1385,12 @@ label phase3:
         Rai Default "Eh? O-okay."
 
         #[SFX Krincing key]
+        play sound audio.key
 
         #Rai (Surprised):
-        Rai Surprised "WHOA!!! • A.. Key? • FROM THE SKY!!?? ."
+        Rai Surprised "WHOA!!!"
+        Rai Surprised "A.. Key?"
+        Rai Surprised "FROM THE SKY!!??"
 
         #Farmer:
         Farmer "That’s the key for completing this trial."
@@ -1331,6 +1447,8 @@ label phase3:
             #Farmer:
             Farmer "Good, now follow me."
 
+            stop music fadeout 1.0
+
             jump wyen_2_3
         else:
             #Rai (Default):
@@ -1353,20 +1471,30 @@ label phase3:
             #Rai (Default):
             Rai Default "Okay, let’s go!"
 
+            stop music fadeout 1.0
+
             jump wyen_2_2
         return
 
     label wyen_2_2:
         #[Black Screen]
+        show black
+        with fade
+
+        pause(0.8)
 
         "Inside the cave…"
+
+        pause(0.8)
+
+        play music audio.cave_bgm loop fadeout 1.0
 
         #[Inside Cave]
         scene caveTunnel with fade
         #[SFX Cave Ambience]
 
-        show Rai Default at right with easeinright
-        show Farmer Default
+        show Rai Default at pos4 with easeinright
+        show Farmer Default at pos2 with easeinright
 
         #Farmer:
         Farmer "Welcome to the cave, Mr. Rai Galilei."
@@ -1384,11 +1512,12 @@ label phase3:
 
         #[Only BG]
         #[SFX footsteps]
+        play sound audio.footsteps loop
         scene caveNyabang
         with fade
 
-        show Rai Default at right with easeinright
-        show Farmer Default
+        show Rai Default at pos4 with easeinright
+        show Farmer Default at pos2 with easeinright
 
         #Rai (Default):
         Rai Default "So, Sir Farmer, how long have you been together with that cow?"
@@ -1428,8 +1557,12 @@ label phase3:
         scene caveFinal
         with fade
 
-        show Rai Default at right with easeinright
-        show Farmer Default
+        pause (1.0)
+
+        stop sound fadeout 1.0
+
+        show Rai Default at pos4 with easeinright
+        show Farmer Default at pos2 with easeinright
 
         #Farmer:
         Farmer "This is the place Mr. Rai."
@@ -1480,6 +1613,9 @@ label phase3:
         Farmer "2…"
         Farmer "1…"
         Farmer "Start!"
+
+        hide Rai Default
+        hide Farmer Default
 
         menu trial_cave_q1:
             "What is the seventh planet from the sun"
@@ -1608,12 +1744,13 @@ label phase3:
 
         if skor_trial_cave >= 5:
             #Farmer:
-            show Rai Default at right with easeinright
-            show Farmer Default
+            show Rai Default at pos4 with easeinright
+            show Farmer Default at pos2 with easeinright
 
             Farmer "You have answered all the questions."
             Farmer "Now let's see how much score you get."
             Farmer "Your score is…"
+            pause(1.0)
             Farmer "[skor_trial_cave]/10"
             $ trial_cave = True
             pass
@@ -1642,7 +1779,8 @@ label phase3:
         Farmer "Oh and here’s the key that you get from this trial."
 
         #[SFX “Krincing” key]
-
+        play sound audio.key
+        pause (1)
 
         if trial_market:
             #Farmer:
@@ -1717,6 +1855,8 @@ label phase3:
             #Rai (Default):
             Rai Default "Okay, let’s go!"
 
+            stop music fadeout 1.0
+
             jump wyen_2_1
         return
 
@@ -1726,15 +1866,18 @@ label phase3:
         $ skor_trial_market = 0
         $ skor_trial_waterfall = 0
 
-        show Rai Default at right with easeinright
-        show Farmer Default
+        show Rai Default at pos4 with easeinright
+        show Farmer Default at pos2 with easeinright
 
         #Farmer:
         Farmer "Well, it seems that you have failed this trial Mr. Rai Galilei."
         Farmer "It’s really unfortunate… but goodbye Mr. Rai."
 
         #Rai (Sad):
-        Rai Sad "No-!"
+        Rai Sad "Nooo-!"
+
+        hide Rai Default
+        hide Farmer Default
 
         #[Bad End screen]
 
@@ -1743,17 +1886,22 @@ label phase3:
 
     label wyen_bad_end_2:
 
-        show Rai Default at right with easeinright
-        show Farmer Default
+        scene Wyen Chamber
+        with fade
+
+        show Rai Default at pos4 with easeinright
+        show Wyen Default at pos2 with easeinleft
 
         #Wyen (Evil):
         Wyen Manic "So that’s your only power huh"
-        Wyen Manic "*sigh* looks like i overestimated your power…"
+        Wyen Manic "*sigh* looks like I overestimated your power…"
 
         #Rai (Serious):
-        Rai Serious "Shit…"
+        Rai Serious "No…"
 
         #[SFX nginggg like the bomb want to explode]
+        play sound audio.bomb_nging_loop_fadein
+        pause(1.0)
 
         #Wyen (Evil):
         Wyen Manic "*chuckle* Well, It was a good time to know you Mr. Rai Galilei."
@@ -1761,21 +1909,35 @@ label phase3:
         Wyen Manic "Sayonara… Mr. Police Officer…"
 
         #[SFX nginggg like the bomb want to explode instesifying and explode]
+        play sound audio.bomb_nging_loop_fadein
+        pause(1.0)
+        show black
+        with fade
+        pause(5.0)
+
+        show CG8
+        with fade
 
         jump wyen_ft_q1
 
     label wyen_2_3:
         #[Black Screen]
+        show black
+        with fade
+        pause(0.8)
 
         "In the Waterfall…"
+        pause(0.8)
 
         #[Waterfall]
         #[SFX Waterfall]
-        scene waterfallDay
+        scene waterfallNight
         with fade
 
-        show Rai Default at right with easeinright
-        show Farmer Default
+        play music audio.waterfall_loop loop fadeout 1.0
+
+        show Rai Default at pos4 with easeinright
+        show Farmer Default at pos2 with easeinright
 
         #Rai (Happy):
         Rai Happy "Oooh! So this is the last trial place, the waterfall!"
@@ -1841,35 +2003,22 @@ label phase3:
         #Rai (Confused):
         Rai Thinking "Errr okay then- magic it is-"
 
-        #(Delay)
-
         #Rai (Default):
-        Rai Default "Wait a minute… so in order for me to be able to read the words in the waterfall, I need to be really close to the waterfall right?"
-
-        #Farmer:
-        Farmer "Yes of course. Except if you have super eyes that can see anything from distance"
-
-        #Rai (Default):
-        Rai Default "Of course i don’t have it"
-        Rai Default "Well, okay then, let me take off my upper clothes first, so it doesn’t get wet."
-
-        #Farmer:
-        Farmer "As you like it Mr. Rai"
-
-        #Rai (Default):
-        Rai Default "Okay wait a sec."
-
-        #(Hehehehehehehehehehe Change Rai’s Sprite to the Shirtless one)
-
-        #Rai (Default):
-        Rai Default "Okay done. Now let me get closer to the waterfall…"
+        Rai Default "Now let me get closer to the waterfall…"
 
         #[SFX Man walking in the waterfall’s pond(?)]
+        play sound audio.footsteps_pond
+        pause(1.0)
 
         #Rai (Default):
         Rai Default "Now let’s see…"
 
         #[Screen blinking with white screen]
+        show white
+        with fade
+        pause (1.0)
+        hide white
+        with fade
 
         #Rai (Surprised):
         Rai Surprised "Oh wow, some words are appearing now!"
@@ -1881,6 +2030,7 @@ label phase3:
         Farmer "Okay, just like the past trials, you also need to answer half of the questions correctly, so be careful."
 
         #(Delay)
+        pause(2.0)
 
         #Farmer:
         Farmer "Now the last trial will begin in…"
@@ -1888,6 +2038,9 @@ label phase3:
         Farmer "2…"
         Farmer "1…"
         Farmer "Start!"
+
+        hide Rai Default
+        hide Farmer Default
 
         menu trial_waterfall_q1:
             "With SOTA, how much are you able to lift now?"
@@ -2022,12 +2175,13 @@ label phase3:
             jump wyen_bad_end_1
 
         #Farmer:
-        show Rai Default at right with easeinright
-        show Farmer Default
+        show Rai Default at pos4 with easeinright
+        show Farmer Default at pos2 with easeinright
 
         Farmer "You have answered all the questions."
         Farmer "Now let’s us see how many scores do you get."
         Farmer "Your score is…"
+        pause(1.0)
         Farmer "[skor_trial_waterfall]/10"
 
         #Rai (Default):
@@ -2040,6 +2194,7 @@ label phase3:
         Rai Happy "Yaaay!"
 
         #[SFX something appears (Blussss? Like Mr Hakim in It takes two or maybe cring2 (?)]
+        play sound audio.poof
 
         #Rai (Surprised):
         Rai Surprised "Whoa!"
@@ -2052,6 +2207,7 @@ label phase3:
         Rai Default "This place is truly special huh-"
 
         #[SFX Krincing key]
+        play sound audio.key
 
         #Farmer:
         Farmer "Looks like you have passed all the trials Mr. Rai."
@@ -2090,21 +2246,31 @@ label phase3:
         Farmer "As you wish Mr. Rai"
         Farmer "Let’s go back to the barn"
 
+        stop music fadeout 1.0
+
         jump wyen_3
 
     label wyen_3:
         #[Black Screen]
+        show black
+        with fade
+        pause(0.8)
 
         "Inside the barn…"
+        pause(0.8)
 
         #[Inside Barn]
         scene Barn
         with fade
 
-        show Rai Default at right with easeinright
-        show Farmer Default
+        play music audio.barn loop fadeout 1.0
+
+        show Rai Default at pos4 with easeinright
+        show Farmer Default at pos2 with easeinright
 
         #[SFX footstep but on pretty grassy (?) surface (as in the barn) because of hay]
+        play sound audio.footsteps_grass
+        pause(1.0)
 
         #Rai (Default):
         Rai Default "At last…"
@@ -2121,17 +2287,33 @@ label phase3:
         Rai Default "Okay here we go."
 
         #[SFX keys inserted in the keyhole 3 times]
+        play sound audio.keys_insert
+        pause (1.2)
 
         #Rai (Default):
         Rai Default "Okay, each keys have already-"
 
         #[Screen blink once with white screen]
+        show white
+        with fade
+        pause(1.0)
+
+        hide white
+        with fade
 
         #Rai (Surprised):
         Rai Surprised "!!!"
 
         #[Screen transition to white screen and back to normal after a while]
         #[SFX Gate opened]
+        show white
+        with fade
+
+        play sound audio.gate_open
+        pause (1.0)
+
+        hide white
+        with fade
 
         #Farmer:
         Farmer "The door is now open Mr. Rai."
@@ -2159,8 +2341,15 @@ label phase3:
         hide Rai Default
 
         #[Screen transition to white screen]
+        stop music fadeout 1.0
+        scene white
+        with fade
         #[SFX nyooming (teleported)]
+        play sound audio.teleport
+        pause(3.5)
         #[Black Screen]
+        scene black
+        with fade
 
         show Rai Default
 
@@ -2181,8 +2370,8 @@ label phase3:
 
         #Wyen (Default):
 
-        show Rai Default at right with easeinright
-        show Wyen Default at left with easeinleft
+        show Rai Default at pos4 with easeinright
+        show Wyen Default at pos2 with easeinleft
 
         Wyen Default "Here Mr. Rai Galilei."
 
@@ -2215,6 +2404,9 @@ label phase3:
         Rai Default "Owh. Thank you, but I'm sorry it seems that we don’t need to do that celebration because…"
 
         #[SFX handcuffs taken out]
+        play sound audio.handcuffs
+
+        pause(1.0)
 
         #Rai (Serious):
         Rai Serious "You’re now arrested, cow."
@@ -2224,13 +2416,17 @@ label phase3:
         Wyen Default "Well then… if that’s what you want…"
 
         #[SFX Wyen clicking finger]
+        pause (0.5)
+        play sound audio.finger_snap
 
         #[BG Changed to Galaxy]
         scene galaxy
         with fade
 
-        show Rai Default at right with easeinright
-        show Wyen Default at left with easeinleft
+        play music audio.Wyen loop fadein 1.0 fadeout 1.0
+
+        show Rai Default at pos4 with easeinright
+        show Wyen Default at pos2 with easeinleft
 
         #Rai (Serious):
         Rai Serious "This is-!"
@@ -2263,6 +2459,7 @@ label phase3:
         Rai Surprised "ANYWAY, now I will need you to come with me!"
 
         #[SFX footsteps]
+        play sound audio.running
 
         #Wyen (Evil):
         Wyen Manic "*chuckle* not so fast Mr. Police officer."
@@ -2305,17 +2502,18 @@ label phase3:
         #[Wyen’s screen appear]
 
         #Wyen (Evil):
-        Wyen Manic "This screen will give you the questions that you need to solve."
-        Wyen Manic "But unlike the trial one, the theme here will be all about your friends."
+        Wyen Manic "This shall be your final trial."
+        Wyen Manic "But unlike the other trials, the theme here will be all about your friends."
         Wyen Manic "And if you are wrong even on one question you will lose."
 
         #[CG Mid Start]
         show CG8
         with fade
+        $ persistent.cg8_unlocked = True
 
         #Wyen (Evil):
         Wyen Manic "Now this is the last showdown to determine all."
-        Wyen Manic "If you fail, that screen will explode and kill you but if you win then you can arrest me."
+        Wyen Manic "If you fail, this whole place will explode and kill you, but if you win then you can arrest me."
         Wyen Manic "How about it, Mr. Rai Gallilei? Will you accept the challenge?"
 
         #Rai (Serious):
@@ -2338,11 +2536,10 @@ label phase3:
         Rai Serious "I’m ready! I can’t wait to arrest you either!."
 
         #Wyen (Evil):
-        Wyen Manic "HahahahahaHAHAHAHAHA!"
-
-        #[CG Mid End]
+        Wyen Manic "HahahahahaHAHAHAHAHA!" with hpunch
 
         menu wyen_ft_q1:
+
             "When was {glitch=50.0}{color=#FF0000}Amicia Michella{/color}{/glitch}'s first live?"
 
             "December 22, 2019":
@@ -2560,14 +2757,14 @@ label phase3:
 
         hide CG8
 
-        show galaxy
+        scene galaxy
         with fade
 
         label wyen_after_ft:
             #[Star sword disappeared]
 
-            show Rai Default at right with easeinright
-            show Wyen Default at left with easeinleft
+            show Rai Default at pos4 with easeinright
+            show Wyen Default at pos2 with easeinleft
 
             #Wyen (Surprised):
             Wyen Surprised "*gasp* How could this be possible…"
@@ -2608,7 +2805,7 @@ label phase3:
             Rai Default "Now please stay-"
 
             #Wyen (Evil):
-            Wyen Manic "...*chuckle*Just kidding."
+            Wyen Manic "...*chuckle* Just kidding."
 
             #[Star sword come from upper screen and jailing Rai again]
             #[+SFX]
@@ -2628,6 +2825,7 @@ label phase3:
             Wyen Manic "Well as a punishment for being bad police officer I shall give you a punishment challenge."
 
             #[SFX Wyen clicking finger]
+            play sound audio.finger_snap
             #[Wyen’s screen appear]
 
             #Wyen (Evil):
@@ -2638,6 +2836,9 @@ label phase3:
 
             #Rai (Serious):
             Rai Serious "Okay… let’s do it!"
+
+            hide Rai Default
+            hide Wyen Default
 
             jump wyen_final_ft
 
@@ -2669,17 +2870,18 @@ label phase3:
 
         #Rai (Surprised):
 
-        show Rai Default
+        show Rai Default at pos4
+        show Wyen Default at pos2
 
         Rai Surprised "W-what is this? I can't read anything!"
 
         #Rai (Serious):
         Rai Annoyed "This is cheating!"
 
-        show Rai Default at right with easeinright
-        show Wyen Default at left with easeinleft
-
         Wyen Smile "Fufufu~"
+
+        hide Rai Default
+        hide Wyen Default
 
         menu:
             "{glitch=50.0}{chaos}{sc}SNuohwdfiebbfvct3rbcr{/sc}{/chaos}{/glitch}"
@@ -2723,8 +2925,8 @@ label phase3:
 
         #[Screen blinking with red screen start]
 
-        show Rai Default at right with easeinright
-        show Wyen Default at left with easeinleft
+        show Rai Default at pos4 with easeinright
+        show Wyen Default at pos2 with easeinleft
 
         #Wyen (Evil):
         Wyen Manic "Such a pity… You lost Mr. Police officer."
@@ -2736,6 +2938,7 @@ label phase3:
         Wyen Manic "Sadly, It is what it is. Goodbye Mr. Rai Galilei. It’s nice to meet you."
 
         #[SFX nginggg like the bomb want to explode start]
+        play sound audio.bomb_nging_loop_fadein
 
         #Rai (Serious):
         Rai Serious "NOOOO!"
@@ -2744,6 +2947,8 @@ label phase3:
 
         #[SFX nginggg like the bomb want to explode intesifying and stop]
         #[Screen transition to White Screen]
+        show white
+        with fade
 
         Rai Nervous "..."
         Rai Nervous "....."
@@ -2804,6 +3009,7 @@ label phase3:
         Wyen Default "Well, but this is the truth."
 
         #(Delay)
+        pause(2.0)
 
         #Wyen (Default):
         Wyen Default "Owh, also if you still don’t get it, you, yourself ‘The Rai’ is not the real Rai either."
@@ -2881,9 +3087,11 @@ label phase3:
         #[CG 9 END START]
         show CG9
         with fade
+        $ persistent.cg9_unlocked = True
 
         #Everyone:
         "HAPPY BIRTHDAY RAI!"
+        pause(3.0)
 
 
         #[CG 9 END END]
