@@ -21,7 +21,7 @@ init python:
 
 screen album:
     tag menu
-    add "gui/gallery_menu.png"
+    add "gui/gallery_menu_none.png"
 
     hbox:
         xalign 0.5
@@ -34,3 +34,42 @@ screen album:
             add gallery.make_button(name="green_and_orange2",unlocked="CGs/small/red_small.jpg",locked="CGs/small/locked.jpg")
             spacing 15
         textbutton "Return" action Return()
+
+
+screen gallery:
+    tag menu
+    add "gui/gallery_menu.png"
+
+    imagebutton:
+        xpos 120
+        ypos 120
+        auto "gui/gallery/gallery_%s.png"
+        action ShowMenu('main_menu')
+
+    if persistent.elsyneunlocked:
+        imagebutton:
+            ypos 570
+            xpos 390
+            auto "gui/gallery/gallery_%s_elsyne.png"
+            action ShowMenu('main_menu')
+
+    if persistent.miraunlocked:
+        imagebutton:
+            ypos 112
+            xpos 1118
+            auto "gui/gallery/gallery_%s_mira.png"
+            action ShowMenu('gallery')
+
+    if persistent.felixunlocked:
+        imagebutton:
+            ypos 112
+            xpos 390
+            auto "gui/gallery/gallery_%s_felix.png"
+            action ShowMenu('album')
+
+    if persistent.wyenunlocked:
+        imagebutton:
+            ypos 570
+            xpos 1118
+            auto "gui/gallery/gallery_%s_wyen.png"
+            action ShowMenu('gallery')

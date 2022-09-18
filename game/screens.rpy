@@ -358,7 +358,7 @@ screen navigation():
             textbutton _("Save") action ShowMenu("save")
 
         textbutton _("Load Game") action ShowMenu("load") xpos -30 ypos 2
-        textbutton _("Gallery") action ShowMenu("album")  ypos 5
+        textbutton _("Gallery") action ShowMenu("gallery")  ypos 5
 
         textbutton _("Settings") action ShowMenu("preferences") xpos -10 ypos 10
 
@@ -638,6 +638,7 @@ screen load_save_slot:
     $ file_text = "% s\n  %s" % (FileTime(number, empty="Empty Slot"), FileSaveName(number))
     add FileScreenshot(number) xpos -1 ypos 0
 
+
 screen load:
 
     tag menu
@@ -650,7 +651,7 @@ screen load:
         selected_hover 'gui/saveload/ground_save.png'
         cache False
 
-        hotspot (57, 980, 78, 72) action FilePagePrevious()
+        hotspot (57, 980, 78, 72) action FilePagePrevious(max=5, wrap=True)
         hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True)
 
         ## You might get confused but these one below are the save/load slots, those boxes.
@@ -667,14 +668,21 @@ screen load:
 
         hotspot (357, 980, 68, 64) action ShowMenu('load')
         hotspot (633, 980, 69, 63) action ShowMenu('save')
+        hotspot (898, 982, 66, 65) action FileDelete(1)
 
 
-        textbutton _("Back") action Return() xpos 130 ypos 75
-        text "{color=#ffce3b}{size=+40}{font=happy chicken.otf}Load{/font}{/size}{/color}" xpos 820 ypos 89
-        textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Load{/size}{/font}{/color}" action ShowMenu('load') xpos 450 ypos 970
-        textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Save{/size}{/font}{/color}" action ShowMenu('save') xpos 720 ypos 970
-        text "{color=#ffce3b}{font=happy chicken.otf}Delete{/font}{/color}" xpos 980 ypos 985
-        text "{color=#ffce3b}{font=happy chicken.otf}Disable Auto Save Slot{/font}{/color}" xpos 1280 ypos 985
+    add "gui/saveload/high_save.png"
+    zorder 200
+
+    textbutton _("Back") action Return() xpos 130 ypos 75
+    text "{color=#ffce3b}{size=+40}{font=happy chicken.otf}Load{/font}{/size}{/color}" xpos 820 ypos 89
+    textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Load{/size}{/font}{/color}" action ShowMenu('load') xpos 450 ypos 970
+    textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Save{/size}{/font}{/color}" action ShowMenu('save') xpos 720 ypos 970
+    text "{color=#ffce3b}{font=happy chicken.otf}Disable Auto Save Slot{/font}{/color}" xpos 980 ypos 985
+    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}001{/size}{/font}{/color}" xpos 170 ypos 305
+    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}002{/size}{/font}{/color}" xpos 170 ypos 632
+    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}003{/size}{/font}{/color}" xpos 1075 ypos 300
+    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}004{/size}{/font}{/color}" xpos 1075 ypos 628
 
 
 
@@ -691,8 +699,8 @@ screen save:
         selected_hover 'gui/saveload/ground_save.png'
         cache False
 
-        hotspot (57, 980, 78, 72) action FilePagePrevious()
-        hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True)
+        hotspot (57, 980, 78, 72) action FilePagePrevious(max=5, wrap=True, auto=False, quick=False)
+        hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True, auto=False, quick=False)
 
         ## You might get confused but these one below are the save/load slots, those boxes.
         hotspot (229, 387, 286, 150) action FileAction(1):
@@ -708,14 +716,21 @@ screen save:
 
         hotspot (357, 980, 68, 64) action ShowMenu('load')
         hotspot (633, 980, 69, 63) action ShowMenu('save')
+        hotspot (898, 982, 66, 65) action FileDelete(1)
 
 
-        textbutton _("Back") action Return() xpos 130 ypos 75
-        text "{color=#ffce3b}{size=+40}{font=happy chicken.otf}Save{/font}{/size}{/color}" xpos 820 ypos 89
-        textbutton "{color=#ffce3b}{font=happy chicken.otf}Load{/font}{/color}" action ShowMenu('load') xpos 450 ypos 980
-        textbutton "{color=#ffce3b}{font=happy chicken.otf}Save{/font}{/color}" action ShowMenu('save') xpos 720 ypos 980
-        text "{color=#ffce3b}{font=happy chicken.otf}Delete{/font}{/color}" xpos 980 ypos 980
-        text "{color=#ffce3b}{font=happy chicken.otf}Disable Auto Save Slot{/font}{/color}" xpos 1280 ypos 980
+    add "gui/saveload/high_save.png"
+    zorder 200
+
+    textbutton _("Back") action Return() xpos 130 ypos 75
+    text "{color=#ffce3b}{size=+40}{font=happy chicken.otf}Save{/font}{/size}{/color}" xpos 820 ypos 89
+    textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Load{/size}{/font}{/color}" action ShowMenu('load') xpos 450 ypos 970
+    textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Save{/size}{/font}{/color}" action ShowMenu('save') xpos 720 ypos 970
+    text "{color=#ffce3b}{font=happy chicken.otf}Disable Auto Save Slot{/font}{/color}" xpos 980 ypos 985
+    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}001{/size}{/font}{/color}" xpos 170 ypos 305
+    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}002{/size}{/font}{/color}" xpos 170 ypos 632
+    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}003{/size}{/font}{/color}" xpos 1075 ypos 300
+    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}004{/size}{/font}{/color}" xpos 1075 ypos 628
 
 init python:
     config.thumbnail_width = 290
@@ -1261,8 +1276,12 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
                 spacing 100
 
-                textbutton _("Yes") action yes_action
-                textbutton _("No") action no_action
+                imagebutton:
+                    auto "gui/button/no_%s_button.png"
+                    action no_action
+                imagebutton:
+                    auto "gui/button/yes_%s_button.png"
+                    action yes_action
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
@@ -1513,107 +1532,4 @@ style nvl_button_text:
 ## Mobile Variants
 ################################################################################
 
-style pref_vbox:
-    variant "medium"
-    xsize 450
-
-## Since a mouse may not be present, we replace the quick menu with a version
-## that uses fewer and bigger buttons that are easier to touch.
-screen quick_menu():
-    variant "touch"
-
-    zorder 100
-
-    if quick_menu:
-
-        hbox:
-            style_prefix "quick"
-
-            xalign 0.5
-            yalign 1.0
-
-            textbutton _("Back") action Rollback()
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Menu") action ShowMenu()
-
-
-style window:
-    variant "small"
-    background "gui/phone/textbox.png"
-
-style radio_button:
-    variant "small"
-    foreground "gui/phone/button/radio_[prefix_]foreground.png"
-
-style check_button:
-    variant "small"
-    foreground "gui/phone/button/check_[prefix_]foreground.png"
-
-style nvl_window:
-    variant "small"
-    background "gui/phone/nvl.png"
-
-style main_menu_frame:
-    variant "small"
-    background "gui/phone/overlay/main_menu.png"
-
-style game_menu_outer_frame:
-    variant "small"
-    background "gui/phone/overlay/game_menu.png"
-
-style game_menu_navigation_frame:
-    variant "small"
-    xsize 340
-
-style game_menu_content_frame:
-    variant "small"
-    top_margin 0
-
-style pref_vbox:
-    variant "small"
-    xsize 400
-
-style bar:
-    variant "small"
-    ysize gui.bar_size
-    left_bar Frame("gui/phone/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
-    right_bar Frame("gui/phone/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
-
-style vbar:
-    variant "small"
-    xsize gui.bar_size
-    top_bar Frame("gui/phone/bar/top.png", gui.vbar_borders, tile=gui.bar_tile)
-    bottom_bar Frame("gui/phone/bar/bottom.png", gui.vbar_borders, tile=gui.bar_tile)
-
-style scrollbar:
-    variant "small"
-    ysize gui.scrollbar_size
-    base_bar Frame("gui/phone/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/phone/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-
-style vscrollbar:
-    variant "small"
-    xsize gui.scrollbar_size
-    base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-
-style slider:
-    variant "small"
-    ysize gui.slider_size
-    base_bar Frame("gui/phone/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
-    thumb "gui/phone/slider/horizontal_[prefix_]thumb.png"
-
-style vslider:
-    variant "small"
-    xsize gui.slider_size
-    base_bar Frame("gui/phone/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
-    thumb "gui/phone/slider/vertical_[prefix_]thumb.png"
-
-style slider_pref_vbox:
-    variant "small"
-    xsize None
-
-style slider_pref_slider:
-    variant "small"
-    xsize 600
+#### there are none
