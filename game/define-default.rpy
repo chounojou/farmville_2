@@ -18,14 +18,27 @@ define Villager     = Character("Villager")
 define Talking_Tree = Character("Talking Tree")
 define Ducks        = Character("Ducks")
 define Duck         = Character("Duck")
+
+define Seller       = Character("Seller")
+define Unknown      = Character("???")
+define Crow         = Character("Crow")
+define Adventurer   = Character("Adventurer")
+define MiRA         = Character("MiRA")
+define The_Girl     = Character("The Girl")
+define Butcher      = Character("Butcher")
+define Elsyne       = Character("Elsyne")
+
+define Galileans    = Character("Galileans")
+
 define Cow          = Character("Cow")
+define Wyen         = Character("Wyen", image= "Wyen")
 
 define Man          = Character("Man")
 define Old_Lady     = Character("Old Lady")
 #+++++++++++++++++++++++Sprites++++++++++++++++++++++++++++
 #======================== Rai
 image Rai Default   =    "Sprite/Rai/Rai_Half.png"
-image side Rai Default: 
+image side Rai Default:
     "Sprite/Rai/side Rai_Default.png"
     zoom 0.35
 
@@ -35,37 +48,37 @@ image side Rai Annoyed   :
     zoom 0.35
 
 image Rai Surprised = "Sprite/Rai/Rai_Half.png"
-image side Rai Surprised : 
+image side Rai Surprised :
     "Sprite/Rai/side Rai_Surprised.png"
     zoom 0.35
 
 image Rai Nervous   = "Sprite/Rai/Rai_Half.png"
-image side Rai Nervous   : 
+image side Rai Nervous   :
     "Sprite/Rai/side Rai_Nervous.png"
     zoom 0.35
 
 image Rai Sad       = "Sprite/Rai/Rai_Half.png"
-image side Rai Sad       : 
+image side Rai Sad       :
     "Sprite/Rai/side Rai_Sad.png"
     zoom 0.35
 
 image Rai Serious   = "Sprite/Rai/Rai_Half.png"
-image side Rai Serious   : 
+image side Rai Serious   :
     "Sprite/Rai/side Rai_Serious.png"
     zoom 0.35
 
 image Rai Happy     = "Sprite/Rai/Rai_Half.png"
-image side Rai Happy     : 
+image side Rai Happy     :
     "Sprite/Rai/side Rai_Happy.png"
     zoom 0.35
 
 image Rai Thinking  = "Sprite/Rai/Rai_Half.png"
-image side Rai Thinking  : 
+image side Rai Thinking  :
     "Sprite/Rai/side Rai_Thinking.png"
     zoom 0.35
 
-image Rai Excited   = "Sprite/Rai/Rai_Half.png" 
-image side Rai Excited   : 
+image Rai Excited   = "Sprite/Rai/Rai_Half.png"
+image side Rai Excited   :
     "Sprite/Rai/side Rai_Excited.png"
     zoom 0.35
 
@@ -74,14 +87,14 @@ image FRai Default   = "Sprite/Rai/Farmer Rai_Half.png"
 image side FRai Default:
     "Sprite/Rai/side Farmer Rai_Default.png"
     zoom 0.35
-    
+
 image FRai Annoyed   = "Sprite/Rai/Farmer Rai_Half.png"
-image side FRai Annoyed: 
+image side FRai Annoyed:
     "Sprite/Rai/side Farmer Rai_Annoyed.png"
     zoom 0.35
 
 image FRai Surprised = "Sprite/Rai/Farmer Rai_Half.png"
-image side FRai Surprised: 
+image side FRai Surprised:
     "Sprite/Rai/side Farmer Rai_Surprised.png"
     zoom 0.35
 
@@ -126,14 +139,14 @@ image side Felix Default:
 image Felix Smirk:
     "Sprite/inmates #1/Felix Half.png"
     zoom 0.55
-image side Felix Smirk:       
+image side Felix Smirk:
     "Sprite/inmates #1/side Felix Smirk.png"
     zoom 0.35
 
 image Felix Serious:
     "Sprite/inmates #1/Felix Half.png"
     zoom 0.55
-image side Felix Serious:     
+image side Felix Serious:
     "Sprite/inmates #1/side Felix Serious.png"
     zoom 0.35
 
@@ -147,7 +160,7 @@ image side Felix Annoyed:
 image Felix Surprised:
     "Sprite/inmates #1/Felix Half.png"
     zoom 0.55
-image side Felix Surprised:    
+image side Felix Surprised:
     "Sprite/inmates #1/side Felix Surprised.png"
     zoom 0.35
 
@@ -158,11 +171,40 @@ image side Felix Hurt:
     "Sprite/inmates #1/side Felix Hurt.png"
     zoom 0.35
 
+#----------------------------------------------------------------------#
+#----------------------------------WYEN--------------------------------#
+#----------------------------------------------------------------------#
+image Wyen Default:
+    "Sprite/inmates #4/final/Wyen Half.png"
+    zoom 0.60
+image side Wyen Default:
+    "Sprite/inmates #4/final/side Wyen Default.png"
+    zoom 0.35
+image Wyen Manic:
+    "Sprite/inmates #4/final/Wyen Half.png"
+    zoom 0.60
+image side Wyen Manic:
+    "Sprite/inmates #4/final/side Wyen Manic.png"
+    zoom 0.35
+image Wyen Smile:
+    "Sprite/inmates #4/final/Wyen Half.png"
+    zoom 0.60
+image side Wyen Smile:
+    "Sprite/inmates #4/final/side Wyen Smile.png"
+    zoom 0.35
+image Wyen Surprised:
+    "Sprite/inmates #4/final/Wyen Half.png"
+    zoom 0.60
+image side Wyen Surprised:
+    "Sprite/inmates #4/final/side Wyen Surprise.png"
+    zoom 0.35
+
+
 #Galileans
 image Galilean_1 Default:
     "Sprite/Galilean Member/Galilean 1 (Cewek).png"
     zoom 0.50
-image Galilean_2 Default: 
+image Galilean_2 Default:
     "Sprite/Galilean Member/Galilean 2 (Cowok).png"
     zoom 0.50
 image Galilean_3 Default:
@@ -255,16 +297,34 @@ image Farm          = "BG/Farm.jpg"
 image Hill          = "BG/Hill.jpg"
 image Fish Shop     = "BG/Fish shop.jpg"
 image CCTV          = "BG/CCTV.jpg"
+image Barn          = "BG/Barn.jpg"
+
+image caveTunnel:
+    "BG/Cave tunnel.jpg"
+    zoom 2.0
+image caveNyabang:
+    "BG/Cave nyabang.jpg"
+    zoom 2.0
+image caveFinal:
+    "BG/Cave - final place.jpg"
+    zoom 2.0
+
+image waterfallDay  = "BG/Waterfall_Day.jpg"
+image waterfallNight = "BG/Waterfall_Night.jpg"
+
+image galaxy        = "BG/WyenChamber.jpg"
 
 #CG
-image CG1: 
+image CG1:
     "CGs/CG_1.png"
     zoom 0.5
+
 default persistent.cg1_unlocked = False
 image CG2: 
     "CGs/CG_2.png"
     zoom 0.5
 default persistent.cg2_unlocked = False
+
 
 image CG7:
     "CGs/CG_7.png"
@@ -273,8 +333,11 @@ image CG8:
 image CG9:
     "CGs/CG_9.png"
 
+
 #Assets
 image Scratches Zoom = "Asset/Hebi/Tree_2_zoom.png"
+
+
 
 #Phases
 
