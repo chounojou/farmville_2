@@ -998,39 +998,44 @@ style slider_vbox:
 screen history():
 
     tag menu
-
+    add "gui/history.png"
+    imagebutton:
+        xpos 30
+        ypos 80
+        auto "gui/gallery/back_%s_button.png"
+        action Return()
     ## Avoid predicting this screen, as it can be very large.
     predict False
+    style_prefix "history"
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    vbox:
+        xalign 0.3
+        ypos 250
+        viewport id "vpgrid":
+            yinitial 1.0
+            draggable True
+            mousewheel True
+            xmaximum 2000
+            ymaximum 750
+            xsize 1000 ysize 750
+            xpos 50 ypos -80
+            vbox:
 
-        style_prefix "history"
+                for h in _history_list:
+                    if h.who:
+                        text h.who xalign 0.0 text_align 0.0:
+                            size 40
+                            color "#ffffff"
+                            xpos 250
 
-        for h in _history_list:
-
-            window:
-
-                ## This lays things out properly if history_height is None.
-                has fixed:
-                    yfit True
-
-                if h.who:
-
-                    label h.who:
-                        style "history_name"
+                    $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                    text what:
+                        size 35
                         substitute False
+                    text " "
+                if not _history_list:
+                    text _("The dialogue history is empty.") ypos 10 xpos 550
 
-                        ## Take the color of the who text from the Character, if
-                        ## set.
-                        if "color" in h.who_args:
-                            text_color h.who_args["color"]
-
-                $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                text what:
-                    substitute False
-
-        if not _history_list:
-            label _("The dialogue history is empty.")
 
 
 ## This determines what tags are allowed to be displayed on the history screen.
