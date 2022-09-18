@@ -2,7 +2,7 @@
 #Characters
 
 define Rai          = Character("Rai", image="Rai")
-define FRai         = Character("Farmer Rai", image="FRai")
+define FRai         = Character("Rai", image="FRai")
 define Boss         = Character("Boss", image="Boss")
 define Galilean_1   = Character("Galilean 1", image="Galilean_1")
 define Galilean_2   = Character("Galilean 2", image="Galilean_2")
@@ -35,8 +35,11 @@ define Wyen         = Character("Wyen", image= "Wyen")
 
 define Man          = Character("Man")
 define Old_Lady     = Character("Old Lady")
-#+++++++++++++++++++++++Sprites++++++++++++++++++++++++++++
-#======================== Rai
+
+#+++++++++++++++++++++++     Sprites    ++++++++++++++++++++++++++++#
+###########################================############################
+#=========================== RAI DEFAULT =============================#
+###########################================############################
 image Rai Default   =    "Sprite/Rai/Rai_Half.png"
 image side Rai Default:
     "Sprite/Rai/side Rai_Default.png"
@@ -82,7 +85,9 @@ image side Rai Excited   :
     "Sprite/Rai/side Rai_Excited.png"
     zoom 0.35
 
-#============================ Farmer Rai
+###########################================############################
+#============================ Farmer Rai =============================#
+###########################================############################
 image FRai Default   = "Sprite/Rai/Farmer Rai_Half.png"
 image side FRai Default:
     "Sprite/Rai/side Farmer Rai_Default.png"
@@ -128,7 +133,10 @@ image side FRai Excited:
     "Sprite/Rai/side Farmer Rai_Excited.png"
     zoom 0.35
 
-#Inmate 1 (Felix) ==========================================
+########################================############################
+#============================ FELIX ===============================#
+#=========================== INMATE 1 =============================#
+########################================############################
 image Felix Default:
     "Sprite/inmates #1/Felix Half.png"
     zoom 0.55
@@ -298,7 +306,6 @@ image Hill          = "BG/Hill.jpg"
 image Fish Shop     = "BG/Fish shop.jpg"
 image CCTV          = "BG/CCTV.jpg"
 image Barn          = "BG/Barn.jpg"
-
 image caveTunnel:
     "BG/Cave tunnel.jpg"
     zoom 2.0
@@ -308,6 +315,10 @@ image caveNyabang:
 image caveFinal:
     "BG/Cave - final place.jpg"
     zoom 2.0
+
+image Forest:
+    "BG/Forest.jpg"
+    zoom 0.3
 
 image waterfallDay  = "BG/Waterfall_Day.jpg"
 image waterfallNight = "BG/Waterfall_Night.jpg"
