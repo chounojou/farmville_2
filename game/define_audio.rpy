@@ -1,3 +1,6 @@
+init:
+    init python:
+        renpy.music.register_channel("ambience", "sfx", True)
 
 #Audio directories
 define bgm_dir = "audio/BGM/"
@@ -67,7 +70,7 @@ define audio.gemuruh_loop           = sfx_dir+"gemuruh_loop.mp3"
 define audio.grass_rustling         = sfx_dir+"grass_rustling.mp3"
 define audio.gun_loading            = sfx_dir+"gun_loading.mp3"
 define audio.gun_shot               = sfx_dir+"gun_shot.mp3"
-define audio.handcuffs              = sfx_dir+"handcuffs.mp3"
+define audio.handcuffs              = sfx_dir+"handcuff.mp3"
 define audio.horses                 = sfx_dir+"horses.mp3"
 define audio.inhale                 = sfx_dir+"inhale.mp3"
 define audio.jump                   = sfx_dir+"jump.mp3"

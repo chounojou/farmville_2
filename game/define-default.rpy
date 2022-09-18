@@ -30,7 +30,7 @@ define Elsyne       = Character("Elsyne")
 
 define Galileans    = Character("Galileans")
 
-define Cow          = Character("Cow")
+define Cow          = Character("Cow", image= "Cow")
 define Wyen         = Character("Wyen", image= "Wyen")
 
 define Man          = Character("Man")
@@ -274,10 +274,16 @@ image Villager Default:
 image Cow Default:
     "Sprite/Cow/default.png"
     zoom 0.50
+image side Cow Default:
+    "Sprite/Cow/side Cow Default.png"
+    zoom 0.30
 
 image Cow WyenColor:
     "Sprite/Cow/wyen color ver.png"
     zoom 0.50
+image side Cow WyenColor:
+    "Sprite/Cow/wyen color ver.png"
+    zoom 0.30
 
 image TalkingTree Default:
     "Sprite/Talking tree!/just smile.png"
@@ -298,6 +304,9 @@ image Hill          = "BG/Hill.jpg"
 image Fish Shop     = "BG/Fish shop.jpg"
 image CCTV          = "BG/CCTV.jpg"
 image Barn          = "BG/Barn.jpg"
+
+image black         = "BG/black-screen.png"
+image white         = "BG/white-screen.png"
 
 image caveTunnel:
     "BG/Cave tunnel.jpg"
@@ -320,10 +329,13 @@ image CG1:
     zoom 0.5
 image CG7:
     "CGs/CG_7.png"
+default persistent.cg7_unlocked = False
 image CG8:
     "CGs/CG_8.png"
+default persistent.cg8_unlocked = False
 image CG9:
     "CGs/CG_9.png"
+default persistent.cg9_unlocked = False
 
 #Phases
 
