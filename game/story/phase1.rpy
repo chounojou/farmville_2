@@ -23,8 +23,6 @@ label phase1:
     Rai "I can’t work properly if my table is full of papers."
     Rai "I need to tidy it up a bit, I think I should put some of the papers in the drawer for the meantime."
 
-    $ persistent.felixunlocked = True
-
     "While Rai was tidying up the papers that were on his desk, one of his Galilean coworkers came by his table."
 
     #Galilean 1 appear
