@@ -8,9 +8,9 @@
 label start:
 
     #set volume audio channels
-    $ renpy.music.set_volume(0.3, delay=0, channel='ambience')
-    $ renpy.music.set_volume(0.05, delay=0, channel='music')
-    $ renpy.music.set_volume(0.3, delay=0, channel='sound')
+    #$ renpy.music.set_volume(0.3, delay=0, channel='ambience')
+    #$ renpy.music.set_volume(0.05, delay=0, channel='music')
+    #$ renpy.music.set_volume(0.3, delay=0, channel='sound')
 
     if persistent.phase1:
         jump phase1

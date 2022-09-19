@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("rai_farmville")
+define config.name = _("FarmFile")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "rai_farmville"
+define build.name = "FarmFile"
 
 
 ## Sounds and music ############################################################
@@ -62,6 +62,10 @@ define config.has_voice = True
 ## game, until it is stopped or another file is played.
 
 define config.main_menu_music = audio.main_menu
+
+define config.default_music_volume = 0.2
+define config.default_sfx_volume = 0.5
+define config.default_voice_volume = 0.5
 
 
 ## Transitions #################################################################
