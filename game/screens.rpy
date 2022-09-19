@@ -52,7 +52,7 @@ style scrollbar:
 style vscrollbar:
     xsize gui.scrollbar_size
     base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png")
 
 style slider:
     ysize gui.slider_size
@@ -223,7 +223,13 @@ define config.narrator_menu = True
 
 
 style choice_vbox is vbox
-style choice_button_text is button_text
+style choice_button_text:
+    font 'BaksoSapi.otf'
+    xalign 0.5
+    yalign 0.5
+    size 26
+    color '#ffffff'
+    hover_color '#ffce3b'
 
 style choice_vbox:
     xalign 0.5
@@ -235,10 +241,6 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
-
-style choice_button_text is default:
-    properties gui.button_text_properties("choice_button")
-
 
 ## Quick Menu screen ###########################################################
 ##
@@ -360,15 +362,11 @@ screen navigation():
         textbutton _("Load Game") action ShowMenu("load") xpos -30 ypos 2
         textbutton _("Gallery") action ShowMenu("gallery")  ypos 5
 
-        textbutton _("Settings") action ShowMenu("preferences") xpos -10 ypos 10
+        textbutton _("Settings") action ShowMenu("preferences2") xpos -10 ypos 10
 
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
-
-        elif not main_menu:
-
-            textbutton _("Main Menu") action MainMenu()
 
         if renpy.variant("pc"):
 
@@ -592,25 +590,39 @@ style return_button:
 
 screen about():
 
+
     tag menu
+    add "gui/history.png"
+    imagebutton:
+        xpos 30
+        ypos 80
+        auto "gui/gallery/back_%s_button.png"
+        action Return()
+    text "{size=+20}Credit{/size}" xpos 850 ypos 120
 
-    ## This use statement includes the game_menu screen inside this one. The
-    ## vbox child is then included inside the viewport inside the game_menu
-    ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    vbox:
+        xalign 0.3
+        ypos 250
+        viewport id "vpgrid":
+            yinitial 1.0
+            draggable True
+            mousewheel True
+            xmaximum 1400
+            ymaximum 700
+            yfill True
+            scrollbars "vertical"
+            xsize 1000 ysize 750
+            xpos 100 ypos -50
+            vbox:
 
-        style_prefix "about"
+                label "[config.name!t]"
+                text _("Version [config.version!t]\n")
 
-        vbox:
+                ## gui.about is usually set in options.rpy.
+                if gui.about:
+                    text "[gui.about!t]\n"
 
-            label "[config.name!t]"
-            text _("Version [config.version!t]\n")
-
-            ## gui.about is usually set in options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
-
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+                text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 ## This is redefined in options.rpy to add text to the about screen.
@@ -651,8 +663,8 @@ screen load:
         selected_hover 'gui/saveload/ground_save.png'
         cache False
 
-        hotspot (57, 980, 78, 72) action FilePagePrevious(max=5, wrap=True)
-        hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True)
+        hotspot (57, 980, 78, 72) action FilePagePrevious(max=5, wrap=True, auto=False, quick=False)
+        hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True, auto=False, quick=False)
 
         ## You might get confused but these one below are the save/load slots, those boxes.
         hotspot (229, 387, 286, 150) action FileAction(1):
@@ -668,17 +680,16 @@ screen load:
 
         hotspot (357, 980, 68, 64) action ShowMenu('load')
         hotspot (633, 980, 69, 63) action ShowMenu('save')
-        hotspot (898, 982, 66, 65) action FileDelete(1)
+        hotspot (55, 87, 66, 68) action Return()
 
 
     add "gui/saveload/high_save.png"
     zorder 200
 
-    textbutton _("Back") action Return() xpos 130 ypos 75
+    textbutton _("{color=#ffce3b}Back{/color}") action Return() xpos 130 ypos 75
     text "{color=#ffce3b}{size=+40}{font=happy chicken.otf}Load{/font}{/size}{/color}" xpos 820 ypos 89
     textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Load{/size}{/font}{/color}" action ShowMenu('load') xpos 450 ypos 970
     textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Save{/size}{/font}{/color}" action ShowMenu('save') xpos 720 ypos 970
-    text "{color=#ffce3b}{font=happy chicken.otf}Disable Auto Save Slot{/font}{/color}" xpos 980 ypos 985
     text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}001{/size}{/font}{/color}" xpos 170 ypos 305
     text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}002{/size}{/font}{/color}" xpos 170 ypos 632
     text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}003{/size}{/font}{/color}" xpos 1075 ypos 300
@@ -716,17 +727,16 @@ screen save:
 
         hotspot (357, 980, 68, 64) action ShowMenu('load')
         hotspot (633, 980, 69, 63) action ShowMenu('save')
-        hotspot (898, 982, 66, 65) action FileDelete(1)
+        hotspot (55, 87, 66, 68) action Return()
 
 
     add "gui/saveload/high_save.png"
     zorder 200
 
-    textbutton _("Back") action Return() xpos 130 ypos 75
+    textbutton _("{color=#ffce3b}Back{/color}") action Return() xpos 130 ypos 75
     text "{color=#ffce3b}{size=+40}{font=happy chicken.otf}Save{/font}{/size}{/color}" xpos 820 ypos 89
     textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Load{/size}{/font}{/color}" action ShowMenu('load') xpos 450 ypos 970
     textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Save{/size}{/font}{/color}" action ShowMenu('save') xpos 720 ypos 970
-    text "{color=#ffce3b}{font=happy chicken.otf}Disable Auto Save Slot{/font}{/color}" xpos 980 ypos 985
     text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}001{/size}{/font}{/color}" xpos 170 ypos 305
     text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}002{/size}{/font}{/color}" xpos 170 ypos 632
     text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}003{/size}{/font}{/color}" xpos 1075 ypos 300
@@ -788,8 +798,8 @@ screen preferences():
         selected_hover "gui/button/set_hover.png"
 
         hotspot (376, 818, 79, 90) action Return()
-        hotspot (617, 818, 231, 83) action ShowMenu("history")
-        hotspot (483, 804, 102, 112) action ShowMenu("main_menu")
+        hotspot (617, 818, 231, 83) action ShowMenu("about")
+        hotspot (483, 804, 102, 112) action MainMenu()
 
         vbox:
 
@@ -986,6 +996,114 @@ style slider_button_text:
 style slider_vbox:
     xsize 350
 
+####pref2
+
+screen preferences2():
+
+    tag menu
+
+    imagemap:
+        ground "gui/game_menu.png"
+        idle "gui/button/set.png"
+        hover "gui/button/set_hover.png"
+        selected_idle "gui/button/set.png"
+        selected_hover "gui/button/set_hover.png"
+
+        hotspot (376, 818, 79, 90) action Return()
+        hotspot (617, 818, 231, 83) action ShowMenu("about")
+        hotspot (483, 804, 102, 112) action ShowMenu("main_menu")
+
+        vbox:
+
+            hbox:
+                box_wrap True
+
+                if renpy.variant("pc") or renpy.variant("web"):
+
+                    vbox:
+                        style_prefix "radio"
+                        label _("Display") xpos 435 ypos 153
+                        textbutton _("          Window") action Preference("display", "window") xpos 385 ypos 188
+                        textbutton _("          Fullscreen") action Preference("display", "fullscreen") xpos 385 ypos 205
+
+                vbox:
+                    style_prefix "radio"
+                    label _("Rollback Side") xpos 503 ypos 153
+                    textbutton _("           Disable") action Preference("rollback side", "disable") xpos 447 ypos 188
+                    textbutton _("           Left") action Preference("rollback side", "left") xpos 447 ypos 205
+                    textbutton _("           Right") action Preference("rollback side", "right") xpos 447 ypos 224
+
+                vbox:
+                    style_prefix "check"
+                    label _("Skip") xpos 684 ypos 153
+                    textbutton _("           Unseen Text") action Preference("skip", "toggle") xpos 615 ypos 188
+                    textbutton _("           After Choices") action Preference("after choices", "toggle") xpos 615 ypos 205
+                    textbutton _("           Transitions") action InvertSelected(Preference("transitions", "toggle")) xpos 615 ypos 224
+
+                ## Additional vboxes of type "radio_pref" or "check_pref" can be
+                ## added here, to add additional creator-defined preferences.
+
+            null height (4 * gui.pref_spacing)
+
+            hbox:
+                style_prefix "slider"
+                box_wrap True
+
+                vbox:
+
+
+                    label _("Text Speed") ypos -7 xpos 1
+
+                    bar value Preference("text speed") ypos 1
+
+                    label _("Auto-Forward Time") ypos 3 xpos 1
+
+                    bar value Preference("auto-forward time") ypos 8
+
+                    xpos 382
+                    ypos 205
+
+
+
+                vbox:
+
+                    if config.has_music:
+                        label _("Music Volume") ypos -8 xpos 25
+
+                        hbox:
+                            bar value Preference("music volume")
+                        xpos 563
+                        ypos 205
+
+                    if config.has_sound:
+
+                        label _("Sound Volume") ypos 1 xpos 25
+
+                        hbox:
+                            bar value Preference("sound volume") ypos 5
+
+                            if config.sample_sound:
+                                textbutton _("Test") action Play("sound", config.sample_sound)
+
+
+                    if config.has_voice:
+                        label _("Voice Volume") ypos 8 xpos 25
+
+                        hbox:
+                            bar value Preference("voice volume") ypos 10
+
+                            if config.sample_voice:
+                                textbutton _("Test") action Play("voice", config.sample_voice)
+
+                    if config.has_music or config.has_sound or config.has_voice:
+                        null height gui.pref_spacing
+
+            textbutton _("           Mute All"):
+                action Preference("all mute", "toggle")
+                style "mute_all_button"
+                ypos 235
+                xpos 1070
+
 
 ## History screen ##############################################################
 ##
@@ -999,15 +1117,16 @@ screen history():
 
     tag menu
     add "gui/history.png"
+    text "{size=+20}History{/size}" xpos 850 ypos 120
     imagebutton:
         xpos 30
         ypos 80
         auto "gui/gallery/back_%s_button.png"
         action Return()
+
     ## Avoid predicting this screen, as it can be very large.
     predict False
     style_prefix "history"
-
     vbox:
         xalign 0.3
         ypos 250
@@ -1015,73 +1134,36 @@ screen history():
             yinitial 1.0
             draggable True
             mousewheel True
-            xmaximum 2000
-            ymaximum 750
+            xmaximum 1400
+            ymaximum 700
+            yfill True
+            scrollbars "vertical"
             xsize 1000 ysize 750
-            xpos 50 ypos -80
+            xpos 100 ypos -50
             vbox:
 
                 for h in _history_list:
                     if h.who:
                         text h.who xalign 0.0 text_align 0.0:
-                            size 40
-                            color "#ffffff"
-                            xpos 250
+                            size 50
+                            color u"#ffce3b"
 
                     $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                     text what:
-                        size 35
+                        color "#ffffff"
                         substitute False
                     text " "
                 if not _history_list:
-                    text _("The dialogue history is empty.") ypos 10 xpos 550
-
+                    text _("The dialogue history is empty.")
 
 
 ## This determines what tags are allowed to be displayed on the history screen.
 
 define gui.history_allow_tags = set()
-
-
-style history_window is empty
-
-style history_name is gui_label
-style history_name_text is gui_label_text
-style history_text is gui_text
-
-style history_text is gui_text
-
-style history_label is gui_label
-style history_label_text is gui_label_text
-
-style history_window:
-    xfill True
-    ysize gui.history_height
-
-style history_name:
-    xpos gui.history_name_xpos
-    xanchor gui.history_name_xalign
-    ypos gui.history_name_ypos
-    xsize gui.history_name_width
-
-style history_name_text:
-    min_width gui.history_name_width
-    text_align gui.history_name_xalign
-
-style history_text:
-    xpos gui.history_text_xpos
-    ypos gui.history_text_ypos
-    xanchor gui.history_text_xalign
-    xsize gui.history_text_width
-    min_width gui.history_text_width
-    text_align gui.history_text_xalign
-    layout ("subtitle" if gui.history_text_xalign else "tex")
-
-style history_label:
-    xfill True
-
 style history_label_text:
-    xalign 0.5
+    xpos 350
+    ypos 50
+    size 90
 
 
 ## Help screen #################################################################
