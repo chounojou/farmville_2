@@ -766,6 +766,9 @@ label phase1:
         
         show FRai Default at center with ease
         FRai Surprised "Wha-"
+        
+        stop music
+        play music audio.Felix loop
 
         show Felix Default at right with dissolve 
         show FRai Serious
@@ -845,6 +848,7 @@ label phase1:
         FRai "‘But I think it’s safe to go to the village and search.’"
 
         #[Screen fades to black]
+        stop music
         play music audio.village loop
         scene Village
         with fade #deleted?
@@ -1099,6 +1103,8 @@ label phase1:
         show FRai Default at right with easeinright
         FRai Surprised "‘What, again?’"
 
+        stop music
+        play music audio.Felix loop
         show Felix Default at left with easeinleft
         Felix "It’s you again..."
         Felix Smirk "You’re never gonna catch me!"
@@ -1276,8 +1282,6 @@ label phase1:
         Felix "IPD."
         #[Screen fades to black]
 
-        stop music
-        play music audio.fish_shop loop
         scene Fish Shop
         show Felix Default at right
         with fade
