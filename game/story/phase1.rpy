@@ -1,5 +1,5 @@
 label phase1:
-    play music audio.IPD volume 0.25 loop
+    play music audio.IPD loop
     scene IPD WORKPLACE
     with fade
     "It’s a bright and sunny day at the Interdimensional Police Department or IPD for short."
@@ -55,7 +55,7 @@ label phase1:
 
     label scene1_intro:
         stop music
-        play music audio.meeting_room volume 0.25 loop
+        play music audio.meeting_room loop
         scene Meeting Room
         with fade
 
@@ -117,7 +117,7 @@ label phase1:
         #Blackscreen
 
         stop music
-        play music audio.cctv_room volume 0.25 loop
+        play music audio.cctv_room loop
         scene CCTV
         with fade
         show Artemisia Default at left with dissolve
@@ -153,7 +153,7 @@ label phase1:
         stop music
 
     label scene2_2intro:
-        play music audio.IPD volume 0.25 loop
+        play music audio.IPD loop
         scene IPD WORKPLACE
         with fade
 
@@ -194,7 +194,7 @@ label phase1:
         jump scene3_intro
 
     label scene3_intro:
-        play music audio.IPD volume 0.25 loop
+        play music audio.IPD loop
         scene IPD WORKPLACE
         with fade
 
@@ -261,7 +261,7 @@ label phase1:
         
     label scene3_2intro:
         stop music
-        play music audio.IPD_cell volume 0.25 loop
+        play music audio.IPD_cell loop
         scene Jail Red
         with dissolve
         
@@ -309,7 +309,7 @@ label phase1:
 
     #Mulainya pengejaran sus pertama yaitu Felix
     label scene1_1:
-        play music audio.farm volume 0.25 loop
+        play music audio.farm loop
         scene Farm
         with fade
         
@@ -641,7 +641,7 @@ label phase1:
 
         stop music
         #[Screen fades to black]
-        play music audio.market volume 0.25 loop
+        play music audio.market loop
         scene Market
         with fade
         show FRai Happy with dissolve
@@ -673,7 +673,7 @@ label phase1:
         
         #[Screen fades to black]
         stop music
-        play music audio.fish_shop volume 0.25 loop
+        play music audio.fish_shop loop
         scene Fish Shop
         show Fisherman Default at right
         with fade
@@ -729,7 +729,7 @@ label phase1:
 
         #[Screen fades to black]
         stop music
-        play music audio.market volume 0.25 loop
+        play music audio.market loop
         scene Market
         with fade
         FRai "Have you seen a cat boy around here, sir? He has pink and bushy hair."
@@ -845,7 +845,7 @@ label phase1:
         FRai "‘But I think it’s safe to go to the village and search.’"
 
         #[Screen fades to black]
-        play music audio.village volume 0.25 loop
+        play music audio.village loop
         scene Village
         with fade #deleted?
 
@@ -952,7 +952,7 @@ label phase1:
 
         #[Screen fades to black]
         stop music
-        play music audio.forest volume 0.25 loop
+        play music audio.forest loop
         scene Forest
         with fade
         FRai "Hmm, it’s pretty hard searching with all these trees everywhere.."
@@ -1045,7 +1045,7 @@ label phase1:
         #[Screen fades to black]
 
         stop music
-        play music audio.fish_shop volume 0.25 loop
+        play music audio.fish_shop loop
         scene Fish Shop
         show Fisherman Default at center
         with fade
@@ -1087,7 +1087,7 @@ label phase1:
 
         #[Screen fades to black]
         stop music
-        play music audio.market volume 0.25 loop
+        play music audio.market loop
         scene Market
         show FRai Default
         with fade
@@ -1277,7 +1277,7 @@ label phase1:
         #[Screen fades to black]
 
         stop music
-        play music audio.fish_shop volume 0.25 loop
+        play music audio.fish_shop loop
         scene Fish Shop
         show Felix Default at right
         with fade
