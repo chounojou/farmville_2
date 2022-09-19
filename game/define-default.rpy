@@ -312,6 +312,7 @@ image Hill          = "BG/Hill.jpg"
 image Fish Shop     = "BG/Fish shop.jpg"
 image CCTV          = "BG/CCTV.jpg"
 image Barn          = "BG/Barn.jpg"
+image market_2nd    = "BG/Roof top.jpg"
 
 image black         = "BG/black-screen.png"
 image white         = "BG/white-screen.png"
@@ -361,6 +362,33 @@ default persistent.cg9_unlocked = False
 #Assets
 image Scratches Zoom = "Asset/Hebi/Tree_2_zoom.png"
 
+image pitchfork:
+    im.Flip("Asset/Pitchfork.png", vertical=True)
+    zoom 0.35
+image moon_key:
+    "Asset/moon-key.png"
+    zoom 0.35
+image star_key:
+    "Asset/star-key.png"
+    zoom 0.35
+image sun_key:
+    "Asset/sun-key.png"
+    zoom 0.35
+
+image star_sword:
+    "Asset/Pedang.png"
+    zoom 0.50
+
+image gate_closed:
+    "Asset/barn_door_close.png"
+    zoom 0.50
+image gate_open:
+    "Asset/barn_door_open.png"
+    zoom 0.50
+
+image wyen_screen:
+    "Asset/Hebi/Screen.png"
+
 
 
 #Phases
@@ -380,3 +408,21 @@ default persistent.k2_caught = False
 default persistent.k3_caught = False
 
 #Variabel Phase3
+
+#----------------------------------------------------------------------#
+#-----------------------------Animation--------------------------------#
+#----------------------------------------------------------------------#
+
+image jail_blinking:
+    "BG/Jail (alarm).jpg"
+    0.5
+    "BG/Jail.jpg"
+    0.5
+    repeat
+
+image galaxy_blinking:
+    "BG/WyenChamber_Red.jpg"
+    1.0
+    "BG/WyenChamber.jpg"
+    1.0
+    repeat
