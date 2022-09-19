@@ -327,9 +327,8 @@ image galaxy        = "BG/WyenChamber.jpg"
 image CG1:
     "CGs/CG_1.png"
     zoom 0.5
-
 default persistent.cg1_unlocked = False
-image CG2: 
+image CG2:
     "CGs/CG_2.png"
     zoom 0.5
 default persistent.cg2_unlocked = False
