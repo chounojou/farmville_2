@@ -66,7 +66,7 @@ label phase1:
         show Rai Default at right with easeinright
         Rai Thinking "What happened Boss? Am I late?"
 
-        show Boss Default at left with dissolve
+        show Boss DefaultSparkle at left with dissolve
         Boss    "No, the higher-ups suddenly rescheduled our meeting for next week due to the lack of some documents that we need."
         Rai Sad "Too bad, I was hoping I could be useful today Boss."
         Boss    "Don't worry, I already said that you eagerly wait for them."
@@ -80,7 +80,6 @@ label phase1:
 
         hide Rai Default
         with dissolve
-        hide Boss Default 
         play sound audio.footsteps
         "Rai walks back to his office remembering that he wanted to tidy up the files that were on his drawers a while ago."
         
@@ -290,6 +289,7 @@ label phase1:
         Galilean_3 "That was the plan, on the CCTV footage his collar is still on him but he somehow managed to deactivate it."
         Rai "Leave him to me, I’ll catch him."
         hide Galilean_3 at left with dissolve
+        show Artemisia Default at left with ease
         Artemisia "What do you mean sir?"
 
         "As Artemisia is still questioning what Rai’s words mean, Rai starts to contact the main branch via his receiver. Inputting the combination that only a few officers know about."
@@ -338,11 +338,10 @@ label phase1:
         FRai "There’s really no one else outside.."
 
         show FRai Default with dissolve
+        play sound audio.farm_animals
         FRai Nervous "It’s kinda creepy… at least there’s animals. I can see them."
 
         ##[SFX chicken noises, duck quacking, horse neighing, sheep baa-ing, cow moo-ing (all noises at once, chaotic)]
-        play sound audio.farm_animals
-
         FRai Surprised "Whoa, wha-"
 
         #SFX #[SFX barn door opening]
@@ -604,6 +603,9 @@ label phase1:
         #[SFX paper unroll (srek)]
         play sound audio.paper_unroll
         #[Asset: Farmland map start]
+        show black
+        show Maps at truecenter 
+        with dissolve
 
         FRai "'Hmm, there's a river near the forest.'"
         FRai "'Knowing his past crime, maybe he’s searching for fish?'"
@@ -819,10 +821,10 @@ label phase1:
         label scene1_2_1:
             #Fadeout Blackscreen
             #Flashback Filter? using tint/swirly effect?
-            scene Market
-            show FRai Default
+            scene Market Grayscale
+            show FRai Grayscale
             with fade
-            FRai Default "Please tell the Fisherman at the fish shop if you spot him!"
+            FRai GDefault "Please tell the Fisherman at the fish shop if you spot him!"
 
             jump scene1_3
 
@@ -830,13 +832,13 @@ label phase1:
         #play music audio.market loop
         scene Market
         show FRai Default
-        with fade
+        with dissolve
         FRai Thinking "‘If the inmate is back to the market.. I’ve told everyone to go to the fish shop if they see the inmate, so I’ve got more eyes to help me.’"
         FRai "‘And maybe the people at the market can catch him..’"
 
         #[Flashback filter]
-        scene Fish Shop
-        show MeatButcher Default
+        scene GFish Shop
+        show MeatButcher GDefault
         with fade
         Meat_Butcher "And he’s fast. There were some people in and outside this shop, but nobody could catch him."
 
@@ -1000,7 +1002,9 @@ label phase1:
         FRai "There’s something on this tree.."
 
         #[Asset Scratches on tree]
-        show Scratches Zoom with dissolve
+        show black
+        show Scratches Zoom at truecenter 
+        with dissolve
         FRai Thinking "Scratches.. it could be caused by the inmate, or a wild animal."
         #[Asset Scratches on tree]
 
@@ -1008,7 +1012,7 @@ label phase1:
         #play music audio.forest loop
         scene Forest
         show FRai Default at left
-        show TalkingTree at right
+        show TalkingTree Default at right
         with fade
 
         FRai Default "Mr Talking Tree, do you know who did this?"
@@ -1117,9 +1121,9 @@ label phase1:
         play sound audio.footsteps
         "Chase scene ensues. The police officer and the inmate are running, jumping, and parkouring through the crowded market."
         FRai Serious "Excuse me!"
-        "Whoa!!" #the soud of Lady
+        "Whoa!!" with vpunch #the soud of Lady
         FRai "I’m sorry- whoa!"
-        "Whoaah!" #the sound of Children
+        "Whoaah!" with vpunch #the sound of Children
         FRai Nervous "‘Oh my God, I almost hit those children!"
         Felix "Ahaha! You can’t catch up to me, don’t you?" #show Felix Smirk?
         FRai "He’s too fast..! I have to do something to slow him down!"
@@ -1145,9 +1149,9 @@ label phase1:
             Felix "‘Crap, he’s catching up!’"
             Felix "‘I can’t let it happen!’"
             #[SFX wooden barrel falling harshly (tabrak tabrakan)]
-            play sound audio.wooden_barrel_falling
             Felix Smirk "My turn!"
-            FRai Surprised "Whop-"
+            play sound audio.wooden_barrel_falling
+            FRai Surprised "Whop-" with vpunch
 
             menu:
                 "Evade":
@@ -1191,9 +1195,8 @@ label phase1:
                 #[Screen fades to black]
                 #[SFX wooden barrel falling harshly (tabrak tabrakan)]
                 play sound audio.wooden_barrel_falling
-
+                show black with dissolve
                 "Rai may have some broken bones now."
-
                 jump scene1_3_1
 
             label scene1_3_1a3:
@@ -1204,6 +1207,7 @@ label phase1:
                 #[Screen fades to black]
                 #[SFX wooden barrel falling harshly (tabrak tabrakan)]
                 play sound audio.wooden_barrel_falling
+                show black with dissolve
                 "Rai forgot he doesn’t have a weapon and his fists aren’t enough to destroy the wooden barrels."
 
                 jump scene1_3_1
@@ -1219,9 +1223,9 @@ label phase1:
         FRai Thinking "‘Where is he..’"
         FRai Annoyed "‘Ugh, I can’t find him in this crowd!’"
         FRai Thinking "‘But this crowd.. that means..’"
-        "Hey, that’s the catboy that stole fishes!" #the sound of Cutlery Seller
+        Seller "Hey, that’s the catboy that stole fishes!" #the sound of Cutlery Seller
         "Is that the thief the farmer boy was talking about?" #the sound of Woman
-        "Someone catch him!" #the sound of Girl
+        "Someone catch him!" with vpunch #the sound of Girl
         
         #[SFX people chattering but louder(rame)]
         play sound audio.people_chattering_loop
@@ -1231,11 +1235,13 @@ label phase1:
         Felix Annoyed "‘Ugh, that yellow head must’ve planned this..’"
         Felix "‘If there’s a building I could climb..’"
         Felix "‘There it is!’"
+        hide Felix Default with dissolve
 
         #[SFX landing on roof]
         play sound audio.landing_roof
 
-        "My shop roof!" #the sound of Vegetable and fruit seller
+        FV_Seller "My shop roof!" #the sound of Vegetable and fruit seller
+        show FRai Default at center with ease
         FRai Serious "‘Oh no, he’s gonna climb to a higher building..’"
         FRai "‘I have to climb too to catch him..!’"
 
@@ -1243,15 +1249,18 @@ label phase1:
         play sound audio.climbing
 
         FRai "‘I gotta at least get to the highest floor of this building for a good view.’"
-        "Uwaa?!" #sound of Shop customer
-        FRai Nervous "‘Oh man, everyone from the window can see me..’"
+        Seller "Uwaa?!" with vpunch #sound of Shop customer
+        scene Rooftop with dissolve
+        show FRai Default at left with easeinleft
+        FRai Nervous "‘Oh man, everyone can see me from the window...’"
 
         #[SFX landing on floor]
         play sound audio.landing_floor
-
+        
         FRai "‘Good thing this window is open. Now where is he.."
-        FRai Surprised "There you are!"
-
+        show Felix Default at right with easeinright
+        hide Felix Default with dissolve  
+        FRai Surprised "There you are!"      
         #[CG 2 START]
         show CG2 with dissolve
         $ persistent.cg2_unlocked = True
@@ -1308,7 +1317,7 @@ label phase1:
         FRai Happy "You defeated him!!"
 
         play sound audio.crowd_cheering
-        "YEAAAHH!!" #the sound of Crowd
+        Crowd "YEAAAHH!!" #the sound of Crowd
         #[SFX crowd cheering]
     
         Fisherman "My deepest thanks, really…"
@@ -1322,7 +1331,7 @@ label phase1:
 
         Meat_Butcher "Nice job, kid."
         FRai Sad "I’m not a kid.."
-        "Hahaha!" #the sound of Crowd
+        Crowd "Hahaha!" #the sound of Crowd
         FRai "'These people.. they're all kind.'"
         FRai "'I can't do much without all the people I've met. I can't succeed my mission without them.'"
         FRai Serious "Alright now, catboy.."
@@ -1345,6 +1354,8 @@ label phase1:
         FRai Thinking "Where did you get this?"
         FRai "A..."
         FRai "Code?"
+
+        stop music
 
         $ persistent.phase1 = False
         $ persistent.phase2 = True

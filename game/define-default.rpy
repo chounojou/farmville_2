@@ -18,6 +18,8 @@ define Villager     = Character("Villager")
 define Talking_Tree = Character("Talking Tree")
 define Ducks        = Character("Ducks")
 define Duck         = Character("Duck")
+define Crowd        = Character("Sound of Crowd")
+define FV_Seller    = Character("Fruits & Veggies Seller")
 
 define Seller       = Character("Seller")
 define Unknown      = Character("???")
@@ -89,8 +91,13 @@ image side Rai Excited   :
 #============================ Farmer Rai =============================#
 ###########################================############################
 image FRai Default   = "Sprite/Rai/Farmer Rai_Half.png"
+image FRai GDefault   = im.Grayscale("Sprite/Rai/Farmer Rai_Half.png")
+image FRai Grayscale = im.Grayscale("Sprite/Rai/Farmer Rai_Half.png")
 image side FRai Default:
     "Sprite/Rai/side Farmer Rai_Default.png"
+    zoom 0.35
+image side FRai GDefault:
+    im.Grayscale("Sprite/Rai/side Farmer Rai_Default.png")
     zoom 0.35
 
 image FRai Annoyed   = "Sprite/Rai/Farmer Rai_Half.png"
@@ -233,7 +240,7 @@ image Galilean_3 Default:
 #Artemisia
 image Artemisia Default:
     "Sprite/Artemisia/Artemisia Clear.png"
-    zoom 0.50
+    zoom 0.45
 image side Artemisia Black:
     "Sprite/Artemisia/Artemisia NotClear.png"
     zoom 0.25
@@ -265,6 +272,9 @@ image FruitsVeggies Seller:
 
 image MeatButcher Default:
     "Sprite/Butcher/no blood.png"
+    zoom 0.50
+image MeatButcher GDefault:
+    im.Grayscale("Sprite/Butcher/no blood.png")
     zoom 0.50
 
 image MeatButcher Blood:
@@ -307,11 +317,14 @@ image Jail          = "BG/Jail.jpg"
 image Jail Red      = "BG/Jail (alarm).jpg"
 image Village       = "BG/Village.jpg"
 image Market        = "BG/Market.jpg"
+image Market Grayscale = im.Grayscale("BG/market.jpg")
 image Farm          = "BG/Farm.jpg"
 image Hill          = "BG/Hill.jpg"
 image Fish Shop     = "BG/Fish shop.jpg"
+image GFish Shop     = im.Grayscale("BG/Fish shop.jpg")
 image CCTV          = "BG/CCTV.jpg"
 image Barn          = "BG/Barn.jpg"
+image Rooftop       = "BG/Roof top.jpg"
 
 image black         = "BG/black-screen.png"
 image white         = "BG/white-screen.png"
@@ -360,9 +373,12 @@ default persistent.cg9_unlocked = False
 
 
 #Assets
-image Scratches Zoom = "Asset/Hebi/Tree_2_zoom.png"
-
-
+image Scratches Zoom:
+    "Asset/Hebi/Tree_2_zoom.png"
+    zoom 0.9
+image Maps:
+    "Asset/Map (ver2).png"
+    zoom 0.36
 
 #Phases
 
