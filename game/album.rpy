@@ -1,59 +1,69 @@
 init python:
     gallery = Gallery()
 
-    gallery.button("CG1")
-    gallery.image("CGs/CG_1.png")
+    gallery.button("cg1")
+    gallery.image("CG1")
     gallery.condition("persistent.cg1_unlocked")
 
-    gallery.button("CG2")
-    gallery.image("CGs/CG_2.png")
+    gallery.button("cg2")
+    gallery.image("CG2")
     gallery.condition("persistent.cg2_unlocked")
 
-    gallery.button("CG3")
-    gallery.image("CGs/CG_3.png")
+    gallery.button("cg3")
+    gallery.image("CG3")
     gallery.condition("persistent.cg3_unlocked")
 
-    gallery.button("CG4")
-    gallery.image("CGs/CG_4.png")
+    gallery.button("cg4")
+    gallery.image("CG4")
     gallery.condition("persistent.cg4_unlocked")
 
-    gallery.button("CG5")
-    gallery.image("CGs/CG_5.png")
+    gallery.button("cg5")
+    gallery.image("CG5")
     gallery.condition("persistent.cg5_unlocked")
 
-    gallery.button("CG6")
-    gallery.image("CGs/CG_6.png")
+    gallery.button("cg6")
+    gallery.image("CG6")
     gallery.condition("persistent.cg6_unlocked")
 
-    gallery.button("CG7")
-    gallery.image("CGs/CG_7.png")
+    gallery.button("cg7")
+    gallery.image("CG7")
     gallery.condition("persistent.cg7_unlocked")
 
-    gallery.button("CG8")
-    gallery.image("CGs/CG_8.png")
+    gallery.button("cg8")
+    gallery.image("CG8")
     gallery.condition("persistent.cg8_unlocked")
 
-    gallery.button("CG9")
-    gallery.image("CGs/CG_9.png")
+    gallery.button("cg9")
+    gallery.image("CG9")
     gallery.condition("persistent.cg9_unlocked")
 
-screen album:
+screen gallery:
+
     tag menu
-    add "images/CustomUI/bg gallery.jpg"
+    add "gui/gallery2_menu.png"
+
+    text "{color=#59173e}{size=+20}{font=happy chicken.otf}Gallery{/font}{/size}{/color}" xpos 980 ypos 125
+
+    imagebutton:
+        xpos 110
+        ypos 72
+        auto "gui/gallery/back_%s_button.png"
+        action Return()
+
 
     hbox:
-        xalign 0.5
-        yalign 0.5
-        spacing 30
+        ## xpos before edited is 570
+        xpos 600
+        ypos 250
+        spacing 100
         grid 3 3:
-            add gallery.make_button(name="CG1",unlocked="CGs/CG_1.png",locked="CGs/small/locked.jpg")
-            add gallery.make_button(name="CG2",unlocked="CGs/CG_2.png",locked="CGs/small/locked.jpg")
-            add gallery.make_button(name="CG3",unlocked="CGs/CG_3.png",locked="CGs/small/locked.jpg")
-            add gallery.make_button(name="CG4",unlocked="CGs/CG_4.png",locked="CGs/small/locked.jpg")
-            add gallery.make_button(name="CG5",unlocked="CGs/CG_5.png",locked="CGs/small/locked.jpg")
-            add gallery.make_button(name="CG6",unlocked="CGs/CG_6.png",locked="CGs/small/locked.jpg")
-            add gallery.make_button(name="CG7",unlocked="CGs/CG_7.png",locked="CGs/small/locked.jpg")
-            add gallery.make_button(name="CG8",unlocked="CGs/CG_8.png",locked="CGs/small/locked.jpg")
-            add gallery.make_button(name="CG9",unlocked="CGs/CG_9.png",locked="CGs/small/locked.jpg")
+            add gallery.make_button(name="cg1",unlocked="CGs/thumbnail/cg1_tn.png",locked="gui/gallery/blank_photo.png")
+            add gallery.make_button(name="cg2",unlocked="CGs/thumbnail/cg2_tn.png",locked="gui/gallery/blank_photo.png")
+            add gallery.make_button(name="cg3",unlocked="CGs/thumbnail/cg3_tn.png",locked="gui/gallery/blank_photo.png")
+            add gallery.make_button(name="cg4",unlocked="CGs/thumbnail/cg4_tn.png",locked="gui/gallery/blank_photo.png")
+            add gallery.make_button(name="cg5",unlocked="CGs/thumbnail/cg5_tn.png",locked="gui/gallery/blank_photo.png")
+            add gallery.make_button(name="cg6",unlocked="CGs/thumbnail/cg6_tn.png",locked="gui/gallery/blank_photo.png")
+            add gallery.make_button(name="cg7",unlocked="CGs/thumbnail/cg7_tn.png",locked="gui/gallery/blank_photo.png")
+            add gallery.make_button(name="cg8",unlocked="CGs/thumbnail/cg8_tn.png",locked="gui/gallery/blank_photo.png")
+            add gallery.make_button(name="cg9",unlocked="CGs/thumbnail/cg9_tn.png",locked="gui/gallery/blank_photo.png")
             spacing 15
-        textbutton "Return" action Return()
