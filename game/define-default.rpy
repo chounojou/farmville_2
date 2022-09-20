@@ -25,10 +25,11 @@ define Seller       = Character("Seller")
 define Unknown      = Character("???")
 define Crow         = Character("Crow")
 define Adventurer   = Character("Adventurer")
-define MiRA         = Character("MiRA")
-define The_Girl     = Character("The Girl")
+define MiRA         = Character("MiRA", image="Mira")
+define The_Girl     = Character("The Girl", image="Mira")
+define The_Girl2     = Character("The Girl", image="Elsyne")
 define Butcher      = Character("Butcher")
-define Elsyne       = Character("Elsyne")
+define Elsyne       = Character("Elsyne", image="Elsyne")
 
 define Galileans    = Character("Galileans")
 
@@ -186,6 +187,197 @@ image side Felix Hurt:
     "Sprite/inmates #1/side Felix Hurt.png"
     zoom 0.35
 
+#Inmates 2 (MiRA)
+image Mira Default:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Default:
+    "Sprite/inmates #2/side Default 1.png"
+    zoom 0.15
+
+image Mira Default2:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Default2:
+    "Sprite/inmates #2/side Default 2.png"
+    zoom 0.15
+
+image Mira Annoyed:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Annoyed:
+    "Sprite/inmates #2/side Annoyed.png"
+    zoom 0.15
+
+image Mira Serious:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Serious:
+    "Sprite/inmates #2/side Serious.png"
+    zoom 0.15
+
+image Mira Serious2:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Serious2:
+    "Sprite/inmates #2/side Serious 2.png"
+    zoom 0.15
+
+image Mira Angry:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Angry:
+    "Sprite/inmates #2/side Angry.png"
+    zoom 0.15
+
+image Mira Surprised:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Surprised:
+    "Sprite/inmates #2/side Surprise 1.png"
+    zoom 0.15
+
+image Mira Surprised2:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Surprised2:
+    "Sprite/inmates #2/side Surprise 2.png"
+    zoom 0.15
+
+image Mira Excited:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Excited:
+    "Sprite/inmates #2/side Excited.png"
+    zoom 0.15
+
+image Mira Excited2:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Excited2:
+    "Sprite/inmates #2/side Excited 2.png"
+    zoom 0.15
+
+image Mira Happy:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Happy:
+    "Sprite/inmates #2/side Happy.png"
+    zoom 0.15
+
+image Mira Happy2:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Happy2:
+    "Sprite/inmates #2/side Happy 2.png"
+    zoom 0.15
+
+image Mira Sad:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Sad:
+    "Sprite/inmates #2/side Sad.png"
+    zoom 0.15
+
+image Mira Sad2:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Sad2:
+    "Sprite/inmates #2/side Sad 2.png"
+    zoom 0.15
+
+image Mira Sad3:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Sad3:
+    "Sprite/inmates #2/side Sad 3.png"
+    zoom 0.15
+
+image Mira Sad4:
+    "Sprite/inmates #2/Default 1.png"
+    zoom 0.33
+image side Mira Sad4:
+    "Sprite/inmates #2/side Sad 4.png"
+    zoom 0.15
+
+#Inmates 3 (Elsyne)
+image Elsyne Default:
+    "Sprite/inmates #3/Default.png"
+    zoom 0.9
+image side Elsyne Default:
+    "Sprite/inmates #3/side Default.png"
+    zoom 0.35
+
+image Elsyne Default2:
+    "Sprite/inmates #3/Default 2.png"
+    zoom 0.9
+image side Elsyne Default2:
+    "Sprite/inmates #3/side Sad 2.png"
+    zoom 0.3
+
+image Elsyne Angry:
+    "Sprite/inmates #3/Default 2.png"
+    zoom 0.9
+image side Elsyne Angry:
+    "Sprite/inmates #3/side Angry.png"
+    zoom 0.3
+
+image Elsyne Shy:
+    "Sprite/inmates #3/Default.png"
+    zoom 0.9
+image side Elsyne Shy:
+    "Sprite/inmates #3/side Shy.png"
+    zoom 0.35
+
+image Elsyne Scared:
+    "Sprite/inmates #3/Default.png"
+    zoom 0.9
+image side Elsyne Scared:
+    "Sprite/inmates #3/side Scared.png"
+    zoom 0.35
+
+image Elsyne Surprised:
+    "Sprite/inmates #3/Default.png"
+    zoom 0.9
+image side Elsyne Surprised:
+    "Sprite/inmates #3/side Surprised.png"
+    zoom 0.35
+
+image Elsyne Surprised2:
+    "Sprite/inmates #3/Default 2.png"
+    zoom 0.9
+image side Elsyne Surprised2:
+    "Sprite/inmates #3/side Surprised 2.png"
+    zoom 0.3
+
+image Elsyne Sad:
+    "Sprite/inmates #3/Default.png"
+    zoom 0.9
+image side Elsyne Sad:
+    "Sprite/inmates #3/side Sad.png"
+    zoom 0.35
+
+image Elsyne Sad2:
+    "Sprite/inmates #3/Default 2.png"
+    zoom 0.9
+image side Elsyne Sad2:
+    "Sprite/inmates #3/side Sad 2.png"
+    zoom 0.3
+
+image Elsyne Smile:
+    "Sprite/inmates #3/Default.png"
+    zoom 0.9
+image side Elsyne Smile:
+    "Sprite/inmates #3/side Smile.png"
+    zoom 0.35
+
+image Elsyne Smile2:
+    "Sprite/inmates #3/Default 2.png"
+    zoom 0.9
+image side Elsyne Smile2:
+    "Sprite/inmates #3/side Smile 2.png"
+    zoom 0.3
+
 #----------------------------------------------------------------------#
 #----------------------------------WYEN--------------------------------#
 #----------------------------------------------------------------------#
@@ -324,7 +516,9 @@ image Fish Shop     = "BG/Fish shop.jpg"
 image GFish Shop     = im.Grayscale("BG/Fish shop.jpg")
 image CCTV          = "BG/CCTV.jpg"
 image Barn          = "BG/Barn.jpg"
+
 image Rooftop       = "BG/Roof top.jpg"
+image market_2nd    = "BG/Roof top.jpg"
 
 image black         = "BG/black-screen.png"
 image white         = "BG/white-screen.png"
@@ -341,11 +535,16 @@ image caveFinal:
     zoom 2.0
 
 image Forest:
-    "BG/Forest.jpg"
-    zoom 0.3
+    "Bg/Forest.jpg"
+    zoom 0.28
+
+image Forest Night:
+    "Bg/Forest Night.jpg"
+    zoom 0.28
 
 image waterfallDay  = "BG/Waterfall_Day.jpg"
 image waterfallNight = "BG/Waterfall_Night.jpg"
+image waterfallNightRed ="BG/Waterfall_Night_Red.jpg"
 
 image galaxy        = "BG/WyenChamber.jpg"
 
@@ -353,13 +552,25 @@ image galaxy        = "BG/WyenChamber.jpg"
 image CG1:
     "CGs/CG_1.png"
     zoom 0.5
-
 default persistent.cg1_unlocked = False
-image CG2: 
+image CG2:
     "CGs/CG_2.png"
     zoom 0.5
 default persistent.cg2_unlocked = False
-
+image CG3:
+    "CGs/CG_3.png"
+    zoom 0.48
+default persistent.cg3_unlocked = False
+image CG4:
+    "CGs/CG_4.png"
+    zoom 0.48
+default persistent.cg4_unlocked = False
+image CG5:
+    "CGs/CG_5.png"
+default persistent.cg5_unlocked = False
+image CG6:
+    "CGs/CG_6.png"
+default persistent.cg6_unlocked = False
 
 image CG7:
     "CGs/CG_7.png"
@@ -379,6 +590,63 @@ image Scratches Zoom:
 image Maps:
     "Asset/Map (ver2).png"
     zoom 0.36
+=======
+image Scratches Zoom = "Asset/Hebi/Tree_2_zoom.png"
+
+image pitchfork:
+    im.Flip("Asset/Pitchfork.png", vertical=True)
+    zoom 0.35
+image moon_key:
+    "Asset/moon-key.png"
+    zoom 0.35
+image star_key:
+    "Asset/star-key.png"
+    zoom 0.35
+image sun_key:
+    "Asset/sun-key.png"
+    zoom 0.35
+
+image star_sword:
+    "Asset/Pedang.png"
+    zoom 0.50
+
+image gate_closed:
+    "Asset/barn_door_close.png"
+    zoom 0.50
+image gate_open:
+    "Asset/barn_door_open.png"
+    zoom 0.50
+
+image wyen_screen:
+    "Asset/Hebi/Screen.png"
+
+image Antena Device:
+    "Asset/Hotaru/Rai Asset Jarum.png"
+    zoom 0.4
+
+image Radar Machine:
+    "Asset/Hotaru/mesin radar rai.png"
+    zoom 0.4
+
+image Ring:
+    "Asset/Hotaru/cincin gepeng.png"
+    zoom 0.4
+
+image Tempered Glass:
+    "Asset/Hotaru/layar radar.png"
+    zoom 0.4
+
+image Rubber:
+    "Asset/Hotaru/ban lentur.png"
+    zoom 0.4
+
+image Hair:
+    "Asset/Sehelai Rambut.png"
+    zoom 0.3
+
+image Map:
+    "Asset/Map (ver2).png"
+    zoom 0.15
 
 #Phases
 
@@ -397,3 +665,21 @@ default persistent.k2_caught = False
 default persistent.k3_caught = False
 
 #Variabel Phase3
+
+#----------------------------------------------------------------------#
+#-----------------------------Animation--------------------------------#
+#----------------------------------------------------------------------#
+
+image jail_blinking:
+    "BG/Jail (alarm).jpg"
+    0.5
+    "BG/Jail.jpg"
+    0.5
+    repeat
+
+image galaxy_blinking:
+    "BG/WyenChamber_Red.jpg"
+    1.0
+    "BG/WyenChamber.jpg"
+    1.0
+    repeat
