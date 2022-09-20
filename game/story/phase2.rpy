@@ -3468,6 +3468,7 @@ label phase2:
 
             show Elsyne Angry
             show FRai Default at right
+            play sound audio.kick
             Elsyne "RRAAAGH" with vpunch
 
             show FRai Surprised at left with easeinright
@@ -3549,6 +3550,7 @@ label phase2:
             FRai "I... Can’t..."
 
             show Elsyne Angry
+            play sound audio.kick
             Elsyne "Hmmph" with vpunch
 
             show FRai Default at right with easeinleft
