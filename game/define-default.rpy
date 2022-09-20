@@ -46,47 +46,47 @@ define Old_Lady     = Character("Old Lady")
 image Rai Default   =    "Sprite/Rai/Rai_Half.png"
 image side Rai Default:
     "Sprite/Rai/side Rai_Default.png"
-    zoom 0.35
+    zoom 0.45
 
 image Rai Annoyed   = "Sprite/Rai/Rai_Half.png"
 image side Rai Annoyed   :
     "Sprite/Rai/side Rai_Annoyed.png"
-    zoom 0.35
+    zoom 0.45
 
 image Rai Surprised = "Sprite/Rai/Rai_Half.png"
 image side Rai Surprised :
     "Sprite/Rai/side Rai_Surprised.png"
-    zoom 0.35
+    zoom 0.45
 
 image Rai Nervous   = "Sprite/Rai/Rai_Half.png"
 image side Rai Nervous   :
     "Sprite/Rai/side Rai_Nervous.png"
-    zoom 0.35
+    zoom 0.45
 
 image Rai Sad       = "Sprite/Rai/Rai_Half.png"
 image side Rai Sad       :
     "Sprite/Rai/side Rai_Sad.png"
-    zoom 0.35
+    zoom 0.45
 
 image Rai Serious   = "Sprite/Rai/Rai_Half.png"
 image side Rai Serious   :
     "Sprite/Rai/side Rai_Serious.png"
-    zoom 0.35
+    zoom 0.45
 
 image Rai Happy     = "Sprite/Rai/Rai_Half.png"
 image side Rai Happy     :
     "Sprite/Rai/side Rai_Happy.png"
-    zoom 0.35
+    zoom 0.45
 
 image Rai Thinking  = "Sprite/Rai/Rai_Half.png"
 image side Rai Thinking  :
     "Sprite/Rai/side Rai_Thinking.png"
-    zoom 0.35
+    zoom 0.45
 
 image Rai Excited   = "Sprite/Rai/Rai_Half.png"
 image side Rai Excited   :
     "Sprite/Rai/side Rai_Excited.png"
-    zoom 0.35
+    zoom 0.45
 
 ###########################================############################
 #============================ Farmer Rai =============================#
@@ -96,50 +96,50 @@ image FRai GDefault   = im.Grayscale("Sprite/Rai/Farmer Rai_Half.png")
 image FRai Grayscale = im.Grayscale("Sprite/Rai/Farmer Rai_Half.png")
 image side FRai Default:
     "Sprite/Rai/side Farmer Rai_Default.png"
-    zoom 0.35
+    zoom 0.45
 image side FRai GDefault:
     im.Grayscale("Sprite/Rai/side Farmer Rai_Default.png")
-    zoom 0.35
+    zoom 0.45
 
 image FRai Annoyed   = "Sprite/Rai/Farmer Rai_Half.png"
 image side FRai Annoyed:
     "Sprite/Rai/side Farmer Rai_Annoyed.png"
-    zoom 0.35
+    zoom 0.45
 
 image FRai Surprised = "Sprite/Rai/Farmer Rai_Half.png"
 image side FRai Surprised:
     "Sprite/Rai/side Farmer Rai_Surprised.png"
-    zoom 0.35
+    zoom 0.45
 
 image FRai Nervous   = "Sprite/Rai/Farmer Rai_Half.png"
 image side FRai Nervous:
     "Sprite/Rai/side Farmer Rai_Nervous.png"
-    zoom 0.35
+    zoom 0.45
 
 image FRai Sad       = "Sprite/Rai/Farmer Rai_Half.png"
 image side FRai Sad:
     "Sprite/Rai/side Farmer Rai_Sad.png"
-    zoom 0.35
+    zoom 0.45
 
 image FRai Serious   = "Sprite/Rai/Farmer Rai_Half.png"
 image side FRai Serious:
     "Sprite/Rai/side Farmer Rai_Serious.png"
-    zoom 0.35
+    zoom 0.45
 
 image FRai Happy     = "Sprite/Rai/Farmer Rai_Half.png"
 image side FRai Happy:
     "Sprite/Rai/side Farmer Rai_Happy.png"
-    zoom 0.35
+    zoom 0.45
 
 image FRai Thinking  = "Sprite/Rai/Farmer Rai_Half.png"
 image side FRai Thinking:
     "Sprite/Rai/side Farmer Rai_Thinking.png"
-    zoom 0.35
+    zoom 0.45
 
 image FRai Excited   = "Sprite/Rai/Farmer Rai_Half.png"
 image side FRai Excited:
     "Sprite/Rai/side Farmer Rai_Excited.png"
-    zoom 0.35
+    zoom 0.45
 
 ########################================############################
 #============================ FELIX ===============================#
@@ -147,45 +147,45 @@ image side FRai Excited:
 ########################================############################
 image Felix Default:
     "Sprite/inmates #1/Felix Half.png"
-    zoom 0.55
+    zoom 0.50
 image side Felix Default:
     "Sprite/inmates #1/side Felix Default.png"
-    zoom 0.35
+    zoom 0.45
 
 image Felix Smirk:
     "Sprite/inmates #1/Felix Half.png"
-    zoom 0.55
+    zoom 0.50
 image side Felix Smirk:
     "Sprite/inmates #1/side Felix Smirk.png"
-    zoom 0.35
+    zoom 0.45
 
 image Felix Serious:
     "Sprite/inmates #1/Felix Half.png"
-    zoom 0.55
+    zoom 0.50
 image side Felix Serious:
     "Sprite/inmates #1/side Felix Serious.png"
-    zoom 0.35
+    zoom 0.45
 
 image Felix Annoyed:
     "Sprite/inmates #1/Felix Half.png"
-    zoom 0.55
+    zoom 0.50
 image side Felix Annoyed:
     "Sprite/inmates #1/side Felix Annoyed.png"
-    zoom 0.35
+    zoom 0.45
 
 image Felix Surprised:
     "Sprite/inmates #1/Felix Half.png"
-    zoom 0.55
+    zoom 0.50
 image side Felix Surprised:
     "Sprite/inmates #1/side Felix Surprised.png"
-    zoom 0.35
+    zoom 0.45
 
 image Felix Hurt:
     "Sprite/inmates #1/Felix Half.png"
-    zoom 0.55
+    zoom 0.50
 image side Felix Hurt:
     "Sprite/inmates #1/side Felix Hurt.png"
-    zoom 0.35
+    zoom 0.45
 
 #Inmates 2 (MiRA)
 image Mira Default:
@@ -193,112 +193,112 @@ image Mira Default:
     zoom 0.33
 image side Mira Default:
     "Sprite/inmates #2/side Default 1.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Default2:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Default2:
     "Sprite/inmates #2/side Default 2.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Annoyed:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Annoyed:
     "Sprite/inmates #2/side Annoyed.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Serious:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Serious:
     "Sprite/inmates #2/side Serious.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Serious2:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Serious2:
     "Sprite/inmates #2/side Serious 2.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Angry:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Angry:
     "Sprite/inmates #2/side Angry.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Surprised:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Surprised:
     "Sprite/inmates #2/side Surprise 1.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Surprised2:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Surprised2:
     "Sprite/inmates #2/side Surprise 2.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Excited:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Excited:
     "Sprite/inmates #2/side Excited.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Excited2:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Excited2:
     "Sprite/inmates #2/side Excited 2.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Happy:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Happy:
     "Sprite/inmates #2/side Happy.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Happy2:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Happy2:
     "Sprite/inmates #2/side Happy 2.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Sad:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Sad:
     "Sprite/inmates #2/side Sad.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Sad2:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Sad2:
     "Sprite/inmates #2/side Sad 2.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Sad3:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Sad3:
     "Sprite/inmates #2/side Sad 3.png"
-    zoom 0.15
+    zoom 0.20
 
 image Mira Sad4:
     "Sprite/inmates #2/Default 1.png"
     zoom 0.33
 image side Mira Sad4:
     "Sprite/inmates #2/side Sad 4.png"
-    zoom 0.15
+    zoom 0.20
 
 #Inmates 3 (Elsyne)
 image Elsyne Default:
@@ -306,77 +306,77 @@ image Elsyne Default:
     zoom 0.9
 image side Elsyne Default:
     "Sprite/inmates #3/side Default.png"
-    zoom 0.35
+    zoom 0.45
 
 image Elsyne Default2:
     "Sprite/inmates #3/Default 2.png"
     zoom 0.9
 image side Elsyne Default2:
     "Sprite/inmates #3/side Sad 2.png"
-    zoom 0.3
+    zoom 0.4
 
 image Elsyne Angry:
     "Sprite/inmates #3/Default 2.png"
     zoom 0.9
 image side Elsyne Angry:
     "Sprite/inmates #3/side Angry.png"
-    zoom 0.3
+    zoom 0.4
 
 image Elsyne Shy:
     "Sprite/inmates #3/Default.png"
     zoom 0.9
 image side Elsyne Shy:
     "Sprite/inmates #3/side Shy.png"
-    zoom 0.35
+    zoom 0.45
 
 image Elsyne Scared:
     "Sprite/inmates #3/Default.png"
     zoom 0.9
 image side Elsyne Scared:
     "Sprite/inmates #3/side Scared.png"
-    zoom 0.35
+    zoom 0.45
 
 image Elsyne Surprised:
     "Sprite/inmates #3/Default.png"
     zoom 0.9
 image side Elsyne Surprised:
     "Sprite/inmates #3/side Surprised.png"
-    zoom 0.35
+    zoom 0.45
 
 image Elsyne Surprised2:
     "Sprite/inmates #3/Default 2.png"
     zoom 0.9
 image side Elsyne Surprised2:
     "Sprite/inmates #3/side Surprised 2.png"
-    zoom 0.3
+    zoom 0.4
 
 image Elsyne Sad:
     "Sprite/inmates #3/Default.png"
     zoom 0.9
 image side Elsyne Sad:
     "Sprite/inmates #3/side Sad.png"
-    zoom 0.35
+    zoom 0.45
 
 image Elsyne Sad2:
     "Sprite/inmates #3/Default 2.png"
     zoom 0.9
 image side Elsyne Sad2:
     "Sprite/inmates #3/side Sad 2.png"
-    zoom 0.3
+    zoom 0.4
 
 image Elsyne Smile:
     "Sprite/inmates #3/Default.png"
     zoom 0.9
 image side Elsyne Smile:
     "Sprite/inmates #3/side Smile.png"
-    zoom 0.35
+    zoom 0.45
 
 image Elsyne Smile2:
     "Sprite/inmates #3/Default 2.png"
     zoom 0.9
 image side Elsyne Smile2:
     "Sprite/inmates #3/side Smile 2.png"
-    zoom 0.3
+    zoom 0.4
 
 #----------------------------------------------------------------------#
 #----------------------------------WYEN--------------------------------#
@@ -386,25 +386,25 @@ image Wyen Default:
     zoom 0.60
 image side Wyen Default:
     "Sprite/inmates #4/final/side Wyen Default.png"
-    zoom 0.35
+    zoom 0.45
 image Wyen Manic:
     "Sprite/inmates #4/final/Wyen Half.png"
     zoom 0.60
 image side Wyen Manic:
     "Sprite/inmates #4/final/side Wyen Manic.png"
-    zoom 0.35
+    zoom 0.45
 image Wyen Smile:
     "Sprite/inmates #4/final/Wyen Half.png"
     zoom 0.60
 image side Wyen Smile:
     "Sprite/inmates #4/final/side Wyen Smile.png"
-    zoom 0.35
+    zoom 0.45
 image Wyen Surprised:
     "Sprite/inmates #4/final/Wyen Half.png"
     zoom 0.60
 image side Wyen Surprised:
     "Sprite/inmates #4/final/side Wyen Surprise.png"
-    zoom 0.35
+    zoom 0.45
 
 
 #Galileans
@@ -486,14 +486,14 @@ image Cow Default:
     zoom 0.50
 image side Cow Default:
     "Sprite/Cow/side Cow Default.png"
-    zoom 0.30
+    zoom 0.40
 
 image Cow WyenColor:
     "Sprite/Cow/wyen color ver.png"
     zoom 0.50
 image side Cow WyenColor:
     "Sprite/Cow/wyen color ver.png"
-    zoom 0.30
+    zoom 0.40
 
 image TalkingTree Default:
     "Sprite/Talking tree!/just smile.png"
@@ -581,6 +581,18 @@ default persistent.cg8_unlocked = False
 image CG9:
     "CGs/CG_9.png"
 default persistent.cg9_unlocked = False
+image CG10:
+    "CGs/CG_10.png"
+default persistent.cg10_unlocked = False
+image CG11:
+    "CGs/CG_11.png"
+default persistent.cg11_unlocked = False
+image CG12:
+    "CGs/CG_12.png"
+default persistent.cg12_unlocked = False
+image CG13:
+    "CGs/CG_13.png"
+default persistent.cg13_unlocked = False
 
 
 #Assets
@@ -590,7 +602,7 @@ image Scratches Zoom:
 image Maps:
     "Asset/Map (ver2).png"
     zoom 0.36
-    
+
 image Scratches Zoom = "Asset/Hebi/Tree_2_zoom.png"
 
 image pitchfork:
@@ -612,10 +624,10 @@ image star_sword:
 
 image gate_closed:
     "Asset/barn_door_close.png"
-    zoom 0.50
+    zoom 0.40
 image gate_open:
     "Asset/barn_door_open.png"
-    zoom 0.50
+    zoom 0.40
 
 image wyen_screen:
     "Asset/Hebi/Screen.png"
