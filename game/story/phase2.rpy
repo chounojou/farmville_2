@@ -3423,7 +3423,7 @@ label phase2:
             stop music fadeout 2.0
             play music audio.Elsyne
             scene waterfallNight with fade
-            play nature waterfall_loop
+            play nature waterfall_loop loop
 
             show Elsyne Default2 at left
             #From here on Elsyne gonna be on her Eldritch form, unless stated otherwise
