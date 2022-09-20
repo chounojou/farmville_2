@@ -1826,6 +1826,7 @@ label phase2:
             show FRai Default
             FRai "To the right, huh?"
 
+            play sound audio.gedubrak
             "Without any warning, Rai falls into a deep hole." with vpunch
             "It seemed there were several minutes before Rai stopped and hit the ground. The banging sound is quite loud."
 
