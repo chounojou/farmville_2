@@ -26,7 +26,7 @@ label phase1:
 
     #Galilean 1 appear
     # N : easeinright itu dateng ngeslide dari kanan
-    show Galilean_1 Default at left with easeinleft 
+    show Galilean_1 Default at left with easeinleft
     show Rai at right with ease
     Galilean_1 "Good morning! Sorry to disturb you so early in the morning…"
     Rai "Oh! Good morning!"
@@ -36,7 +36,7 @@ label phase1:
     Rai "Thank you for the reminder. I’ll get it ready."
     Galilean_1 "Okay then, I shall excuse myself now. Have a good day!"
 
-    hide Galilean_1 Default 
+    hide Galilean_1 Default
     with dissolve
 
     "As Rai gets back on his chair, he sees a post-it-note reminder on his PC screen to help fix the CCTV."
@@ -70,7 +70,7 @@ label phase1:
         Boss    "No, the higher-ups suddenly rescheduled our meeting for next week due to the lack of some documents that we need."
         Rai Sad "Too bad, I was hoping I could be useful today Boss."
         Boss    "Don't worry, I already said that you eagerly wait for them."
-        
+
         "Rai’s Boss reassures him with a shoulder pat."
 
         Boss "Is that the document that I asked you to fetch? It’s the notes for the meeting."
@@ -82,7 +82,7 @@ label phase1:
         with dissolve
         play sound audio.footsteps
         "Rai walks back to his office remembering that he wanted to tidy up the files that were on his drawers a while ago."
-        
+
         #SFX Footstep
         #BG : Blackscreen
         stop music
@@ -101,7 +101,7 @@ label phase1:
 
         show Rai Default at left with dissolve
         Rai Default "Oh, okay. Just put it on the table, thank you."
-        
+
         Galilean_2 "Then, I'll excuse myself."
         hide Galilean_2 with dissolve
         show Rai at center with ease
@@ -111,7 +111,7 @@ label phase1:
         Rai "My god, I thought it’s a prank. Damn you Artemisia."
         play sound audio.footsteps
         "Rai laughs as he folds the paper neatly and walks towards the CCTV Room."
-    
+
         #SFX Footstep
         #Blackscreen
 
@@ -137,14 +137,14 @@ label phase1:
         Rai Thinking "Hmm, the spot is kinda suspicious."
         Artemisia "What do you mean sir?"
 
-        show Rai Serious 
+        show Rai Serious
         Rai "I saw it from my office. The CCTVs placements are too specific, as if it was purposely moved to create a blind spot. Maybe it’s just my imagination though. Forget it."
         Artemisia "I see. How observant of you sir."
 
-        show Rai Excited 
+        show Rai Excited
         Rai "Aww hehe, I’ve been working here for so long that I feel like IPD is an extension of my body. So, where do I start?"
         Artemisia "Yes sir. Before that…"
-        
+
         hide Rai
         hide Artemisia
         with dissolve
@@ -163,7 +163,7 @@ label phase1:
 
         "Rai tinkers with the tools given by the Artemisia to repair the CCTV."
         "After he tightens back the screw and changes the lens, he reports back through the receiver to check if it’s working again or not."
-        
+
         Artemisia Black "Looking good sir."
         Rai Happy "Okay, thanks Artemisia."
 
@@ -213,7 +213,7 @@ label phase1:
 
         "As Rai speaks to himself, he sips another cola while arranging the drawer."
 
-        "He finds another peculiar book. It’s a dark-brown binder book, strapped with purple cloth, weaving an ‘ATHENEAN’ on its cover." 
+        "He finds another peculiar book. It’s a dark-brown binder book, strapped with purple cloth, weaving an ‘ATHENEAN’ on its cover."
         "The backside is a lot of hand-woven ribbon with colorful colors, mostly in red and blue."
         "When he flips it, one of the papers slips from the binder, Rai picks it up and reads the written text on it."
 
@@ -258,18 +258,18 @@ label phase1:
         hide Artemisia
         hide Rai Serious with dissolve
         "Rai quickened his pace to Northway IPD Jail Hall."
-        
+
     label scene3_2intro:
         stop music
         play music audio.IPD_cell loop
         scene Jail Red
         with dissolve
-        
+
         #SFX RUNNING
         play sound audio.running
         "As Rai arrives, there were three Galileian and an Artemisia in there examining the recent jailbreak room."
         show Galilean_3 Default at left with dissolve
-        
+
         show Rai Serious at right with easeinright
         Rai Serious "Data report. What’s the identity of the inmate? Did you see their number? Or anything?!"
 
@@ -313,7 +313,7 @@ label phase1:
         play music audio.farm loop
         scene Farm
         with fade
-        
+
         "It is a peaceful morning in Farmland. The sun had just climbed out of its hiding. Its warm light dyed the sky a yellowish orange."
         "It seemed like a normal morning, but an interdimensional portal near a barn, which isn’t normal."
         "A young man walked out of it and looked around."
@@ -402,7 +402,7 @@ label phase1:
         Farmer "You’re welcome."
         Farmer "Alright, I have to go now. Good luck on your task!" #Farmer gone?
         hide Farmer Default
-        hide Cow WyenColor 
+        hide Cow WyenColor
         with dissolve
         ##[SFX running away footsteps]
         play sound audio.running
@@ -423,7 +423,7 @@ label phase1:
         label scene1_1_1:
             #play music audio.Farm loop
             scene Farm
-            show FRai Default 
+            show FRai Default
             with dissolve
             FRai Default "Here you go duck."
             #[SFX ducks quacking]
@@ -475,7 +475,7 @@ label phase1:
         label scene1_1_2:
             #play music audio.Farm loop
             scene Farm
-            show FRai Default 
+            show FRai Default
             with dissolve
             FRai Default "Hello, horses. How’s your day?"
 
@@ -516,7 +516,7 @@ label phase1:
         scene Farm
         play sound audio.chickens
         #[SFX chicken noises]
-        show FRai Default 
+        show FRai Default
         with dissolve
         FRai Default "Alright, chickens. Breakfast time!"
 
@@ -605,7 +605,7 @@ label phase1:
         play sound audio.paper_unroll
         #[Asset: Farmland map start]
         show black
-        show Maps at truecenter 
+        show Maps at truecenter
         with dissolve
 
         FRai "'Hmm, there's a river near the forest.'"
@@ -673,7 +673,7 @@ label phase1:
 
         Bread_Seller "That building over there."
         FRai         "Thank you!"
-        
+
         #[Screen fades to black]
         stop music
         play music audio.fish_shop loop
@@ -760,20 +760,20 @@ label phase1:
         FRai "Hello, miss! Have you seen a catboy around here? He has pink and bushy hair."
 
         show FRai Annoyed at right with ease
-        show Villager Default at left with dissolve 
+        show Villager Default at left with dissolve
         Villager "Umm, yes?"
         FRai "Where?!"
         Villager "Uh, there…"
         Old_Lady "AAAAAHH! THIEF!!" with vpunch #Sound only? also this is soud of Old lady
-        
-        
+
+
         show FRai Default at center with ease
         FRai Surprised "Wha-"
-        
+
         stop music
         play music audio.Felix loop
 
-        show Felix Default at right with dissolve 
+        show Felix Default at right with dissolve
         show FRai Serious
         FRai Serious "You..!"
 
@@ -861,17 +861,17 @@ label phase1:
         FRai "‘Wow, it’s crowded in the morning.’"
 
         #[SFX 2 people bumping into each other]
-        show FRai Default at right 
+        show FRai Default at right
         show Villager Default at left
         with dissolve
-        show FRai at center 
+        show FRai at center
         show Villager at center
         with ease
 
         play sound audio.bump
         FRai Surprised "Uwah-" with vpunch
         show Villager Default at left with ease
-        Villager "Aaaah! I’m so sorry!" 
+        Villager "Aaaah! I’m so sorry!"
 
         show FRai Nervous at right with ease
         FRai Nervous "Ah, no, it’s my fault. I was spacing out and didn’t notice you."
@@ -884,7 +884,7 @@ label phase1:
         Villager "Here you go! Fresh potato!"
         FRai "Um, you don’t need to…"
         Villager "No, no, please take it!"
-        
+
         #[SFX tummy growl]
         play sound audio.tummy_growl
         FRai Happy "...Thank you!"
@@ -1004,7 +1004,7 @@ label phase1:
 
         #[Asset Scratches on tree]
         show black
-        show Scratches Zoom at truecenter 
+        show Scratches Zoom at truecenter
         with dissolve
         FRai Thinking "Scratches.. it could be caused by the inmate, or a wild animal."
         #[Asset Scratches on tree]
@@ -1048,7 +1048,7 @@ label phase1:
         Talking_Tree "Faaareeweell, myy chiildd…"
 
         #[SFX running footsteps]
-        
+
         FRai Serious "‘I left the market for hours already. I have to go back!"
         play sound audio.running
         #[Screen fades to black]
@@ -1102,7 +1102,7 @@ label phase1:
         with fade
         #[SFX running footsteps]
         play sound audio.running
-        
+
         FRai Serious "‘Where.. where is he..’"
         "AAAAAAAHH!! THIEF!! HELP!" with vpunch #the sound of Lady
         show FRai Default at right with easeinright
@@ -1227,7 +1227,7 @@ label phase1:
         "Hey, that’s the catboy that stole fishes!" #the sound of Cutlery Seller
         "Is that the thief the farmer boy was talking about?" #the sound of Woman
         "Someone catch him!" with vpunch #the sound of Girl
-        
+
         #[SFX people chattering but louder(rame)]
         play sound audio.people_chattering_loop
 
@@ -1257,11 +1257,11 @@ label phase1:
 
         #[SFX landing on floor]
         play sound audio.landing_floor
-        
+
         FRai "‘Good thing this window is open. Now where is he.."
         show Felix Default at right with easeinright
-        hide Felix Default with dissolve  
-        FRai Surprised "There you are!"      
+        hide Felix Default with dissolve
+        FRai Surprised "There you are!"
         #[CG 2 START]
         show CG2 with dissolve
         $ persistent.cg2_unlocked = True
@@ -1281,7 +1281,7 @@ label phase1:
         hide FRai Default
         hide Felix Default
 
-        scene Market 
+        scene Market
         show FRai Default at right
         show Felix Default at left
         with fade
@@ -1304,7 +1304,7 @@ label phase1:
         show Felix Default at center with ease
         Felix "Get outta my way-"
         show Fisherman Default at center with ease
-        
+
         #[SFX punch]
         play sound audio.punch
 
@@ -1320,13 +1320,13 @@ label phase1:
         play sound audio.crowd_cheering
         Crowd "YEAAAHH!!" #the sound of Crowd
         #[SFX crowd cheering]
-    
+
         Fisherman "My deepest thanks, really…"
         Fisherman "You’ve chased this tiger everywhere, without rest and without complaint!"
         FRai "That's too much.. but thank you."
 
         show MeatButcher Default at left with dissolve
-        show FRai Default at center 
+        show FRai Default at center
         show Fisherman Default at right
         with ease
 
@@ -1355,6 +1355,15 @@ label phase1:
         FRai Thinking "Where did you get this?"
         FRai "A..."
         FRai "Code?"
+
+        show black with fade
+        pause(2.0)
+
+        show CG10 with fade
+        $ persistent.cg10_unlocked = True
+        pause(10.0)
+        show black with fade
+        pause(5.0)
 
         stop music
 
