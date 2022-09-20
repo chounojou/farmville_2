@@ -213,7 +213,8 @@ label phase1:
 
         "As Rai speaks to himself, he sips another cola while arranging the drawer."
 
-        "He finds another peculiar book. It’s a dark-brown binder book, strapped with purple cloth, weaving an ‘ATHENEAN’ on its cover. The backside is a lot of hand-woven ribbon with colorful colors, mostly in red and blue."
+        "He finds another peculiar book. It’s a dark-brown binder book, strapped with purple cloth, weaving an ‘ATHENEAN’ on its cover." 
+        "The backside is a lot of hand-woven ribbon with colorful colors, mostly in red and blue."
         "When he flips it, one of the papers slips from the binder, Rai picks it up and reads the written text on it."
 
         Rai Excited "What's this… hmm.  It reads… 'It feels like a fairytale - Maxwell’."
@@ -1223,7 +1224,7 @@ label phase1:
         FRai Thinking "‘Where is he..’"
         FRai Annoyed "‘Ugh, I can’t find him in this crowd!’"
         FRai Thinking "‘But this crowd.. that means..’"
-        Seller "Hey, that’s the catboy that stole fishes!" #the sound of Cutlery Seller
+        "Hey, that’s the catboy that stole fishes!" #the sound of Cutlery Seller
         "Is that the thief the farmer boy was talking about?" #the sound of Woman
         "Someone catch him!" with vpunch #the sound of Girl
         
