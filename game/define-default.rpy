@@ -590,7 +590,7 @@ image Scratches Zoom:
 image Maps:
     "Asset/Map (ver2).png"
     zoom 0.36
-=======
+    
 image Scratches Zoom = "Asset/Hebi/Tree_2_zoom.png"
 
 image pitchfork:
@@ -683,3 +683,60 @@ image galaxy_blinking:
     "BG/WyenChamber.jpg"
     1.0
     repeat
+
+####Persistent Gallery####
+
+init python:
+    gallery = Gallery()
+
+    gallery.button("cg1")
+    gallery.image("CG1")
+    gallery.condition("persistent.cg1_unlocked")
+
+    gallery.button("cg2")
+    gallery.image("CG2")
+    gallery.condition("persistent.cg2_unlocked")
+
+    gallery.button("cg3")
+    gallery.image("CG3")
+    gallery.condition("persistent.cg3_unlocked")
+
+    gallery.button("cg4")
+    gallery.image("CG4")
+    gallery.condition("persistent.cg4_unlocked")
+
+    gallery.button("cg5")
+    gallery.image("CG5")
+    gallery.condition("persistent.cg5_unlocked")
+
+    gallery.button("cg6")
+    gallery.image("CG6")
+    gallery.condition("persistent.cg6_unlocked")
+
+    gallery.button("cg7")
+    gallery.image("CG7")
+    gallery.condition("persistent.cg7_unlocked")
+
+    gallery.button("cg8")
+    gallery.image("CG8")
+    gallery.condition("persistent.cg8_unlocked")
+
+    gallery.button("cg9")
+    gallery.image("CG9")
+    gallery.condition("persistent.cg9_unlocked")
+
+    gallery.button("cg10")
+    gallery.image("CG10")
+    gallery.condition("persistent.cg10_unlocked")
+
+    gallery.button("cg11")
+    gallery.image("CG11")
+    gallery.condition("persistent.cg11_unlocked")
+
+    gallery.button("cg12")
+    gallery.image("CG12")
+    gallery.condition("persistent.cg12_unlocked")
+
+    gallery.button("cg13")
+    gallery.image("CG13")
+    gallery.condition("persistent.cg13_unlocked")

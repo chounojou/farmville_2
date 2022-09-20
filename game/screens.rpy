@@ -114,7 +114,7 @@ screen say(who, what):
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
     if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xpos 200 yalign 1.0
 
 
 ## Make the namebox available for styling through the Character object.
@@ -234,7 +234,7 @@ style choice_button_text:
 style choice_vbox:
     xalign 0.5
     ypos 850
-    xpos 1150
+    xpos 950
     yanchor 0.5
 
     spacing gui.choice_spacing
@@ -252,7 +252,13 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
-    if quick_menu:
+    imagebutton:
+        xpos 1798
+        ypos 50
+        auto "gui/button/qm_%s.png"
+        action ShowMenu('pause_menu')
+
+    if quick_menu and not renpy.get_screen('choice'):
 
         hbox:
             style_prefix "quick"
