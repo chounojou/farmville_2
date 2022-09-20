@@ -233,7 +233,7 @@ style choice_button_text:
 
 style choice_vbox:
     xalign 0.5
-    ypos 850
+    ypos 450
     xpos 950
     yanchor 0.5
 
@@ -619,16 +619,31 @@ screen about():
             scrollbars "vertical"
             xsize 1000 ysize 750
             xpos 100 ypos -50
+
             vbox:
 
-                label "[config.name!t]"
-                text _("Version [config.version!t]\n")
+                text _("{size=+5}Project Assist: Terrabyd{/size}") xalign 0.5
+
+                grid 3 1:
+                    xalign 0.5
+                    text _("{font=Happy Chicken.otf}Story{/font}:\n-Maru (Lead)\n-Filia (V.Lead)\n-IzunaLord\n-Grenin\n-Renko\n-Galabun\n-Radice\n-Zenyastra")
+                    text _("{font=Happy Chicken.otf}Visual{/font}:\n-Wawa (Lead)\n-ComicSans (V.Lead)\n-Cantalea\n-Vira k.\n-Farichi\n-Rarugo\n-Dino Brando\n-Salaaad")
+                    text _("\n-Xerael\n-Aifira\n-Hotaru Setsuna\n-Rei Holysoto\n-Hebi Hanster\n-Anna Freyya\n-Hannu")
+                spacing 20
+                grid 3 1:
+                    xalign 0.5
+                    text _("{font=Happy Chicken.otf}  IT{/font}:\n-Chounojou (Lead)\n-Kuro Stark\n-Lucifenn\n-Yukio Defender")
+                    text _("{font=Happy Chicken.otf}  Audio{/font}:\n-Alto Ether (Lead)\n-No15e (V.Lead)\n-Riordan Hayton")
+                    text _("{font=Happy Chicken.otf}RiddleMaker{/font}:\n-Keppachi (Lead)\n-Rayden Rin (V.Lead)\n-mifmif")
+                text _("{font=Happy Chicken.otf}        BGM & SFX{/font}:\nhttps://dova-s.jp\nhttps://freesound.org\nhttps://opengameart.ord\nhttps://sound-effect.bbcrewind.co.uk") xpos 450
+                label "\n[config.name!t]" xalign 0.5
+                text _("Version [config.version!t]\n") xalign 0.5
 
                 ## gui.about is usually set in options.rpy.
                 if gui.about:
-                    text "[gui.about!t]\n"
+                    text "[gui.about!t]\n" xalign 0.5
 
-                text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+                text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]") xalign 0.5
 
 
 ## This is redefined in options.rpy to add text to the about screen.

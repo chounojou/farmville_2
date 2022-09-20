@@ -11,15 +11,15 @@ define Artemisia    = Character("Artemisia", image="Artemisia")
 define Farmer       = Character("Farmer")
 define Bread_Seller = Character("Bread Seller")
 define Fisherman    = Character("Fisherman")
-define Meat_Butcher = Character("Meat Butcher")
+define Meat_Butcher = Character("{size=-10}Meat Butcher{/size}")
 define Merchant     = Character("Merchant")
 define Felix        = Character("Felix", image="Felix")
 define Villager     = Character("Villager")
 define Talking_Tree = Character("Talking Tree")
 define Ducks        = Character("Ducks")
 define Duck         = Character("Duck")
-define Crowd        = Character("Sound of Crowd")
-define FV_Seller    = Character("Fruits & Veggies Seller")
+define Crowd        = Character("Crowds")
+define FV_Seller    = Character("Greengocer")
 
 define Seller       = Character("Seller")
 define Unknown      = Character("???")
@@ -450,6 +450,10 @@ image Boss DefaultSparkle:
 
 
 #Other NPC
+image Adventurer Default:
+    "Sprite/Adventurer/Adventurer.png"
+    zoom 0.50
+
 image Farmer Default:
     "Sprite/Farmer/Farmer.png"
     zoom 0.50
@@ -460,7 +464,7 @@ image Fisherman Default:
 
 image FruitsVeggies Seller:
     "Sprite/Fruits and Veggies Seller/Fruits and Veggies Seller.png"
-    zoom zoom 0.50
+    zoom 0.50
 
 image MeatButcher Default:
     "Sprite/Butcher/no blood.png"
@@ -508,6 +512,7 @@ image Meeting Room  = "BG/Meeting Room.jpg"
 image Jail          = "BG/Jail.jpg"
 image Jail Red      = "BG/Jail (alarm).jpg"
 image Village       = "BG/Village.jpg"
+image Village Night = "Bg/Village Night.jpg"
 image Market        = "BG/Market.jpg"
 image Market Grayscale = im.Grayscale("BG/market.jpg")
 image Farm          = "BG/Farm.jpg"
@@ -516,6 +521,10 @@ image Fish Shop     = "BG/Fish shop.jpg"
 image GFish Shop     = im.Grayscale("BG/Fish shop.jpg")
 image CCTV          = "BG/CCTV.jpg"
 image Barn          = "BG/Barn.jpg"
+image Shed          = "BG/Shed.jpg"
+image Dark Shed     = "Bg/Shed Dark.jpg"
+image River         = "Bg/River.jpg"
+image Corn Field    = "Bg/Corn field.jpg"
 
 image Rooftop       = "BG/Roof top.jpg"
 image market_2nd    = "BG/Roof top.jpg"
