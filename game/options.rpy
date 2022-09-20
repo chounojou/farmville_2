@@ -62,9 +62,9 @@ define config.has_voice = True
 
 define config.main_menu_music = audio.main_menu
 
-define config.default_music_volume = 0.2
-define config.default_sfx_volume = 0.5
-define config.default_voice_volume = 0.5
+define config.default_music_volume = 1.0
+define config.default_sfx_volume = 1.0
+define config.default_voice_volume = 1.0
 
 
 ## Transitions #################################################################
