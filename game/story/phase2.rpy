@@ -1,3 +1,10 @@
+#Register music channel
+init python:
+    renpy.music.register_channel("nature", "ambience", False)
+    renpy.music.register_channel("hewan", "hewan", False)
+    renpy.music.register_channel("hewan2", "hewan2", False)
+    renpy.music.register_channel("hewan3", "hewan3", False)
+
 label phase2:
 
     play music audio.IPD loop
@@ -58,7 +65,7 @@ label phase2:
             jump phase2_scene3_intro
 
     label phase2_scene1_intro:
-        stop music
+        stop music fadeout 2.0
         play music audio.IPD loop
         scene IPD WORKPLACE with fade
 
@@ -74,14 +81,14 @@ label phase2:
         "If that was the case then he would have no choice but to look for it fearing that it would get buried."
         "What was miraculous and magical about it is that even though he was prone to be forgetful, it was as neat as if he had just recently tidied it."
 
-        Rai "When did I… tidy it up? Kinda forgot really."
+        Rai "(When did I… tidy it up? Kinda forgot really.)"
 
         "What's going on today? Is the Rai Galilei starting to experience senility or fatigue from work so much that his mind is forced to forget the activities that he did yesterday or maybe even more recent than that?"
         "Who knows."
         "But for Rai this seems like a plus for him since it’s already clean. He can just put the papers that’s currently in his hands easily."
 
         show Rai Default
-        Rai "Maybe it’s one of my coworkers. Oh well, time to get back to Shigoto-san."
+        Rai "(Maybe it’s one of my coworkers. Oh well, time to get back to Shigoto-san.)"
 
         hide Rai Default with dissolve
         scene black with dissolve
@@ -94,7 +101,7 @@ label phase2:
             jump phase2_scene3_intro
 
     label phase2_scene2_intro:
-        stop music
+        stop music fadeout 2.0
         play music audio.IPD loop
         scene IPD WORKPLACE with fade
 
@@ -112,7 +119,7 @@ label phase2:
         hide Galilean_2 Default with dissolve
 
         "After they left, Rai read the paper."
-        "Need help in the CCTV Room -Artemisia"
+        "'Need help in the CCTV Room -Artemisia'"
 
         Rai "My god, I thought it’s a prank. Damn you Artemisia."
 
@@ -121,7 +128,7 @@ label phase2:
         play sound audio.footsteps
         scene black with fade
         
-        stop music
+        stop music fadeout 2.0
         play music audio.cctv_room loop
 
         scene CCTV with fade
@@ -172,7 +179,7 @@ label phase2:
         jump phase2_scene3_intro
 
     label phase2_scene3_intro:
-        stop music
+        stop music fadeout 2.0
         play music audio.meeting_room loop
         scene Meeting Room with fade
         show Rai Serious
@@ -181,7 +188,8 @@ label phase2:
 
         "Rai said to himself as he flipped over to the next paper about the inmate."
 
-        Rai "Crime Record: Illegal Dimension Hopper, 2nd Degree Interdimensional Murder. Fitting for a cat."
+        Rai "Crime Record: Illegal Dimension Hopper, 1st Degree Interdimensional Mass Murder." 
+        Rai "..Of fishes in other dimensions. Fitting for a cat."
 
         "As he examines and searches the database for the inmate, his background, family connection, relation to other criminals. Something immediately clicks."
 
@@ -220,9 +228,12 @@ label phase2:
         show Rai Surprised
         Rai "..What did you just say?"
 
+        show Felix Annoyed
+        Felix "No. Nothing"
+
         show Rai Happy
-        Rai "Ah…"
-        Rai "I see!"
+        Rai "(Ah…)"
+        Rai "(I see!)"
         Felix "What are you talking about man?! Get away from me!"
 
         show Rai Excited
@@ -303,9 +314,14 @@ label phase2:
 
     label route2:
         label scene1:
-            stop music
+            stop music fadeout 2.0
             play music audio.farm loop
             scene Farm with fade
+            play nature audio.wind loop
+            play hewan audio.chickens
+            play hewan2 audio.cows
+            play hewan3 audio.sheep
+
             show Rai Default
             "A place dominated by a combination of green and brown. Cool air blows all over the place. Sounds from nature—be it the sounds of the animals or the rustle of leaves—fill the ears."
             "A boy—or a man?—stands in the middle of a meadow."
@@ -329,14 +345,14 @@ label phase2:
             Farmer "Oh, you're the new kid who's going to work here, aren't you?"
 
             show Rai Default
-            Rai "But I am not kid tho..."
+            Rai "(But I am not kid tho...)"
             Farmer "Welcome! Thank you for coming all the way here."
 
             show Rai Happy
             Rai "No worries!"
 
             show Rai Default
-            Rai "It’s for my mission, too."
+            Rai "(It’s for my mission, too.)"
             Farmer "Please prepare yourself and come to see me again."
 
             show Rai Happy
@@ -418,14 +434,18 @@ label phase2:
             play sound audio.footsteps_grass
             "Rai checks the paper again. He tries to remember all the jobs."
 
-            FRai Thinking "Shed, huh? There must be a lot of stuff in there."
-            FRai Serious "There must be a lot… {i}something.{/i}"
+            FRai Thinking "(Shed, huh? There must be a lot of stuff in there.)"
+            FRai Serious "(There must be a lot… {i}something.{/i})"
 
             "As this one policeman had already pointed out, there were indeed a lot of things in that place."
             "A huge amount."
 
         label scene2:
-            stop music
+            stop music fadeout 2.0
+            stop nature
+            stop hewan
+            stop hewan2
+            stop hewan3
             play music audio.shed loop
             scene Shed with fade
             play sound audio.door_open
@@ -449,7 +469,7 @@ label phase2:
             "There's no point in thinking all the time doing nothing."
 
             show FRai Default
-            FRai "Just get over it"
+            FRai "(Just get over it)"
             FRai "Well, where should I store all this?"
 
             "Rai looks to his right."
@@ -470,57 +490,10 @@ label phase2:
 
             "Rai began to arrange the items."
             "He pushes the items that were previously on the shelf to the edge of the shelf."
-            "At that time..."
-
-            play sound audio.benda_jatuh  
-            show FRai Surprised
-            FRai "Oh? What is this?"
-
-            "Something fell."
-            "It is the size of a fist."
-            "Rai tries to pick it up. Quite surprised by the weight that slightly exceeds his expectations."
-
-            show Antena Device with dissolve
-
-            show FRai Thinking
-            FRai "It's a tool for winding a well's bucket rope, isn't it?"
-
-            "Rai flips it over to observe it. He tries to imagine operating the device."
-            
-            hide Antena Device with dissolve
-
-        label scene2_1:
-            show FRai Thinking
-            FRai "But based on the times that exist in this timeline, it shouldn't be this sophisticated. How did it get here?"
-
-        menu:
-            "Save it.":
-                jump scene2_1_a
-
-            "Ignore it.":
-                jump scene2_1_b
-
-        label scene2_1_a:
-            show FRai Serious
-            FRai "Looks like this could be an evidence. I have to keep this up. I'll ask the farmer as well."
-
-            "Rai stores it in an inaccessible place in the shed. If it's related to the farm, he doesn't think he can just take it."
-
-            jump scene2_2
-
-        label scene2_1_b:
-            show FRai Thinking
-            FRai "Looks like the farmer has good connections. It’s possible for him to have something like this. Maybe I should ask him later."
-
-            "Rai puts it back on the shelf. He made sure it won’t fall again."
-
-            jump scene2_2
 
         label scene2_2:
             show FRai Excited
-            FRai "Alright, let's continue again!"
-
-            "Rai returns to pick up the scattered items."
+            "Rai pick up the scattered items."
             "He arranges the items by function in each place on the farm as he had seen the entire contents of the map."
             "Maybe that way, it can help farmers take things as needed."
 
@@ -603,7 +576,7 @@ label phase2:
             "Rai is speechless. He knows it was his fault."
 
             show FRai Serious
-            FRai "I shouldn't be in a hurry. There’s still time."
+            FRai "(I shouldn't be in a hurry. There’s still time.)"
 
             "Rai gets up and brushes the dust off his clothes."
 
@@ -654,9 +627,13 @@ label phase2:
             FRai "Okay, let's gooo!!"
 
         label scene2_5:
-            stop music
+            stop music fadeout 2.0
             play music audio.farm loop
             scene Farm with fade
+            play nature audio.wind loop
+            play hewan audio.chickens
+            play hewan2 audio.cows
+            play hewan3 audio.sheep
 
             "Rai leaves the shed and goes to meet the farmer."
 
@@ -705,18 +682,22 @@ label phase2:
             "Once he finishes organizing, he looks back at the map and heads straight for the village."
 
         label scene3:
-            stop music
+            stop music fadeout 2.0
+            stop hewan
+            stop hewan2
+            stop hewan3
+            stop nature
             play music audio.village loop
             scene Village with fade
+            play nature audio.crowd_cheering
             
             show FRai Default
-            play sound audio.crowd_cheering
             "Finally Rai arrives at the village."
             "He sees the hustle and bustle of the village people who were busy passing here and there to get to their destination."
             "Rai tries to avoid the crowds by walking on the side of the road. He leans against the wall to find a gap in the busy street."
 
             show FRai Nervous
-            FRai "Maybe this isn't the right time."
+            FRai "(Maybe this isn't the right time.)"
 
             "Rai struggles through those people."
             "It’s understandable that a place like this is indeed packed with crowds because it is close to the marketplace."
@@ -821,10 +802,12 @@ label phase2:
 
             "They walk together towards the market."
             "The villager and seller tell stories about the village and the people who live here. They also tell him about some places around it."
-
-            scene Market with fade
-            stop music
+            
+            stop music fadeout 2.0
+            stop nature
             play music audio.market loop
+            scene Market with fade
+            
             "After walking quite a distance, they arrived at the place where the seller will be selling his stuff."
             
             show Villager Default at right with easeinleft
@@ -926,7 +909,8 @@ label phase2:
 
         label scene4:
             scene Market with fade
-            play sound audio.crowd_cheering
+            stop nature
+            play nature audio.crowd_cheering
 
             "The noise of the crowd can be heard everywhere. He looks left and right to make sure he didn't go past where he planned to go."
             "Until finally, he hears a voice that caught his attention."
@@ -1050,7 +1034,7 @@ label phase2:
             "Even though it was only a glance, the merchant looked surprised when he saw the object in Rai's hand."
 
             show FRai Serious
-            FRai "Aha. Gotcha."
+            FRai "(Aha. Gotcha.)"
             Merchant "I don't know."
             hide Ring with dissolve
 
@@ -1079,7 +1063,7 @@ label phase2:
             "Rai observes the merchant's movements who responded silently."
 
             Merchant "Maybe it belongs to that {i}kid{/i}."
-            FRai "Again?"
+            FRai "(Again?)"
             FRai "Who exactly is this {i}kid{/i}?"
 
             "Rai had heard about this child several times today."
@@ -1117,7 +1101,7 @@ label phase2:
             Merchant "What do you think she was doing?"
 
             show FRai Annoyed
-            FRai "This guy really...."
+            FRai "(This guy really....)"
             Merchant "If you want to find out what this kid is doing, I can't tell-- whether I know that or not."
             Merchant "Customer’s privacy policy, you know?"
 
@@ -1156,7 +1140,8 @@ label phase2:
             hide FRai Default with dissolve
 
         label scene5:
-            stop music
+            stop music fadeout 2.0
+            stop nature
             play music audio.shed_night loop
             scene Dark Shed with fade
             show FRai Default at left
@@ -1180,7 +1165,7 @@ label phase2:
             "Rai lets out a long breath."
 
             show FRai Default
-            FRai "It's normal to be tired, especially on missions. Who wouldn’t break a sweat after a long day of going here and there anyway?"
+            FRai "(It's normal to be tired, especially on missions. Who wouldn’t break a sweat after a long day of going here and there anyway?)"
 
             "Rai looks up at the ceiling."
             "For the first day, it was quite a long day."
@@ -1191,24 +1176,24 @@ label phase2:
             "He also glances at objects that were suspected to be evidence that had been collected."
 
             show FRai Serious
-            FRai "A ring-shaped object and a glass the size of a palm."
+            FRai "(A ring-shaped object and a glass the size of a palm.)"
 
             "Rai looks away from the item."
             "He remembers the conversation he had with the villagers. They have been mentioning that one particular kid so many times."
 
             show FRai Thinking
-            FRai "Who exactly is this kid?"
-            FRai "Was it that important for the child to be in the village?"
+            FRai "(Who exactly is this kid?)"
+            FRai "(Was it that important for the child to be in the village?)"
 
             show FRai Serious
-            FRai "Could it be that she... has anything to do with this mission...?"
+            FRai "(Could it be that she... has anything to do with this mission...?)"
 
             "Even if he wondered so, it was certain that Rai would suspect this child."
             "It was too obvious that she has a big influence in the village even though she wasn't that famous."
 
             show FRai Thinking
             FRai "Is it that hard to say the child's name? How come no one knows her name."
-            FRai "Or did she not introduce her name? From her personality, it doesn't seem like that."
+            FRai "(Or did she not introduce her name? From her personality, it doesn't seem like that.)"
 
             "Rai felt something was up."
             "He was still confused as to how everything had happened in the village but there was no sign of any big commotion or anything about the girl's disappearance."
@@ -1226,7 +1211,7 @@ label phase2:
 
         label scene5_1_a:
             show FRai Thinking
-            FRai "If that’s the case, was it because she provoked someone? I think she's also kinda naive."
+            FRai "(If that’s the case, was it because she provoked someone? I think she's also kinda naive.)"
 
             "Rai didn't mean to offend, but he thought about it considering she was denying the fact that she wasn't human."
 
@@ -1237,7 +1222,7 @@ label phase2:
 
         label scene5_1_b:
             show FRai Thinking
-            FRai "Why is she hiding? Was she threatened by anyone?"
+            FRai "(Why is she hiding? Was she threatened by anyone?)"
 
             "Rai remembered that the villagers said he was acting weird though it didn't bother most people. "
 
@@ -1250,7 +1235,7 @@ label phase2:
             "Whatever it is, Rai knows all of this is related, either directly or indirectly."
 
             show FRai Default
-            FRai "Well, I'll find out later anyway."
+            FRai "(Well, I'll find out later anyway.)"
 
             show FRai Happy
             FRai "Time to rest!"
@@ -1259,10 +1244,10 @@ label phase2:
             "Without thinking, Rai adjusted position. He immediately slid into the dream world."
 
         label scene6:
-            stop music
+            stop music fadeout 2.0
             play music audio.shed loop 
             scene Shed with fade
-            play sound audio.birds_chirping 
+            play hewan audio.birds_chirping 
 
             "Morning has come. The sun had risen to the surface brightly."
             "Rai immediately wakes up and arranges his mat." 
@@ -1274,8 +1259,15 @@ label phase2:
             play sound audio.door_open 
             "After getting ready, Rai goes out of the shed to the farmer."
 
+            stop music fadeout 2.0
+            stop hewan
+            play music audio.farm
             scene Farm with fade
             play sound audio.footsteps
+            play nature audio.wind
+            play hewan audio.chickens
+            play hewan2 audio.cows
+            play hewan3 audio.sheep
             
             show Farmer Default at right
             show FRai Happy at left with easeinleft
@@ -1309,10 +1301,14 @@ label phase2:
             "After preparing, Rai goes to the river."
 
         label scene7:
-            stop music
+            stop music fadeout 2.0
+            stop hewan
+            stop nature
+            stop hewan2
+            stop hewan3
             play music audio.river_bgm loop
             scene River with fade
-            play sound audio.river_loop loop
+            play nature audio.river_loop loop
 
             show FRai Default
             "The air feels a lot more refreshing than at the farm. The sound of running water really creates such a calm atmosphere."
@@ -1344,7 +1340,7 @@ label phase2:
 
             "The fisherman hesitantly hands over the thing."
 
-            #kail thingy
+            show Antena Device with dissolve
 
             "It looks like a fishing hook."
             "But the ends are not bent but straight and not too sharp."
@@ -1361,7 +1357,7 @@ label phase2:
             Fisherman "I don’t think so. The tip is too blunt for a hook."
 
             show FRai Default
-            FRai "It is true. Is this again related to the mission?"
+            FRai "(It is true. Is this again related to the mission?)"
 
             show FRai Happy
             FRai "Sorry if this sounds rude since we just met but may I take that thing? It looks interesting!"
@@ -1369,6 +1365,7 @@ label phase2:
             Fisherman "Besides, it can't be used for fishing anyway."
 
             "Rai receives the hook-shaped object from the fisherman."
+            hide Antena Device with dissolve
 
             show FRai Thinking
             FRai "...hm? How come this mission seems easy huh?"
@@ -1378,9 +1375,9 @@ label phase2:
             FRai "It's nothing."
 
             show FRai Thinking
-            FRai "It's getting more and more awkward."
-            FRai "Why is it that almost everywhere there must be something odd, like at least one?"
-            FRai "And again, it's easy to find and get them."
+            FRai "(It's getting more and more awkward.)"
+            FRai "(Why is it that almost everywhere there must be something odd, like at least one?)"
+            FRai "(And again, it's easy to find and get them.)"
 
             show FRai Default
             FRai "Oh yeah, are you catching fish? How many have you got?"
@@ -1404,8 +1401,8 @@ label phase2:
             hide FRai Default with moveoutright
 
         label scene8:
-            stop music
-            stop sound
+            stop music fadeout 2.0
+            stop nature
             play music audio.cornfield loop
             scene Corn Field with fade
             "After Rai gave the fish to the farmer, he went to the cornfield."
@@ -1457,7 +1454,7 @@ label phase2:
             show CG3 with fade
             $ persistent.cg3_unlocked = True
 
-            play sound audio.gagak
+            play hewan audio.gagak
 
             "Rai who was wiping his sweat heard the sound of a crow behind him."
             "The crow perched on the scarecrow."
@@ -1499,7 +1496,7 @@ label phase2:
             FRai Nervous "Uhm, she's a girl. Looks like she used to visit the village. But suddenly she's out of sight."
             FRai Nervous "Do you know anything, sir crow?"
             Crow "The ears! Long!"
-            FRai Thinking "Long ears? Is she an elf too? Is she related to the seller?"
+            FRai Thinking "(Long ears? Is she an elf too? Is she related to the seller?)"
             FRai Thinking "Is there anything else Mr Crow knows?"
             Crow "Noisy!"
             FRai Nervous "Uh oh, did you mean the girl or me?"
@@ -1509,7 +1506,7 @@ label phase2:
             FRai Annoyed "...."
             FRai Happy "Thank you, Sir Crow. If you would lik---"
 
-            play sound audio.wings_flapping 
+            play hewan audio.wings_flapping 
             hide CG3 with fade
 
             # scene Corn Field
@@ -1527,7 +1524,7 @@ label phase2:
             "After closing the water reservoir, Rai went to store the equipment in the shed."
 
         label scene9:
-            stop music
+            stop music fadeout 2.0
             play music audio.shed loop
             scene Shed with fade
             show FRai Default at left
@@ -1565,7 +1562,7 @@ label phase2:
             hide Hair with dissolve
 
             show FRai Serious
-            FRai "Anyone else has barged in?"
+            FRai "(Anyone else has barged in?)"
 
             "Rai knows that only him and the farmer were in and out of the shed. There are no other workers here."
             "The farmer has also handed over some of the work to Rai."
@@ -1586,8 +1583,9 @@ label phase2:
             "Rai then continues on to the next job."
 
         label scene10:
-            play music audio.MIRA
-            play sound audio.gemuruh_loop
+            stop music fadeout 2.0
+            play music audio.MIRA loop
+            play nature audio.gemuruh_loop
             scene black with fade
             "At some place...."
 
@@ -1602,8 +1600,9 @@ label phase2:
             "They can't wait for Rai's arrival."
 
         label scene11:
-            stop music
+            stop music fadeout 2.0
             stop sound
+            stop nature
             play music audio.IPD loop
             scene IPD WORKPLACE with fade
             "Rai arrives at the IPD."
@@ -1619,7 +1618,7 @@ label phase2:
 
             "His Galilean co-worker shows the results of their lab analysis."
 
-            show Radar Machine with dissolve
+            show Radar Machine at truecenter with dissolve
 
             "It looks like a cellphone that has a unique design. The shape is stiff but looks solid."
 
@@ -1650,10 +1649,10 @@ label phase2:
             "With an unreadable expression, Rai stepped out of the IPD."
 
         label scene12:
-            stop music
+            stop music fadeout 2.0
             play music audio.hill loop
             scene Hill with fade
-            play sound audio.wind loop
+            play nature audio.wind loop
 
             "Rai starts to climb up the hill."
             "He had brought provisions to meet this person face to face. His clothes were still the same as his identity as an apprentice at the farm because there was still the possibility that he might meet people he had known before."
@@ -1776,10 +1775,11 @@ label phase2:
             "Rai waves, then continues his journey to the west side of the hill."
 
         label scene13:
-            stop music
+            stop music fadeout 2.0
+            stop nature
             play music audio.cave_bgm loop
             scene caveTunnel with fade
-            play sound water_droplets_loop loop
+            play nature water_droplets_loop loop
 
             "After walking quite a distance, Rai reaches the cave."
             "According to information, the location is around here."
@@ -1792,15 +1792,19 @@ label phase2:
             "Rai tries to repeat the information he had received so far."
 
             show FRai Serious
-            FRai "The device is related to the person IPD is looking for. But, does that cat kid has anything to do with it?"
-            FRai "Are they related to the farmer?"
-            FRai "What is their motive?"
-            FRai "What are they trying to do?"
-            FRai "If it's getting the IPD or my attention, they sure are getting it"
+            FRai "(The device is related to the person IPD is looking for. But, does that cat kid has anything to do with it?)"
+            FRai "(Are they related to the farmer?)"
+            FRai "(What is their motive?)"
+            FRai "(What are they trying to do?)"
+            FRai "(If it's getting the IPD or my attention, they sure are getting it.)"
 
             "Many questions flooded Rai's mind. But that's normal in missions. Rai really had to keep thinking."
 
         label scene13_1:
+            stop music fadeout 2.0
+            stop nature
+            play music audio.cave_bgm
+            play nature audio.water_droplets_loop loop
             scene caveNyabang with fade
             show FRai Surprised
             FRai "Oh?"
@@ -1837,7 +1841,7 @@ label phase2:
             scene caveNyabang with fade
             "Rai walks to the mouth of the cave on the left. He makes sure that the path he had chosen did have traces of being passed by people, such as the footprints of boots."
 
-            show FRai Default
+            show FRai Default with dissolve
             FRai "It's seems like it’s going to be a long way.."
 
             "The deeper Rai goes, the darker the cave is."
@@ -1866,15 +1870,18 @@ label phase2:
             "When Rai stepped in, suddenly the surroundings were dark."
 
             show FRai Thinking
-            FRai "Ah, did I go the wrong way? Yet there are traces, very clear."
+            FRai "(Ah, did I go the wrong way? Yet there are traces, very clear.)"
 
             "Rai was waiting for the surroundings to become clear."
 
+            stop music fadeout 2.0
+            stop nature
+            play music audio.hill
             scene Hill with fade
             "After a while, it turned out that Rai was outside the cave with the surrounding green scenery."
 
             show FRai Default
-            FRai "Back here huh?"
+            FRai "(Back here huh?)"
 
             "After looking left and right, Rai goes back to the cave entrance not far from where he is sitting."
 
@@ -1882,23 +1889,23 @@ label phase2:
 
         label scene13_3:
             show FRai Excited
-            FRai "I'm not that easily fooled."
+            FRai "(I'm not that easily fooled.)"
 
             "Rai walks into the mouth of the cave. He calmly entered without doing one hundred percent supervision. Of course he's in work mode."
 
             show FRai Thinking
-            FRai "The previous imprint was obvious but the imprint in the cave before that was the footprints of boots. It shouldn't be that different right?"
+            FRai "(The previous imprint was obvious but the imprint in the cave before that was the footprints of boots. It shouldn't be that different right?)"
 
             "Rai nods."
 
             show FRai Serious
-            FRai "This fellow is good at hiding traces too."
+            FRai "(This fellow is good at hiding traces too.)"
 
             "With that, Rai continues to walk through the cave."
 
         label scene14:
-            stop music
-            stop sound
+            stop music fadeout 2.0
+            stop nature
             play music audio.MIRA loop
             scene caveFinal with fade
             "After going through a long hallway, Rai arrives at a huge place."
@@ -1936,7 +1943,7 @@ label phase2:
             "Rai notices this girl's appearance. Obviously she wasn't human. Especially with the big antennae on her head."
 
             show FRai Annoyed
-            FRai "That's not a long ear, Mr. Crow."
+            FRai "(That's not a long ear, Mr. Crow.)"
 
             show Mira Excited
             The_Girl "Come on, come in! There's no need to be shy."
@@ -1995,7 +2002,7 @@ label phase2:
             The_Girl "Why mind that? Didn't you tried so hard just to get here? Just enjoy the beautiful view, while i enjoy my tea."
 
             show FRai Surprised
-            FRai "She saw me struggling at the cave earlier huh---"
+            FRai "(She saw me struggling at the cave earlier huh---)"
             FRai "How did you know that?"
 
             show Mira Happy
@@ -2095,8 +2102,8 @@ label phase2:
             FRai Thinking "Can robots be unstable too?"
             FRai Thinking "Is there something wrong with the program?"
             MiRA Annoyed "I told you multiple times, I am a human!"
-            FRai Default "Yep."
-            FRai Default "This girl is a little bit cuckoo in the head"
+            FRai Default "(Yep.)"
+            FRai Default "(This girl is a little bit cuckoo in the head.)"
             FRai Nervous "I'm sorry, but you know.. That appearance of yours..."
             MiRA Angry "I have two hands and two legs, isn't that enough?!"
 
@@ -2104,7 +2111,7 @@ label phase2:
 
             MiRA Annoyed "You guys, kept saying that I'm not human."
             MiRA Angry "Even though I only look a little different from you guys!"
-            FRai Nervous "But it's not just a little..."
+            FRai Nervous "(But it's not just a little...)"
             MiRA Angry "The people in the village are like that too! You are the same!"
 
             "MiRA shows something in her hand."
@@ -2127,6 +2134,8 @@ label phase2:
             "Rai zips his mouth."
 
         label scene15_1:
+            stop sound
+            stop nature
             MiRA Serious "It's useless for you to persuade me. I've been here longer than you, you know."
             MiRA Angry "They always bring up that I'm different. Do you know that?!"
             MiRA Annoyed "They don't believe what I'm saying… They always have that look on their face...."
@@ -2154,15 +2163,17 @@ label phase2:
             MiRA Angry "Why won't you just believe me?!!"
             FRai Surprised "WAIT!"
 
+            play sound audio.bomb_explode
             "MiRA presses the forbidden button. Red screens appear everywhere. Each screen displays different corners of the village. It could be seen from the screen that the village is in chaos due to explosions everywhere."
-
+            play nature audio.bomb_nging_loop_fadein
             MiRA Excited "EAT THAT!"
+            
 
             "MiRA laughs with satisfaction seeing the destruction in front of her eyes."
             "Rai widens his eyes. Rai tries to believe what happened."
             "The mission before his eyes, failed."
 
-            FRai Annoyed "I wish I could redo it again..."
+            FRai Annoyed "(I wish I could redo it again...)"
 
             show black with fade
             hide black with fade
@@ -2213,7 +2224,7 @@ label phase2:
 
         label scene16:
             scene Hill with fade
-            play voice audio.wind loop
+            play nature audio.wind loop
             play sound audio.footsteps_grass
 
             "Rai and MiRA come out of the cave. They walked down the hill."
@@ -2288,25 +2299,29 @@ label phase2:
             "Rai missed something though."
             "There’s something left on MiRA’s table.."
 
+            stop music 
+            stop nature
+
             $persistent.k2_caught = True
             jump ending
 
 
     label route3:
         label R3scene1:
-            stop music
+            stop music fadeout 2.0
+            stop nature
             play music audio.farm loop
             scene Farm with fade
-            play sound audio.chickens
-            play voice audio.cows
+            play nature audio.wind loop
+            play hewan audio.chickens
+            play hewan2 audio.cows
+            play hewan3 audio.sheep
             
 
             show Rai Default
             Rai "Alright, so here’s the place huh..."
 
             "Rai is looking around, gazing through the fields, to familiarize himself with the scenery that will be with him for quite a long time."
-
-            play sound audio.wind
             Rai "Ahh~ the breeze here feels nice, exactly like what I expected."
             Rai "Oh right, I should look for the farmer first huh? He must be expecting me by now."
 
@@ -2411,10 +2426,14 @@ label phase2:
             jump R3scene2
 
         label R3scene2:
-            stop music
+            stop music fadeout 2.0
+            stop hewan
+            stop hewan2
+            stop hewan3
+            stop nature
             play music audio.village loop
             scene Village with fade
-            play sound crowd_cheering
+            play nature crowd_cheering
 
             show Rai Surprised
             Rai "So this is the village huh..."
@@ -2502,7 +2521,8 @@ label phase2:
             jump R3scene3
 
         label R3scene3:
-            stop music
+            stop music fadeout 2.0
+            stop nature
             play music audio.market
             scene Market with fade
             "After walking for a short while, Rai arrived at the market, but unlike his expectations..."
@@ -2519,11 +2539,11 @@ label phase2:
             "Rai returned back into the farm, and spent the rest of the day resting up to prepare for his first day tomorrow."
 
         label R3scene4:
-            stop music
+            stop music fadeout 2.0
             scene black with fade
             "The next day..."
 
-            play sound audio.chicken_morning
+            play hewan audio.chicken_morning
 
             Rai Surprised "Whoa!"
             with vpunch
@@ -2540,9 +2560,14 @@ label phase2:
             "After preparing himself for the long day, Rai went toward the field."
             "The Farmer, as expected, had already waited for him there."
 
-            stop music
+            stop music fadeout 2.0
             play music audio.farm loop
             scene Farm with fade
+            play nature audio.wind loop
+            play hewan audio.chickens
+            play hewan2 audio.cows
+            play hewan3 audio.sheep
+
             show Farmer Default at right
             show FRai Default at left with easeinleft
             Farmer "Good morning kid, it’s your first day working today, you’re ready?"
@@ -2602,10 +2627,14 @@ label phase2:
             jump R3scene5
 
         label R3scene5:
-            stop music
+            stop music fadeout 2.0
+            stop nature
+            stop hewan
+            stop hewan2
+            stop hewan3
             play music audio.market loop
             scene Market with fade
-            play sound crowd_cheering
+            play nature crowd_cheering
 
             show FRai Default
             FRai "So this is how the market looks like on these hours huh"
@@ -2714,7 +2743,8 @@ label phase2:
             "Until the next day comes..."
 
         label R3scene6:
-            stop music
+            stop music fadeout 2.0
+            stop nature
             scene black with fade
 
             "The next day..."
@@ -2727,7 +2757,7 @@ label phase2:
             FRai "Oh right, someone was supposed to come here today huh?"
             FRai "I wonder when she’ll come"
 
-            stop music 
+            stop music fadeout 2.0
             play sound audio.door_open
             play music audio.Elsyne loop
             Unknown "Excuse meee"
@@ -2933,7 +2963,7 @@ label phase2:
 
         label R3scene7:
         scene Forest with fade
-        play sound audio.birds_chirping
+        play hewan audio.birds_chirping
 
         show Elsyne Default with easeinleft
         show FRai Surprised at left with easeinleft
@@ -2980,6 +3010,7 @@ label phase2:
         Elsyne "Uh-huh"
 
         show black with fade
+        stop sound
         hide TalkingTree
         hide black with fade
 
@@ -3003,8 +3034,9 @@ label phase2:
         Elsyne "You’ll see soon enough"
 
     label R3scene8:
+        stop hewan
         scene River with fade
-        play sound river_loop loop
+        play nature river_loop loop
 
         show Elsyne Default with easeinright
         show FRai Surprised at right with easeinright
@@ -3042,9 +3074,9 @@ label phase2:
         "The two of them quickly went and followed the river. Elsyne’s enthusiasm seems weird for Rai at first, but when they arrived at their final destination, everything cleared up."
 
         label R3scene9:
-            stop sound
+            stop nature
             scene waterfallDay with fade
-            play sound waterfall_loop loop
+            play nature waterfall_loop loop
 
             show Elsyne Smile with easeinright
             show FRai Surprised at right with easeinright
@@ -3109,8 +3141,8 @@ label phase2:
             "Having ended their tour, the two of them went back to the farm, and parted ways there for today"
 
         label R3scene10:
-            stop music
-            stop sound
+            stop music fadeout 2.0
+            stop nature
             play music audio.shed_night
             scene Dark Shed with fade
 
@@ -3135,9 +3167,9 @@ label phase2:
             FRai "(Alright, that’s enough for today)"
             FRai "(I’m already feeling tired, and i need to wake up early tomorrow)"
             FRai "(Well, goodnight)"
-
+            stop music fadeout 2.0
             "Meanwhile, on Elsyne’s side"
-            stop music
+            
             play music audio.Elsyne loop
             scene Village Night with fade
             show Elsyne Default
@@ -3162,9 +3194,14 @@ label phase2:
             Elsyne "(At any cost.)"
 
         label R3scene11:
-            stop music
+            stop music fadeout 2.0
             play music audio.farm
             scene Farm with fade
+            play nature audio.wind loop
+            play hewan audio.chickens
+            play hewan2 audio.cows
+            play hewan3 audio.sheep
+
             show FRai Default
             FRai "Here we go"
             
@@ -3235,10 +3272,14 @@ label phase2:
             FRai "And maybe I'll go to the forest at around 9PM."
 
         label R3scene12:
-            stop music
+            stop music fadeout 2.0
+            stop nature
+            stop hewan
+            stop hewan2
+            stop hewan3
             play music audio.forest_night
             scene Forest Night with fade
-            play sound audio.owl
+            play hewan audio.owl
 
             show FRai Serious
             FRai "Okay, here goes nothing"
@@ -3287,11 +3328,12 @@ label phase2:
             "The unknown figure approached Rai’s hiding spot, but luckily, they didn’t notice him..."
             "Or did they?"
             
+            stop music fadeout 2.0
             show black with fade
             hide FRai Default
             hide black with fade
 
-            stop music
+            
             play music audio.Elsyne
 
             show Elsyne Surprised2 with dissolve
@@ -3304,8 +3346,6 @@ label phase2:
             hide Elsyne Default2 with moveoutright
             "The unknown figure suddenly fled with a blinding speed, but unfortunately, Rai already got an idea, about what is that figure"
             
-            stop music
-            play music audio.forest_night
             show FRai Surprised with dissolve
             FRai "(No...)"
             FRai "(My eyes didn’t play a trick on me right???)"
@@ -3323,7 +3363,8 @@ label phase2:
 
         label R3scene13:
             "After the last night’s event, Rai decided to confront his suspect directly today"
-            stop music
+            stop music fadeout 2.0
+            stop hewan
             play music audio.market loop
             scene Market with fade
             show MeatButcher Default at right
@@ -3343,10 +3384,10 @@ label phase2:
             show FRai Default at left with easeinright
             show Elsyne Default at center with easeinright
             show MeatButcher Default at right with easeinright
-            Butcher "There she is, I’ll leave you two on your own now"
 
-            stop music
+            stop music fadeout 2.0
             play music audio.Elsyne
+            Butcher "There she is, I’ll leave you two on your own now"
 
             hide MeatButcher with moveoutright
             Elsyne "What?"
@@ -3368,10 +3409,11 @@ label phase2:
             Elsyne "Get out"
 
         label R3scene14:
-            stop music
+            stop music fadeout 2.0
             play music audio.Elsyne
             scene waterfallNight with fade
-            # play voice waterfall_loop
+            play nature waterfall_loop
+
             show Elsyne Default2 at left
             #From here on Elsyne gonna be on her Eldritch form, unless stated otherwise
 
@@ -3666,6 +3708,9 @@ label phase2:
             "And so, Rai have successfully completed his mission, and furthermore, he has resolved things peacefully"
             "And thus, his adventure comes to an end."
             "Until he opens what Elsyne gave him.."
+
+            stop music
+            stop nature
 
             $ persistent.k3_caught = True
             jump ending

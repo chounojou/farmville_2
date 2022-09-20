@@ -626,7 +626,7 @@ image Antena Device:
 
 image Radar Machine:
     "Asset/Hotaru/mesin radar rai.png"
-    zoom 0.4
+    zoom 0.25
 
 image Ring:
     "Asset/Hotaru/cincin gepeng.png"
