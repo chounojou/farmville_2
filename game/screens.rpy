@@ -626,16 +626,20 @@ screen about():
 
                 grid 3 1:
                     xalign 0.5
-                    text _("{font=Happy Chicken.otf}Story{/font}:\n-Maru (Lead)\n-Filia (V.Lead)\n-IzunaLord\n-Grenin\n-Renko\n-Galabun\n-Radice\n-Zenyastra")
-                    text _("{font=Happy Chicken.otf}Visual{/font}:\n-Wawa (Lead)\n-ComicSans (V.Lead)\n-Cantalea\n-Vira k.\n-Farichi\n-Rarugo\n-Dino Brando\n-Salaaad")
+                    text _("{color=#ffce3b}{font=Happy Chicken.otf}Story:{/font}{/color}\n-Maru (Lead)\n-Filia (V.Lead)\n-IzunaLord\n-Grenin\n-Renko\n-Galabun\n-Radice\n-Zenyastra")
+                    text _("{color=#ffce3b}{font=Happy Chicken.otf}Visual:{/font}{/color}\n-Wawa (Lead)\n-ComicSans (V.Lead)\n-Cantalea\n-Vira k.\n-Farichi\n-Rarugo\n-Dino Brando\n-Salaaad")
                     text _("\n-Xerael\n-Aifira\n-Hotaru Setsuna\n-Rei Holysoto\n-Hebi Hanster\n-Anna Freyya\n-Hannu")
-                spacing 20
+                spacing 30
                 grid 3 1:
                     xalign 0.5
-                    text _("{font=Happy Chicken.otf}  IT{/font}:\n-Chounojou (Lead)\n-Kuro Stark\n-Lucifenn\n-Yukio Defender")
-                    text _("{font=Happy Chicken.otf}  Audio{/font}:\n-Alto Ether (Lead)\n-No15e (V.Lead)\n-Riordan Hayton")
-                    text _("{font=Happy Chicken.otf}RiddleMaker{/font}:\n-Keppachi (Lead)\n-Rayden Rin (V.Lead)\n-mifmif")
-                text _("{font=Happy Chicken.otf}        BGM & SFX{/font}:\nhttps://dova-s.jp\nhttps://freesound.org\nhttps://opengameart.ord\nhttps://sound-effect.bbcrewind.co.uk") xpos 450
+                    text _("{color=#ffce3b}{font=Happy Chicken.otf}  IT:{/font}{/color}\n-Chounojou (Lead)\n-Kuro Stark\n-Lucifenn\n-Yukio Defender")
+                    text _("{color=#ffce3b}{font=Happy Chicken.otf}  Audio:{/font}{/}\n-Alto Ether (Lead)\n-No15e (V.Lead)\n-Riordan Hayton")
+                    text _("{color=#ffce3b}{font=Happy Chicken.otf}RiddleMaker:{/font}{/color}\n-Keppachi (Lead)\n-Rayden Rin (V.Lead)\n-mifmif")
+                grid 2 1:
+                    xalign 0.5
+                    text _("{color=#ffce3b}{font=Happy Chicken.otf}        BGM & SFX:{/font}{/color}\n{a=https://dova-s.jp\nhttps://freesound.org}dova-s.jp{/a}\n{a=https://opengameart.ord}opengameart.ord{/a}\n{a=https://sound-effect.bbcrewind.co.uk}sound-effect.bbcrewind.co.uk{/a}")
+                    text _("{color=#ffce3b}{font=Happy Chicken.otf}        Background:{/font}{/color}\n{a=https://www.freepik.com/free-photo/group-pigs-domestic-animals-pig-farm_11036358.htm#query=inside%20barn&position=27&from_view=search}Freepik: Barn{/a}\n{a=https://www.freepik.com/free-photo/beautiful-shot-forest-with-tall-green-trees_10978866.htm#query=forest&position=15&from_view=keyword}Freepik: Forest{/a}\n{a=https://unsplash.com/photos/zCQ06B18v0Q}Unsplash: Farm{/a}\n{a=https://unsplash.com/photos/Q2TO1NfHS8E}unsplash :Corn Field{/a}\n{a=https://stock.adobe.com/id/images/cotswolds/304711814}Adobe Stock : Village{/a}\n{a=https://www.pexels.com/photo/people-walking-on-street-6159067/}Pexels : Market{/a}\n{a=https://unsplash.com/photos/8janMgWWR8A}Unsplash : River{/a}\n{a=https://unsplash.com/photos/PaKHbtTDqt0}Unsplash: Jail{/a}\n{a=https://pixabay.com/photos/blacksmith-workshop-equipment-500776/}Pixabay: Shed{/a}\n{a=https://pxhere.com/en/photo/1637467}Pxhere: Cave Branch{/a}\n{a=https://www.flickr.com/photos/coconinonationalforest/20578435368}Flickr :Cave Tunnel{/a}\n{a=https://unsplash.com/photos/sXxwbzfNdR4}Unsplash: Cave Final{/a}") xpos 230
+                    
                 label "\n[config.name!t]" xalign 0.5
                 text _("Version [config.version!t]\n") xalign 0.5
 
