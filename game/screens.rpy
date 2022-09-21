@@ -610,7 +610,7 @@ screen about():
         xalign 0.3
         ypos 250
         viewport id "vpgrid":
-            yinitial 1.0
+            yinitial 0
             draggable True
             mousewheel True
             xmaximum 1400
@@ -638,7 +638,7 @@ screen about():
                 grid 2 1:
                     xalign 0.5
                     text _("{color=#ffce3b}{font=Happy Chicken.otf}        BGM & SFX:{/font}{/color}\n{a=https://dova-s.jp\nhttps://freesound.org}dova-s.jp{/a}\n{a=https://opengameart.ord}opengameart.ord{/a}\n{a=https://sound-effect.bbcrewind.co.uk}sound-effect.bbcrewind.co.uk{/a}")
-                    text _("{color=#ffce3b}{font=Happy Chicken.otf}        Background:{/font}{/color}\n{a=https://www.freepik.com/free-photo/group-pigs-domestic-animals-pig-farm_11036358.htm#query=inside%20barn&position=27&from_view=search}Freepik: Barn{/a}\n{a=https://www.freepik.com/free-photo/beautiful-shot-forest-with-tall-green-trees_10978866.htm#query=forest&position=15&from_view=keyword}Freepik: Forest{/a}\n{a=https://unsplash.com/photos/zCQ06B18v0Q}Unsplash: Farm{/a}\n{a=https://unsplash.com/photos/Q2TO1NfHS8E}unsplash :Corn Field{/a}\n{a=https://stock.adobe.com/id/images/cotswolds/304711814}Adobe Stock : Village{/a}\n{a=https://www.pexels.com/photo/people-walking-on-street-6159067/}Pexels : Market{/a}\n{a=https://unsplash.com/photos/8janMgWWR8A}Unsplash : River{/a}\n{a=https://unsplash.com/photos/PaKHbtTDqt0}Unsplash: Jail{/a}\n{a=https://pixabay.com/photos/blacksmith-workshop-equipment-500776/}Pixabay: Shed{/a}\n{a=https://pxhere.com/en/photo/1637467}Pxhere: Cave Branch{/a}\n{a=https://www.flickr.com/photos/coconinonationalforest/20578435368}Flickr :Cave Tunnel{/a}\n{a=https://unsplash.com/photos/sXxwbzfNdR4}Unsplash: Cave Final{/a}") xpos 230
+                    text _("{color=#ffce3b}{font=Happy Chicken.otf}        Background:{/font}{/color}\n{a=https://www.freepik.com/free-photo/group-pigs-domestic-animals-pig-farm_11036358.htm#query=inside%20barn&position=27&from_view=search}Freepik: Barn{/a}\n{a=https://www.freepik.com/free-photo/beautiful-shot-forest-with-tall-green-trees_10978866.htm#query=forest&position=15&from_view=keyword}Freepik: Forest{/a}\n{a=https://unsplash.com/photos/zCQ06B18v0Q}Unsplash: Farm{/a}\n{a=https://unsplash.com/photos/Q2TO1NfHS8E}unsplash :Corn Field{/a}\n{a=https://stock.adobe.com/id/images/cotswolds/304711814}Adobe Stock : Village{/a}\n{a=https://www.pexels.com/photo/people-walking-on-street-6159067/}Pexels : Market{/a}\n{a=https://unsplash.com/photos/8janMgWWR8A}Unsplash : River{/a}\n{a=https://unsplash.com/photos/PaKHbtTDqt0}Unsplash: Jail{/a}\n{a=https://pixabay.com/photos/blacksmith-workshop-equipment-500776/}Pixabay: Shed{/a}\n{a=https://pxhere.com/en/photo/1637467}Pxhere: Cave Branch{/a}\n{a=https://www.flickr.com/photos/coconinonationalforest/20578435368}Flickr :Cave Tunnel{/a}\n{a=https://unsplash.com/photos/sXxwbzfNdR4}Unsplash: Cave Final{/a}") xpos 150
                     
                 label "\n[config.name!t]" xalign 0.5
                 text _("Version [config.version!t]\n") xalign 0.5
@@ -679,6 +679,8 @@ screen load_save_slot:
 screen load:
 
     tag menu
+    #current page
+    default curpage = 1
 
     imagemap:
         ground 'gui/saveload/ground_save.png'
@@ -687,20 +689,80 @@ screen load:
         selected_idle 'gui/saveload/ground_save.png'
         selected_hover 'gui/saveload/ground_save.png'
         cache False
-
-        hotspot (57, 980, 78, 72) action FilePagePrevious(max=5, wrap=True, auto=False, quick=False)
-        hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True, auto=False, quick=False)
+        
+        #lucii
+        # hotspot (57, 980, 78, 72) action FilePagePrevious(max=5, wrap=True, auto=False, quick=False)
+        # hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True, auto=False, quick=False)
+        
+        #sans
+        if curpage == 1 :
+            hotspot (57, 980, 78, 72) action [FilePagePrevious(max=5, wrap=True, auto=False, quick=False), SetScreenVariable("curpage", 5)]
+            hotspot (195, 981, 67, 66) action [FilePageNext(max=5, wrap=True, auto=False, quick=False),SetScreenVariable("curpage", curpage+1)]
+        if curpage >1 and curpage <5 :
+            hotspot (57, 980, 78, 72) action [FilePagePrevious(max=5, wrap=True, auto=False, quick=False),SetScreenVariable("curpage", curpage-1)]
+            hotspot (195, 981, 67, 66) action [FilePageNext(max=5, wrap=True, auto=False, quick=False),SetScreenVariable("curpage", curpage+1)]
+        if curpage == 5 :
+            hotspot (57, 980, 78, 72) action [FilePagePrevious(max=5, wrap=True, auto=False, quick=False),SetScreenVariable("curpage", curpage-1)]
+            hotspot (195, 981, 67, 66) action [FilePageNext(max=5, wrap=True, auto=False, quick=False),SetScreenVariable("curpage", 1)]
 
         ## You might get confused but these one below are the save/load slots, those boxes.
-        hotspot (229, 387, 286, 150) action FileAction(1):
-            use load_save_slot(number=1)
-        hotspot (219, 721, 285, 150) action FileAction(2):
-            use load_save_slot(number=2)
-        hotspot (1140, 370, 285, 150) action FileAction(3):
-            use load_save_slot(number=3)
-        hotspot (1139, 720, 286, 150) action FileAction(4):
-            use load_save_slot(number=4)
+        
+        #lucii
+        # hotspot (229, 387, 286, 150) action FileAction(1):
+        #     use load_save_slot(number=1)
+        # hotspot (219, 721, 285, 150) action FileAction(2):
+        #     use load_save_slot(number=2)
+        # hotspot (1140, 370, 285, 150) action FileAction(3):
+        #     use load_save_slot(number=3)
+        # hotspot (1139, 720, 286, 150) action FileAction(4):
+        #     use load_save_slot(number=4)
 
+        #sans
+        if curpage ==1 :
+            hotspot (229, 387, 286, 150) action FileAction(1):
+                use load_save_slot(number=1)
+            hotspot (219, 721, 285, 150) action FileAction(2):
+                use load_save_slot(number=2)
+            hotspot (1140, 370, 285, 150) action FileAction(3):
+                use load_save_slot(number=3)
+            hotspot (1139, 720, 286, 150) action FileAction(4):
+                use load_save_slot(number=4)
+        if curpage ==2 :
+            hotspot (229, 387, 286, 150) action FileAction(5):
+                use load_save_slot(number=5)
+            hotspot (219, 721, 285, 150) action FileAction(6):
+                use load_save_slot(number=6)
+            hotspot (1140, 370, 285, 150) action FileAction(7):
+                use load_save_slot(number=7)
+            hotspot (1139, 720, 286, 150) action FileAction(8):
+                use load_save_slot(number=8)
+        if curpage ==3 :
+            hotspot (229, 387, 286, 150) action FileAction(9):
+                use load_save_slot(number=9)
+            hotspot (219, 721, 285, 150) action FileAction(10):
+                use load_save_slot(number=10)
+            hotspot (1140, 370, 285, 150) action FileAction(11):
+                use load_save_slot(number=11)
+            hotspot (1139, 720, 286, 150) action FileAction(12):
+                use load_save_slot(number=12)
+        if curpage == 4 :
+            hotspot (229, 387, 286, 150) action FileAction(13):
+                use load_save_slot(number=13)
+            hotspot (219, 721, 285, 150) action FileAction(14):
+                use load_save_slot(number=14)
+            hotspot (1140, 370, 285, 150) action FileAction(15):
+                use load_save_slot(number=15)
+            hotspot (1139, 720, 286, 150) action FileAction(16):
+                use load_save_slot(number=16)
+        if curpage==5 :
+            hotspot (229, 387, 286, 150) action FileAction(17):
+                use load_save_slot(number=17)
+            hotspot (219, 721, 285, 150) action FileAction(18):
+                use load_save_slot(number=18)
+            hotspot (1140, 370, 285, 150) action FileAction(19):
+                use load_save_slot(number=19)
+            hotspot (1139, 720, 286, 150) action FileAction(20):
+                use load_save_slot(number=20)
 
 
         hotspot (357, 980, 68, 64) action ShowMenu('load')
@@ -715,17 +777,46 @@ screen load:
     text "{color=#ffce3b}{size=+40}{font=happy chicken.otf}Load{/font}{/size}{/color}" xpos 820 ypos 89
     textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Load{/size}{/font}{/color}" action ShowMenu('load') xpos 450 ypos 970
     textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Save{/size}{/font}{/color}" action ShowMenu('save') xpos 720 ypos 970
-    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}001{/size}{/font}{/color}" xpos 170 ypos 305
-    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}002{/size}{/font}{/color}" xpos 170 ypos 632
-    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}003{/size}{/font}{/color}" xpos 1075 ypos 300
-    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}004{/size}{/font}{/color}" xpos 1075 ypos 628
 
+    #lucii
+    # text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}001{/size}{/font}{/color}" xpos 170 ypos 305
+    # text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}002{/size}{/font}{/color}" xpos 170 ypos 632
+    # text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}003{/size}{/font}{/color}" xpos 1075 ypos 300
+    # text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}004{/size}{/font}{/color}" xpos 1075 ypos 628
+    
+    #sans
+    if curpage == 1 :
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}001{/size}{/font}{/color}" xpos 170 ypos 305
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}002{/size}{/font}{/color}" xpos 170 ypos 632
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}003{/size}{/font}{/color}" xpos 1075 ypos 300
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}004{/size}{/font}{/color}" xpos 1075 ypos 628
+    elif curpage == 2:
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}005{/size}{/font}{/color}" xpos 170 ypos 305
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}006{/size}{/font}{/color}" xpos 170 ypos 632
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}007{/size}{/font}{/color}" xpos 1075 ypos 300
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}008{/size}{/font}{/color}" xpos 1075 ypos 628
+    elif curpage == 3:
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}009{/size}{/font}{/color}" xpos 170 ypos 305
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}010{/size}{/font}{/color}" xpos 170 ypos 632
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}011{/size}{/font}{/color}" xpos 1075 ypos 300
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}012{/size}{/font}{/color}" xpos 1075 ypos 628
+    elif curpage == 4:
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}013{/size}{/font}{/color}" xpos 170 ypos 305
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}014{/size}{/font}{/color}" xpos 170 ypos 632
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}015{/size}{/font}{/color}" xpos 1075 ypos 300
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}016{/size}{/font}{/color}" xpos 1075 ypos 628
+    elif curpage == 5:
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}017{/size}{/font}{/color}" xpos 170 ypos 305
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}018{/size}{/font}{/color}" xpos 170 ypos 632
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}019{/size}{/font}{/color}" xpos 1075 ypos 300
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}020{/size}{/font}{/color}" xpos 1075 ypos 628
 
 
 
 screen save:
 
     tag menu
+    default curpage = 1
 
     imagemap:
         ground 'gui/saveload/ground_save.png'
@@ -735,20 +826,77 @@ screen save:
         selected_hover 'gui/saveload/ground_save.png'
         cache False
 
-        hotspot (57, 980, 78, 72) action FilePagePrevious(max=5, wrap=True, auto=False, quick=False)
-        hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True, auto=False, quick=False)
+        # hotspot (57, 980, 78, 72) action FilePagePrevious(max=5, wrap=True, auto=False, quick=False)
+        # hotspot (195, 981, 67, 66) action FilePageNext(max=5, wrap=True, auto=False, quick=False)
+
+        if curpage == 1 :
+            hotspot (57, 980, 78, 72) action [FilePagePrevious(max=5, wrap=True, auto=False, quick=False), SetScreenVariable("curpage", 5)]
+            hotspot (195, 981, 67, 66) action [FilePageNext(max=5, wrap=True, auto=False, quick=False),SetScreenVariable("curpage", curpage+1)]
+        if curpage >1 and curpage <5 :
+            hotspot (57, 980, 78, 72) action [FilePagePrevious(max=5, wrap=True, auto=False, quick=False),SetScreenVariable("curpage", curpage-1)]
+            hotspot (195, 981, 67, 66) action [FilePageNext(max=5, wrap=True, auto=False, quick=False),SetScreenVariable("curpage", curpage+1)]
+        if curpage == 5 :
+            hotspot (57, 980, 78, 72) action [FilePagePrevious(max=5, wrap=True, auto=False, quick=False),SetScreenVariable("curpage", curpage-1)]
+            hotspot (195, 981, 67, 66) action [FilePageNext(max=5, wrap=True, auto=False, quick=False),SetScreenVariable("curpage", 1)]
 
         ## You might get confused but these one below are the save/load slots, those boxes.
-        hotspot (229, 387, 286, 150) action FileAction(1):
-            use load_save_slot(number=1)
-        hotspot (219, 721, 285, 150) action FileAction(2):
-            use load_save_slot(number=2)
-        hotspot (1140, 370, 285, 150) action FileAction(3):
-            use load_save_slot(number=3)
-        hotspot (1139, 720, 286, 150) action FileAction(4):
-            use load_save_slot(number=4)
 
+        #lucii
+        # hotspot (229, 387, 286, 150) action FileAction(1):
+        #     use load_save_slot(number=1)
+        # hotspot (219, 721, 285, 150) action FileAction(2):
+        #     use load_save_slot(number=2)
+        # hotspot (1140, 370, 285, 150) action FileAction(3):
+        #     use load_save_slot(number=3)
+        # hotspot (1139, 720, 286, 150) action FileAction(4):
+        #     use load_save_slot(number=4)
 
+        #sans
+        if curpage ==1 :
+            hotspot (229, 387, 286, 150) action FileAction(1):
+                use load_save_slot(number=1)
+            hotspot (219, 721, 285, 150) action FileAction(2):
+                use load_save_slot(number=2)
+            hotspot (1140, 370, 285, 150) action FileAction(3):
+                use load_save_slot(number=3)
+            hotspot (1139, 720, 286, 150) action FileAction(4):
+                use load_save_slot(number=4)
+        if curpage ==2 :
+            hotspot (229, 387, 286, 150) action FileAction(5):
+                use load_save_slot(number=5)
+            hotspot (219, 721, 285, 150) action FileAction(6):
+                use load_save_slot(number=6)
+            hotspot (1140, 370, 285, 150) action FileAction(7):
+                use load_save_slot(number=7)
+            hotspot (1139, 720, 286, 150) action FileAction(8):
+                use load_save_slot(number=8)
+        if curpage ==3 :
+            hotspot (229, 387, 286, 150) action FileAction(9):
+                use load_save_slot(number=9)
+            hotspot (219, 721, 285, 150) action FileAction(10):
+                use load_save_slot(number=10)
+            hotspot (1140, 370, 285, 150) action FileAction(11):
+                use load_save_slot(number=11)
+            hotspot (1139, 720, 286, 150) action FileAction(12):
+                use load_save_slot(number=12)
+        if curpage == 4 :
+            hotspot (229, 387, 286, 150) action FileAction(13):
+                use load_save_slot(number=13)
+            hotspot (219, 721, 285, 150) action FileAction(14):
+                use load_save_slot(number=14)
+            hotspot (1140, 370, 285, 150) action FileAction(15):
+                use load_save_slot(number=15)
+            hotspot (1139, 720, 286, 150) action FileAction(16):
+                use load_save_slot(number=16)
+        if curpage==5 :
+            hotspot (229, 387, 286, 150) action FileAction(17):
+                use load_save_slot(number=17)
+            hotspot (219, 721, 285, 150) action FileAction(18):
+                use load_save_slot(number=18)
+            hotspot (1140, 370, 285, 150) action FileAction(19):
+                use load_save_slot(number=19)
+            hotspot (1139, 720, 286, 150) action FileAction(20):
+                use load_save_slot(number=20)
 
         hotspot (357, 980, 68, 64) action ShowMenu('load')
         hotspot (633, 980, 69, 63) action ShowMenu('save')
@@ -762,10 +910,40 @@ screen save:
     text "{color=#ffce3b}{size=+40}{font=happy chicken.otf}Save{/font}{/size}{/color}" xpos 820 ypos 89
     textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Load{/size}{/font}{/color}" action ShowMenu('load') xpos 450 ypos 970
     textbutton "{color=#ffce3b}{font=happy chicken.otf}{size=-3}Save{/size}{/font}{/color}" action ShowMenu('save') xpos 720 ypos 970
-    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}001{/size}{/font}{/color}" xpos 170 ypos 305
-    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}002{/size}{/font}{/color}" xpos 170 ypos 632
-    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}003{/size}{/font}{/color}" xpos 1075 ypos 300
-    text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}004{/size}{/font}{/color}" xpos 1075 ypos 628
+
+    #lucii
+    # text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}001{/size}{/font}{/color}" xpos 170 ypos 305
+    # text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}002{/size}{/font}{/color}" xpos 170 ypos 632
+    # text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}003{/size}{/font}{/color}" xpos 1075 ypos 300
+    # text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}004{/size}{/font}{/color}" xpos 1075 ypos 628
+
+    #number slot increased when pagination
+    #sans
+    if curpage == 1 :
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}001{/size}{/font}{/color}" xpos 170 ypos 305
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}002{/size}{/font}{/color}" xpos 170 ypos 632
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}003{/size}{/font}{/color}" xpos 1075 ypos 300
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}004{/size}{/font}{/color}" xpos 1075 ypos 628
+    elif curpage == 2:
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}005{/size}{/font}{/color}" xpos 170 ypos 305
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}006{/size}{/font}{/color}" xpos 170 ypos 632
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}007{/size}{/font}{/color}" xpos 1075 ypos 300
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}008{/size}{/font}{/color}" xpos 1075 ypos 628
+    elif curpage == 3:
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}009{/size}{/font}{/color}" xpos 170 ypos 305
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}010{/size}{/font}{/color}" xpos 170 ypos 632
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}011{/size}{/font}{/color}" xpos 1075 ypos 300
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}012{/size}{/font}{/color}" xpos 1075 ypos 628
+    elif curpage == 4:
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}013{/size}{/font}{/color}" xpos 170 ypos 305
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}014{/size}{/font}{/color}" xpos 170 ypos 632
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}015{/size}{/font}{/color}" xpos 1075 ypos 300
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}016{/size}{/font}{/color}" xpos 1075 ypos 628
+    elif curpage == 5:
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}017{/size}{/font}{/color}" xpos 170 ypos 305
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}018{/size}{/font}{/color}" xpos 170 ypos 632
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}019{/size}{/font}{/color}" xpos 1075 ypos 300
+        text "{color=#ffce3b}{font=happy chicken.otf}{size=+20}020{/size}{/font}{/color}" xpos 1075 ypos 628
 
 init python:
     config.thumbnail_width = 290
