@@ -28,7 +28,7 @@ label phase2:
     Rai "Ah.. another day with my wife, Shigoto-san."
     Rai "Hmm, let's see what I have to do today."
 
-    Rai "Man… It's just the beginning of the day yet someone has already put this much paper here."
+    Rai "Man... It's just the beginning of the day yet someone has already put this much paper here."
 
     Rai "I can't work properly if my table is full of papers."
 
@@ -73,7 +73,7 @@ label phase2:
 
         show Rai Surprised
 
-        Rai "Wait, what…?"
+        Rai "Wait, what...?"
 
         "It was surprisingly tidy."
         "There are only a few cases that will make Rai have the intention to tidy up his work drawer. The first one is if it was untidy."
@@ -81,7 +81,7 @@ label phase2:
         "If that was the case then he would have no choice but to look for it fearing that it would get buried."
         "What was miraculous and magical about it is that even though he was prone to be forgetful, it was as neat as if he had just recently tidied it."
 
-        Rai "(When did I… tidy it up? Kinda forgot really.)"
+        Rai "(When did I... tidy it up? Kinda forgot really.)"
 
         "What's going on today? Is the Rai Galilei starting to experience senility or fatigue from work so much that his mind is forced to forget the activities that he did yesterday or maybe even more recent than that?"
         "Who knows."
@@ -141,8 +141,8 @@ label phase2:
 
         "Rai shows the paper that has already been folded into a shuriken-shaped. He throws the shuriken across the room, making it fly and it returns neatly into his hand."
 
-        Artemisia "Ohmagah, Milord… Ahem- I mean. Such a talent to neatly fold an origami and to make it fly like that."
-        Rai "Oh don't flatter me, also this… origami thing you said? I learned it from the Youtube video you gave during my expedition in the Far East Dimension."
+        Artemisia "Ohmagah, Milord... Ahem- I mean. Such a talent to neatly fold an origami and to make it fly like that."
+        Rai "Oh don't flatter me, also this... origami thing you said? I learned it from the Youtube video you gave during my expedition in the Far East Dimension."
 
         show Rai Serious
         Rai "Anyway, what seems to be the problem regarding the CCTV?"
@@ -195,7 +195,7 @@ label phase2:
         "As he examines and searches the database for the inmate, his background, family connection, relation to other criminals. Something immediately clicks."
 
         show Rai Surprised
-        Rai "But really, why does he seem familiar… Ah right, this kusogaki."
+        Rai "But really, why does he seem familiar... Ah right, this kusogaki."
 
         show Rai Annoyed
         Rai "He's the one that ate the fish that I just bought during my trip in the Quantal World. That glutton!"
@@ -233,12 +233,12 @@ label phase2:
         Felix "No. Nothing"
 
         show Rai Happy
-        Rai "(Ah…)"
+        Rai "(Ah...)"
         Rai "(I see!)"
         Felix "What are you talking about man?! Get away from me!"
 
         show Rai Excited
-        Rai "Well thanks to you, I know there is someone who is trying to mess up the surveillance just now. I don't need you anymore…"
+        Rai "Well thanks to you, I know there is someone who is trying to mess up the surveillance just now. I don't need you anymore..."
 
         show Rai Default
         Rai "Contacting IPD, Team Galileian, Team Artemisia, escort this inmate back to his jail. I'm done with him. Retrieve the Inmates Collar from him and send me the data after jailing him. Moving to the CCTV room ASAP."
@@ -286,12 +286,12 @@ label phase2:
         "During the middle of the video, Rai suddenly pauses the record and plays it backwards."
 
         show Rai Thinking
-        Rai "Wait…"
+        Rai "Wait..."
 
         "The inmate seems to be mumbling something."
         "He continued to learn about the inmate for this case."
 
-        Rai "Hmm.. For now this will be the only information that I have…"
+        Rai "Hmm.. For now this will be the only information that I have..."
 
         "He examines and tries to make out something from the mumbling."
 
@@ -299,7 +299,7 @@ label phase2:
         Rai "He said something like going to a place called Farmland?"
 
         show Rai Serious
-        Rai "All is connected…"
+        Rai "All is connected..."
 
         "A fiery ambition flickers in his eyes, a flame that never goes down as long as the criminals are roaming around."
         "Rai runs as fast as he can towards his office to pack his things and head towards Farmland Dimension."
@@ -390,7 +390,7 @@ label phase2:
             Farmer "What kind of work are you going to do, huh?"
 
         menu:
-            "Something simple, maybe…?":
+            "Something simple, maybe...?":
                 jump scene1_1_a
 
             "Whatever is needed now, Sir.":
@@ -441,7 +441,7 @@ label phase2:
             "Rai checks the paper again. He tries to remember all the jobs."
 
             FRai Thinking "(Shed, huh? There must be a lot of stuff in there.)"
-            FRai Serious "(There must be a lot… {i}something.{/i})"
+            FRai Serious "(There must be a lot... {i}something.{/i})"
 
             "As this one policeman had already pointed out, there were indeed a lot of things in that place."
             "A huge amount."
@@ -995,7 +995,7 @@ label phase2:
             Merchant "Didn't I told you to name the stuff right away?!"
 
             show FRai Surprised
-            FRai "A…"
+            FRai "A..."
 
             "Rai was surprised by the merchant's response."
 
@@ -1671,7 +1671,7 @@ label phase2:
             "He had brought provisions to meet this person face to face."
             "His clothes were still the same as his identity as an apprentice at the farm because there was still the possibility that he might meet people he had known before."
             "Fortunately, the hiking trail looks perfect, it seems that the residents here are used to it."
-            "…Or that's what Rai thought earlier."
+            "...Or that's what Rai thought earlier."
 
             show FRai Nervous with dissolve
             FRai "Uhm, where should I go?"
@@ -2033,7 +2033,7 @@ label phase2:
             "Indeed he's also a human with something similar like superpowers, he couldn't deny that. But the power of people in general with the strength of IPD members is different."
 
             show Mira Default
-            The_Girl "You're just like… the woman in the village. You should maintain your manners!"
+            The_Girl "You're just like... the woman in the village. You should maintain your manners!"
 
             show Mira Serious
             The_Girl "I guess you should just go home if you don't like it here."
@@ -2153,7 +2153,7 @@ label phase2:
             stop nature
             MiRA Serious "It's useless for you to persuade me. I've been here longer than you, you know."
             MiRA Angry "They always bring up that I'm different. Do you know that?!"
-            MiRA Annoyed "They don't believe what I'm saying… They always have that look on their face...."
+            MiRA Annoyed "They don't believe what I'm saying... They always have that look on their face...."
             MiRA Angry "They keep... discriminating me!"
 
             "MiRA slightly bowed. Her voice is low, almost like a whisper."
@@ -2170,9 +2170,9 @@ label phase2:
         label scene15_1_a:
             #STILL IN CG
 
-            MiRA Sad4 "Haha…"
+            MiRA Sad4 "Haha..."
             FRai Nervous "What?"
-            MiRA Sad "See…?"
+            MiRA Sad "See...?"
             FRai Default "Eh?"
             MiRA Angry "Even you are the same as them!"
             MiRA Angry "Why won't you just believe me?!!"
@@ -2256,7 +2256,7 @@ label phase2:
             "MiRA looked up at the sky sadly."
 
             show Mira Sad
-            MiRA "The sky…"
+            MiRA "The sky..."
             MiRA "I-it's beautiful"
             MiRA "What have I been doing all this time?"
 
@@ -2706,7 +2706,7 @@ label phase2:
             show CG5 with fade
             $ persistent.cg5_unlocked = True
 
-            FRai Thinking "(Hmm… look at these juicy meats, they look delicious)"
+            FRai Thinking "(Hmm... look at these juicy meats, they look delicious)"
             FRai "(I wonder if i should use some of the money the IPD provided me to buy some?)"
             FRai "(To throw myself a welcoming BBQ party perhaps?)"
             FRai Default "(Oh no I shouldn't)"
@@ -3632,7 +3632,7 @@ label phase2:
             Elsyne "But it'll be fine"
 
             show FRai Sad
-            FRai "El… syne."
+            FRai "El... syne."
             Elsyne "Thanks for everything Rai"
             Elsyne "But it was time for me to go"
             Elsyne "I'm sorry... But please..."
@@ -3678,7 +3678,7 @@ label phase2:
 
             show Elsyne Sad2
             Elsyne "This isn't right."
-            Elsyne "I.. don't want to hurt you… Not again.."
+            Elsyne "I.. don't want to hurt you... Not again.."
 
             # SPRITE ELSYNE RETURN TO HUMAN FORM
             # hide Elsyne Sad2 with dissolve
@@ -3725,7 +3725,7 @@ label phase2:
             Elsyne "Thanks."
             FRai "I promise, the IPD will treat you well."
             FRai "I swear."
-            Elsyne "Alright…"
+            Elsyne "Alright..."
 
             show FRai Default
             FRai "Before we leave, would you like to go back home for one more time?"
