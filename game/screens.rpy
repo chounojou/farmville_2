@@ -610,7 +610,7 @@ screen about():
         xalign 0.3
         ypos 250
         viewport id "vpgrid":
-            yinitial 1.0
+            yinitial 0
             draggable True
             mousewheel True
             xmaximum 1400
@@ -638,7 +638,7 @@ screen about():
                 grid 2 1:
                     xalign 0.5
                     text _("{color=#ffce3b}{font=Happy Chicken.otf}        BGM & SFX:{/font}{/color}\n{a=https://dova-s.jp\nhttps://freesound.org}dova-s.jp{/a}\n{a=https://opengameart.ord}opengameart.ord{/a}\n{a=https://sound-effect.bbcrewind.co.uk}sound-effect.bbcrewind.co.uk{/a}")
-                    text _("{color=#ffce3b}{font=Happy Chicken.otf}        Background:{/font}{/color}\n{a=https://www.freepik.com/free-photo/group-pigs-domestic-animals-pig-farm_11036358.htm#query=inside%20barn&position=27&from_view=search}Freepik: Barn{/a}\n{a=https://www.freepik.com/free-photo/beautiful-shot-forest-with-tall-green-trees_10978866.htm#query=forest&position=15&from_view=keyword}Freepik: Forest{/a}\n{a=https://unsplash.com/photos/zCQ06B18v0Q}Unsplash: Farm{/a}\n{a=https://unsplash.com/photos/Q2TO1NfHS8E}unsplash :Corn Field{/a}\n{a=https://stock.adobe.com/id/images/cotswolds/304711814}Adobe Stock : Village{/a}\n{a=https://www.pexels.com/photo/people-walking-on-street-6159067/}Pexels : Market{/a}\n{a=https://unsplash.com/photos/8janMgWWR8A}Unsplash : River{/a}\n{a=https://unsplash.com/photos/PaKHbtTDqt0}Unsplash: Jail{/a}\n{a=https://pixabay.com/photos/blacksmith-workshop-equipment-500776/}Pixabay: Shed{/a}\n{a=https://pxhere.com/en/photo/1637467}Pxhere: Cave Branch{/a}\n{a=https://www.flickr.com/photos/coconinonationalforest/20578435368}Flickr :Cave Tunnel{/a}\n{a=https://unsplash.com/photos/sXxwbzfNdR4}Unsplash: Cave Final{/a}") xpos 230
+                    text _("{color=#ffce3b}{font=Happy Chicken.otf}        Background:{/font}{/color}\n{a=https://www.freepik.com/free-photo/group-pigs-domestic-animals-pig-farm_11036358.htm#query=inside%20barn&position=27&from_view=search}Freepik: Barn{/a}\n{a=https://www.freepik.com/free-photo/beautiful-shot-forest-with-tall-green-trees_10978866.htm#query=forest&position=15&from_view=keyword}Freepik: Forest{/a}\n{a=https://unsplash.com/photos/zCQ06B18v0Q}Unsplash: Farm{/a}\n{a=https://unsplash.com/photos/Q2TO1NfHS8E}unsplash :Corn Field{/a}\n{a=https://stock.adobe.com/id/images/cotswolds/304711814}Adobe Stock : Village{/a}\n{a=https://www.pexels.com/photo/people-walking-on-street-6159067/}Pexels : Market{/a}\n{a=https://unsplash.com/photos/8janMgWWR8A}Unsplash : River{/a}\n{a=https://unsplash.com/photos/PaKHbtTDqt0}Unsplash: Jail{/a}\n{a=https://pixabay.com/photos/blacksmith-workshop-equipment-500776/}Pixabay: Shed{/a}\n{a=https://pxhere.com/en/photo/1637467}Pxhere: Cave Branch{/a}\n{a=https://www.flickr.com/photos/coconinonationalforest/20578435368}Flickr :Cave Tunnel{/a}\n{a=https://unsplash.com/photos/sXxwbzfNdR4}Unsplash: Cave Final{/a}") xpos 150
                     
                 label "\n[config.name!t]" xalign 0.5
                 text _("Version [config.version!t]\n") xalign 0.5
