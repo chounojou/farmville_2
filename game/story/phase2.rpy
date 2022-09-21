@@ -1,9 +1,9 @@
 #Register music channel
 init python:
-    renpy.music.register_channel("nature", "ambience", False)
-    renpy.music.register_channel("hewan", "hewan", False)
-    renpy.music.register_channel("hewan2", "hewan2", False)
-    renpy.music.register_channel("hewan3", "hewan3", False)
+    renpy.music.register_channel("nature", "sfx", False)
+    renpy.music.register_channel("hewan", "sfx", False)
+    renpy.music.register_channel("hewan2", "sfx", False)
+    renpy.music.register_channel("hewan3", "sfx", False)
 
 label phase2:
 
@@ -508,7 +508,7 @@ label phase2:
 
             play sound audio.footsteps
             show FRai Default at left with easeinleft
-            
+
             "He picks up another item that was on the floor and carries it over to the shelf. He arranges the same as the previous shelf."
 
             show FRai Default
@@ -1463,11 +1463,14 @@ label phase2:
             FRai "I'll check it again later."
 
         label scene8_1:
+            window hide
             show CG3 with fade
             $ persistent.cg3_unlocked = True
 
             play hewan audio.gagak
+            pause(4.0)
 
+            show window
             "Rai who was wiping his sweat heard the sound of a crow behind him."
             "The crow perched on the scarecrow."
 
@@ -2106,10 +2109,13 @@ label phase2:
             show FRai Excited
             FRai "Yes, yes. Of course."
             FRai "So, come with me, will you?"
+            window hide
 
             show CG4 with fade
             $ persistent.cg4_unlocked = True
+            pause(3.0)
 
+            window show
             "When Rai is about to pull MiRA's hand, this girl's expression becomes serious."
             "Along with that, around her a hologram-like screen appears."
 
@@ -3641,7 +3647,7 @@ label phase2:
             Elsyne "I'll be leaving the Farmland for now"
             Elsyne "Don't go look out for me..."
             Elsyne "Until we meet again..."
-            
+
             hide Elsyne Default2 with dissolve
             show black with dissolve
 

@@ -497,7 +497,7 @@ image Cow WyenColor:
     "Sprite/Cow/wyen color ver.png"
     zoom 0.50
 image side Cow WyenColor:
-    "Sprite/Cow/wyen color ver.png"
+    "Sprite/Cow/wyen color ver side.png"
     zoom 0.40
 
 image TalkingTree Default:

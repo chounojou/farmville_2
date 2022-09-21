@@ -9,7 +9,7 @@ label phase1:
 
     "Today is like any of his work days, a lot of new paperworks awaits Rai in his office, which he happily accepts as it is."
     "Waking up and walking to his office like normal. Accompanied by the usual chit-chatter with colleagues."
-    "Rai finally reached his office desk. It doesn't look like one at the moment as it is covered by mountains of paperwork." 
+    "Rai finally reached his office desk. It doesn't look like one at the moment as it is covered by mountains of paperwork."
     "He lets out a big stretch. And it's time for him to do his work."
 
     "Before sitting down on his desk, he grabs a can of cola and cracks it open."
@@ -72,7 +72,7 @@ label phase1:
         Rai Sad "Too bad, I was hoping I could be useful today Boss."
         Boss    "Don't worry, I already said that you eagerly wait for them."
 
-        
+
         "Rai's Boss reassures him with a shoulder pat."
 
 
@@ -141,11 +141,11 @@ label phase1:
         Artemisia "What do you mean sir?"
 
 
-        show Rai Serious 
+        show Rai Serious
         Rai "I saw it from my office. The CCTVs placements are too specific, as if it was purposely moved to create a blind spot. Maybe it's just my imagination though. Forget it."
         Artemisia "I see. How observant of you sir."
 
-        show Rai Excited 
+        show Rai Excited
         Rai "Aww hehe, I've been working here for so long that I feel like IPD is an extension of my body. So, where do I start?"
 
         Artemisia "Yes sir. Before that…"
@@ -169,7 +169,7 @@ label phase1:
         "Rai tinkers with the tools given by the Artemisia to repair the CCTV."
 
         "After he tightens back the screw and changes the lens, he reports back through the receiver to check if it's working again or not."
-        
+
 
         Artemisia Black "Looking good sir."
         Rai Happy "Okay, thanks Artemisia."
@@ -220,7 +220,7 @@ label phase1:
 
         "As Rai speaks to himself, he sips another cola while arranging the drawer."
 
-        "He finds another peculiar book. It's a dark-brown binder book, strapped with purple cloth, weaving an 'ATHENEAN' on its cover." 
+        "He finds another peculiar book. It's a dark-brown binder book, strapped with purple cloth, weaving an 'ATHENEAN' on its cover."
 
         "The backside is a lot of hand-woven ribbon with colorful colors, mostly in red and blue."
         "When he flips it, one of the papers slips from the binder, Rai picks it up and reads the written text on it."
@@ -272,7 +272,7 @@ label phase1:
     label scene3_2intro:
         stop music
         play music audio.IPD_cell loop
-        scene Jail Red
+        scene jail_blinking
         with dissolve
 
         #SFX RUNNING
@@ -611,6 +611,7 @@ label phase1:
         FRai "(I've been searching around this farm, but seems that there really is no one else here.)"
         FRai "(Oh right, the map.)"
         FRai "(Let's see..)"
+        window hide
 
         #[SFX paper unroll (srek)]
         play sound audio.paper_unroll
@@ -618,7 +619,9 @@ label phase1:
         show black
         show Maps at truecenter
         with dissolve
+        pause(2.0)
 
+        window show
         FRai "(Hmm, there's a river near the forest.)"
         FRai "(Knowing his past crime, maybe he's searching for fish?)"
         FRai "(Then, he might be there.)"
@@ -880,7 +883,7 @@ label phase1:
         FRai Surprised "Uwah-" with vpunch
         show Villager Default at left with ease
 
-        Villager "Aaaah! I'm so sorry!" 
+        Villager "Aaaah! I'm so sorry!"
 
 
         show FRai Nervous at right with ease
@@ -1058,7 +1061,7 @@ label phase1:
         Talking_Tree "Faaareeweell, myy chiildd…"
 
         #[SFX running footsteps]
-        
+
         FRai Serious "(I left the market for hours already. I have to go back!"
 
         play sound audio.running
@@ -1113,7 +1116,7 @@ label phase1:
         with fade
         #[SFX running footsteps]
         play sound audio.running
-        
+
         FRai Serious "(Where.. where is he..)"
 
         "AAAAAAAHH!! THIEF!! HELP!" with vpunch #the sound of Lady
@@ -1269,7 +1272,7 @@ label phase1:
 
         #[SFX landing on floor]
         play sound audio.landing_floor
-        
+
         FRai "(Good thing this window is open. Now where is he.."
 
         show Felix Default at right with easeinright
@@ -1367,6 +1370,7 @@ label phase1:
         FRai Thinking "Where did you get this?"
         FRai "A..."
         FRai "Code?"
+        window hide
 
         show black with fade
         pause(2.0)
@@ -1378,7 +1382,6 @@ label phase1:
         pause(5.0)
 
         stop music
-        window hide
 
         $ persistent.phase1 = False
         $ persistent.phase2 = True
