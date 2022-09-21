@@ -531,8 +531,8 @@ label phase2:
 
             show Ring with dissolve
 
-            "It is a circle with a hole in the middle."
-            "There are some sort of four patterns or lines on the edges."
+            "It is a circle with a hole"
+            "There are some sort of lines on the edges."
             "It doesn't have volumes, so calling it a ring would be strange. It looks more like a coin with a hole in the middle of it."
 
             hide Ring with dissolve
