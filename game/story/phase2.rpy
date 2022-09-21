@@ -2317,6 +2317,7 @@ label phase2:
 
             stop music
             stop nature
+            window hide
 
             $persistent.k2_caught = True
 
@@ -3749,6 +3750,7 @@ label phase2:
 
             stop music
             stop nature
+            window hide
 
             $ persistent.k3_caught = True
 
