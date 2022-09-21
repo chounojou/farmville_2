@@ -33,6 +33,7 @@ define Elsyne       = Character("Elsyne", image="Elsyne")
 
 define Galileans    = Character("Galileans")
 
+define Cow_Screen   = Character("Cow")
 define Cow          = Character("Cow", image= "Cow")
 define Wyen         = Character("Wyen", image= "Wyen")
 
@@ -590,7 +591,7 @@ image Scratches Zoom:
 image Maps:
     "Asset/Map (ver2).png"
     zoom 0.36
-=======
+
 image Scratches Zoom = "Asset/Hebi/Tree_2_zoom.png"
 
 image pitchfork:
