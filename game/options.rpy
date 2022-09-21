@@ -29,8 +29,7 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
-""")
+
 
 
 ## A short name for the game used for executables and directories in the built
@@ -63,9 +62,9 @@ define config.has_voice = True
 
 define config.main_menu_music = audio.main_menu
 
-define config.default_music_volume = 0.2
-define config.default_sfx_volume = 0.5
-define config.default_voice_volume = 0.5
+define config.default_music_volume = 1.0
+define config.default_sfx_volume = 1.0
+define config.default_voice_volume = 1.0
 
 
 ## Transitions #################################################################
