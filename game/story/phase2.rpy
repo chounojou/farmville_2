@@ -245,13 +245,13 @@ label phase2:
         Artemisia "Aye aye Sir."
         Rai "Now checking the cameras."
 
-        "Rai sees the weirdly ‘bent' CCTV camera. He runs towards the main room to consult the Galileian officer there."
+        "Rai sees the weirdly 'bent' CCTV camera. He runs towards the main room to consult the Galileian officer there."
 
         show Rai Surprised
         Rai "I got the report that our CCTV is weirdly shaped. Fast Report, ASAP."
-        Galilean_2 "Yes sir. As you can see, our signal was disrupted just before the camera bent, and now it seems like it was crushed by something. While we're here, this is the record from the CCTV before it was ‘bent'."
+        Galilean_2 "Yes sir. As you can see, our signal was disrupted just before the camera bent, and now it seems like it was crushed by something. While we're here, this is the record from the CCTV before it was 'bent'."
 
-        "Rai checks the camera and notices the way the camera ‘bent'."
+        "Rai checks the camera and notices the way the camera 'bent'."
 
         show Rai Surprised
         Rai "THERE!"
@@ -878,7 +878,7 @@ label phase2:
             "Rai raises an eyebrow."
 
             show FRai Thinking
-            FRai "What do you mean by ‘weird'?"
+            FRai "What do you mean by 'weird'?"
             Seller "She... she tried.. a way too hard to blend in, you know."
             Seller "She doesn't look like most people, but she always insists that she's the same as everyone else even though no one mentioned that she's not."
             Villager "She doesn't have to do that though. We'll definitely respond to her like everyone else."
@@ -2425,13 +2425,13 @@ label phase2:
             Rai "(Hmm... where should i go though...)"
 
         menu:
-            "Maybe I should take a stroll on the forest nearby":
+            "Take a stroll on the forest nearby":
                 jump R3scene1_1_a
 
-            "Maybe I should go to the village and see the market there":
+            "Go to the village and see the market there":
                 jump R3scene1_1_b
 
-            "Maybe I should go fishing on the river":
+            "Go fishing on the river":
                 jump R3scene1_1_a
 
         label R3scene1_1_a:
@@ -3180,7 +3180,7 @@ label phase2:
             show FRai Thinking with dissolve
             FRai "(Hmm... Perhaps I have gathered some valuable information about my suspect after today.)"
             FRai "(I do recall something weird.)"
-            FRai "(Firstly, when i talked about ‘a criminal who took thousands of lives', she went quiet for a while.)"
+            FRai "(Firstly, when i talked about 'a criminal who took thousands of lives', she went quiet for a while.)"
             FRai "(I don't know if she's still being absorbed in the somber atmosphere from before.)"
             FRai "(Or if she's hiding something.)"
             FRai "(And second, she hunts?)"
