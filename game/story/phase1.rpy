@@ -222,7 +222,8 @@ label phase1:
         Rai Happy "Ah yeah, looking back, I do remember a bit when I was in the Athenean unit. Fine work, a good one. Yes yes, good memory indeed. Me likey."
 
         "Rai flips the binder book, reminiscing a lot about the job. After finishing with 'ATHENEAN', he picks up the 'GALILEIAN' one and starts to examine it."
-        "The binder is in a hue color of black, brown and light yellow, kinda like a rusted steel. Complemented with a hand-woven gray ribbon as the strap circling around it, making it look like a chained book."
+        "The binder is in a hue color of black, brown and light yellow, kinda like a rusted steel."
+        "Complemented with a hand-woven gray ribbon as the strap circling around it, making it look like a chained book."
 
         Rai Happy "Ah, this book. It's my favorite one. It made me feel like I was writing a new spell in my grimoires. Fuhahahahaha!"
 
@@ -234,7 +235,8 @@ label phase1:
         "It was completely dark that day because there was a jailbreak (which turned out to be a prank) and the inmates were creating a big mess by shutting down IPD's electricity."
 
         Rai Excited "Naughty Inmates. Made us wear night vision goggles for three days straight because of the power outage."
-        "Still it was so fun, I felt like an espionage agent when that day happened. Working on my laptop at the corner of the office, completely with a night vision to maintain the surroundings, because they were playing hide and seek."
+        "Still it was so fun, I felt like an espionage agent when that day happened."
+        "Working on my laptop at the corner of the office, completely with a night vision to maintain the surroundings, because they were playing hide and seek."
         "It ended up as a big surprise: 'A Jailbreak Session'."
 
         "Rai laughs while remembering the photo."
@@ -626,7 +628,7 @@ label phase1:
         FRai Serious "(I'll go to the market first.)"
 
         show FRai Thinking
-        FRai Thinking ")Oh wait. What about the farmer?)"
+        FRai Thinking "(Oh wait. What about the farmer?)"
         FRai "(I have to tell him I'm going out, or he might be suspicious of me.)"
 
         #[Screen fades to black]
@@ -978,7 +980,7 @@ label phase1:
 
         #show FRai Surprised
         FRai Surprised "Wow.. you're huge.."
-        FRai "Someone told me you help people that get lost in this forest."
+        FRai "Someone told me you help people that got lost in this forest."
         Talking_Tree "Whyyy, haaavee youuuu looost yooouur waaay, myy chiiild…?"
         FRai "I think so."
         Talking_Tree "Waaallkk toooo yooouurr leeeftt..!"
@@ -1233,7 +1235,7 @@ label phase1:
         FRai Happy "There he is! Nice!"
         show Felix Default at left with dissolve
         Felix Annoyed "(Ugh, that yellow head must've planned this..)"
-        Felix "(If there's a building I could climb..)"
+        Felix "(If only there's a building I could climb..)"
         Felix "(There it is!)"
         hide Felix Default with dissolve
 
@@ -1295,7 +1297,6 @@ label phase1:
         show Felix Default at right
         with fade
         Felix Annoyed "I'm not going back there!"
-        FRai Surprised "He's going to jump down..!"
         Felix Smirk "Ha! Goodbye, slowpoke!"
 
         show Fisherman Default at left with dissolve
@@ -1356,6 +1357,7 @@ label phase1:
         FRai "Code?"
 
         stop music
+        window hide
 
         $ persistent.phase1 = False
         $ persistent.phase2 = True
