@@ -1,9 +1,9 @@
 #Register music channel
 init python:
-    renpy.music.register_channel("nature", "ambience", False)
-    renpy.music.register_channel("hewan", "hewan", False)
-    renpy.music.register_channel("hewan2", "hewan2", False)
-    renpy.music.register_channel("hewan3", "hewan3", False)
+    renpy.music.register_channel("nature", "sfx", False)
+    renpy.music.register_channel("hewan", "sfx", False)
+    renpy.music.register_channel("hewan2", "sfx", False)
+    renpy.music.register_channel("hewan3", "sfx", False)
 
 label phase2:
 
@@ -508,7 +508,7 @@ label phase2:
 
             play sound audio.footsteps
             show FRai Default at left with easeinleft
-            
+
             "He picks up another item that was on the floor and carries it over to the shelf. He arranges the same as the previous shelf."
 
             show FRai Default
@@ -1463,11 +1463,14 @@ label phase2:
             FRai "I'll check it again later."
 
         label scene8_1:
+            window hide
             show CG3 with fade
             $ persistent.cg3_unlocked = True
 
             play hewan audio.gagak
+            pause(4.0)
 
+            show window
             "Rai who was wiping his sweat heard the sound of a crow behind him."
             "The crow perched on the scarecrow."
 
@@ -2106,10 +2109,13 @@ label phase2:
             show FRai Excited
             FRai "Yes, yes. Of course."
             FRai "So, come with me, will you?"
+            window hide
 
             show CG4 with fade
             $ persistent.cg4_unlocked = True
+            pause(3.0)
 
+            window show
             "When Rai is about to pull MiRA's hand, this girl's expression becomes serious."
             "Along with that, around her a hologram-like screen appears."
 
@@ -2478,8 +2484,8 @@ label phase2:
 
             show Rai Default
             Rai "That's right, I just came here today."
-            Villager "What kind of business did you have around here?"
-            Villager "It's been a while since a youngster like you showed up outta nowhere."
+            Villager "Another newcomer huh?"
+            Villager "What kind of business do you have around here?"
 
             show Rai Happy
             Rai "I'm helping out the Farmer around the farm for now"
@@ -2494,9 +2500,9 @@ label phase2:
             "Rai suddenly realized something."
 
             show Rai Thinking
-            Rai "(Wait, did he say that it's been a while since someone like me showed up?)"
+            Rai "(Wait, did she say 'another newcomer'? There must be another person who came before then.)"
             Rai "(I wonder if they're the ones that I'm looking for?)"
-            Rai "(Should I ask him for more information about them?)"
+            Rai "(Should I ask her for more information about them?)"
 
         menu:
             "Ask the villager about the other newcomer":
@@ -2510,8 +2516,8 @@ label phase2:
             Rai "Ah, wait!"
 
             show Rai Default
-            Rai "I recalled that you said it's been a while since someone like me showed up around here?"
-            Rai "Does that mean there's someone relatively new around here like me?"
+            Rai "I recalled that you said another newcomer?"
+            Rai "Does that mean there's someone else relatively new around too?"
             Villager "Yeah, you wanna know about it?"
             Rai "Yes, please tell me about them."
             Villager "Alright, I guess it would be easier for you to get along with fellow newcomers huh?"
@@ -3641,7 +3647,7 @@ label phase2:
             Elsyne "I'll be leaving the Farmland for now"
             Elsyne "Don't go look out for me..."
             Elsyne "Until we meet again..."
-            
+
             hide Elsyne Default2 with dissolve
             show black with dissolve
 
